@@ -48,6 +48,8 @@ to generate Bach compositions.
     cd torch-hdf5
     luarocks make hdf5-0-0.rockspec
     ```
+** I had to use `HDF5_ROOT=/home/fl350/usr luarocks make
+hdf5-0-0.rockspec` because I local-installed `hdf5` to `~/usr`
 
 * For GPU acceleration with CUDA, you'll need CUDA > 6.5 and:
 
