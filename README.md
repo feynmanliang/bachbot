@@ -6,13 +6,18 @@ to generate Bach compositions.
 
 * Install submodules:
 
-    `git submodule init`
-    `git submodule update --recursive`
+    ```
+    git submodule init
+    git submodule update --recursive
+    ```
 
 * Set up virtualenv:
 
-    `source venv/bin/activate`
-    `pip install -r requirements.txt`
+    ```
+    virtualenv -p python2.7 venv/
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
 
 * Set up torch:
 
