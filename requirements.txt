@@ -1,0 +1,5 @@
+lxml==3.6.0
+music21==2.2.1
+recordtype==1.1
+requests==2.10.0
+urlparse2==1.1.1
