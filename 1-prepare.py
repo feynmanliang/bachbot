@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import glob
+import os
 
 def concatenate_pieces(composer, comp_txt):
     """Removes metadata and concatenates all pieces by `composer` together into
@@ -33,9 +34,12 @@ def strip_metadata(lines):
     return out
 
 if __name__ == "__main__":
+    directory = './scratch/'
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     composers = ["Bach+Johann"]
     for composer in composers:
-        comp_txt = open("./corpus/{composer}.txt".format(composer=composer),"w")
+        comp_txt = open(directory + "{composer}.txt".format(composer=composer),"w")
         concatenate_pieces(composer, comp_txt)
         comp_txt.close()
 
