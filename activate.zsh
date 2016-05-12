@@ -1,4 +1,4 @@
 #!/usr/bin/zsh
 
 source venv/bin/activate
-./torch/install/bin/torch-activate
+source ./torch/install/bin/torch-activate
