@@ -58,4 +58,4 @@ to generate Bach compositions.
 
 ## Workflow
 
-* `./activate.zsh` sources an existing intallation
+* `source ./activate.zsh` sources an existing intallation
