@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     # write output to `filename`-bar.krn
     outpath = args.filepath[:-4] + '-bar.krn'
-    with open(outpath, 'rw') as out:
+    with open(outpath, 'w+') as out:
         r = fix_measure_numbering(args.filepath)
         out.writelines(r)
 
