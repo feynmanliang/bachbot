@@ -1,0 +1,3 @@
+[submodule "torch-rnn"]
+	path = torch-rnn
+	url = https://github.com/feynmanliang/torch-rnn
