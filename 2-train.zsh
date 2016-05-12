@@ -2,8 +2,6 @@
 
 COMPOSER=Bach+Johann
 
-exec "source venv/bin/activate"
-
 # preprocess data (tokenize store in hdf5)
 python torch-rnn/scripts/preprocess.py \
     --input_txt scratch/${COMPOSER}.txt \
