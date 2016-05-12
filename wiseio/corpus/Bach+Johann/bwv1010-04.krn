@@ -1,0 +1,249 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685///-1750///
+!!!CNT@EN: German
+!!!OTL: Sarabande from Cello Suite No. 4 in E-flat Major, BWV 1010
+!!!OPR: Cello Suite No. 4 in E-flat Major, BWV 1010
+!!!OMD: Sarabande
+!!!OMV: 4
+!!!ODT: 1723///
+!!!SCT: BWV 1010
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+**kern
+*Icello
+*>[A,A,B,B]
+*>norep[A,B]
+*>A
+*clefF4
+*k[b-e-a-]
+*M3/4
+*MM104
+=1-
+*^
+(4B-/	2.E-\
+4c/)	.
+4d-/	.
+=2	=2
+(8.d-/L	8AA-\ 8E-\
+.	8r
+16B-/Jk	.
+*v	*v
+(B-q/)
+*^
+([4c\)	2r
+16c\LL]	.
+16B-\	.
+16A-\	.
+16G\JJ)	.
+=3	=3
+(4F/	2.BB-\
+4G/)	.
+4A-/	.
+=4	=4
+(8.A-/L	8EE-\ 8BB-\
+.	8r
+16F/Jk	.
+8.G/L)	2r
+16B-/Jk	.
+4E-\	.
+=5	=5
+(8.E-/L	8BB-\
+.	8r
+16C/Jk	.
+(8.D/L)	2r
+16F/Jk)	.
+4A-\	.
+=6	=6
+(8.A-/L	8EE-\ 8BB-\
+.	8r
+16F/Jk	.
+(8.G/L)	2r
+16B-/Jk)	.
+4d-\	.
+=7	=7
+(8.d-/L	4En\
+16B-/Jk	.
+(8.c\L)	2r
+16en\Jk)	.
+4g\	.
+=8	=8
+4B-/	4F\
+2r	(8.An\L
+.	16G\Jk)
+.	(8.F\L
+.	16E-\Jk)
+=9	=9
+4D\	(8.B-/L
+.	16d/Jk
+(8.f\L)	2r
+16A-\Jk)	.
+4B-\	.
+=10	=10
+4E-\	(8.B-/L
+.	16d/Jk
+(8.g\L)	2r
+16An\Jk)	.
+4B-\	.
+=11	=11
+8B-/L	8F\
+16An/L	8r
+16G/JJ	.
+8F/L	2r
+8E-/J	.
+E-q/	.
+(8D/L	.
+16E-/L	.
+16C/JJ)	.
+*v	*v
+=12
+2.BB-/
+=13:|!|:
+*>B
+*^
+(4F/	2.BB-\
+4G/)	.
+4A-/	.
+=14	=14
+(8.A-/L	8.BBn\
+16F/Jk	16r
+2r	([4G\)
+.	16G\LL]
+.	16F\
+.	16E-\
+.	16D\JJ)
+=15	=15
+4G/ 4e-/	8C\
+.	8r
+4F/ 4d/	8AA-\
+.	8r
+4F#/ 4c/	8AAn\
+.	8r
+=16	=16
+(8.c/L	8GG\ 8D\
+.	8r
+16An/Jk	.
+(8.Bn\L)	2r
+16d\Jk)	.
+(8.G\L	.
+16Fn\Jk)	.
+*v	*v
+=17
+(4BB-/ 4En/
+4AA-/) 4F/
+4GG/ 4G/
+=18
+*^
+(8.A-/L	8FF\ 8C\
+.	8r
+16F/Jk	.
+2r	(8.D\L)
+.	16Bn\Jk)
+.	4E-\ [4c\
+=19	=19
+(8.c/L]	4F\
+16d/Jk)	.
+(4.d/	2G\
+8c/)	.
+*v	*v
+=20
+(8.c\L
+16G\Jk)
+(8.E-\L
+16G\Jk)
+8.C/L
+16BB-/Jk
+=21
+*^
+4F/ (4c/	8AAn\
+.	8r
+4d\)	2r
+4e-\	.
+=22	=22
+(8.e-/L	8BB-\ 8F\
+.	8r
+16c/Jk	.
+(8.d\L)	2r
+16f\Jk)	.
+4A-\	.
+=23	=23
+8.BB-/ (8.A-/L	2r
+16F/Jk)	.
+(8.G/L	.
+16B-/Jk)	.
+4AAn/ 4E-/	8CC\
+.	8r
+*v	*v
+=24
+(8.BB-/ 8.E-/L
+16C/Jk)
+(8.D\L
+16F\Jk)
+8.BB-/L
+16AA-/Jk
+=25
+8.GG\ (8.E-\L
+16G\Jk)
+(8.B-\L
+16D\Jk)
+4E-\
+=26
+8.AA-\ (8.E-\L
+16G\Jk)
+(8.c\L
+16D\Jk)
+4E-\
+=27
+8.BB-\ (8.E-\L
+16A-\Jk)
+(8.G\L
+16F\Jk)
+8E-\L
+16F\L
+16D\JJ
+=28
+*^
+(8E-/L	8C\
+16G/L	8r
+16B-/JJ	.
+(8e-\L)	2r
+16B-\L	.
+16G\JJ)	.
+4E-\	.
+*v	*v
+=29
+(8.E-/L
+16G-/Jk
+8.c/L)
+16F/Jk
+4e-\
+=30
+*^
+(8e-/L	8AA-\ 8F\
+16d/L	8r
+16c/JJ	.
+8.d\L)	2r
+16f\Jk	.
+4B-\	.
+*v	*v
+=31
+8GG\ 8E-\ 8B-\L
+16A-\L
+16G\JJ
+8F\L
+8E-\J
+(8BB-/L
+16E-/L
+16D/JJ)
+=32
+(16EE-/LL
+16GG/
+16BB-/
+16D/JJ)
+(16E-\LL
+16G\
+16B-\
+16d\JJ)
+4e-\
+==:|!
+*-
+!!!ENC: Craig Stuart Sapp
+!!!END: 2004/12/29/

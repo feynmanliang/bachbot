@@ -1,0 +1,130 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Chorale Harmonizations
+!!!ONR: Nr. 7
+!!!OTL: Ach, was soll ich Su2nder machen
+!!!SCT: BWV 259
+!!!YEC: Copyright 1996, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Icalto	*Isoprn
+*	*	*Ialto	*
+*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*M4/4	*M4/4	*M4/4	*M4/4
+*clefF4	*clefGv2	*clefG2	*clefG2
+=1-	=1-	=1-	=1-
+8E\L,	4G/,	4B/,	4e/,
+8F#\J	.	.	.
+8G\L	4G/	4B/	4e/
+8F#\J	.	.	.
+8E\L	4B\	4e/	4g/
+8D\J	.	.	.
+8C/L	4B\	4e/	4g/
+8BB/J	.	.	.
+=2	=2	=2	=2
+8AA/L	4c\	4e/	4a:/
+8GG/J	.	.	.
+8FF#/L	4d\	8a/L	4a/
+8DD/J	.	8f#/J	.
+4GG/	4d\	4g/	4b\
+4G;\	4d;\	4g;/	4b;\
+=3	=3	=3	=3
+8GG/L,	4d\,	4g/,	4b\,
+8AA/J	.	.	.
+8BB/L	8d\L	4g/	4dd\
+8E/J	8B\J	.	.
+8AA/L	8c\L	8g/L	4cc\
+8D/J	8d\J	8f#/J	.
+8GG/L	4d\	4g/	4b\
+8BB/J	.	.	.
+=4	=4	=4	=4
+8C/L	8e\L	4g/	4.a/
+8AA/J	8c\J	.	.
+4D\	8A\L	4f#/	.
+.	16d\L	.	8a/
+.	16c\JJ	.	.
+2GG;/,	2B;\,	2d;/,	2g;/,
+=5	=5	=5	=5
+8F#\L	4d\	4f#/	4a/
+8E\J	.	.	.
+8D/L	4A/	4e/	4a/
+8C/J	.	.	.
+8BB/L	8A/L	8d#/L	4b\
+8D#/J	16G/L	8f#/J	.
+.	16F#/JJ	.	.
+8E\L	8G/L	8B/L	4g/
+8C\J	8c/J	16e/L	.
+.	.	16d#/JJ	.
+=6	=6	=6	=6
+8AA/L	8c\L	4e/	4.f#/
+8FF#/J	8A\J	.	.
+4BB/	8F#/L	4d#/	.
+.	16B/L	.	8f#/
+.	16A/JJ	.	.
+2EE;/,	2G;/,	2B;/,	2e;/,
+=7	=7	=7	=7
+8EE/L	4B\	4g/	4ee\
+8FF#/J	.	.	.
+8GG/L	4B\	4g/	4ee\
+8AA/J	.	.	.
+8BB/L	4B\	4f#/	4dd\
+8C#/J	.	.	.
+8D/L	4B\	4f#/	4dd\
+8BB/J	.	.	.
+=8	=8	=8	=8
+8E\L	4.B\	4g/	4cc#\
+8C#\J	.	.	.
+4F#\	.	4f#/	4cc#\
+.	8A#/	.	.
+4BB/	4d\	4f#/	4b\
+4BB;/	4d;\	4f#;/	4b;\
+=9	=9	=9	=9
+8B\L	8d\L	4f#/	4dd\
+8A\J	8c\J	.	.
+8G\L	4B\	4g/	4dd\
+8F#\J	.	.	.
+8E\L	8e\L	8g/L	4cc\
+8F#\J	8d\J	8a/J	.
+8G\L	8d\L	8a/L	4b\
+8E\J	8e\J	8g/J	.
+=10	=10	=10	=10
+8C/L	8e\L	4g/	4.a/
+8AA/J	8c\J	.	.
+4D\	8A\L	4f#/	.
+.	16d\L	.	8a/
+.	16c\JJ	.	.
+2GG;/,	2B;\,	2d;/,	2g;/,
+=11	=11	=11	=11
+4G\	4c#\	4e/	4a/
+8F#\L	8d\L	4f#/	4a/
+8E\J	8cn\J	.	.
+4D#\	4B\	4.f#/	4b\
+8E\L	8B\L	.	4g/
+8C\J	8cn\J	8e/	.
+=12	=12	=12	=12
+8AA/L	8cn\L	4e/	4.f#/
+8FF#/J	8A\J	.	.
+4BB/	8F#/L	4d#/	.
+.	16B/L	.	8f#/
+.	16A/JJ	.	.
+2EE;/	2G#;/	2B;/	2e;/
+==	==	==	==
+*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!PDT: 1784//
+!!!PPP: Leipzig
+!!!AGN: chorale harmonization
+!!!AST: baroque, choral
+!!!AMT: simple quadruple
+!!!YOR: Bach Gesellschaft, xxxix
+!!!AIN: bass calto soprn tenor vox
+!!!EEV: 1.0
+!!!RDT: 1994 May 05
+!!!YER: 1996 July 11
+!!!YEN: United States of America
+!!!EFL: 7/185
+!!!ENC: S. Rasmussen
+!!!EED: W.B. Hewlett
+!!!VTS: 507903416

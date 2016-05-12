@@ -1,0 +1,121 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 85. Herr, straf' mich nicht in deinem Zorn
+!!!SCT: BWV 338
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*>[A,A,B]	*	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*	*>A	*>A	*>A
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*a:	*	*a:	*a:	*a:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4a/	Herr,sonst	4e/	4c\	4AA/
+=1	=1	=1	=1	=1
+4cc\	straf'bin	4a/	4e\	4A\
+4b\	michich	8a/L	8.e\L	4E\
+.	.	8g/J	.	.
+.	.	.	16d\Jk	.
+4a/	nichtganz	4f/	4c\	8F\L
+.	.	.	.	8E\J
+4a/	inund	4f/	4d\	8D/L
+.	.	.	.	8C/J
+=2	=2	=2	=2	=2
+4g/	dei-gar	8f/L	8d\L	8BB/L
+.	.	8e/J	8A\J	8C#/J
+4f/	-nemver-	8e/L	4A/	4D\
+.	.	8d/J	.	.
+4e;/	Zorn,-lor'n,	4c#;/	4A;/	4AA;/
+4e/	dasmit	4e/	4A/	4Cn/
+=3	=3	=3	=3	=3
+4f#/	bitt'dir	8.d/L	4A/	8C/L
+.	.	.	.	16D/L
+.	.	16e/Jk	.	16C/JJ
+4g#/	ichist	8f/L	8d\L	8BB/L
+.	.	8e/J	16c\L	8E/J
+.	.	.	16B\JJ	.
+4a/	dichnicht	8e/L	8c\L	8C/L
+.	.	16f#/L	8d\J	8BB/J
+.	.	16g#/JJ	.	.
+4cc\	vonzu	4a/	4e\	8AA/L
+.	.	.	.	8C/J
+=4	=4	=4	=4	=4
+2b\	Her-scher-	4a/	8f\L	8D/L
+.	.	.	8d\	8BB/J
+.	.	4g#/	8B\	4E\
+.	.	.	16e\L	.
+.	.	.	16d\JJ	.
+4a;/	-zen,-zen,	4e;/	4c;\	4AA;/
+=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*	*>B	*>B	*>B
+4b\	und	4gn/	4e\	4E\
+=5	=5	=5	=5	=5
+4b\	z\u3cht'-	4f#/	4d#\	8B\L
+.	.	.	.	8A\J
+4b\	-ge	4g/	4e\	8G\L
+.	.	.	.	8F#\J
+4b\	mich	4f#/	4B\	8E\L
+.	.	.	.	8D#\J
+4g/	nicht	8f#/L	8B\L	4E\
+.	.	8e/J	8c\J	.
+=6	=6	=6	=6	=6
+4a/	in	8e/L	8c\L	4F#\
+.	.	8d/J	16d\L	.
+.	.	.	16c\JJ	.
+4b\	dein'm	8d/L	16B\LL	4G#\
+.	.	.	16A\J	.
+.	.	8e/J	8B\J	.
+4cc;\	Grimm,	4e;/	4A;/	4A;\
+4b\	weil	4e/	4G/	4E\
+=7	=7	=7	=7	=7
+4b\	ich	(16f#/LL	4B\	4D#\
+.	.	16g/JJ	.	.
+.	.	4a/)	.	.
+4b\	so	.	4e\	4Dn\
+.	.	8g#/	.	.
+4cc\	voll	4.a/	4e\	8C/L
+.	.	.	.	8D/J
+4b\	Be-	.	8.e\L	4E\
+.	.	8gn/	.	.
+.	.	.	16d\Jk	.
+=8	=8	=8	=8	=8
+4a/	-tr\u3b-	8g/L	4c\	8F\L
+.	.	16f/L	.	8E\J
+.	.	16e/JJ	.	.
+4a/	-niss	4d/	8B/L	4F\
+.	.	.	8A/J	.
+4g#;/	bin,	4e;/	4B;\	4E;\
+4g#/	und	4e/	4B\	8E\L
+.	.	.	.	8D\J
+=9	=9	=9	=9	=9
+4a/	lei-	4e/	4c\	8C/L
+.	.	.	.	8BB/J
+4b\	-de	4e/	4B\	8AA/L
+.	.	.	.	8GG#/J
+4cc\	gro-	8e/L	4A/	4AA/
+.	.	16a/L	.	.
+.	.	16g#/JJ	.	.
+4dd\	-sse	4a/	8A\L	8F\L
+.	.	.	8f\J	8D\J
+=10	=10	=10	=10	=10
+2b\	Schmer-	8a/L	8e\L	2E\
+.	.	16g#/L	8B\	.
+.	.	16f#/JJ	.	.
+.	.	4g#/	8e\	.
+.	.	.	8d\J	.
+4a;/	-zen.	4e;/	4c#;\	4AA;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/06/10/
+!!!KEY: 3587476716
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

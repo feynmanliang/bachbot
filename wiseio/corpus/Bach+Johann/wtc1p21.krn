@@ -1,0 +1,601 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Das wohltemperirte Clavier, Band I
+!!!XEN: The Well-Tempered Clavier, Volume I
+!!!OTL: Prelude in B-flat Major
+!!!OMV: Prelude XXI
+!!!SCT: BWV 866
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xiv
+!!!ENC: Walter Hewlett
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern
+*k[b-e-]
+*B-:
+*M4/4
+*MM76
+=1-
+*^
+32r	8B-\L
+32f/LLL	.
+32dd/	.
+32f/JJJ	.
+32r	8A\J
+32f/LLL	.
+32cc/	.
+32f/JJJ	.
+32r	8B-\L
+32f/LLL	.
+32dd/	.
+32f/JJJ	.
+32r	8F\J
+32a/LLL	.
+32ff/	.
+32a/JJJ	.
+32r	8G\L
+32d/LLL	.
+32b-/	.
+32d/JJJ	.
+32r	8F\J
+32d/LLL	.
+32a/	.
+32d/JJJ	.
+32r	8G\L
+32d/LLL	.
+32b-/	.
+32d/JJJ	.
+32r	8D\J
+32f/LLL	.
+32dd/	.
+32f/JJJ	.
+=2	=2
+32r	8E-\L
+32B-/LLL	.
+32g/	.
+32B-/JJJ	.
+32r	8D\J
+32B-/LLL	.
+32f/	.
+32B-/JJJ	.
+32r	8E-/L
+32B-/LLL	.
+32g/	.
+32B-/JJJ	.
+32r	8BB-/J
+32d/LLL	.
+32b-/	.
+32d/JJJ	.
+32r	8C/L
+32d/LLL	.
+32e-/	.
+32d/JJJ	.
+32r	8BB-/J
+32d/LLL	.
+32g/	.
+32d/JJJ	.
+32r	8AA/L
+32c/LLL	.
+32f/	.
+32c/JJJ	.
+32r	8FF/J
+32A/LLL	.
+32e-/	.
+32A/JJJ	.
+=3	=3
+32r	8B-\L
+32d/LLL	.
+32f/	.
+32d/JJJ	.
+32r	8F\J
+32B-/LLL	.
+32d/	.
+32B-/JJJ	.
+32r	8D\L
+32F/LLL	.
+32B-/	.
+32F/JJJ	.
+32r	8BB-\J
+32D/LLL	.
+32F/	.
+32D/JJJ	.
+32GG\LLL	2ryy
+32D\	.
+32En\	.
+32F#\JJJ	.
+32G\	.
+32A/LLL	.
+32B-/	.
+32c/JJJ	.
+32B-/	.
+32G\LLL	.
+32A\	.
+32B-\JJJ	.
+32c\	.
+32d/LLL	.
+32en/	.
+32fn/JJJ	.
+=4	=4
+32r	8c\L
+32en/LLL	.
+32g/	.
+32e/JJJ	.
+32r	8G\J
+32c/LLL	.
+32e/	.
+32c/JJJ	.
+32r	8En\L
+32G/LLL	.
+32c/	.
+32G/JJJ	.
+32r	8C\J
+32En/LLL	.
+32G/	.
+32E/JJJ	.
+32AA\LLL	2ryy
+32En\	.
+32F\	.
+32G\JJJ	.
+32A\	.
+32Bn/LLL	.
+32c/	.
+32d/JJJ	.
+32c/	.
+32A\LLL	.
+32Bn\	.
+32c\JJJ	.
+32d\	.
+32en/LLL	.
+32f/	.
+32g/JJJ	.
+=5	=5
+32r	8d\L
+32f/LLL	.
+32a/	.
+32f/JJJ	.
+32r	8A\J
+32d/LLL	.
+32f/	.
+32d/JJJ	.
+32r	8F\L
+32A/LLL	.
+32d/	.
+32A/JJJ	.
+32r	8D\J
+32F/LLL	.
+32A/	.
+32F/JJJ	.
+32r	8BB-\L
+32F/LLL	.
+32d/	.
+32F/JJJ	.
+32r	8GG\J
+32F/LLL	.
+32B-/	.
+32F/JJJ	.
+32r	8AA\L
+32F/LLL	.
+32c/	.
+32F/JJJ	.
+32r	8FF\J
+32F/LLL	.
+32e-/	.
+32F/JJJ	.
+=6	=6
+32r	8BB-\L
+32F/LLL	.
+32d/	.
+32F/JJJ	.
+32r	8GG\J
+32F/LLL	.
+32B-/	.
+32F/JJJ	.
+32r	8AA\L
+32F/LLL	.
+32c/	.
+32F/JJJ	.
+32r	8FF\J
+32F/LLL	.
+32e-/	.
+32F/JJJ	.
+32r	8BB-\L
+32F/LLL	.
+32d/	.
+32F/JJJ	.
+32r	8BBn\J
+32G/LLL	.
+32f\	.
+32G/JJJ	.
+32r	8C\L
+32G/LLL	.
+32en\	.
+32G/JJJ	.
+32r	8C#\J
+32A/LLL	.
+32g\	.
+32A/JJJ	.
+=7	=7
+32r	8D\L
+32A/LLL	.
+32f\	.
+32A/JJJ	.
+32r	8DD\J
+32B-/LLL	.
+32a\	.
+32B-/JJJ	.
+32r	8EEn\L
+32B-/LLL	.
+32g\	.
+32B-/JJJ	.
+32r	8En\J
+32c/LLL	.
+32b-/	.
+32c/JJJ	.
+32r	8F\L
+32c/LLL	.
+32a/	.
+32c/JJJ	.
+32r	8FF\J
+32d/LLL	.
+32cc/	.
+32d/JJJ	.
+32r	8GG\L
+32d/LLL	.
+32b-/	.
+32d/JJJ	.
+32r	8G\J
+32en/LLL	.
+32dd/	.
+32e/JJJ	.
+=8	=8
+*v	*v
+32A\LLL
+32c\
+32d\
+32en\JJJ
+32f\
+32g/LLL
+32a/
+32b-/
+32cc/
+32b-/
+32a/
+32g/JJJ
+32f\LLL
+32e-\
+32d\
+32c\JJJ
+32d/LLL
+32B-/
+32A/
+32G/JJJ
+32F/
+32E-\LLL
+32D\
+32C\JJJ
+32BB-\LLL
+32C\JJJ
+32D/LLL
+32C/JJJ
+32BB-/
+32AA\LLL
+32GG\
+32FF\JJJ
+=9
+*^
+32r	8EEn\L
+32c/LLL	.
+32b-/	.
+32c/JJJ	.
+32r	8FF\J
+32c/LLL	.
+32a/	.
+32c/JJJ	.
+32r	8DD\L
+32B-/LLL	.
+32a/	.
+32B-/JJJ	.
+32r	8EEn\J
+32B-/LLL	.
+32g/	.
+32B-/JJJ	.
+32r	8FF\L
+32A/LLL	.
+32g\	.
+32A/JJJ	.
+32r	8AA\J
+32A/LLL	.
+32f\	.
+32A/JJJ	.
+32r	8BB-\L
+32G/LLL	.
+32f\	.
+32G/JJJ	.
+32r	8C\J
+32G/LLL	.
+32en\	.
+32G/JJJ	.
+=10	=10
+32A/LLL	8FF\
+32c\	.
+32f\	.
+32c\JJJ	.
+32A/LLL	8r
+32f\	.
+32c\	.
+32A/JJJ	.
+32F/LLL	4r
+32A/	.
+32c/	.
+32A/JJJ	.
+32F/LLL	.
+32c/	.
+32A/	.
+32F/JJJ	.
+32C\	2ryy
+32F/LLL	.
+32En/	.
+32D/JJJ	.
+32C/	.
+32BB-\LLL	.
+32AA\	.
+32GG\JJJ	.
+32FF\LLL	.
+32AA\	.
+32C\	.
+32F\JJJ	.
+32A/LLL	.
+32c/	.
+32e-/	.
+32g-/JJJ	.
+=11	=11
+*^	*
+*^	*	*
+4r	2ryy	4ryy	8DD/
+.	.	.	8r
+8.ff/ 8.dd/ 8.b-/ 8.a-/L	.	8.d/L	8.B-\L 8.F\ 8.D\
+16ff/ 16dd/ 16b-/ 16a-/Jk	.	16d/Jk	16B-\Jk 16F\ 16D\
+[4ff/ 4dd/ 4bn/	4g\	2ryy	4G\ 4D\ 4BBn\
+32ff\LLL]	4ryy	.	4r
+32gg\	.	.	.
+32aa-\	.	.	.
+32gg\	.	.	.
+32ff\	.	.	.
+32ee-\	.	.	.
+32dd\	.	.	.
+32ee-\JJJ	.	.	.
+=12	=12	=12	=12
+*v	*v	*v	*v
+32ff\LLL
+32ee-\
+32dd\
+32cc\
+32bn\
+32cc\
+32dd\
+32cc\JJJ
+32bn\LLL
+32a\
+32g\
+32a\
+32b\
+32a\
+32g\
+32f\JJJ
+32e-/LLL
+32d/
+32c/
+32B-/
+32A-/
+32G/
+32F/
+32E-/JJJ
+32D/LLL
+32C/
+32BBn/
+32AAn/
+32GG/
+32FF/
+32EE-/
+32DD/JJJ
+=13
+*^
+*^	*
+*^	*	*
+4r	4ryy	4ryy	8CC/
+.	.	.	8r
+8.ee-/ 8.cc/L	8.g\L	8.c/L 8.G/ 8.E-/	8.C\L
+16ee-/ 16cc/ 16b-/Jk	16g\Jk	16c/Jk 16G/ 16E-/	16C\Jk
+4ee-/ 4cc/ 4a/	4f\	4c/ 4A/ 4F/	[4F\
+4r	4ryy	4ryy	32F\LLL]
+.	.	.	32C\
+.	.	.	32D\
+.	.	.	32E-\
+.	.	.	32F\
+.	.	.	32G\
+.	.	.	32A\
+.	.	.	32B-\JJJ
+=14	=14	=14	=14
+*v	*v	*v	*v
+32A\LLL
+32G\
+32F\
+32G\
+32A\
+32B-\
+32c\
+32d\JJJ
+32c\LLL
+32B-\
+32A\
+32B-\
+32c\
+32d\
+32e-\
+32f\JJJ
+32e-\LLL
+32d\
+32c\
+32d\
+32e-\
+32f\
+32g\
+32a\JJJ
+32b-\LLL
+32cc\
+32dd\
+32ee-\
+32ff\
+32gg\
+32aa\
+32ff\JJJ
+=15
+*^
+*^	*
+8bb-\	4ryy	4r
+8r	.	.
+8.dd/ 8.b-/L	8.a-\L 8.f\	8.B-\L 8.F\ 8.D\ 8.BB-\
+16dd/ 16b-/Jk	16a-\Jk 16f\	16B-\Jk 16F\ 16D\ 16BB-\
+4dd/ 4b-/	4g\ 4e-\	4B-\ 4G\ 4E-\
+8.dd-/L	8.b-\L 8.g\	8.B-\L 8.G\ 8.En\
+16cc/Jk	16b-\Jk 16g\	16c\Jk 16G\ 16E\
+=16	=16	=16
+4cc/	[4a\ 4f\	4e-\ 4c\ 4A\ 4F\
+32a/LLL	4ryy	4ryy
+32cc/	.	.
+32a/	.	.
+32f/JJJ	.	.
+32e-\	.	.
+32f/LLL	.	.
+32a/	.	.
+32cc/JJJ	.	.
+32a/LLL	2ryy	2ryy
+32cc/	.	.
+32a/	.	.
+32f/JJJ	.	.
+32e-\	.	.
+32f/LLL	.	.
+32a/	.	.
+32cc/JJJ	.	.
+32gg-\LLL	.	.
+32ff\	.	.
+32ee-\	.	.
+32dd-\	.	.
+32cc\	.	.
+32b-\	.	.
+32a\	.	.
+32gn\JJJ	.	.
+=17	=17	=17
+*^	*	*
+2ryy	32a/]	2ryy	2ryy
+.	32f\LLL	.	.
+.	32a\	.	.
+.	32cc\JJJ	.	.
+.	32ee-\	.	.
+.	32gg-/LLL	.	.
+.	32aa/	.	.
+.	32ccc/JJJ	.	.
+.	16.bb-\LL	.	.
+.	32cc\L	.	.
+.	32dd-\	.	.
+.	32a\	.	.
+.	32b-\	.	.
+.	32en\JJJ	.	.
+4cc/ 4b-/ 4f/	8c\L	4F/	4E-\ 4C\ 4FF\
+.	8dn\J	.	.
+4cc/ 4a/ 4f/	4e-\	8F/L	4E-\ 4C\ 4FF\
+.	.	8G/J	.
+=18	=18	=18	=18
+4b-/ 4f/	[4d\	4A-/	4F\ 4D\ 4BB-\
+4ryy	32d/LLL]	4ryy	4ryy
+.	32f/	.	.
+.	32d/	.	.
+.	32B-/JJJ	.	.
+.	32A-\	.	.
+.	32B-/LLL	.	.
+.	32d/	.	.
+.	32f/JJJ	.	.
+2ryy	32d/LLL	2ryy	2ryy
+.	32f/	.	.
+.	32d/	.	.
+.	32B-/JJJ	.	.
+.	32A-\	.	.
+.	32B-/LLL	.	.
+.	32d/	.	.
+.	32f/JJJ	.	.
+.	32cc-/LLL	.	.
+.	32a-/	.	.
+.	32f/	.	.
+.	32d/JJJ	.	.
+.	32c-\LLL	.	.
+.	32A-\	.	.
+.	32F\JJJ	.	.
+.	32d/	.	.
+=19	=19	=19	=19
+*v	*v	*v	*
+[8e-T/L	8G\
+32e-/LL]	8r
+32d/	.
+32c/	.
+32d/JJJ	.
+32e-/LLL	4ryy
+32d/	.
+32c/	.
+32B-/	.
+32An/	.
+32B-/	.
+32c/	.
+32B-/JJJ	.
+32A/LLL	2ryy
+32G/	.
+32F/	.
+32G/	.
+32A/	.
+32G/	.
+32F/	.
+32E-/JJJ	.
+32D/LLL	.
+32E-/	.
+32F/	.
+32E-/	.
+32D/	.
+32C/	.
+32BB-/	.
+32AA/JJJ	.
+=20	=20
+32r	8BB-\L
+32D/LLL	.
+32F/	.
+32D/JJJ	.
+32r	8D\J
+32F/LLL	.
+32B-/	.
+32F/JJJ	.
+32r	8F\L
+32B-/LLL	.
+32d/	.
+32B-/JJJ	.
+32r	8B-\J
+32d/LLL	.
+32f/	.
+32d/JJJ	.
+32r	8d\L
+32f/LLL	.
+32b-/	.
+32f/JJJ	.
+32r	8f\J
+32b-/LLL	.
+32dd/	.
+32b-/JJJ	.
+32r	8b-\
+32dd/LLL	.
+32ff/	.
+32dd/JJJ	.
+8bb-;/	8r;
+==|!;	==|!;
+*-	*-
+!!!END: 1994/01/20/
+!!!KEY: 1518074177
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

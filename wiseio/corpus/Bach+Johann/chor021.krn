@@ -1,0 +1,99 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Herzlich tut mich verlangen
+!!!SCT:	BWV 153/5
+!!!PC#:	21
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[]	*k[]	*k[]	*k[]
+*a:	*a:	*a:	*a:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4D	4G#	4B	4e
+=1	=1	=1	=1
+4C	4A	4e	4a
+4C#	4B-	4e	4g
+4D	4A	4d	4f
+4E	4G	4c#	4e
+=2	=2	=2	=2
+4F	8AL	2d	2d
+.	16GL	.	.
+.	16FJJ	.	.
+4BB-	8GL	.	.
+.	8DJ	.	.
+4AA;	4A;	4c#;	4e;
+4G	4B	4e	4b
+=3	=3	=3	=3
+4F#	4A	4d#	4cc
+4E	4A	4e	4cc
+4D#	4A	4f#	4b
+4E	4G#	8eL	4b
+.	.	8dJ	.
+=4	=4	=4	=4
+2.AA;	2.A;	2.c;	2.a;
+=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B
+4A	4A	8eL	4cc
+.	.	8f#J	.
+=5	=5	=5	=5
+4G	4d	4g	4b
+4FnX	4B	4d	4g
+4E	4c	4e	4a
+4D	4d	4f	4b
+=6	=6	=6	=6
+4E	8cL	4g	2cc
+.	8B-J	.	.
+4F	4A	4f	.
+4C;	4G;	4e;	4cc;
+4E	4c	4g	4g
+=7	=7	=7	=7
+4F	4c	4f	4a
+4B-	8c#L	8eL	4g
+.	8dJ	8dJ	.
+4C#X	4A	4e	4a
+4D	4A	4d	4f
+=8	=8	=8	=8
+2.AA;	2.A;	2.c#;	2.e;
+4F#	4A	4d	4cc
+=9	=9	=9	=9
+4G	8GL	4d	8bL
+.	8AJ	.	8ccJ
+4GG	4B	[4g	4dd
+4AA	4c	8gL]	4cc
+.	.	8f#J	.
+4BB	4d	4g	4b
+=10	=10	=10	=10
+4C	4e	4g	2a
+4D	4d	4f#	.
+4GG;	4d;	4g;	4b;
+4C	8cL	4g	4e
+.	8BJ	.	.
+=11	=11	=11	=11
+4D	4A	4d	4fnX
+4E	4G	4c	4e
+4F#	4A	4c	4d
+4G	8GL	8BL	4g
+.	8AJ	8cJ	.
+=12	=12	=12	=12
+4G#	4B	4d	2.e;
+4A	4A	4c	.
+4E;	4G#;	4B;	.
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

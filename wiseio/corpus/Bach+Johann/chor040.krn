@@ -1,0 +1,73 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL@@DE: 40. Ach Gott und Herr, wie gross und schwer
+!!!OTL@EN: Ah, God and Lord, how great and heavy my sins
+!!!SCA: BWV 240
+**kern	**kern	**kern	**kern	**harm	**root
+*staff2	*staff2	*staff1	*staff1	*staff2	*
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+!bass	!tenor	!alto	!sprno	!	!
+*clefF4	*clefF4	*clefG2	*clefG2	*	*
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*C:	*C:	*C:	*C:	*C:	*C:
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4C\	4e/	4g\	4cc/	I	4CC
+=1	=1	=1	=1	=1	=1
+4G\	[4d/	4g\	4b/	V	4GG
+4D\	8d/L]	4f#\	4a/	V7/V	4DD
+.	8c/J	.	.	.	.
+4GG;\	4B;/	4d;\	4g;/	V;	4GG;
+4C\	8c/L	8e\L	4g/	I	4CC
+.	8B-/J	8d\J	.	.	.
+=2	=2	=2	=2	=2	=2
+8F\L	8A/L	4c\	4a/	IV	4FF
+8E\J	8G/J	.	.	.	.
+4D\	4F/	4d\	4b/	viiob	4BB
+4C;\	4G;/	4e;\	4cc;/	I;	4CC;
+4GG\	4B/	[4g\	4dd/	V	4GG
+=3	=3	=3	=3	=3	=3
+4AA\	4c/	8g\L]	4cc/	viiob/V	4FF#
+.	.	8f#\J	.	.	.
+8BB\L	4d/	4g\	4b/	Vb	4GG
+8C\J	.	.	.	.	.
+4D\	4d/	4f#\	4a/	V/V	4DD
+4G\	4d/	[4g\	8b/L	V	4GG
+.	.	.	8cc/J	.	.
+=4	=4	=4	=4	=4	=4
+4C\	4e/	4g\]	2a/	vi7b	4AA
+4D\	8d/L	4f#\	.	V7/V	4DD
+.	8c/J	.	.	.	.
+4GG;\	4B;/	4d;\	4g;/	V;	4GG;
+4E\	4c/	4g\	4cc/	Ib	4CC
+=5	=5	=5	=5	=5	=5
+!!linebreak: 2
+4D\	4d/	4f\	4b/	viiob	4BB
+4C\	4e/	4g\	4cc/	I	4CC
+4G;\	4B;/	4g;\	4dd;/	V;	4GG;
+4G\	4B/	4g\	4dd/	V	4GG
+=6	=6	=6	=6	=6	=6
+8c\L	4c/	4g\	4ee/	I	4CC
+8B\J	.	.	.	.	.
+4A\	4c/	4f#\	8dd/L	V7c/V	4DD
+.	.	.	8cc/J	.	.
+4G;\	4B;/	4g;\	4dd;/	V;	4GG;
+4E\	4c/	4g\	4g/	Ib	4CC
+=7	=7	=7	=7	=7	=7
+4F#\	4c/	4d\	4a/	V7b/V	4DD
+4G#\	4B/	4d\	4b/	viio/VI	4GG#
+4A\	8e/L	4.c\	8cc/L	vi	4AA
+.	8fn/	.	8dd/	.	.
+8Gn\L	8g/	.	8ee/	Ic	8CC
+8Fn\J	8c/J	8a\	8ff/J	IV	8FF
+=8	=8	=8	=8	=8	=8
+4G\	4c/	4.g\	2dd/	Ic	4CC
+4GG\	4B/	.	.	V7	4GG
+.	.	8f\	.	.	.
+4C;\	4G;/	4e;\	4cc;/	I;	4CC;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!!ENC: Craig Stuart Sapp
+!!!END: 2004/12/06/
+!!!ONB: Harmony and Root analysis done manually by Craig Sapp
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

@@ -1,0 +1,144 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 150. O Mensch, schau Jesum Christum an
+!!!SCT: BWV 403
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**silbe	**kern	**silbe	**kern	**silbe
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[ALTO]	*I:[TENORE]	*I:[TENORE]	*I:[BASSO]	*I:[BASSO]
+*clefG2	*	*clefG2	*	*clefGv2	*	*clefF4	*
+*k[b-]	*	*k[b-]	*	*k[b-]	*	*k[b-]	*
+*d:	*	*d:	*	*d:	*	*d:	*
+*M3/4	*	*M3/4	*	*M3/4	*	*M3/4	*
+=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-
+4g/	O	8d/L	.	8B-/L	.	8GG/L	.
+.	.	8c/J	.	8A/J	.	8AA/J	.
+4g/	Mensch,	4d/	.	4.G/	.	4BB-/	.
+4g/	schau	4Bn/	.	.	.	4GG/	.
+.	.	.	.	8F/	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2
+2g/	Je-	4c/	.	8E-/L	.	8C/L	.
+.	.	.	.	8F/J	.	8D/J	.
+.	.	4Bn/	.	4G/	.	4E-\	.
+4e-/	-sum	8c/L	.	4F#/	.	4C/	.
+.	.	8A/J	.	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3
+2d/	Chri-	8d/L	.	8G/L	.	8BB-/L	.
+.	.	8c/J	.	8A/J	.	8AA/J	.
+.	.	4d/	.	4B-\	.	4GG/	.
+4d/	-stum	4d/	.	4B-\	.	4G\	.
+=4	=4	=4	=4	=4	=4	=4	=4
+2a;/	an,	2d;/	.	2A;/	.	2F#;\	.
+4b-\	den	4d/	.	4G/	.	[4G\	den
+=5	=5	=5	=5	=5	=5	=5	=5
+2a/	wah-	4c#/	.	2A/	.	4G\]	.
+.	.	4d/	.	.	.	8F\L	wah-
+.	.	.	.	.	.	8E\J	.
+4g/	-ren	4e/	.	4A/	.	8D/L	-ren
+.	.	.	.	.	.	8C#/J	.
+=6	=6	=6	=6	=6	=6	=6	=6
+2f/	Mensch	8e/L	.	4A/	.	4D\	.
+.	.	8c#/J	.	.	.	.	.
+.	.	4.d/	.	8B-/L	.	4GG/	.
+.	.	.	.	8A/J	.	.	.
+4e/	und	.	.	8G/L	.	4AA/	.
+.	.	8c#/	.	8A/J	.	.	.
+=7	=7	=7	=7	=7	=7	=7	=7
+2d;/	Gott,	2A;/	.	2F#;/	.	2DD;/	.
+4d/	der	4A/	.	4F#/	.	8D/L	.
+.	.	.	.	.	.	8C/J	.
+=8	=8	=8	=8	=8	=8	=8	=8
+2g/	f\u3r	2d/	.	8G/L	f\u3r	4BB-/	.
+.	.	.	.	8A/J	.	.	.
+.	.	.	.	2B-\	uns	8GG/L	.
+.	.	.	.	.	.	8AA/	.
+4g/	uns	4d/	.	.	.	8BB-/	.
+.	.	.	.	.	.	8C/J	.
+=9	=9	=9	=9	=9	=9	=9	=9
+2f#/	hat	4d/	.	8A/L	.	4D\	.
+.	.	.	.	8B-/J	.	.	.
+.	.	4e-/	.	4c\	.	8AA/L	.
+.	.	.	.	.	.	8BB-/J	.
+4f#/	ge-	4d/	.	4A/	.	8C/L	.
+.	.	.	.	.	.	8AA/J	.
+=10	=10	=10	=10	=10	=10	=10	=10
+2g/	-nug	4d/	.	4.G/	.	4BB-/	.
+.	.	8c/L	.	.	.	8E-\L	.
+.	.	8B-/J	.	8B-/	.	8D\J	.
+4g/	ge-	4c/	.	8A/L	.	4E-\	.
+.	.	.	.	8G/J	.	.	.
+=11	=11	=11	=11	=11	=11	=11	=11
+2a;/	-tan	2F#;/	.	2d;\	.	2D;\	.
+4a/	durch	4f#/	.	4d\	.	4DD/	.
+=12	=12	=12	=12	=12	=12	=12	=12
+2a/	sei-	2f#/	.	2d\	.	8D\L	.
+.	.	.	.	.	.	8E-\	.
+.	.	.	.	.	.	8D\	.
+.	.	.	.	.	.	8C\J	.
+4a/	-nen	4f#/	.	4d\	.	8BB-/L	.
+.	.	.	.	.	.	8AA/J	.
+=13	=13	=13	=13	=13	=13	=13	=13
+2b-\	bit-	2g/	.	2d\	.	8GG/L	.
+.	.	.	.	.	.	8FF#/	.
+.	.	.	.	.	.	8GG/	.
+.	.	.	.	.	.	8AA/J	.
+4b-\	-tern	4g/	.	4d\	.	8BB-/L	.
+.	.	.	.	.	.	8C/J	.
+=14	=14	=14	=14	=14	=14	=14	=14
+2.a;/	Tod.	4g/	.	2.d;\	.	2.D;\	.
+.	.	8f#/L	.	.	.	.	.
+.	.	8e/J	.	.	.	.	.
+.	.	4f#;/	.	.	.	.	.
+=15	=15	=15	=15	=15	=15	=15	=15
+2dd\	O	8f#/L	O	4A/	O	8D\L	O
+.	.	8g/J	.	.	.	8E\	.
+.	.	[2a/	wie	2d\	wie	8F#\	.
+.	.	.	.	.	.	8E\J	.
+4cc\	wie	.	.	.	.	8F#\L	wie
+.	.	.	.	.	.	8D\J	.
+=16	=16	=16	=16	=16	=16	=16	=16
+2b-\	gro-	4a/]	.	2d\	gro-	8G\L	gro-
+.	.	.	.	.	.	8F#\	.
+.	.	4g/	gro-	.	.	8G\	.
+.	.	.	.	.	.	8A\J	.
+4a/	-sse	4d/	-sse	[4d\	-sse	8G\L	-sse
+.	.	.	.	.	.	8Fn\J	.
+=17	=17	=17	=17	=17	=17	=17	=17
+4g/	Angst	4g/	Angst	4d\]	.	8E-\L	Angst
+.	.	.	.	.	.	8D\	.
+4a/	.	2f/	und	4c\	Angst	8E-\	.
+.	.	.	.	.	.	8F\J	.
+4bn\	und	.	.	4d\	und	8E-\L	.
+.	.	.	.	.	.	8D\J	.
+=18	=18	=18	=18	=18	=18	=18	=18
+2cc;\	Pein	2g;/	.	2e-;\	.	2C;/	.
+4a/	durch-	4f#/	.	4d\	.	4D\	.
+=19	=19	=19	=19	=19	=19	=19	=19
+2b-\	-drang	4g/	.	2d\	.	8G/L	.
+.	.	.	.	.	.	8GG/	.
+.	.	4f/	.	.	.	8AA/	.
+.	.	.	.	.	.	8BB-/J	.
+4a/	das	4e-/	.	4c\	.	8C/L	.
+.	.	.	.	.	.	8D/J	.
+=20	=20	=20	=20	=20	=20	=20	=20
+2g/	Her-	4.e-/	.	8c\L	Her-	8E-\L	.
+.	.	.	.	8B-\J	.	8D\J	.
+.	.	.	.	4.A/	.	4C/	.
+.	.	(8e-/	.	.	.	.	.
+4f#/	-ze	4d/)	.	.	.	4D\	.
+.	.	.	.	8c\	-ze	.	.
+=21	=21	=21	=21	=21	=21	=21	=21
+2.g;/	mein.	2.d;/	.	2.Bn;\	.	2.GG;/	.
+==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/07/27/
+!!!KEY: 2107597086
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

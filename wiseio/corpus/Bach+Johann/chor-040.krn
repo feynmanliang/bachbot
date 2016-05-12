@@ -1,0 +1,91 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 40. Der du bist drei in Einigkeit
+!!!SCT: BWV 293
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*C:	*	*C:	*C:	*C:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4a/	Der	4d/	4F/	4D\
+=1	=1	=1	=1	=1
+4g/	du	(8d/	4G/	4E\
+.	.	4c/)	.	.
+4d/	bist	.	4G/	4G\
+.	.	16B/LL	.	.
+.	.	16c#/JJ	.	.
+4f/	drei	8d/L	4A/	4D\
+.	.	8cn/J	.	.
+4g/	in	4B/	4G/	8E\L
+.	.	.	.	8D\J
+=2	=2	=2	=2	=2
+4a/	Ei-	4e/	4G/	4C/
+4a/	-nig-	8d/L	4F#/	4D\
+.	.	8c/J	.	.
+4g;/	-keit,	4B;/	4D;/	4GG;/
+4a/	ein	4d/	4Fn/	4D\
+=3	=3	=3	=3	=3
+4g/	wah-	(8d/	4G/	4E\
+.	.	4c/)	.	.
+4d/	-rer	.	4G/	4G\
+.	.	16B/LL	.	.
+.	.	16c#/JJ	.	.
+4f/	Gott	8d/L	4A/	4D\
+.	.	8cn/J	.	.
+4g/	von	4B/	4G/	8E\L
+.	.	.	.	8D\J
+=4	=4	=4	=4	=4
+4a/	E-	4e/	4G/	4C/
+4a/	-wig-	4d/	8F#/L	4D\
+.	.	.	8c/J	.
+4g;/	-keit,	4d;/	4B;\	4GG;/
+4a/	die	4f/	4c\	8F\L
+.	.	.	.	8E\J
+=5	=5	=5	=5	=5
+4b\	Sonn'	4f/	4d\	4D\
+4cc\	mit	8f/L	4G/	4C/
+.	.	8e/J	.	.
+4a/	dem	8e/L	16A/LL	8F\L
+.	.	.	16B/JJ	.
+.	.	8d/J	(4c\	8F#\J
+4g/	Tag	4d/	.	4G\
+.	.	.	8B\)	.
+=6	=6	=6	=6	=6
+4g/	von	4.e/	8c\L	8C/L
+.	.	.	8B-\J	8C#/J
+4f/	uns	.	4A/	4D\
+.	.	8d/	.	.
+4e;/	weicht,	4c#;/	4A;/	4AA;/
+4f/	lass	8d/L	4A/	4D\
+.	.	8cn/J	.	.
+=7	=7	=7	=7	=7
+4g/	uns	8B/	4G/	4E\
+.	.	(4c/	.	.
+4d/	leuch-	.	4G/	4G\
+.	.	16B/LL	.	.
+.	.	16c#/JJ)	.	.
+4f/	-ten	8d/L	4A/	4D\
+.	.	8cn/J	.	.
+4g/	dein	4B/	4G/	8E\L
+.	.	.	.	8D\J
+=8	=8	=8	=8	=8
+4a/	g\o3tt-	4e/	4G/	4C/
+4a/	-lich	8d/L	4F#/	4D\
+.	.	8c/J	.	.
+4g;/	Licht.	4B;/	4D;/	4GG;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/16/
+!!!KEY: 3562585759
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

@@ -1,0 +1,96 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 1. Ach bleib' bei uns, Herr Jesu Christ
+!!!SCT: BWV 253
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#c#g#]	*	*k[f#c#g#]	*k[f#c#g#]	*k[f#c#g#]
+*A:	*	*A:	*A:	*A:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4cc#\	Ach	4a/	4e\	4AA/
+=1	=1	=1	=1	=1
+8cc#\L	bleib'	4a/	4e\	4A\
+8dd\J	.	.	.	.
+4ee\	bei	4b\	4e\	4G#\
+4cc#\	uns,	4a/	4e\	4A\
+4a/	Herr	4a/	8e\L	4F#\
+.	.	.	8d\J	.
+=2	=2	=2	=2	=2
+4b\	Je-	8gn/L	4d\	4Gn\
+.	.	8f#/J	.	.
+4cc#\	-su	4e/	4A/	4A\
+4dd;\	Christ,	4f#;/	4A;/	4D;\
+4cc#\	weil	4e/	4A/	4AA/
+=3	=3	=3	=3	=3
+4b\	es	8e/L	4G#/	4E\
+.	.	8d/J	.	.
+4a/	nun	4c#/	4A/	8F#\L
+.	.	.	.	8E\J
+4.a/	A-	2f#/	2d\	8D\L
+.	.	.	.	8E\
+.	.	.	.	8F#\
+8b\	.	.	.	8G#\J
+=4	=4	=4	=4	=4
+4cc#\	.	4e/	8c#\L	4A\
+.	.	.	8B\J	.
+4cc#\	-bend	4e/	4A/	8C#/L
+.	.	.	.	8D/J
+8b/L	wor-	4.e/	4A/	4E\
+8a/J	.	.	.	.
+4b\	-den	.	4G#/	4E\
+.	.	8d/	.	.
+=5	=5	=5	=5	=5
+2.a;/	ist;	2.c#;/	2.E;/	2.AA;/
+4cc#\	dein	4a/	4e\	4AA/
+=6	=6	=6	=6	=6
+4b\	g\3ott-	4g#/	8e\L	4E\
+.	.	.	8d\J	.
+4cc#\	-lich	4g#/	4c#\	4E#\
+4a/	Wort,	8f#/L	4c#\	4F#\
+.	.	8e/J	.	.
+4f#/	das	4d#/	4B\	8B\L
+.	.	.	.	8A\J
+=7	=7	=7	=7	=7
+4g#/	hel-	4.e/	4B\	4G#\
+4a/	-le	.	4A/	4F#\
+.	.	8d#/	.	.
+4b;\	Licht,	4e;/	4G#;/	4E;\
+4cc#\	lass	4e#/	4G#/	4C#/
+=8	=8	=8	=8	=8
+4a/	ja	4c#/	4A/	8F#\L
+.	.	.	.	8E\J
+4a/	bei	4f#/	4d\	8F#\L
+.	.	.	.	8G#\J
+4.a/	uns	4e/	8c#\L	8A\L
+.	.	.	8d\	8B\
+.	.	8f#/L	8c#\	8A\
+8b\	.	8g#/J	8B\J	8G#\J
+=9	=9	=9	=9	=9
+4cc#\	.	4a/	4A/	4F#\
+4cc#\	aus-	4e/	4A/	8C#/L
+.	.	.	.	8D/J
+8b/L	-l\3o-	4.e/	4A/	4E\
+8a/J	.	.	.	.
+4b\	-schen	.	4G#/	4E\
+.	.	8d/	.	.
+=10	=10	=10	=10	=10
+2.a;/	nicht!	2.c#;/	2.E;/	2.AA;/
+==|!	==|!	==|!	==|!	==|!
+!!!RNB1: NOTE ON SPELLING: BG's "th" is modernized to "t" (e.g. "thut" is changed
+!!!RNB2:   to "tut"). Otherwise, all other spellings have been retained (except where
+!!!RNB3:   noted), including "ss" for modern German "\0/" (long s). -- S. Rasmussen
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1990/06/26/
+!!!KEY: 1199118880
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

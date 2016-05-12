@@ -1,0 +1,119 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Chorale Harmonizations
+!!!ONR: Nr. 10
+!!!OTL: Alle Menschen mu2ssen sterben
+!!!SCT: BWV 262
+!!!YEC: Copyright 1996, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Icalto	*Isoprn
+*	*	*Ialto	*
+*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]
+*M4/4	*M4/4	*M4/4	*M4/4
+*clefF4	*clefGv2	*clefG2	*clefG2
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A
+=1-	=1-	=1-	=1-
+4D\	4F#/	4d/	4a/
+4BB/	8F#/L	4d/	4dd\
+.	8G/J	.	.
+4FF#/	4A/	4d/	4a/
+4GG/	8G/L	4d/	4b\
+.	8F#/J	.	.
+=2	=2	=2	=2
+4AA/	8E/L	4d/	4.a/
+.	8D/J	.	.
+4AA/	4E/	4c#/	.
+.	.	.	8g/
+4DD/	4D/	4d/	4f#/
+4DD;/,	4D;/,	4d;/,	4f#;/,
+=3	=3	=3	=3
+4D\	4F#/	4d/	4a/
+4D\	4F#/	8d/L	4a/
+.	.	8c#/J	.
+4E\	4G/	8B/L	4g;/
+.	.	8c#/J	.
+4F#\	4A/	4d/	4f#/
+=4	=4	=4	=4
+8G\L	4B\	4d/	4.e/
+8E\J	.	.	.
+8A\L	8.A/L	4c#/	.
+8AA\J	.	.	8d/
+.	16G/Jk	.	.
+2D;\,	2F#;/,	2d;/,	2d;/,
+=5:|!	=5:|!	=5:|!	=5:|!
+*>B	*>B	*>B	*>B
+4AA/	4A/	4c#/	4e/
+4AA/	4A/	4c#/	4e/
+4D\	4A/	4d/	8f#/L
+.	.	.	8g#/J
+8F#\L	4A/	4c#/	4a/
+8E\J	.	.	.
+=6	=6	=6	=6
+4D\	4B\	4f#/	4.a/
+4E\	4B\	8e/L	.
+.	.	8d/J	8g#/
+4AA/	4A/	4c#/	4a/
+4AA;/,	4A;/,	4c#;/,	4a;/,
+=7	=7	=7	=7
+4E\	4.G/	8e/L	4.b\
+.	.	8f#/J	.
+4E\	.	4g/	.
+.	8A/	.	8cc#\
+8BB/L	4B\	4f#/	4dd\
+8C#/J	.	.	.
+8D\L	4B\	4f#/	4dd\
+8E\J	.	.	.
+=8	=8	=8	=8
+4F#\	4B\	4.f#/	4.cc#\
+4F#\	4A#/	.	.
+.	.	8e/	8cc#\
+4BB/	4B\	4d/	4b\
+4BB;/	4B;\	4d;/	4b;\
+=9	=9	=9	=9
+4D\	4A/	4d/	4f#/
+4D\	4A/	4d/	4f#/
+4GG/	8G/L	4d/	4b\
+.	8F#/J	.	.
+4AA/	4E/	4c#/	4a/
+=10	=10	=10	=10
+4BB/	8D/L	4d/	4a/
+.	8F#/J	.	.
+4BB/	8E/L	4d/	4g#/
+.	8D/J	.	.
+2AA;/,	2E;/,	2c#;/,	2a;/,
+=11	=11	=11	=11
+4GG/	4G/	4d/	4b\
+4D\	4F#/	8d/L	4a/
+.	.	8c#/J	.
+4E\	4G/	8B/L	4g;/
+.	.	8c#/J	.
+4F#\	4A/	4d/	4f#/
+=12	=12	=12	=12
+8G\L	4B\	4d/	4.e/
+8E\J	.	.	.
+8A\L	8.A/L	4c#/	.
+8AA\J	.	.	8d/
+.	16G/Jk	.	.
+2D;\	2F#;/	2d;/	2d;/
+==	==	==	==
+*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!PDT: 1784//
+!!!PPP: Leipzig
+!!!AGN: chorale harmonization
+!!!AST: baroque, choral
+!!!AMT: simple quadruple
+!!!YOR: Bach Gesellschaft, xxxix
+!!!AIN: bass calto soprn tenor vox
+!!!EEV: 1.0
+!!!RDT: 1994 May 05
+!!!YER: 1996 July 11
+!!!YEN: United States of America
+!!!EFL: 10/185
+!!!ENC: S. Rasmussen
+!!!EED: W.B. Hewlett
+!!!VTS: 2255428300

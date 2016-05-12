@@ -1,0 +1,77 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: O Traurigkeit
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 57
+!!!SCT: BWV 404
+!!!YEC: Copyright 2003 by Craig Stuart Sapp
+!!!license: GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually by Craig Sapp
+**kern	**kern	**kern	**kern	**root	**harm
+!bass	!tenor	!alto	!soprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*a:	*a:	*a:	*a:	*a:	*a:
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4E	4B	4g#	4ee	4EE	V
+=1	=1	=1	=1	=1	=1
+4A	8A	4e	8cc	4AA	i
+.	8G#	.	8b	.	.
+4AA	4F#	8e	4cc	4DD#	viio7c/V
+.	.	8d#	.	.	.
+4E;	4G#;	4e;	4b;	4EE	V
+4D	4B	4e	4g#	4EE	Vd
+=2	=2	=2	=2	=2	=2
+4C	4c	4e	4a	4AA	ib
+4Fn	8B	4dn	4a	4DD	iv
+.	8A	.	.	.	.
+4E;	4B;	4e;	4g#;	4EE;	V;
+4E	4B	4g#	4ee	4EE	V
+=3	=3	=3	=3	=3	=3
+4A	4c	4a	4ee	4AA	i
+4G#	4B	4b	4ee	4EE	Vb
+8A	8c	4a	4ff	4FF	VI
+8B	8d	.	.	.	.
+4c	8e	4gn	8ee	4CC	III
+.	8c	.	8dd	.	.
+=4	=4	=4	=4	=4	=4
+4F#	4c	4a	2dd	4DD	V7b/-VII
+4G	4B	8g	.	4GG	-VII
+.	.	8f	.	.	.
+2C;	2c;	2e;	2cc;	2CC;	III;
+!!linebreak: 2
+=5	=5	=5	=5	=5	=5
+4GG	4d	4g	4b	4GG	-VII
+4AA	4c	8f	4cc	4FF	VIb
+.	.	8e	.	.	.
+4BB	4g	8d	4dd	4GG	-VIIb
+.	.	8dd	.	.	.
+4C	8G	4cc	4ee	4CC	III
+.	8A	.	.	.	.
+=6	=6	=6	=6	=6	=6
+4G#	8B	4b	4dd	4EE	V7b
+.	8E	.	.	.	.
+4A	4e	4a	4cc	4AA	i
+2E;	2e;	2g#;	2b;	2EE;	V;
+=7	=7	=7	=7	=7	=7
+4F#	8e	4e	4a	4FF#	#viD7
+.	[8d	.	.	.	.
+4G#	8d]	4e	4b	4EE	V7b
+.	[8c	.	.	.	.
+8A	8c]	4e	4cc	4AA	ib
+8Gn	8B	.	.	.	.
+8Fn	4A	8a	8dd	4DD	ivb
+8E	.	8gn	8ee	.	.
+=8	=8	=8	=8	=8	=8
+4D	4A	4f	2b	4DD	iv
+4E	4G#	8e	.	4EE	V7
+.	.	8d	.	.	.
+2AA;	2E;	2c;	2a;	2AA;	i;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

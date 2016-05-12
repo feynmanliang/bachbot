@@ -1,0 +1,115 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 174. Wenn ich in Angst und Not
+!!!SCT: BWV 427
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[b-e-a-]	*	*k[b-e-a-]	*k[b-e-a-]	*k[b-e-a-]
+*E-:	*	*E-:	*E-:	*E-:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4e-/	Wenn	4B-/	8G/L	8E-\L
+.	.	.	8A-/J	8F\J
+=1	=1	=1	=1	=1
+4b-\	ich	4e-/	8B-\L	4G\
+.	.	.	8c\J	.
+4b-\	in	4e-/	4d-\	4G\
+4cc\	Angst	4e-/	8c\L	8A-\L
+.	.	.	8B-\J	8G\J
+4dd\	und	4f/	4A-/	4F\
+=2	=2	=2	=2	=2
+2ee-;\	Not	2g;/	2B-;\	2E-;\
+4r	.	4r	4r	4r
+4dd\	mein'	4f/	4B-\	4BB-/
+=3	=3	=3	=3	=3
+4ee-\	Au-	4cc\	8B-/L	4C/
+.	.	.	8An/J	.
+4dd\	-gen	8b-/L	4B-\	4G\
+.	.	8d/J	.	.
+4cc\	heb'	4g/	4B-\	4E-\
+4cc\	em-	8f/L	4A/	4F\
+.	.	8e-/J	.	.
+=4	=4	=4	=4	=4
+2b-;\	-por	2d;/	2F;/	2BB-;/
+4r	.	4r	4r	4r
+4b-\	zu	4e-/	4B-\	4GG/
+=5	=5	=5	=5	=5
+4cc\	dei-	4e-/	8B-/L	4AA-/
+.	.	.	8A-/J	.
+4b-\	-nen	4d/	8A-/L	4BB-/
+.	.	.	8G/J	.
+4a-/	Ber-	8e-/L	8G/L	8C/L
+.	.	8B-/J	8F/J	8D/J
+4g/	-gen,	4B-/	8F/L	4E-\
+.	.	.	8E-/J	.
+=6	=6	=6	=6	=6
+2f;/	Herr!	2B-;/	2D;/	2BB-;/
+4r	.	4r	4r	4r
+4g/	mit	4d/	4G/	4BBn/
+=7	=7	=7	=7	=7
+4e-/	Seuf-	8d/L	4G/	4C/
+.	.	8c/J	.	.
+4f/	-zen	8c/L	4F/	4D\
+.	.	8B-/J	.	.
+8g/L	und	4B-/	4E-/	4E-\
+8a-/J	.	.	.	.
+4b-\	mit	4e-/	4B-\	4GG/
+=8	=8	=8	=8	=8
+2a-/	Fle-	8e-/L	4c\	4FF/
+.	.	16f/L	.	.
+.	.	16e-/JJ	.	.
+.	.	4d/	4B-\	4BB-/
+4g;/	-hen,	4e-;/	4B-;\	4EE-;/
+4dd\	so	4f/	4d\	4B-\
+=9	=9	=9	=9	=9
+4ee-\	reichst	8g/L	4c\	8B-\L
+.	.	8f/J	.	8An\J
+4dd\	du	4f/	4B-\	4B-\
+4cc\	mir	4g/	4B-\	4E-\
+4cc\	dein	8f/L	4An/	4F\
+.	.	8e-/J	.	.
+=10	=10	=10	=10	=10
+2b-;\	Ohr,	2d;/	2F;/	2BB-;/
+4r	.	4r	4r	4r
+4ee-\	dass	4g/	4c\	4C/
+=11	=11	=11	=11	=11
+4dd\	ich	4g/	8c\L	4G\
+.	.	.	8B-\J	.
+4cc\	nicht	4e-/	8B-/L	4A-\
+.	.	.	8A-/J	.
+4b-\	darf	4e-/	8A-/L	4E-\
+.	.	.	8G/J	.
+4cc\	be-	4e-/	4G/	4C/
+=12	=12	=12	=12	=12
+4b-\	-tr\u3bt	8f/L	8d\L	8D\L
+.	.	8g/J	8c\J	8En\J
+4a-/	von	8g/L	4c\	4F\
+.	.	8f/J	.	.
+8g/L	dei-	8f/L	4c\	4C/
+8a-/J	.	8e-/J	.	.
+4b-\	-nem	4e-/	4B-\	4GG/
+=13	=13	=13	=13	=13
+4a-/	Ant-	4e-/	8E-/L	4C/
+.	.	.	8F/J	.
+4g/	-litz	4e-/	8G/L	4BB-/
+.	.	.	8E-/J	.
+2f/	ge-	4e-/	4c\	4AA-/
+.	.	4d/	8B-/L	4BB-/
+.	.	.	8A-/J	.
+=14	=14	=14	=14	=14
+1e-;/	-hen.	1B-;/	1G;/	1EE-;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/08/08/
+!!!KEY: 1147525937
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

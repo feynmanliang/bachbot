@@ -1,0 +1,101 @@
+!!!COM: Bach, Johann Sebastian!!!COM: Bach, Johann Sebastian
+!!!OTL: 224. Das walt' Gott Vater und Gott Sohn!!!OTL: 224. Das walt' Gott Vater und Gott Sohn
+!!!ONM: No. 224!!!ONM: No. 224
+!!!OCL: Erk!!!OCL: Erk
+!!!SCA: BWV 290!!!SCA: BWV 290
+!!!YOE: Riemenschneider, Albert!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations!!!OPT: Bach Chorale Harmonizations
+**kern	**kern	**kern	**kern	**harm	**root	**kern
+!bass	!tenor	!alto	!sprno	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*F:	*F:	*F:	*F:	*F:	*F:	*F:
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4F	4A	4c	4f	I	4FF	4F 4a 4cc
+=1	=1	=1	=1	=1	=1	=1
+4F	4c	4f	4a	I	4FF	4F 4a 4cc
+8AA	4c	4f	4cc	Ib	4FF	4f 4A 4cc
+8BB-	.	.	.	.	.	.
+4C	4G	4e	4cc	V	4CC	4C 4e 4g
+4C#	4A	[4e	4a	Vb/vi	4AA	4a 4C# 4ee
+=2	=2	=2	=2	=2	=2	=2
+4D	4A	8e]	4f	vi	4DD	4D 4f 4a
+.	.	8d	.	.	.	.
+4E	4G	4c	4g	Vb	4CC	4c 4E 4g
+4F;	4F;	4c;	4a;	I;	4FF;	4F; 4a; 4cc;
+4F	4A	4c	4f	I	4FF	4F 4a 4cc
+=3	=3	=3	=3	=3	=3	=3
+4.F	4A	4f	4cc	I	4FF	4F 4a 4cc
+.	4c	4g	4cc	Vb	4CC	4c 4E 4g
+8E	.	.	.	.	.	.
+4D	4f	8a	4dd	vi	4DD	4D 4f 4a
+.	.	8bn	.	.	.	.
+8A	4e	4cc	4ee	iii	4AA	4A 4cc 4ee
+8G	.	.	.	.	.	.
+=4	=4	=4	=4	=4	=4	=4
+4F	4a	4.cc	8ff	I	4FF	4F 4a 4cc
+.	.	.	8ee	.	.	.
+4G	8d	.	4dd	V/V	4GG	4G 4b 4dd
+.	16g	8bn	.	.	.	.
+.	16f	.	.	.	.	.
+4C;	4e;	4g;	4cc;	V;	4CC;	4C; 4e; 4g;
+4E	4c	[4g	4cc	Vb	4CC	4c 4E 4g
+=5	=5	=5	=5	=5	=5	=5
+!!linebreak: 2!!linebreak: 2
+4F	4c	8g]	4a	I	4FF	4F 4a 4cc
+.	.	16f	.	.	.	.
+.	.	16e	.	.	.	.
+8AA	[4c	4f	4cc	Ib	4FF	4f 4A 4cc
+8FF	.	.	.	.	.	.
+4BB-	8c]	4f	4dd	IV	4BB-	4B- 4dd 4ff
+.	[8B-	.	.	.	.	.
+[4F	8B-]	4f	4cc	I	4FF	4F 4a 4cc
+.	8A	.	.	.	.	.
+=6	=6	=6	=6	=6	=6	=6
+8F]	4G	8g	4b-	V7b	4CC	4c 4E 4g 4b-
+8E	.	8c	.	.	.	.
+4F	8.A	8c	4a	I	4FF	4F 4a 4cc
+.	.	[8f	.	.	.	.
+.	16B-	.	.	.	.	.
+4C;	4c;	8f]	4g;	V;	4CC;	4C; 4e; 4g;
+.	.	8e;	.	.	.	.
+4E	4c	4g	4cc	Vb	4CC	4c 4E 4g
+=7	=7	=7	=7	=7	=7	=7
+4F	4c	4f	8a	I	4FF	4F 4a 4cc
+.	.	.	8b-	.	.	.
+4AA	4c	4f	4cc	Ib	4FF	4f 4A 4cc
+4BB-	4d	4f	4b-	IV	4BB-	4B- 4dd 4ff
+4C	8c	4e	8a	V7	4CC	4C 4e 4g 4b-
+.	8B-	.	8g	.	.	.
+=8	=8	=8	=8	=8	=8	=8
+4D	8A	16d	4f	vi	4DD	4D 4f 4a
+.	.	16e	.	.	.	.
+.	16G	4f	.	.	.	.
+.	16F	.	.	.	.	.
+4C	8.c	.	4g	V	4CC	4C 4e 4g
+.	.	8e	.	.	.	.
+.	16B-	.	.	.	.	.
+4F;	4A;	4c;	4f;	I;	4FF;	4F; 4a; 4cc;
+==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland!!!OCY: Deutschland
+!!!AGN: chorale!!!AGN: chorale
+!!!AST: Baroque!!!AST: Baroque
+!!!AIN: vox!!!AIN: vox
+!!!YOY: 1941!!!YOY: 1941
+!!!PPP: New York; London!!!PPP: New York; London
+!!!PPR: G. Schirmer!!!PPR: G. Schirmer
+!!!ENC: David Huron!!!ENC: David Huron
+!!!EED: David Huron!!!EED: David Huron
+!!!YEN: United States of America!!!YEN: United States of America
+!!!YER: 1992!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996!!!YER: March 20, 1996
+!!!AMT: simple quadruple!!!AMT: simple quadruple
+!!!EEV: 1.1!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx!!chor2scor: -l 2 -s 0.6 -o %b.pmx

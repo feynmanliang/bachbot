@@ -1,0 +1,136 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 93. Ich dank' dir Gott für all Wohltat
+!!!SCT: BWV 346
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**silbe	**kern	**silbe
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[TENORE]	*I:[BASSO]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*	*clefF4	*
+*k[]	*	*k[]	*k[]	*	*k[]	*
+*C:	*	*C:	*C:	*	*C:	*
+*M4/4	*	*M4/4	*M4/4	*	*M4/4	*
+4g/	Ich	4c/	8E/L	.	4C/	.
+.	.	.	8F/J	.	.	.
+=1	=1	=1	=1	=1	=1	=1
+4e/	dank'	4c/	4G/	.	4BB-/	.
+4f#/	dir	4c/	4A/	.	4AA/	.
+4g;/	Gott	4B;/	4D;/	.	4GG;/	.
+4g/	f\u3r	4d/	4G/	.	4BBn/	.
+=2	=2	=2	=2	=2	=2	=2
+4e/	all'	(8d/	4G/	.	4C/	.
+.	.	4c/)	.	.	.	.
+4d/	Wohl-	.	8.G/L	.	4GG/	.
+.	.	8B/	.	.	.	.
+.	.	.	16F/Jk	.	.	.
+4c;/	-tat,	4G;/	4E;/	.	4CC;/	.
+4c/	dass	4G/	4E/	.	4C/	.
+=3	=3	=3	=3	=3	=3	=3
+4g/	du	4d/	4G/	.	4BB/	.
+4g/	uns	4e/	4c\	.	8C/L	.
+.	.	.	.	.	8BB/J	.
+4a/	hast	8e/L	4c\	.	4AA/	.
+.	.	8f#/J	.	.	.	.
+4b\	so	4g/	4d\	.	4GG/	.
+=4	=4	=4	=4	=4	=4	=4
+4cc\	gn\a3-	8g/L	4c\	.	4E\	.
+.	.	8f#/J	.	.	.	.
+4b\	.	2g/	4d\	.	4D\	.
+4a/	.	.	4e\	.	4C/	.
+4a/	-dig-	8g/L	8.d\L	.	4D\	.
+.	.	8f#/J	.	.	.	.
+.	.	.	16c\Jk	.	.	.
+=5	=5	=5	=5	=5	=5	=5
+2g;/	-lich	2d;/	2B;\	.	2GG;/	.
+4r	.	4r	4r	.	4r	.
+4g/	die	4e/	4c\	.	4E\	.
+=6	=6	=6	=6	=6	=6	=6
+4a/	Nacht	8e/L	4c\	.	4F\	.
+.	.	8d/J	.	.	.	.
+4b\	be-	8d/L	4B\	.	4GG#/	.
+.	.	8e/J	.	.	.	.
+4cc;\	-h\u3t't	4e;/	4A;/	.	4AA;/	.
+4g/	durch	4c/	4E/	.	4C/	.
+=7	=7	=7	=7	=7	=7	=7
+4a/	dei-	8c/L	4F/	.	4.F\	.
+.	.	8B/	.	.	.	.
+4g/	.	8c/	4G/	.	.	.
+.	.	8c#/	.	.	8E\	.
+4f/	.	8d/	4A/	.	8D\L	.
+.	.	8c#/J	.	.	8E\J	.
+4f/	-ne	4d/	4A/	.	8F\L	.
+.	.	.	.	.	8D\J	.
+=8	=8	=8	=8	=8	=8	=8
+2e;/	G\u3t'	(4d/	2A;/	.	2A;\	.
+.	.	4c#;/)	.	.	.	.
+4r	.	4r	4r	.	4r	.
+4cc\	und	4g/	4c\	.	4E\	.
+=9	=9	=9	=9	=9	=9	=9
+4a/	bitt'	8g/L	4c\	.	8F\L	.
+.	.	16f/L	.	.	8E\J	.
+.	.	16e/JJ	.	.	.	.
+4b\	nun	4f/	4d\	.	4D\	.
+4cc;\	fort,	4e;/	4G;/	.	4C;/	.
+4a/	ach	4f/	8d\L	.	4D\	.
+.	.	.	8c\J	.	.	.
+=10	=10	=10	=10	=10	=10	=10
+4g/	Gott,	4e/	4B-\	.	8D/L	.
+.	.	.	.	.	8C#/J	.
+4f/	mein	8e/L	4A/	.	4D\	.
+.	.	8d/J	.	.	.	.
+4e;/	Hort,	(8d/L	4A;/	.	4AA;/	.
+.	.	8c#;/J)	.	.	.	.
+4g/	vor	4d/	4G/	.	4BB/	.
+=11	=11	=11	=11	=11	=11	=11
+4e/	S\u3nd'	4e/	(8G/	.	4C#/	.
+.	.	.	4A/)	.	.	.
+4f#/	und	4B/	.	.	4D#\	.
+.	.	.	16G/LL	.	.	.
+.	.	.	16F#/JJ	.	.	.
+4g;/	G'fahr	4B;/	4E;/	.	4E;\	.
+4cc\	mich	8g/L	8e\L	.	8E\L	.
+.	.	8a/J	8d\J	.	8F#\J	.
+=12	=12	=12	=12	=12	=12	=12
+4b\	heut'	(8a/	4d\	.	4G\	.
+.	.	4g/)	.	.	.	.
+4a/	be-	.	8.d\L	.	4D\	.
+.	.	8f#/	.	.	.	.
+.	.	.	16c\Jk	.	.	.
+4g;/	-wahr',	4d;/	4B;\	.	4GG;/	.
+4g/	dass	4d/	4G/	.	4BB/	.
+=13	=13	=13	=13	=13	=13	=13
+8e/L	mir	4c/	4G/	.	8C/L	.
+8f/J	.	.	.	.	8D/J	.
+4g/	kein	4c/	8c\L	.	8E\L	.
+.	.	.	8B-\J	.	8C\J	.
+4a/	B\o3-	(8c/	8.A/L	B\o3-	4F\	B\o3-
+.	.	4f/)	.	.	.	.
+.	.	.	16Bn/k	.	.	.
+4g/	-ses	.	8.c/	.	[4C/	.
+.	.	8e/	.	.	.	.
+.	.	.	16B-/Jk	.	.	.
+=14	=14	=14	=14	=14	=14	=14
+4f/	wi-	4.d/	8A/L	.	8C/L]	.
+.	.	.	8G/J	.	8BB/J	.
+4e/	.	.	4G/	-ses	4C/	-ses
+.	.	[8c/	.	.	.	.
+4d/	.	8c/L]	8A/L	wi-	4FF/	.
+.	.	16B/L	8D/J	.	.	.
+.	.	16A/JJ	.	.	.	.
+4d/	-der-	4B/	8G/L	-der-	4GG/	.
+.	.	.	8F/J	.	.	.
+=15	=15	=15	=15	=15	=15	=15
+1c;/	-fahr!	1G;/	1E;/	-fahr!	1CC;/	.
+==|!	==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/06/27/
+!!!KEY: 278584748
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

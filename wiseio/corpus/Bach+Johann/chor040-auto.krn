@@ -1,0 +1,78 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL@@DE: 40. Ach Gott und Herr, wie gross und schwer
+!!!OTL@EN: Ah, God and Lord, how great and heavy my sins
+!!!SCA: BWV 240
+**kern	**kern	**kern	**kern	**mharm	**mroot	**harm	**tsroot	
+*staff2	*staff2	*staff1	*staff1	*staff2	*	*	*
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+!bass	!tenor	!alto	!sprno	!	!	!	!
+*clefF4	*clefF4	*clefG2	*clefG2	*	*	*	*
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*C:	*C:	*C:	*C:	*C:	*C:	*	*
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4C\	4e/	4g\	4cc/	I	4CC	I	C
+=1	=1	=1	=1	=1	=1	=1	=1
+4G\	[4d/	4g\	4b/	V	4GG	I	G
+4D\	8d/L]	4f#\	4a/	V7/V	4DD	V7/VII	D
+.	8c/J	.	.	.	.	.	D
+4GG;\	4B;/	4d;\	4g;/	V;	4GG;	Chr	G
+4C\	8c/L	8e\L	4g/	I	4CC	V7c/IV	C
+.	8B-/J	8d\J	.	.	.	.	C
+=2	=2	=2	=2	=2	=2	=2	=2
+8F\L	8A/L	4c\	4a/	IV	4FF	IV	F
+8E\J	8G/J	.	.	.	.	.	C
+4D\	4F/	4d\	4b/	viiob	4BB	I	G
+4C;\	4G;/	4e;\	4cc;/	I;	4CC;	IV	C
+4GG\	4B/	[4g\	4dd/	V	4GG	Ib	G
+=3	=3	=3	=3	=3	=3	=3	=3
+4AA\	4c/	8g\L]	4cc/	viiob/V	4FF#	V	C
+.	.	8f#\J	.	.	.	.	C
+8BB\L	4d/	4g\	4b/	Vb	4GG	I	G
+8C\J	.	.	.	.	.	.	G
+4D\	4d/	4f#\	4a/	V/V	4DD	ii7b	D
+4G\	4d/	[4g\	8b/L	V	4GG	V7	G
+.	.	.	8cc/J	.	.	.	C
+=4	=4	=4	=4	=4	=4	=4	=4
+4C\	4e/	4g\]	2a/	vi7b	4AA	I	A
+4D\	8d/L	4f#\	.	V7/V	4DD	IVb	D
+.	8c/J	.	.	.	.	.	D
+4GG;\	4B;/	4d;\	4g;/	V;	4GG;	V7c/IV	G
+4E\	4c/	4g\	4cc/	Ib	4CC	IV	C
+=5	=5	=5	=5	=5	=5	=5	=5
+!!linebreak: 2
+4D\	4d/	4f\	4b/	viiob	4BB	I	G
+4C\	4e/	4g\	4cc/	I	4CC	.	C
+4G;\	4B;/	4g;\	4dd;/	V;	4GG;	IV	G
+4G\	4B/	4g\	4dd/	V	4GG	V7c	G
+=6	=6	=6	=6	=6	=6	=6	=6
+8c\L	4c/	4g\	4ee/	I	4CC	I	C
+8B\J	.	.	.	.	.	.	C
+4A\	4c/	4f#\	8dd/L	V7c/V	4DD	IVb	D
+.	.	.	8cc/J	.	.	.	D
+4G;\	4B;/	4g;\	4dd;/	V;	4GG;	V7b	G
+4E\	4c/	4g\	4g/	Ib	4CC	I	C
+=7	=7	=7	=7	=7	=7	=7	=7
+4F#\	4c/	4d\	4a/	V7b/V	4DD	ii	D
+4G#\	4B/	4d\	4b/	viio/VI	4GG#	IV	G
+4A\	8e/L	4.c\	8cc/L	vi	4AA	I	A
+.	8fn/	.	8dd/	.	.	.	D
+8Gn\L	8g/	.	8ee/	Ic	8CC	V7/IV	C
+8Fn\J	8c/J	8a\	8ff/J	IV	8FF	.	F
+=8	=8	=8	=8	=8	=8	=8	=8
+4G\	4c/	4.g\	2dd/	Ic	4CC	IV	G
+4GG\	4B/	.	.	V7	4GG	.	G
+.	.	8f\	.	.	.	.	G
+4C;\	4G;/	4e;\	4cc;/	I;	4CC;	.	C
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!ENC: Craig Stuart Sapp
+!!!END: 2004/12/06/
+!!!ONB: Harmony and Root analysis done manually by Craig Sapp
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

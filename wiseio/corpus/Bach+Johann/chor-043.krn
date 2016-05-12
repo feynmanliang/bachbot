@@ -1,0 +1,108 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 43. Die Nacht ist kommen
+!!!SCT: BWV 296
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*C:	*	*C:	*C:	*C:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4g/	Die	4d/	4B\	4G\
+=1	=1	=1	=1	=1
+4a/	Nacht	4d/	4A/	4F#\
+4b\	ist	4d/	4G/	4Fn\
+2cc\	kom-	4e/	4G/	4E\
+.	.	4d/	4A/	4F#\
+=2	=2	=2	=2	=2
+2b;\	-men,	2d;/	2G;/	2G;\
+4a/	drin	4e/	4G/	4C#/
+4a/	wir	8d/L	8F/L	4D\
+.	.	8c/J	8E/J	.
+=3	=3	=3	=3	=3
+4g#/	ru-	4B/	4E/	4D\
+4a/	-hen	4e/	8E/L	4C/
+.	.	.	8A/J	.
+2b\	sol-	4f/	4A/	4D\
+.	.	8e/L	4G#/	4E\
+.	.	8d/J	.	.
+=4	=4	=4	=4	=4
+2a;/	-len;	2c;/	2A;/	2AA;/
+4r	.	4r	4r	4r
+4cc\	Gott	4a/	4e\	4A\
+=5	=5	=5	=5	=5
+4cc\	walt	8g/L	8e\L	4E\
+.	.	8f/J	8d\J	.
+8cc\L	zum	4g/	4e\	4C/
+8b\J	.	.	.	.
+2a/	From-	8g/L	8c\L	8F\L
+.	.	16f/L	8c#\	8G\
+.	.	16e/J	.	.
+.	.	8f/	8d\	8F\
+.	.	8g/J	8e\J	8E\J
+=6	=6	=6	=6	=6
+2dd;\	-men	2a;/	2f;\	2D;\
+4r	.	4r	4r	4r
+4b\	nach	4g/	4d\	8G\L
+.	.	.	.	8F\J
+=7	=7	=7	=7	=7
+4cc\	sein'm	4g/	4e\	4E\
+4a/	Wohl-	4a/	4d\	4F#\
+4b\	-ge-	8a/L	4.d\	4G\
+.	.	8g/J	.	.
+4a/	-fal-	8g/L	.	4D\
+.	.	8f#/J	8c\	.
+=8	=8	=8	=8	=8
+2g;/	-len,	2d;/	2B;\	2GG;/
+4r	.	4r	4r	4r
+4dd\	dass	4g/	4B\	4G\
+=9	=9	=9	=9	=9
+4dd\	wir	8a/L	4A/	4F#\
+.	.	8d/J	.	.
+4dd\	uns	4g/	4B\	8G\L
+.	.	.	.	8Fn\J
+2cc\	le-	8g/L	2c\	8E\L
+.	.	8f/	.	8D\
+.	.	8g/	.	8E\
+.	.	8e/J	.	8C\J
+=10	=10	=10	=10	=10
+2a;/	-gen	2f;/	2c;\	2F;\
+4r	.	4r	4r	4r
+4cc\	in	4g/	4e\	4E\
+=11	=11	=11	=11	=11
+4cc\	sein'm	4a/	4d\	4F#\
+4b\	G'leit	8a/L	4d\	4G\
+.	.	8g/J	.	.
+8cc\L	und	4g/	8e\L	4C/
+8b\J	.	.	8d\J	.
+4a/	Se-	4g/	4e\	4C#/
+=12	=12	=12	=12	=12
+2a;/	-gen,	2f#;/	2d;\	2D;\
+4r	.	4r	4r	4r
+4dd\	sein'n	4g/	4d\	4BB/
+=13	=13	=13	=13	=13
+4cc\	Will'n	8g/L	8G/L	4E\
+.	.	8f#/J	8A/J	.
+4b\	zu	4g/	8B\L	8D/L
+.	.	.	8e\J	8C/J
+2a/	pfle-	4g/	8A/	4D\
+.	.	.	4d\	.
+.	.	4f#/	.	4DD/
+.	.	.	8c\	.
+=14	=14	=14	=14	=14
+1g;/	-gen.	1d;/	1B;\	1GG;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/17/
+!!!KEY: 2006558244
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

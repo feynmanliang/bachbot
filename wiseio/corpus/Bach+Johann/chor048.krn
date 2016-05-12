@@ -1,0 +1,100 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Ach wie fluechtig, ach wie nichtig
+!!!AGN: 4-Part Chorale
+!!!OPR: Cantata, BWV 26
+!!!SCT: BH 048
+!!!SCT: BWV 26
+!!!YEC: Copyright 1994, David Huron
+!!!YEC: Changes/Additions 2001 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+**kern	**kern	**kern	**kern	**root	**harm
+!bass	!tenor	!alto	!soprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*a:	*a:	*a:	*a:	*a:	*a:
+=1-	=1-	=1-	=1-	=1-	=1-
+4A	4c	4e	4a	4AA	i
+4G#	4B	4e	4b	4EE	Vb
+4A	4A	4e	4cc	4AA	i
+4AA;	4A;	4e;	4cc;	4AA;	i;
+=2	=2	=2	=2	=2	=2
+4A	4A	4e	4cc	4AA	i
+4G	4B	4g	4dd	4GG	V/III
+4c	4c	4g	4ee	4CC	I/III
+4C;	4c;	4g;	4ee;	4CC;	I/III;
+=3	=3	=3	=3	=3	=3
+8c	8c	4g	4ee	4CC	I/III
+8B	8d	.	.	.	.
+8A	8c	[4cc	4ee	4AA	i
+8G	8B	.	.	.	.
+8F#	8A	8cc]	4dd	8DD	V7b/-VII
+8G#	8B	4b	.	8GG#	viio
+4A	8c	.	4cc	4AA	i
+.	8e	8a	.	.	.
+=4	=4	=4	=4	=4	=4
+4D	4f	4a	4.b	4DD	iv7
+4E	8e	4g#	.	4EE	V
+.	8d	.	8a	.	.
+2AA;	2c#;	2e;	2a;	2AA;	I;
+=5	=5	=5	=5	=5	=5
+8A	8c#	4a	4ee	4AA	I
+8B	8d	.	.	.	.
+8c#	8e	4a	4ee	4AA	Ib
+8A	8c#	.	.	.	.
+8d	4d	4a	4ff	4DD	iv
+8cn	.	.	.	.	.
+8B-	4d	4b-	4ff	4BB-	-II
+8A	.	.	.	.	.
+!!linebreak: 2
+=6	=6	=6	=6	=6	=6
+8G	4d	4b-	4ee	4EE	viiD7/VI
+8E	.	.	.	.	.
+4A	4c#	8a	4ee	4AA	V/IV
+.	.	8g	.	.	.
+4D	4d	8g	4ee	4DD	IV
+.	.	8e	.	.	.
+4D;	4A;	4f#;	4dd;	4DD;	IV;
+*C:	*C:	*C:	*C:	*C:	*C:
+=7	=7	=7	=7	=7	=7
+8G	8B	4g	4dd	4GG	V
+8A	8c	.	.	.	.
+8B	8d	4g	4dd	4GG	Vb
+8G	8B	.	.	.	.
+8c	4c	4g	4ee	4CC	I
+8B	.	.	.	.	.
+8A	4c	4a	4ee	4AA	vi
+8G	.	.	.	.	.
+=8	=8	=8	=8	=8	=8
+8F	4c	4a	4dd	4DD	ii7b
+8D	.	.	.	.	.
+4G	4B	8g	4dd	4GG	V
+.	.	8f	.	.	.
+4C	4c	8f	4cc	4CC	I
+.	.	8d	.	.	.
+4C;	4G;	4e;	4cc;	4CC;	I;
+*a:	*a:	*a:	*a:	*a:	*a:
+=9	=9	=9	=9	=9	=9
+4F	4A	4f	4cc	4FF	VI
+8E	4A	4f	4dd	4DD	iv
+8D	.	.	.	.	.
+8G#	4B	4e	4ee	4EE	Vb
+8E	.	.	.	.	.
+4A	4A	4e	8dd	4AA	I
+.	.	.	8cc	.	.
+=10	=10	=10	=10	=10	=10
+4D#	4A	4f#	4b	4BB	V7b/V
+4E	4G#	8e	4b	4EE	V
+.	.	8d	.	.	.
+4A	4A	8d	4a	4AA	I
+.	.	8B	.	.	.
+4AA;	4E;	4c#;	4a;	4AA;	I;
+====	====	====	====	====	====
+*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

@@ -1,0 +1,119 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 89. Heut' triumphiret Gottes Sohn
+!!!SCT: BWV 342
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*a:	*	*a:	*a:	*a:
+*M3/4	*	*M3/4	*M3/4	*M3/4
+=1-	=1-	=1-	=1-	=1-
+4cc\	Heut'	8e/L	4c\	4A\
+.	.	8f/J	.	.
+4cc\	tri-	4g/	4c\	4E\
+4dd\	-um-	4g/	4B\	4G\
+=2	=2	=2	=2	=2
+2ee\	-phi-	2g/	4c\	2C/
+.	.	.	4B\	.
+4dd\	-ret	4f/	4A/	4D\
+=3	=3	=3	=3	=3
+2cc\	Got-	4e/	(4G/	(4E\
+.	.	2d/	4A/)	4F\)
+4b\	-tes	.	4G/	4G\
+=4	=4	=4	=4	=4
+2.cc;\	Sohn,	2.e;/	2.G;/	2.C;/
+=5	=5	=5	=5	=5
+4cc\	der	4f/	4A/	4F\
+4cc\	von	4g/	4G/	4E\
+4cc\	dem	4f/	4A/	4F\
+=6	=6	=6	=6	=6
+4dd\	Tod	4f/	4G#/	4BB/
+4cc\	.	4e/	4A/	4C/
+4b\	er-	4d/	4B\	4D\
+=7	=7	=7	=7	=7
+2a/	-stan-	(4e/	4c\	(4C/
+.	.	4f/)	2B\	4D\)
+4g#/	-den	4e/	.	4E\
+=8	=8	=8	=8	=8
+2a;/	schon,	2e;/	2c;\	2AA;/
+4b\	Hal-	4e/	4G#/	4E\
+=9	=9	=9	=9	=9
+2cc\	-le-	2e/	8A/L	2A\
+.	.	.	8B/J	.
+.	.	.	4c\	.
+4dd\	-lu-	4g/	4B\	4G\
+=10	=10	=10	=10	=10
+4.ee\	-ja,	2g/	2c\	2c\
+8ff\	.	.	.	.
+4gg\	hal-	4g/	4d\	4B\
+=11	=11	=11	=11	=11
+4ff\	-le-	4cc\	4c\	4A\
+4ee\	.	4b\	4e\	4G\
+4dd\	-lu-	4a/	4f\	4F\
+=12	=12	=12	=12	=12
+2.ee;\	-ja!	2.g#;/	2.B;\	2.E;\
+=13	=13	=13	=13	=13
+4ee\	mit	4a/	4c\	4A\
+4ee\	gro-	8g/L	4c\	4E\
+.	.	8f/J	.	.
+4ee\	-sser	8g/L	4c\	4C/
+.	.	8a/J	.	.
+=14	=14	=14	=14	=14
+2dd\	Pracht	4b\	8d\L	4G\
+.	.	.	8c\	.
+.	.	4g/	8d\	4B\
+.	.	.	8e\J	.
+4dd\	und	4a/	4f\	4A\
+=15	=15	=15	=15	=15
+4ee\	Herr-	2b\	2e\	2G#\
+4dd\	.	.	.	.
+4cc\	-lich-	4a/	4e\	4A\
+=16	=16	=16	=16	=16
+2.b;\	-keit,	2.g#;/	2.e;\	2.E;\
+=17	=17	=17	=17	=17
+4b\	dess	8g/L	4e\	8E\L
+.	.	8a/J	.	8D\J
+4b\	dank'n	8g/L	4e\	8E\L
+.	.	8f/J	.	8F\J
+4cc#\	wir	4e/	4A/	4G\
+=18	=18	=18	=18	=18
+4dd\	ihm	4d/	2A/	4F\
+4cc\	.	4e/	.	4E\
+4b\	in	4f/	4G#/	4D\
+=19	=19	=19	=19	=19
+2a/	E-	4e/	4A/	4C/
+.	.	4f/	4d\	4D\
+4g#/	-wig-	4e/	4B\	4E\
+=20	=20	=20	=20	=20
+2a;/	-keit.	2e;/	2c;\	2AA;/
+4b\	Hal-	4g#/	4e\	4E\
+=21	=21	=21	=21	=21
+2cc\	-le-	2a/	4e\	2A\
+.	.	.	4f\	.
+4dd\	-lu-	4g/	4d\	4B\
+=22	=22	=22	=22	=22
+2ee\	-ja,	2g/	2c\	4c\
+.	.	.	.	4B\
+4ee\	hal-	4f#/	4c\	4A\
+=23	=23	=23	=23	=23
+4ee\	-le-	4f#/	2B\	2B\
+2dd#\	-lu-	(4g#/	.	.
+.	.	4a/)	4B\	4BB/
+=24	=24	=24	=24	=24
+2.ee;\	-ja!	2.g#;/	2.B;\	2.E;\
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/06/10/
+!!!KEY: 4186149153
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

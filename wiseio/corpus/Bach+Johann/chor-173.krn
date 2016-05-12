@@ -1,0 +1,148 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 173. Weltlich Ehr' und zeitlich Gut
+!!!SCT: BWV 426
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**silbe	**kern	**silbe	**kern	**silbe
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[ALTO]	*I:[TENORE]	*I:[TENORE]	*I:[BASSO]	*I:[BASSO]
+*clefG2	*	*clefG2	*	*clefGv2	*	*clefF4	*
+*k[]	*	*k[]	*	*k[]	*	*k[]	*
+*C:	*	*C:	*	*C:	*	*C:	*
+*M4/4	*	*M4/4	*	*M4/4	*	*M4/4	*
+=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-
+4cc\	Welt-	8e/L	.	4G/	.	8C/L	.
+.	.	8f/J	.	.	.	8D/J	.
+4b\	-lich	4g/	.	8G/L	.	4E\	.
+.	.	.	.	8c/J	.	.	.
+4a/	Ehr'	8g/L	.	4c\	.	8F\L	.
+.	.	16f/L	.	.	.	8G\J	.
+.	.	16e/JJ	.	.	.	.	.
+4a/	und	4f/	.	4c\	.	8F\L	.
+.	.	.	.	.	.	8E\J	.
+=2	=2	=2	=2	=2	=2	=2	=2
+4a/	zeit-	8f/L	.	8d\L	zeit-	4D\	.
+.	.	8a/J	.	8f\	.	.	.
+4b\	.	4g/	.	8e\	.	8G\L	.
+.	.	.	.	8d\J	.	8F\J	.
+8cc\L	-lich	4.g/	.	4c\	.	4E\	.
+8b\J	.	.	.	.	.	.	.
+4a/	.	.	.	4c\	-lich	4F\	.
+.	.	8f/	.	.	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3
+2g;/	Gut,	(4f/	.	2c;\	.	2C;/	.
+.	.	4e;/)	.	.	.	.	.
+4r	.	4r	.	4r	.	4r	.
+4b\	Wol-	4g/	.	4d\	.	4G\	.
+=4	=4	=4	=4	=4	=4	=4	=4
+4cc\	-lust	4g/	.	4e\	.	8C\L	.
+.	.	.	.	.	.	8E\J	.
+4b\	und	4g/	.	4d\	.	8G\L	.
+.	.	.	.	.	.	8F\J	.
+4cc\	al-	4g/	.	4c\	.	8E\L	.
+.	.	.	.	.	.	8C\J	.
+4a/	-ler	4f/	.	4c\	.	8F\L	.
+.	.	.	.	.	.	8E\J	.
+=5	=5	=5	=5	=5	=5	=5	=5
+4b\	\U3-?	4f/	.	4d\	.	8D/L	.
+.	.	.	.	.	.	8BB/	.
+4g/	.	4e/	.	4B\	.	8E/	.
+.	.	.	.	.	.	8D/J	.
+2a/	-ber-	2e/	.	8A\L	.	8C/L	.
+.	.	.	.	8B\	.	8BB/	.
+.	.	.	.	8c\	.	8AA/	.
+.	.	.	.	8A\J	.	8C/J	.
+=6	=6	=6	=6	=6	=6	=6	=6
+2b;\	-mut	2e;/	.	2G#;/	.	2E;\	.
+4r	.	4r	.	4r	.	4r	.
+4b\	ist	4e/	.	4Gn/	.	4E\	.
+=7	=7	=7	=7	=7	=7	=7	=7
+4b\	e-	8f#/L	.	8B\L	.	4D#\	.
+.	.	8a/J	.	8f#\J	.	.	.
+4b\	-ben	8a/L	.	8f#\L	.	4E\	.
+.	.	8g/J	.	8e\J	.	.	.
+4a/	wie	4f#/	.	8e\L	.	4F#\	.
+.	.	.	.	8d\J	.	.	.
+4b\	ein	4e/	.	8c\L	.	4G#\	.
+.	.	.	.	8B\J	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8
+2cc;\	Gras;	2e;/	.	2A;/	.	2A;\	.
+4g/	al-	8d/L	.	4d\	.	4B\	.
+.	.	8f/J	.	.	.	.	.
+4g/	-le	8f/L	.	8d\L	.	4c\	.
+.	.	8e/J	.	16c\L	.	.	.
+.	.	.	.	16B\JJ	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9
+4a/	Pracht	8e/L	.	4c\	.	4F#\	.
+.	.	8d/J	.	.	.	.	.
+4b\	und	4d/	.	8B/L	.	8G\L	.
+.	.	.	.	8A/J	.	8F#\J	.
+4cc\	stol-	(8c/	.	8G\L	.	8E\L	.
+.	.	4g/)	.	8e\J	.	8C\J	.
+4a/	-zer	.	.	4d\	.	4D\	.
+.	.	8f#/	.	.	.	.	.
+=10	=10	=10	=10	=10	=10	=10	=10
+2b;\	Ruhm	2g;/	.	2d;\	.	2GG;/	.
+4b\	ver-	4.g/	.	4d\	.	4GG/	.
+4cc\	-f\a3llt	.	.	4c\	.	4AA/	.
+.	.	8f#/	.	.	.	.	.
+=11	=11	=11	=11	=11	=11	=11	=11
+4dd\	wie	8g/L	.	4B\	.	4BB/	.
+.	.	8a/J	.	.	.	.	.
+4dd\	ein'	4b\	.	4e\	.	4GG#/	.
+4cc\	Wie-	8a/L	.	4e\	.	8AA/L	.
+.	.	8g/J	.	.	.	8BB/J	.
+4a/	-sen-	4f#/	.	4d\	.	8C/L	.
+.	.	.	.	.	.	8D/J	.
+=12	=12	=12	=12	=12	=12	=12	=12
+2b;\	-blum';	2g;/	.	2d;\	.	2GG;/	.
+4dd\	o	4a/	.	8f#\L	.	8d\L	.
+.	.	.	.	8e\J	.	8c\J	.
+4dd\	Mensch,	8g/L	.	8d\L	.	8B\L	.
+.	.	8a/J	.	8c\J	.	8A\J	.
+=13	=13	=13	=13	=13	=13	=13	=13
+4dd\	be-	8b/L	.	4B\	.	8G\L	.
+.	.	8a/J	.	.	.	8F\J	.
+4dd\	-denk'	8g/L	.	4B\	.	8E\L	.
+.	.	8f/J	.	.	.	8D\J	.
+4ee\	e-	4e/	.	8c\L	.	4C/	.
+.	.	.	.	8B\J	.	.	.
+8dd\L	-ben	4f#/	.	4A/	.	4D\	.
+8cc\J	.	.	.	.	.	.	.
+=14	=14	=14	=14	=14	=14	=14	=14
+2b;\	das	2g;/	.	2e;\	.	2E;\	.
+4b\	und	8g/L	.	4d\	.	4GG/	.
+.	.	8f/J	.	.	.	.	.
+4g/	ver-	4e/	ver-	4c\	ver-	8C/L	ver-
+.	.	.	.	.	.	8BB/J	.
+=15	=15	=15	=15	=15	=15	=15	=15
+4a/	-sor-	8e/L	-sor-	4c\	-sor-	4AA/	-sor-
+.	.	8f#/J	.	.	.	.	.
+8b\L	.	4g/	-ge	4d\	.	4GG/	.
+8cc\J	.	.	.	.	.	.	.
+8dd\L	.	4.a/	dich	4d\	-ge	4FF#/	.
+8cc\J	.	.	.	.	.	.	.
+4b\	-ge	.	.	[4d\	dich	4GG/	-ge
+.	.	[8g/	.	.	.	.	.
+=16	=16	=16	=16	=16	=16	=16	=16
+4a/	dich	8g/L]	.	4d\]	.	4D\	dich
+.	.	16f/L	.	.	.	.	.
+.	.	16e/JJ	.	.	.	.	.
+4b\	doch	8f/L	doch	8d\L	.	4GG/	doch
+.	.	16e/L	.	8G\J	.	.	.
+.	.	16d/JJ	.	.	.	.	.
+2cc;\	bass.	2e;/	.	2G;/	.	2C;/	.
+==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!
+!!!RNB1: *) "\U3bermut" spelled "Uebermut" in BG.
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/08/08/
+!!!KEY: 4166389677
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

@@ -1,0 +1,101 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Herr Christ, der ein'ge Gott's Sohn
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 101
+!!!SCT: BWV 164
+!!!YEC: Copyright 1994, David Huron
+!!!YEC: Changes/Additions 2001 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually
+**kern	**kern	**kern	**kern	**mroot	**mharm	**harm	**tsroot	
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*	*	*
+!bass	!tenor	!alto	!soprno	!	!	!	!
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*B-:	*B-:	*B-:	*B-:	*B-:	*B-:	*	*
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A
+*	*	*	*	*	*	*B-:	*B-:
+4B-	4d	4f	4b-	4BB-	I	I	B-
+=1	=1	=1	=1	=1	=1	=1	=1
+4E-	4e-	8g	8b-	4EE-	IV	IV	E-
+.	.	8a	8cc	.	.	.	F
+4BB-	4f	4b-	4dd	4BB-	I	I	B-
+4F	8f	4a	4cc	4FF	V	V7	F
+.	8e-	.	.	.	.	.	F
+4G	4d	4g	4b-	4GG	vi	vi	G
+=2	=2	=2	=2	=2	=2	=2	=2
+4C	4e-	4g	2a	4AA	viio7b	ii	C
+4D	8d	4f#	.	4DD	V/vi	V7/vi	D
+.	8c	.	.	.	.	.	D
+4E-;	4B-;	4g;	4g;	4EE-;	IV;	IV	E-
+4G	4B-	4g	4dd	4GG	vi	vi	G
+=3	=3	=3	=3	=3	=3	=3	=3
+4C	4B-	4g	4ee-	4CC	ii7	ii7	C
+8F	4A	4fn	4cc	4FF	V	V7d	F
+8E-	.	.	.	.	.	.	F
+8D	4B-	4f	4dd	4BB-	Ib	Ib	B-
+8E-	.	.	.	.	.	.	B-
+4F	8B-	4f	4cc	4FF	V	V	F
+.	8A	.	.	.	.	.	F
+=4	=4	=4	=4	=4	=4	=4	=4
+2.BB-;	2.d;	2.f;	2.b-;	2.BB-;	I;	I	B-
+*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+4BB-	8d	4f	8b-	4BB-	I	.	B-
+.	8e-	.	8cc	.	.	.	B-
+!!linebreak: 2
+=5	=5	=5	=5	=5	=5	=5	=5
+8B-	4f	4b-	4dd	4BB-	I	.	B-
+8A	.	.	.	.	.	.	B-
+8G	4g	8b-	4dd	4GG	vi	vi7d	G
+8F	.	8a	.	.	.	.	G
+8E-	8g	4g	4ee-	4EE-	IV	IV	E-
+8D	8f	.	.	.	.	.	F
+8C	8e-	4g	4ee-	4CC	ii	ii7d	C
+8BB-	8d	.	.	.	.	.	C
+=6	=6	=6	=6	=6	=6	=6	=6
+4AA	4c	2f	4ff	4FF	Vb	Vb	F
+4BB-	4B-	.	8ee-	4BB-	I	I	B-
+.	.	.	8dd	.	.	.	B-
+4FF;	4A;	4f;	4cc;	4FF;	V;	V	F
+4AA	4c	4f	4ff	4FF	Vb	.	F
+=7	=7	=7	=7	=7	=7	=7	=7
+8BB-	4B-	4f	4dd	4BB-	I	I	B-
+8C	.	.	.	.	.	.	B-
+8D	4B-	4f	4dd	4BB-	Ib	.	B-
+8E-	.	.	.	.	.	.	B-
+8F	4A	8f	4cc	8FF	V	V7	F
+8F#	.	8e-	.	8FF#	viioD7/vi	.	F
+8G	8A	4d	4b-	8GG	vi	vib	G
+8BB-	8G	.	.	8GG	vib	.	G
+=8	=8	=8	=8	=8	=8	=8	=8
+8C	4G	8e-	2a	4AA	viio7b	V7b	F
+8AA	.	8c	.	.	.	.	F
+4D	4F#	4d	.	4DD	V/vi	III	D
+4GG;	4B-;	4d;	4g;	4GG;	vi;	vi	G
+4G	4Bn	4g	4dd	4GG	V/ii	VI	G
+=9	=9	=9	=9	=9	=9	=9	=9
+8c	8c	4g	4ee-	4CC	ii	ii7d	C
+8B-	8d	.	.	.	.	.	E-
+8A	8e-	4f	4cc	4FF	V7b	V7	F
+8F	8A	.	.	.	.	.	F
+8B-	4B-y	8f	4dd	4BB-	I	I	B-
+8E-	.	8g	.	.	.	.	E-
+8F	8f	4a	4cc	4FF	V	V7	F
+8FF	8e-	.	.	.	.	.	F
+=10	=10	=10	=10	=10	=10	=10	=10
+2.BB-;	2.d;	2.f;	2.b-;	2.BB-;	I;	I	B-
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

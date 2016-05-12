@@ -1,0 +1,141 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Ach Gott, vom Himmel seih darein
+!!!OTL@EN:	Oh God, look down from Heaven
+!!!OPR: Cantata BWV 77: Du sollst Gott, deinen Herren, lieben
+!!!SCT:	BWV 77/6
+!!!PC#:	253
+!!!hymn: Erfurt, 1524
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*g:	*g:	*g:	*g:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4A	4c#	4en	4a
+=1	=1	=1	=1
+4D	4d	8f#	4b-
+.	.	4g	.
+8dL	4d	.	4a
+8cnJ	.	8f#	.
+4B-	4d	8gL	4g
+.	.	8aJ	.
+8AL	4d	4b-	4dd
+8GJ	.	.	.
+=2	=2	=2	=2
+4F#	4d	4.a	8ddL
+.	.	.	8ccJ
+4G	4d	.	4b-
+.	.	8g	.
+2D;	2d;	2f#;	2a;
+=3	=3	=3	=3
+4r	4ry	4ry	4r
+4AA	4d	4f#	4cc
+8BB-L	4d	4g	4b-
+8CJ	.	.	.
+4D	8dL	4fn	4a
+.	8cJ	.	.
+=4	=4	=4	=4
+4E-	4B-	8e-L	4g
+.	.	8fJ	.
+8DL	4e-	4g	8aL
+8CJ	.	.	16b-L
+.	.	.	16ccJJ
+2D	4.d	4g	4b-
+.	.	4f#	4a
+.	8c	.	.
+=5	=5	=5	=5
+2.GG;	2.B-;	2.d;	2.g;
+4D	4d	4f#	4a
+=6	=6	=6	=6
+4G	4d	4g	4b-
+8dL	4d	4f#	4a
+8cJ	.	.	.
+4B-	4d	8gL	4g
+.	.	8aJ	.
+8AL	4d	4b-	4dd
+8GJ	.	.	.
+=7	=7	=7	=7
+4F#	4d	4.a	8ddL
+.	.	.	8ccJ
+4G	4d	.	4b-
+.	.	8g	.
+2D;	2d;	2f#;	2a;
+=8	=8	=8	=8
+4r	4ry	4ry	4r
+4AA	4d	4f#	4cc
+8BB-L	4d	4g	4b-
+8CJ	.	.	.
+4D	8dL	4fn	4a
+.	8cJ	.	.
+=9	=9	=9	=9
+4E-	4B-	8e-L	4g
+.	.	8fJ	.
+8DL	4e-X	4g	8aL
+8CJ	.	.	16b-L
+.	.	.	16ccJJ
+2D	4.d	4g	4b-
+.	.	4f#	4a
+.	8c	.	.
+=10	=10	=10	=10
+2.GG;	2.B-;	2.d;	2.g;
+4G	4B-	4d	4g
+=11	=11	=11	=11
+4C#	4A	4en	4a
+4D	4A	4d	4f
+4AA	8AL	4c#	4e
+.	8GJ	.	.
+4BB-	8FL	4d	8dL
+.	8GJ	.	8eJ
+=12	=12	=12	=12
+4AA	4A	4cn	4f
+4GG	4B-	8dL	4g
+.	.	8enJ	.
+2FF;	2c;	2f;	2a;
+=13	=13	=13	=13
+4r	4ry	4ry	4r
+4FF	4c	4f	4a
+4C	4c	8fL	4g
+.	.	8e-XJ	.
+4GG	8.B-L	8dL	4b-
+.	.	[8gJ	.
+.	16cJk	.	.
+=14	=14	=14	=14
+4D	4d	8gL]	4a
+.	.	8f#J	.
+4BB-	8dL	4g	4b-
+.	8cJ	.	.
+4E-X	8B-L	8gL	4g
+.	16AL	8cJ	.
+.	16GJJ	.	.
+4D	4A	4d	4f#
+=15	=15	=15	=15
+2.GG;	2.B-;	2.d;	2.g;
+4G	4B-	4d	4g
+=16	=16	=16	=16
+4F#	4A	4d	4dd
+4G	4d	4g	4b-
+4A	4c	4fn	4cc
+4B-	4B-	8fL	4dd
+.	.	8gJ	.
+=17	=17	=17	=17
+4c	4e-X	4a	4cc
+4c#	4en	4g	4b-
+4d;	4f#;	4d;	4a;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!PC#2: 6 (Budapest/Imre, 1982) with first part written with repeats.
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

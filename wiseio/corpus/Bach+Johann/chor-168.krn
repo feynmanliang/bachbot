@@ -1,0 +1,95 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 168. Warum betrübst du dich, mein Herz
+!!!SCT: BWV 421
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*a:	*	*a:	*a:	*a:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4a/	Wa-	4e/	8c\L	8AA/L
+.	.	.	8d\J	8BB/J
+=1	=1	=1	=1	=1
+8a/L	-rum	4.e/	4e\	4C/
+8b/J	.	.	.	.
+4cc\	be-	.	4A/	4AA/
+.	.	8a/	.	.
+4b\	-tr\u3bst	8a/L	4B\	4E\
+.	.	8g#/J	.	.
+4ee\	du	4gn/	4B-\	4C#/
+=2	=2	=2	=2	=2
+4dd\	dich,	4f/	4A/	4D\
+4cc\	mein	4f#/	4A/	4D#\
+4b;\	Herz,	4B;/	4G#;/	4E;\
+8cc\L	be-	4e/	4A/	4AA/
+8b\J	.	.	.	.
+=3	=3	=3	=3	=3
+4a/	-k\u3m-	4f/	4A/	4D\
+4ee\	-merst	4g/	4c\	4C/
+4dd\	dich	4g/	8c\L	4G\
+.	.	.	16B\L	.
+.	.	.	16A\JJ	.
+4ee\	und	4g/	8B\L	4E\
+.	.	.	8c#\J	.
+=4	=4	=4	=4	=4
+8a/L	tr\a3-	4f/	4d\	8F\L
+8b/J	.	.	.	8G\J
+4cc#\	-gest	4e/	4A/	4A\
+4dd;\	Schmerz	4f;/	4A;/	4D;\
+4ccn\	nur	4e/	4A/	4AA/
+=5	=5	=5	=5	=5
+4b\	um	4e/	4G#/	4E\
+4ee\	das	8e/L	4A/	4C/
+.	.	8f#/J	.	.
+4dd\	zeit-	4g#/	4B\	4BB/
+4cc\	-lich'	4a/	8c\L	4AA/
+.	.	.	8d\J	.
+=6	=6	=6	=6	=6
+2.b;\	Gut?	2.g#;/	2.e;\	2.E;\
+8a/L	Ver-	8a/L	8e\L	8c\L
+8b/J	.	8g#/J	8d\J	8B\J
+=7	=7	=7	=7	=7
+4cc\	-trau'	4a/	4c\	8A\L
+.	.	.	.	8G\J
+4cc\	du	8a/L	4e-\	4F\
+.	.	8g/J	.	.
+4dd\	dei-	4f/	4d\	8B-\L
+.	.	.	.	8A\J
+4dd\	-nem	4b-\	4g\	4G\
+=8	=8	=8	=8	=8
+4ee\	Her-	4b-\	4g\	4c\
+4ee\	-ren	8a/L	8f\L	4C/
+.	.	8g/J	8e\J	.
+4cc;\	Gott,	4a;/	4f;\	4F;\
+4ee\	der	4cc\	4g\	4C/
+=9	=9	=9	=9	=9
+4dd\	al-	4b\	8g\L	4G\
+.	.	.	8f\J	.
+4cc\	-le	8a/L	4e\	4A\
+.	.	8g/J	.	.
+4b\	Ding'	8f#/L	4d\	8D\L
+.	.	8g#/J	.	8E\J
+8a/L	er-	4a/	8c\L	4F\
+8b/J	.	.	8d\J	.
+=10	=10	=10	=10	=10
+4cc\	-schaf-	4a/	4e\	8C/L
+.	.	.	.	8D/J
+4b\	-fen	4g#/	8e\L	4E\
+.	.	.	8d\J	.
+4a;/	hat.	4e;/	4c#;\	4AA;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/08/03/
+!!!KEY: 896692068
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

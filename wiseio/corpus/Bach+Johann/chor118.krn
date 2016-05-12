@@ -1,0 +1,107 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	In dich hab ich gehoffet, Herr
+!!!SCT:	BWV 244/32
+!!!PC#:	118
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*B-:	*B-:	*B-:	*B-:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+8B-L	4d	4f	4b-
+8AJ	.	.	.
+=1	=1	=1	=1
+4G	8dL	4g	4b-
+.	8e-J	.	.
+4D	4f	8aL	4ff
+.	.	8b-J	.
+4A	4f	4cc	4ff
+[4B-	8gL	8b-L	8ee-L
+.	8fJ	8aJ	8ddJ
+=2	=2	=2	=2
+4B-]	4e-	4g	4cc
+4A-	4f	4f	4dd
+8GL	4B-	4b-	8ee-L
+8E-J	.	.	8ddJ
+4F	8fL	4a	4cc
+.	8e-J	.	.
+=3	=3	=3	=3
+4BB-;	4d;	4f;	4b-;
+4E-	4e-	4g	4b-
+4AA	4e-	4f#	4cc
+4BB	4d	4f	4dd
+=4	=4	=4	=4
+8CL	4G	8e-L	4ee-
+8DJ	.	8fJ	.
+4E-	8GL	4g	4cc
+.	8AJ	.	.
+8DL	8B-L	4.f	4ff
+8CJ	8cJ	.	.
+8BB-XL	8dL	.	4gg
+8CJ	8cJ	8e	.
+=5	=5	=5	=5
+4F;	4c;	4a;	4ff;
+4F#	4c	4a	4dd
+4G	8B-L	4g	8ddL
+.	8cJ	.	8ee-XJ
+4A-	8dL	4f	4ff
+.	8e-XJ	.	.
+=6	=6	=6	=6
+4AnX	4f	4cc	4ee-
+8B-L	4f	4b-	8ddL
+8AJ	.	.	8ccJ
+8GL	4g	4d	8b-L
+8FJ	.	.	8cc
+4E	4B-	4g	8dd
+.	.	.	8ccJ
+=7	=7	=7	=7
+4F;	4A;	4f;	4cc;
+4BB-	8B-L	4f	4dd
+.	8AJ	.	.
+4E-X	4G	8gL	8b-L
+.	.	8aJ	8ccJ
+4D	4F	4b	4dd
+=8	=8	=8	=8
+4C;	4G;	4cc;	4ee-;
+4G	8gL	4b-X	4dd
+.	8fJ	.	.
+8A-L	4e-	4b-	4cc
+8GJ	.	.	.
+4F	4f	4a-	4dd
+=9	=9	=9	=9
+4E-;	4B-;	4g;	4ee-;
+4BB-	4B-	4f	4dd
+4F	4AnX	8fL	4cc
+.	.	8e-J	.
+4G	4B-	8dL	4b-
+.	.	8e-J	.
+=10	=10	=10	=10
+8AL	2.c	8fL	4.ff
+8GJ	.	8gJ	.
+4F	.	2a	.
+.	.	.	8ee-
+4F#	.	.	4dd
+8GL	4B-	4g	8ee-L
+8FJ	.	.	8ddJ
+=11	=11	=11	=11
+4E	4B-	4g	2cc
+4F	4A	8fL	.
+.	.	8e-XJ	.
+4BB-;	4F;	4d;	4b-;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

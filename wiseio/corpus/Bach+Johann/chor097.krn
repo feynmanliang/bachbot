@@ -1,0 +1,132 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Nun bitten wir den heiligen Geist
+!!!SCT:	BWV 169/7
+!!!PC#:	97
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*k[f#c#g#]	*k[f#c#g#]	*k[f#c#g#]	*k[f#c#g#]
+*clefF4	*clefGv2	*clefG2	*clefG2
+*A:	*A:	*A:	*A:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4A	4c#	4e	4a
+=1	=1	=1	=1
+8G#L	8BL	4e	4b
+8F#	8AJ	.	.
+8E	4G#	4e	4b
+8DJ	.	.	.
+8C#L	8AL	4e	4.a
+8BBJ	8BJ	.	.
+4AA	4c#	4e	.
+.	.	.	8g#
+=2	=2	=2	=2
+4D	4A	4d	4f#
+4C#	4A	4e	4e
+4BB	8AL	8dL	4f#
+.	8dJ	8f#J	.
+4E	8c#L	4e	4g#
+.	8BJ	.	.
+=3	=3	=3	=3
+2.AA;	2.c#;	2.e;	2.a;
+8AL	4e	4a	8cc#L
+8BJ	.	.	8ddJ
+=4	=4	=4	=4
+4c#	4e	4a	4ee
+4d	8dL	4a	4ff#
+.	8c#J	.	.
+4G#	4B	8bL	4.ee
+.	.	8aJ	.
+4E	4e	4g#	.
+.	.	.	8dd
+=5	=5	=5	=5
+4A	8eL	4a	8cc#L
+.	8dJ	.	8bJ
+4C#	8c#L	4e	8aL
+.	8BJ	.	8g#J
+4D	4A	8dL	4f#
+.	.	8c#J	.
+4E	4E	4B	4g#
+=6	=6	=6	=6
+2AA;	2E;	2c#;	2a;
+4A	4A	8eL	4cc#
+.	.	8f#J	.
+4E#	4G#	4g#	4cc#
+=7	=7	=7	=7
+4F#	4A	8g#L	4cc#
+.	.	8f#J	.
+4D	4B	8e#L	4b
+.	.	8f#J	.
+2C#	8BL	8e#	2cc#
+.	8A	4f#	.
+.	8G#	.	.
+.	8c#J	8e#	.
+=8	=8	=8	=8
+4F#;	4c#;	4f#;	4a;
+8DL	4d	4f#	4a
+8C#J	.	.	.
+8BBL	8dL	8g#L	8bL
+8AAJ	8c#J	8f#J	8cc#J
+4GG#	4B	4enX	4dd
+=9	=9	=9	=9
+2AA	8AL	2e	8cc#L
+.	8G	.	8bJ
+.	8F#	.	4cc#
+.	8EJ	.	.
+2D;	2F#;	2d;	2a;
+=10	=10	=10	=10
+4G#X	4E	8bL	8bL
+.	.	8aJ	8cc#J
+8F#L	4B	4g#	4dd
+8EJ	.	.	.
+4A	[2A	4a	8cc#L
+.	.	.	8bJ
+4C#	.	4e	8aL
+.	.	.	8g#J
+=11	=11	=11	=11
+[2D	4A]	8dL	4f#
+.	.	8c#J	.
+.	8G#L	4B	4e
+.	8F#J	.	.
+4D]	8EL	8AL	8aL
+.	8G#J	8eJ	8bJ
+4C#	8AL	4e	4cc#
+.	8G#J	.	.
+=12	=12	=12	=12
+8D#L	4F#	[2f#	4.b
+8BB	.	.	.
+8C#	4B	.	.
+8D#J	.	.	8a
+8EL	4B	8f#L]	4g#
+8GG#	.	8e	.
+8AA	8c#L	8e	4f#
+8BBJ	8BJ	8d#J	.
+=13	=13	=13	=13
+2E;	2G#;	2G#;	2e;
+4B	4B	4.dnX	4f#
+4E#	4B	.	4g#
+.	.	8d	.
+=14	=14	=14	=14
+4F#	2.A	8c#L	2a
+.	.	8dJ	.
+4C#	.	4e	.
+4D	.	4f#	2b
+4EnX	4G#	8eL	.
+.	.	8dJ	.
+=15	=15	=15	=15
+2.AA;	2.E;	2.c#;	2.a;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

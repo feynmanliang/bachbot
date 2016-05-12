@@ -1,0 +1,118 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 19. Ich hab' mein' Sach' Gott heimgestellt
+!!!ONM: No. 19
+!!!OCL: Erk
+!!!SCA: BWV 351
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**kern	**kern	**kern	**kern	**mharm	**mroot	**harm	**tsroot	
+!bass	!tenor	!alto	!sprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*g:	*g:	*g:	*g:	*g:	*g:	*	*
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4G	4B-	4d	4g	i	4GG	i7d	G
+=1	=1	=1	=1	=1	=1	=1	=1
+8G	8B-	4d	4g	i	4GG	V7d	G
+8F	8A	.	.	.	.	.	G
+4E-	4G	8d	4g	vii/V	4CC#	i7	G
+.	.	8c#	.	.	.	.	G
+8D	4A	4d	4f#	V	4DD	iiob	D
+8Cn	.	.	.	.	.	.	D
+8BB-	4d	8g	4b-	ib	4GG	V7b/V	G
+8GG	.	8fn	.	.	.	.	G
+=2	=2	=2	=2	=2	=2	=2	=2
+4C	4c	8e-	4a	iib	4AA	V	A
+.	.	8d	.	.	.	.	A
+4C#	8B-	4en	4g	viioD7/V	4CC#	.	A
+.	8A	.	.	.	.	.	A
+4D;	4A;	4d;	4f#;	V;	4DD;	V7	D
+8D	4A	4d	4f#	V	4DD	.	D
+[8E-	.	.	.	.	.	.	D
+=3	=3	=3	=3	=3	=3	=3	=3
+8E-]	4A	4c	4f#	V7	4DD	Ib	D
+[8D	.	.	.	.	.	.	D
+8D]	4A	4d	4f#	V	4DD	V7d/VII	D
+[8Cn	.	.	.	.	.	.	D
+8C]	4G	4d	4g	Ib	4GG	V7c	G
+8BBn	.	.	.	.	.	.	G
+8C	4G	4c	4e	IV	4CC	.	C
+8BB-	.	.	.	.	.	.	C
+=4	=4	=4	=4	=4	=4	=4	=4
+4AA	8A	8c	4f#	viioD7b	4FF#	i	D
+.	8c	8e-	.	.	.	.	D
+4D	8c	4d	4f#	V7	4DD	VII	D
+.	16B-	.	.	.	.	.	D
+.	16A	.	.	.	.	.	D
+4GG;	4B-;	4d;	4g;	I;	4GG;	.	G
+4F	4c	4fn	4a	-VII	4FF	IVb	F
+=5	=5	=5	=5	=5	=5	=5	=5
+!!linebreak: 2
+8F	4c	4f	4a	-VII	4FF	V7d/iii	F
+8G	.	.	.	.	.	.	F
+8F	4c	4g	4cc	IVb	4CC	IIIb	C
+8En	.	.	.	.	.	.	C
+8F	4c	4f	4a	-VII	4FF	VI	F
+[8E-	.	.	.	.	.	.	F
+8E-]	4B-	4f	4f	IIIb	4BB-	V7/iii	B-
+8D	.	.	.	.	.	.	B-
+=6	=6	=6	=6	=6	=6	=6	=6
+8E-	4B-	8e-	4g	VI	4EE-	i	E-
+8En	.	8d	.	.	.	.	G
+8F	8A	8c	4a	-VII	8FF	.	F
+8F#	8c	8e-	.	viioD7	8FF#	.	F
+4G;	4B-;	4d;	4b-;	i;	4GG;	V	G
+4GG	4d	[4g	4b-	i	4GG	ivb	G
+=7	=7	=7	=7	=7	=7	=7	=7
+4D	4.d	8g]	4a	V	4DD	V	D
+.	.	8f#	.	.	.	.	D
+4E-	.	8g	4g	ivb	4CC	.	C
+.	8c	8G	.	.	.	.	C
+4D;	4A;	4d;	4f#;	V;	4DD;	V7c	D
+4D	4A	4d	4f#	V	4DD	.	D
+=8	=8	=8	=8	=8	=8	=8	=8
+8AA	4A	8c	4f#	viib	4FF#	Ib	D
+8BB-	.	8d	.	.	.	.	D
+4C	4A	8e-	4f#	viioD7c	4FF#	V7b/V	D
+.	.	8d	.	.	.	.	D
+8BB-	[4G	4d	4g	ib	4GG	V	G
+8BBn	.	.	.	.	.	.	G
+8C	16G]	4en	4en	IV	8CC	V7	A
+.	16A	.	.	.	.	.	A
+8C#	8B-y	.	.	viioD7/V	8CC#	.	A
+=9	=9	=9	=9	=9	=9	=9	=9
+4D	8A	4d	4f#	V	4DD	I	D
+.	8G	.	.	.	.	.	D
+4DD	16A	4d	4f#	V	4DD	.	D
+.	16B-	.	.	.	.	.	D
+.	8cn	.	.	.	.	.	D
+4GG;	8c	4d;	4g;	I;	4GG;	.	G
+.	8Bn;	.	.	.	.	.	G
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

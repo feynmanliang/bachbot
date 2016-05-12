@@ -1,0 +1,97 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 161. Uns ist ein Kindlein heut' gebor'n
+!!!SCT: BWV 414
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*>[A,A,B]	*	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*	*>A	*>A	*>A
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#]	*	*k[f#]	*k[f#]	*k[f#]
+*G:	*	*G:	*G:	*G:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4b\	Unsdes	4g/	4d\	4GG/
+=1	=1	=1	=1	=1
+8b\L	istfreu-	4g/	4d\	4G\
+8cc\J	.	.	.	.
+4dd\	ein-en	4a/	4d\	4F#\
+4b\	Kind-sich	4g/	4d\	4G\
+4g/	-leindie	4g/	8d\L	4E\
+.	.	.	8c\J	.
+=2	=2	=2	=2	=2
+4a/	heut'En-	8fn/L	4c\	4Fn\
+.	.	8e/J	.	.
+4b\	ge--ge-	4d/	4G/	4G\
+4cc;\	-bor'n-lein,	4e;/	4G;/	4C;/
+4b\	vonsoll-	4d/	4G/	4GG/
+=3	=3	=3	=3	=3
+4a/	ei--ten	8d/L	4F#/	4D\
+.	.	8c/J	.	.
+4g/	-nerwir	4B/	4G/	8E\L
+.	.	.	.	8D\J
+4.g/	Jung-Men-	2e/	2c\	8C\L
+.	.	.	.	8D\
+.	.	.	.	8E\
+8a/	.	.	.	8F#\J
+=4	=4	=4	=4	=4
+4b\	|-schen	4d/	8B/L	4G\
+.	.	.	8A/J	.
+4b\	-fraunicht	4d/	4G/	8BB/L
+.	.	.	.	8C/J
+8a/L	aus-fr\o3h-	4d/	4G/	4D\
+8g/J	.	.	.	.
+4a/	-er--lich	8d/L	4F#/	4D\
+.	.	8c/J	.	.
+=5	=5	=5	=5	=5
+2.g;/	-kor'n,sein?	2.B;/	2.D;/	2.GG;/
+=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*	*>B	*>B	*>B
+4b\	Lob,	4g/	4d\	4GG/
+=6	=6	=6	=6	=6
+4a/	Preis	4f#/	8d\L	4D\
+.	.	.	8c\J	.
+4b\	und	4f#/	4B\	4D#\
+4g/	Dank	8e/L	4B\	4E\
+.	.	8d/J	.	.
+4e/	sei	4c#/	4A/	8A\L
+.	.	.	.	8G\J
+=7	=7	=7	=7	=7
+4f#/	Gott	4.d/	4A/	4F#\
+4g/	be-	.	4G/	4E\
+.	.	8c#/	.	.
+4a;/	-reit't	4d;/	4F#;/	4D;\
+4b\	f\u3r	4d#/	4F#/	4BB/
+=8	=8	=8	=8	=8
+4g/	sol-	4B/	4G/	8E\L
+.	.	.	.	8D\J
+4g/	-che	4e/	4c\	8E\L
+.	.	.	.	8F#\J
+4.g/	Gnad'	4d/	8B\L	8G\L
+.	.	.	8c\	8A\
+.	.	8e/L	8B\	8G\
+8a/	.	8f#/J	8A\J	8F#\J
+=9	=9	=9	=9	=9
+4b\	.	4g/	4G/	4E\
+4b\	in	4d/	4G/	8BB/L
+.	.	.	.	8C/J
+8a/L	E-	4d/	4G/	4D\
+8g/J	.	.	.	.
+4a/	-wig-	8d/L	4F#/	4D\
+.	.	8c/J	.	.
+=10	=10	=10	=10	=10
+2.g;/xx	-keit.	2.B;/xx	2.D;/xx	2.GG;/xx
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/08/03/
+!!!KEY: 1985592580
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

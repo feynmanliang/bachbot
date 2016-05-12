@@ -1,0 +1,110 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 157. Wo Gott zum Haus nicht gibt
+!!!ONM: No. 157
+!!!OCL: Erk
+!!!SCA: BWV 438
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**kern	**kern	**kern	**kern	**mharm	**mroot	**harm	**tsroot	
+!bass	!tenor	!alto	!sprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*F:	*F:	*F:	*F:	*F:	*F:	*	*
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+8F	8A	4c	4f	I	4FF	.	F
+8G	8B-	.	.	.	.	V7	F
+=1	=1	=1	=1	=1	=1	=1	=1
+8A	8c	8f	4cc	Ib	4FF	I	F
+8B-	8d	8g	.	.	.	.	C
+4c	4e	8a	8cc	iiib	8AA	V	C
+.	.	[8g	8b-	V7	8CC	.	C
+4F	4c	8g]	4a	I	4FF	I	F
+.	.	[8f	.	.	.	.	F
+4C	4c	8f]	4g	V	4CC	II	C
+.	.	8e	.	.	.	.	C
+=2	=2	=2	=2	=2	=2	=2	=2
+4F	4c	8f	4a	I	4FF	V	F
+.	.	8e	.	.	.	.	F
+4G	4G	4d	4bn	II	4GG	.	G
+4C;	4G;	4e;	4cc;	V;	4CC;	I	C
+4E	4c	[4g	4cc	Vb	4CC	V	C
+=3	=3	=3	=3	=3	=3	=3	=3
+4F	[4c	8g]	4a	I	4FF	IVb	F
+.	.	8f	.	.	.	.	F
+8E	8c]	8g	4cc	Vb	8CC	V	C
+8C	8e	[8a	.	iiib	8AA	.	C
+8D	8f	8a]	4b-	IV7b	8BB-	I	B-
+8G	8d	16g	.	ii	8GG	.	G
+.	.	16f	.	.	.	.	G
+8E	4c	[4g	4cc	Vb	4CC	V7	C
+8C	.	.	.	.	.	.	C
+=4	=4	=4	=4	=4	=4	=4	=4
+4F	4c	8g]	4a	I	4FF	I	F
+.	.	4f	.	.	.	.	F
+4C	8c	.	4g	V	4CC	.	C
+.	8B-	8e	.	.	.	.	C
+4FF;	4A;	4c;	4f;	I;	4FF;	IV	F
+4F	4A	4f	4cc	I	4FF	.	F
+=5	=5	=5	=5	=5	=5	=5	=5
+!!linebreak: 2
+8BB-	4B-	4f	4dd	IV	4BB-	I	B-
+8C	.	.	.	.	.	.	B-
+8D	8F	4f	4dd	IVb	4BB-	V7/IV	B-
+8E	8G	.	.	.	.	.	G
+8F	4A	4.c	4a	I	4FF	ii	F
+8G	.	.	.	.	.	.	F
+8A	8f	.	4cc	Ib	8FF	.	F
+8F#	8e-	[8a	.	viioD7/ii	8FF#	.	F
+=6	=6	=6	=6	=6	=6	=6	=6
+8G	4d	8a]	4b-	ii	4GG	VI	G
+8A	.	16g	.	.	.	.	G
+.	.	16f#	.	.	.	.	G
+8B-	4d	[4g	4b-	iib	4GG	vi	G
+8c	.	.	.	.	.	.	G
+4d;	4d;	8g]	4a;	V/ii;	4DD;	iii7	D
+.	.	8f#;	.	.	.	.	D
+4D	4d	4a	4ffn	vi	4DD	ii7b	D
+=7	=7	=7	=7	=7	=7	=7	=7
+4A	4c	8a	4ee	iii	4AA	I	A
+.	.	8g	.	.	.	.	A
+4B-	8d	8f	4dd	IV	4BB-	vi7	G
+.	8e	8g	.	.	.	.	G
+8F	4f	8a	4.cc	I	4FF	ii7	F
+8E	.	8g	.	.	.	.	F
+4D	4A	4f	.	vi7	4DD	V7	D
+.	.	.	8dd	.	.	.	D
+=8	=8	=8	=8	=8	=8	=8	=8
+4G	4.B-	4.f	8b-	ii7	4GG	I	G
+.	.	.	8a	.	.	.	G
+4C	.	.	4g	V	4CC	.	C
+.	16c	8e	.	.	.	.	C
+.	16B-	.	.	.	.	.	C
+4F;	4A;	4c;	4f;	I;	4FF;	.	F
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

@@ -1,0 +1,90 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 124. Mach's mit mir, Gott, nach deiner gut'
+!!!SCT: BWV 377
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*>[A,A,B]	*	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*	*>A	*>A	*>A
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#c#]	*	*k[f#c#]	*k[f#c#]	*k[f#c#]
+*D:	*	*D:	*D:	*D:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+8d/L	Mach'swas	4A/	8F#/L	4D\
+8e/J	.	.	8G/J	.
+=1	=1	=1	=1	=1
+4f#/	mitich	4d/	4A/	8D/L
+.	.	.	.	8C#/J
+4g/	mir,dich	4d/	8G/L	4BB/
+.	.	.	8F#/J	.
+4a/	Gott,bitt',	4e/	4E/	4C#/
+4a/	nachver-	8d/L	4F#/	4D\
+.	.	8c#/J	.	.
+=2	=2	=2	=2	=2
+4g/	dei--sag'	8B/L	4G/	4E\
+.	.	8c#/J	.	.
+4f#/	-nermir	4d/	4A/	8F#\L
+.	.	.	.	8G\J
+4e;/	G\u3t',nicht,	4c#;/	4A;/	4A;\
+4a/	hilfwenn	4e/	4A/	4c#\
+=3	=3	=3	=3	=3
+4b\	mirmei-	8f#/L	4d\	4B\
+.	.	8g#/J	.	.
+4cc#\	in-ne	4a/	4e\	4A\
+4dd\	mei-Seel'	4b\	4e\	4G#\
+4cc#\	-nemwill	4a/	4e\	4A\
+=4	=4	=4	=4	=4
+2b\	Lei-schei-	4a/	4f#\	4D\
+.	.	4g#/	8e\L	4E\
+.	.	.	8d\J	.
+4a;/	-den,-den;	4e;/	4c#;\	4AA;/
+=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*	*>B	*>B	*>B
+4a/	so	4e/	8c#\L	8A\L
+.	.	.	8B\J	8G\J
+=5	=5	=5	=5	=5
+4dd\	nimm	4f#/	8A/L	8F#\L
+.	.	.	8F#/J	8D\J
+4cc#\	sie,	4e/	8G/L	8E\L
+.	.	.	8A/J	8F#\J
+4b\	Herr,	8d/L	4B\	8G\L
+.	.	8e/J	.	8F#\J
+4a/	in	4f#/	4B\	8E\L
+.	.	.	.	8D#\J
+=6	=6	=6	=6	=6
+4g/	dei-	4e/	8B\L	4E\
+.	.	.	8c#\J	.
+4f#/	-ne	8A/L	4d\	8F#\L
+.	.	8B/J	.	8G#\J
+4e;/	H\a3nd',	4c#;/	4A;/	4A;\
+4a/	ist	8f#/L	4c#\	4F#\
+.	.	8e/J	.	.
+=7	=7	=7	=7	=7
+4g/	Al-	(8d/	8B/L	8BB/L
+.	.	4e/)	8A/J	8C#/J
+4f#/	-les	.	4A/	4D\
+.	.	8d/	.	.
+8e/L	gut,	8d/L	4A/	4AA/
+8f#/J	.	8c#/J	.	.
+4g/	wenn	4d/	4G/	4BB/
+=8	=8	=8	=8	=8
+4f#/	gut	4d/	4.A/	8AA/L
+.	.	.	.	8GG/J
+4e/	das	4c#/	.	4AA/
+.	.	.	8G/	.
+4d;/	End'.	4A;/	4F#;/	4DD;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/07/18/
+!!!KEY: 1461618249
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

@@ -1,0 +1,107 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Jesu, meine Freude
+!!!SCT:	BWV 227/1
+!!!PC#:	263
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*e:	*e:	*e:	*e:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+=1-	=1-	=1-	=1-
+4E	4e	4g	4b
+4D	4B	4f#	4b
+4.C	8cL	8eL	4a
+.	8F#J	8d#J	.
+.	4G	4e	4g
+8BB	.	.	.
+=2	=2	=2	=2
+4AA	4c	4e	2f#
+4BB	8BL	4d#	.
+.	8AJ	.	.
+2E;	2G;	2B;	2e;
+=3	=3	=3	=3
+4E	8eL	8gL	4b
+.	8dJ	8f#J	.
+8AL	8c#L	4e	4cc#
+8GJ	8BJ	.	.
+4F#	4A	4d	4dd
+8GL	8GL	4d	4b
+8F#J	8AJ	.	.
+=4	=4	=4	=4
+8EL	4B	8gL	2ee
+8F#	.	8aJ	.
+8G	4g	4b	.
+8AJ	.	.	.
+2B;	2f#;	2b;	2dd#;
+=5	=5	=5	=5
+4c	4e	8gL	8eeL
+.	.	8aJ	8ff#J
+8BL	4e	4b	4gg
+8AJ	.	.	.
+4B	4e	4.b	4.ff#
+4BB	4d#	.	.
+.	.	8a	8ff#
+=6	=6	=6	=6
+1E;	1B;	1g;	1ee;
+=7:|!	=7:|!	=7:|!	=7:|!
+*>B	*>B	*>B	*>B
+8EL	4e	4g	4b
+8F#J	.	.	.
+4G	4d	4g	4b
+4F#	4d	4a	4cc
+4G	4d	4g	4b
+=8	=8	=8	=8
+4C	4e	4g	4.a
+4D	8dL	4f#	.
+.	8cJ	.	8a
+2GG;	2B;	2d;	2g;
+=9	=9	=9	=9
+4G	4d	4g	4b
+8F#L	4e	4g	4cc#
+8EJ	.	.	.
+4F#	4d	4a	4dd
+8GL	4d	8gL	4b
+8F#J	.	8aJ	.
+=10	=10	=10	=10
+4E	4g	4b	4ee
+4BB	4f#	4b	8ddL
+.	.	.	8cc#J
+4E	4g	4b	2cc#
+4F#	8f#L	4a#	.
+.	8eJ	.	.
+=11	=11	=11	=11
+2BB;	2d#;	2f#;	2b;
+4E	4e	4g	4b
+4D	8f#L	4f#	4b
+.	8gJ	.	.
+=12	=12	=12	=12
+4C	8aL	4e	4a
+.	8AJ	.	.
+4BB	4B	4e	8gL
+.	.	.	8f#J
+4AA	4c	4e	2f#
+4BB	8BL	4d#	.
+.	8AJ	.	.
+=13	=13	=13	=13
+1E;	1G#;	1B;	1e;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

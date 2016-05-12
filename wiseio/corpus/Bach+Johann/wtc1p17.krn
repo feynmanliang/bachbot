@@ -1,0 +1,502 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Das wohltemperirte Clavier, Band I
+!!!XEN: The Well-Tempered Clavier, Volume I
+!!!OTL: Prelude in A-flat Major
+!!!OMV: Prelude XVII
+!!!SCT: BWV 862
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xiv
+!!!ENC: Walter Hewlett
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern
+*k[b-e-a-d-]
+*A-:
+*M3/4
+*MM108
+=1-
+*^
+8r	4e-\ 4c\ 4A-\
+16a-/LL	.
+16g/JJ	.
+8a-/L	4r
+8cc/	.
+8e-/	4r
+8a-/J	.
+=2	=2
+8r	4e-\ 4B-\ 4G\
+16b-/LL	.
+16a-/JJ	.
+8b-/L	4r
+8dd-/	.
+8e-/	4r
+8b-/J	.
+=3	=3
+*^	*
+4cc/	4r	8r
+.	.	16A-\LL
+.	.	16G\JJ
+4aa-/	4ee-\ 4cc\	8A-\L
+.	.	8c\
+8r	8r	8E-\
+8ee-/	8cc\	8A-\J
+=4	=4	=4
+4dd-/	4b-\	8r
+.	.	16B-\LL
+.	.	16A-\JJ
+4gg/	4r	8B-\L
+.	.	8d-\
+8r	8r	8E-\
+8gg/	8dd-\ 8b-\	8B-\J
+=5	=5	=5
+4aa-/	4ee-\ 4a-\	8r
+.	.	16c\LL
+.	.	16B-\JJ
+4ee-/	4r	8c\L
+.	.	8e-\
+8r	8r	8A-\
+8ee-/	8b-\	8c\J
+=6	=6	=6
+8ee-/L	4a-\	4F\
+16aa-/L	.	.
+16gg/JJ	.	.
+8aa-/L	4r	4f\
+8ff/	.	.
+8cc/	4r	4r
+8ee-/J	.	.
+=7	=7	=7
+4dd-/	4b-\	8r
+.	.	16B-\LL
+.	.	16A-\JJ
+4aa-/	4r	8B-\L
+.	.	8d-\
+8r	8r	8G\
+8dd-/	8a-\	8B-\J
+=8	=8	=8
+8dd-/L	4g\	4E-\
+16bb-/L	.	.
+16aa-/JJ	.	.
+8bb-/L	4r	4e-\
+8gg/	.	.
+8dd-/	8r	4r
+8bb-/ 8dd-/J	8g\	.
+=9	=9	=9
+4cc/	4a-\	8r
+.	.	16A-\LL
+.	.	16G\JJ
+16r	4ryy	8A-\L
+16ee-/LL	.	.
+16ff/	.	8c\
+16gg/JJ	.	.
+16aa-/LL	4ryy	8F\
+16ff/	.	.
+16ddn/	.	8A-\J
+16ff/JJ	.	.
+=10	=10	=10
+*v	*v	*
+[4b-\	8Dn\L
+.	16G\L
+.	16F\JJ
+16b-\LL]	8G\L
+16ddn\	.
+16ee-\	8B-\
+16ff\JJ	.
+16gg\LL	8E-\
+16ee-\	.
+16cc\	8G\J
+16ee-\JJ	.
+=11	=11
+16a-/LL	8C\L
+16b-/	.
+16g/	16F\L
+16b-/JJ	16E-\JJ
+16a-\LL	8F\L
+16cc\	.
+16ddn\	8A-\
+16ee-\JJ	.
+16ff\LL	8Dn\
+16dd\	.
+16b-\	8F\J
+16dd\JJ	.
+=12	=12
+16g/LL	8BB-\L
+16a-/	.
+16f/	16E-\L
+16a-/JJ	16Dn\JJ
+16g\LL	8E-\L
+16b-\	.
+16cc\	8G\
+16ddn\JJ	.
+16ee-\LL	8C\
+16cc\	.
+16a-\	8E-\J
+16cc\JJ	.
+=13	=13
+16f\LL	8AA-\L
+16ee-\	.
+16ddn\	16F\L
+16ee-\JJ	16E-\JJ
+16a-\LL	8F\L
+16ee-\	.
+16dd\	8A-\
+16ee-\JJ	.
+16f\LL	8Dn\
+16ee-\	.
+16dd\	8F\J
+16ee-\JJ	.
+=14	=14
+16g\LL	8BB-\L
+16ee-\	.
+16ddn\	16G\L
+16ee-\JJ	16F\JJ
+16b-\LL	8G\L
+16ee-\	.
+16dd\	8B-\
+16ee-\JJ	.
+16g\LL	8E-\
+16ee-\	.
+16dd\	8G\J
+16ee-\JJ	.
+=15	=15
+16a-\LL	8C\L
+16ee-\	.
+16dd-\	16A-\L
+16ee-\JJ	16G\JJ
+16cc\LL	8A-\L
+16ee-\	.
+16b-\	8c\
+16ee-\JJ	.
+16a-\LL	8F\
+16ee-\	.
+16g\	8A-\J
+16ee-\JJ	.
+=16	=16
+16f\LL	8Dn/L
+16ee-\	.
+16g\	8F/
+16ee-\JJ	.
+16a-\LL	8BB-/
+16ddn\	.
+16ee-\	8D/
+16ff\JJ	.
+16g\LL	8E-/
+16b-\	.
+16a-\	8C/J
+16cc\JJ	.
+=17	=17
+*^	*
+16b-\LL	2ryy	8GG/L
+16ee-\	.	.
+16ddn\	.	8FF/
+16cc\JJ	.	.
+16b-\LL	.	8GG/
+16a-\	.	.
+16b-\	.	8AA-/J
+16cc\JJ	.	.
+8.fT/Lxx	4dn\	4BB-/
+16e-/Jk	.	.
+=18	=18	=18
+4e-/	4e-\	8r
+.	.	16E-\LL
+.	.	16Dn\JJ
+4ee-/	4b-\ 4g\	8E-\L
+.	.	8G\
+8r	8r	8BB-\
+8b-/	8g\	8E-\J
+=19	=19	=19
+4a-/	4f\	8r
+.	.	16F\LL
+.	.	16E-\JJ
+4ddn/	4r	8F\L
+.	.	8A-\
+8r	8r	8BB-\
+8dd/	8a-\ 8f\	8F\J
+=20	=20	=20
+8ee-/L	8b-\ 8g\ 8e-\	4G\
+16e-/L	8ryy	.
+16dn/JJ	.	.
+8e-/L	4ryy	8r
+8g/	.	16E-\LL
+.	.	16F\JJ
+8B-/	4ryy	16G\LL
+.	.	16F\
+8e-/J	.	16G\
+.	.	16E-\JJ
+=21	=21	=21
+*v	*v	*
+8r	8B-\L
+16f/LL	8BB-\J
+16e-/JJ	.
+8f/L	8r
+8a-/	16BB-/LL
+.	16C/JJ
+8B-/	16Dn/LL
+.	16C/
+8f/J	16D/
+.	16BB-/JJ
+=22	=22
+8g/L	8E-/L
+16b-/L	8EE-/J
+16a-/JJ	.
+8b-\L	8r
+8ee-\	16d-\LL
+.	16c\JJ
+8g\	16B-\LL
+.	16c\
+8b-\J	16A-\
+.	16B-\JJ
+=23	=23
+8e-/L	16G\LL
+.	16A-\
+16g/L	16F\
+16f/JJ	16G\JJ
+8g/L	16E-\LL
+.	16F\
+8b-/	16D-\
+.	16E-\JJ
+8e-/	16C\LL
+.	16D-\
+8g/J	16BB-\
+.	16C\JJ
+=24	=24
+8c/	8AA-\L
+8r	16e-\L
+.	16d-\JJ
+8r	8e-\L
+16gg-\LL	8a-\
+16ff\JJ	.
+16ee-\LL	8c\
+16ff\	.
+16dd-\	8e-\J
+16ee-\JJ	.
+=25	=25
+16cc/LL	8A-\L
+16dd-/	.
+16b-/	16c\L
+16cc/JJ	16B-\JJ
+16a-/LL	8c\L
+16b-/	.
+16g-/	8e-\
+16a-/JJ	.
+16f/LL	8A-\
+16g-/	.
+16e-/	8c\J
+16f/JJ	.
+=26	=26
+8d-\L	[4F\
+16dd-\L	.
+16cc\JJ	.
+8dd-\L	16F\LL]
+.	16A-\
+8ff\	16B-\
+.	16c\JJ
+8b-\	16d-\LL
+.	16B-\
+8dd-\J	16G\
+.	16B-\JJ
+=27	=27
+8g\L	[4E-\
+16cc\L	.
+16b-\JJ	.
+8cc\L	16E-\LL]
+.	16G\
+8ee-\	16A-\
+.	16B-\JJ
+8a-\	16c\LL
+.	16A-\
+8cc\J	16F\
+.	16A-\JJ
+=28	=28
+8f/L	16D-\LL
+.	16E-\
+16b-/L	16C\
+16a-/JJ	16E-\JJ
+8b-/L	16D-\LL
+.	16F\
+8dd-/	16G\
+.	16A-\JJ
+8g/	16B-\LL
+.	16G\
+8b-/J	16E-\
+.	16G\JJ
+=29	=29
+8e-/L	16C\LL
+.	16D-\
+16a-/L	16BB-\
+16g/JJ	16D-\JJ
+8a-/L	16C\LL
+.	16E-\
+8cc/	16F\
+.	16G\JJ
+8f/	16A-\LL
+.	16F\
+8a-/J	16D-\
+.	16F\JJ
+=30	=30
+8d-/L	16BB-\LL
+.	16A-\
+16b-/L	16G\
+16a-/JJ	16A-\JJ
+8b-\L	16D-\LL
+.	16A-\
+8dd-\	16G\
+.	16A-\JJ
+8g\	16BB-\LL
+.	16A-\
+8b-\J	16G\
+.	16A-\JJ
+=31	=31
+8e-\L	16C\LL
+.	16A-\
+16cc\L	16G\
+16b-\JJ	16A-\JJ
+8cc\L	16E-\LL
+.	16A-\
+8ee-\	16G\
+.	16A-\JJ
+8a-\	16C\LL
+.	16A-\
+8cc\J	16G\
+.	16A-\JJ
+=32	=32
+8f\L	16D-\LL
+.	16A-\
+16dd-\L	16G-\
+16cc\JJ	16A-\JJ
+8dd-\L	16F\LL
+.	16A-\
+8ff\	16E-\
+.	16A-\JJ
+8b-\	16D-\LL
+.	16A-\
+8dd-\J	16C\
+.	16A-\JJ
+=33	=33
+8g/L	16BB-\LL
+.	16D-\
+8b-/	16C\
+.	16E-\JJ
+8e-/	16D-\LL
+.	16F\
+8g/J	16E-\
+.	16D-\JJ
+[4a-/	16C\LL
+.	16E-\
+.	16D-\
+.	16F\JJ
+=34	=34
+*^	*
+16a-/LL]	4ryy	8E-\L
+16g/	.	.
+16a-/	.	16F\L
+16b-/JJ	.	16D-\JJ
+4.b-T/	2g\	8E-\L
+.	.	8D-\
+.	.	8E-\
+8a-/	.	8EE-\J
+=35	=35	=35
+8a-/L	4a-\	4AA-/
+16ee-/L	.	.
+16dd-/JJ	.	.
+8ee-/L	4ryy	4A-\
+8cc/	.	.
+8g/	4ryy	4r
+8b-/J	.	.
+=36	=36	=36
+4a-T/	4f\	8r
+.	.	16F\LL
+.	.	16E-\JJ
+[4ee-\	4ryy	8F\L
+.	.	8A-\
+16ee-/LL]	4ryy	8D-\
+16g-/	.	.
+16f/	.	8F\J
+16e-/JJ	.	.
+=37	=37	=37
+*v	*v	*
+8d-/L	4BB-/
+16dd-/L	.
+16cc/JJ	.
+8dd-/L	4A-\
+8b-/	.
+8f/	4r
+8a-/J	.
+=38	=38
+*^	*
+4gT/	4e-\	8r
+.	.	16E-\LL
+.	.	16D-\JJ
+[4dd-\	4ryy	8E-\L
+.	.	8G\
+16dd-/LL]	4ryy	8C\
+16f/	.	.
+16e-/	.	8E-\J
+16d-/JJ	.	.
+=39	=39	=39
+*v	*v	*
+16c/LL	16AA-\LL
+16cc/	16A-\
+16b-/	16G\
+16cc/JJ	16A-\JJ
+16a-/LL	16F\LL
+16cc/	16A-\
+16g/	16E-\
+16cc/JJ	16A-\JJ
+16f/LL	16D-\LL
+16cc/	16A-\
+16e-/	16C\
+16cc/JJ	16A-\JJ
+=40	=40
+16d-\LL	16BB-\LL
+16dd-\	16B-\
+16cc\	16A-\
+16dd-\JJ	16B-\JJ
+16b-\LL	16G\LL
+16dd-\	16B-\
+16a-\	16F\
+16dd-\JJ	16B-\JJ
+16g\LL	16E-\LL
+16dd-\	16B-\
+16f\	16D-\
+16dd-\JJ	16B-\JJ
+=41	=41
+8e-/L	8C\L
+16a-T/L	8c\J
+16g/JJ	.
+8a-/L	8r
+8cc/	16F\LL
+.	16G\JJ
+8f/	16A-\LL
+.	16G\
+8a-/J	16A-\
+.	16F\JJ
+=42	=42
+8dd-/L	8B-\L
+16gT/L	8BB-\J
+16f/JJ	.
+8g/L	8r
+8b-/	16E-\LL
+.	16F\JJ
+8e-/	16G\LL
+.	16F\
+8g/J	16G\
+.	16E-\JJ
+=43	=43
+*^	*
+8cc/L	8r	8A-\L
+8a-/J	8f\ 8d-\	8D-\
+4a-/	2e-\ 2B-\	8E-\
+.	.	8D-\
+4gT/xx	.	8E-\
+.	.	8EE-\J
+=44	=44	=44
+2.a-;/	2.e-\ 2.c\	2.AA-;/
+==|!	==|!	==|!
+*-	*-	*-
+!!!AFT: stage2
+!!!END: 1994/01/18/
+!!!KEY: 699335330
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

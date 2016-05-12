@@ -1,0 +1,104 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Von Gott will ich nicht lassen
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 191
+!!!SCT: BWV 73
+!!!YEC: Copyright 2001 by Craig Stuart Sapp
+!!!license: GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually by Craig Sapp
+**kern	**kern	**kern	**kern	**mroot	**mharm	**harm	**tsroot	
+!bass	!tenor	!alto	!soprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*	*	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*	*	*
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*a:	*a:	*a:	*a:	*a:	*a:	*	*
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A
+*	*	*	*	*	*	*Em:	*Em:
+4AA	4A	4c	4e	4AA	i	iv	A
+=1	=1	=1	=1	=1	=1	=1	=1
+4A	4c	4e	4a	4AA	i	.	A
+4G#	4B	4e	4b	4EE	Vb	Ib	E
+4A	4A	4e	4cc	4AA	i	iv	A
+4F#	4A	4d	4dd	4DD	Vb/-VII	VIIb	D
+=2	=2	=2	=2	=2	=2	=2	=2
+4G	4G	8d	2b	4GG	-VII	i7b	E
+.	.	8e	.	.	.	.	E
+4D#	4F#	4f#	.	4BB	Vb/V	Vb	B
+4E;	4B;	4e;	4g;	4EE;	v;	i	E
+*	*	*	*	*	*	*Am:	*Am:
+4C	4c	4e	4g	4CC	III	III	C
+=3	=3	=3	=3	=3	=3	=3	=3
+4Fn	4A	4c	4a	4FF	VI	iv7b	D
+4D	4F	4d	4a	4DD	iv	.	D
+4GG#	4E	8d	4b	2EE	V7b	V7b	E
+.	.	8fn	.	.	.	.	E
+4GG#	4E	8e	4b	.	.	.	E
+.	.	8d	.	.	.	.	E
+=4	=4	=4	=4	=4	=4	=4	=4
+2.AA;	2.A;	2.c;	2.e;	2.AA;	i;	i	A
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B
+4A	4c	4a	4ee	4AA	i	.	A
+=5	=5	=5	=5	=5	=5	=5	=5
+4F	4d	4a	4dd	4DD	iv	ivb	D
+*	*	*	*	*	*	*C:	*C:
+4D	4f	4a	4cc	4DD	iv7	ii7	D
+4G	4e	4g	4cc	4CC	IIIc	Ic	C
+4GG	4d	4g	4b	4GG	-VII	V	G
+=6	=6	=6	=6	=6	=6	=6	=6
+2.C;	2.e;	2.g;	2.cc;	2.CC;	III;	I	C
+4G	4d	4g	4b	4GG	-VII	V	G
+!!linebreak: 2
+=7	=7	=7	=7	=7	=7	=7	=7
+4E	4.c	4g	4cc	4CC	IIIb	Ib	C
+4D	.	4f	4dd	4BB	iiob	ii7	D
+.	[8B	.	.	.	.	.	G
+4C	8B]	4g	4ee	4CC	III	I	C
+.	8G	.	.	.	.	.	C
+4AA	4c	8a	4ee	4AA	i	vi7	A
+.	.	8g	.	.	.	.	A
+=8	=8	=8	=8	=8	=8	=8	=8
+2D	4c	8f#	2dd	2DD	V7/-VII	V7/V	D
+.	.	8e	.	.	.	.	D
+.	8B	4f#	.	.	.	.	D
+.	8A	.	.	.	.	.	D
+4GG;	4G;	4d;	4b;	4GG;	-VII;	V	G
+4G	4d	4g	4b	4GG	-VII	.	G
+=9	=9	=9	=9	=9	=9	=9	=9
+4E	4c	4g	4cc	4CC	IIIb	Ib	C
+4C	4G	4e	4b	4CC	III7	.	C
+4F	8A	4c	4a	4FF	VI	IV	F
+.	8B	.	.	.	.	.	F
+4E	4c	[4f	4a	4FF	VI7	.	F
+=10	=10	=10	=10	=10	=10	=10	=10
+4D	4d	8f]	4b	4BB	iiob	V7c	G
+.	.	8e	.	.	.	.	G
+4D#	4c	4f#	4a	4DD#	vii7/V	ib	C
+4E;	4B;	4e;	4g;	4EE;	v;	iii	E
+4BB	4G	4d	4fn	4GG	V7/III	V7b	G
+=11	=11	=11	=11	=11	=11	=11	=11
+4C	4G	4c	4e	4CC	III	I	C
+4F	8A	4d	4a	4DD	ivb	iib	D
+.	8B	.	.	.	.	.	D
+4E	8c	4e	4a	4AA	ic	vic	A
+.	16B	.	.	.	.	.	A
+.	16A	.	.	.	.	.	A
+*	*	*	*	*	*	*A:	*A:
+4EE	4B	4e	4g#	4EE	V	V	E
+=12	=12	=12	=12	=12	=12	=12	=12
+2.AA;	2.c#;	2.e;	2.a;	2.AA;	I;	I	A
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

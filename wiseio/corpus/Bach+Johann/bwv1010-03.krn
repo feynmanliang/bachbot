@@ -1,0 +1,560 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685///-1750///
+!!!CNT@EN: German
+!!!OTL: Courante from Cello Suite No. 4 in E-flat Major, BWV 1010
+!!!OPR: Cello Suite No. 4 in E-flat Major, BWV 1010
+!!!OMD: Courante
+!!!OMV: 3
+!!!ODT: 1723///
+!!!SCT: BWV 1010
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+**kern
+*Icello
+*>[A,A,B,B]
+*>norep[A,B]
+*>A
+*clefF4
+*k[b-e-a-]
+*M3/4
+*MM120
+8E-\
+=1
+8E-/L
+8BB-/
+8C/
+8AA-/
+8FF/
+8D/J
+=2
+Dq/
+(4E-\
+16EE-\LL)
+(16D\
+16E-\
+16F\JJ
+16G\LL
+16F\
+16G\
+16An\JJ)
+=3
+8B-\L
+8F\
+8G\
+8E-\
+8C\
+8An\J
+=4
+Anq/
+(4B-\
+8BB-/L)
+(8AA-/
+8GG/
+8E-/J)
+=5
+(12AA-/L
+12BB-/
+12C/J)
+(12C\L
+12D\
+12E-\J)
+(12F\L
+12G\
+12A-\J)
+=6
+(12GG/L
+12AA-/
+12BB-/J)
+(12BB-/L
+12C/
+12D/J)
+(12E-\L
+12F\
+12G\J)
+=7
+(12F\L
+12G\
+12A-\J
+12G\L)
+12F\
+12E-\J
+(12BB-/L
+12E-/
+12D/J)
+=8
+(4E-\
+16EE-/LL
+(16BB-/)
+16C/
+16D/JJ
+16E-\LL
+16D\
+16E-\
+16F\JJ)
+=9
+8G\L
+8E-\
+8G\
+8D\
+8C\
+8B-\J
+=10
+(B-q/
+(4An\)
+16EE-/LL)
+(16C/
+16D/
+16E-/JJ
+16F\LL
+16E-\
+16F\
+16G\JJ)
+=11
+8An\L
+8F\
+8A\
+8E-\
+8D\
+8c\J
+=12
+(4B-\
+16DD\LL)
+(16D\
+16E-\
+16F\JJ
+16G\LL
+16F\
+16G\
+16An\JJ)
+=13
+8B-\L
+8G\
+8B-\
+8F\
+8E-\
+8d\J
+=14
+8c\L
+8An\
+8c\
+8G\
+8F\
+8e-\J
+=15
+8d\L
+8B-\
+8d\
+8An\
+8G\
+8f\J
+=16
+8e-\L
+8c\
+8e-\
+8An\
+8F\
+8c\J
+=17
+8d\L
+8B-\
+8d\
+8G\
+8E-\
+8c\J
+=18
+4F\ [4An\
+12A\L]
+(12F\
+12G\J
+12A\L
+12B-\
+12c\J)
+=19
+4E-\ [4c\
+12c\L]
+(12An\
+12B-\J
+12c\L
+12d\
+12e-\J)
+=20
+*^
+8C\ 8An\	[4e-/
+8r	.
+12e-\L]	2r
+(12c\	.
+12d\J	.
+12e-\L	.
+12f\	.
+12g\J)	.
+=21	=21
+4g/	8An\
+.	8r
+(8f/L	2r
+8e-/	.
+8d/	.
+8c/J)	.
+*v	*v
+=22
+8d\L
+8B-\
+8E-\
+8c\
+8F\
+8An\J
+=23
+(4B-\
+16BB-\LL)
+(16B-\
+16An\
+16G\JJ
+16F\LL
+16G\
+16F\
+16E-\JJ)
+=24
+12D/L
+12BB-/
+12C/J
+(12D\L
+12E-\
+12F\J)
+(12F\L
+12G\
+12An\J)
+=25
+*^
+4r	8B-\L
+.	8D\J
+(4.C/	4.FF\
+8BB-/)	8r
+*v	*v
+=26
+2BB-/
+8r
+=:|!|:
+*>B
+8F\
+=27
+8F\L
+8D\
+8G\
+8E-\
+8AAn\
+8F\J
+=28
+(4D\
+8BB-/L)
+(16C/L
+16D/JJ
+16E-\LL
+16D\
+16E-\
+16F\JJ)
+=29
+8G\L
+8E-\
+8A-\
+8F\
+8BBn\
+8G\J
+=30
+(4E-\
+16CC\LL)
+(16G\
+16An\
+16Bn\JJ
+16c\LL
+16B\
+16c\
+16d\JJ)
+=31
+8e-\L
+8d\
+8e-\
+8c\
+8e-\
+8B-\J
+=32
+8e-\L
+8An\
+8e-\
+8G\
+8F\
+8e-\J
+=33
+8d\L
+8c\
+8d\
+8B-\
+8d\
+8An\J
+=34
+8d\L
+8G\
+8d\
+8F\
+8E-\
+8d-\J
+=35
+8c\L
+8B-\
+8c\
+8A-\
+8c\
+8G\J
+=36
+8c\L
+8F\
+8c\
+8E-\
+8D\
+8F\J
+=37
+8A-\L
+8G\
+8A-\
+8F\
+8A-\
+8E-\J
+=38
+8A-\L
+8D\
+8A-\
+8C\
+8BBn\
+8D\J
+=39
+8F\L
+8E-\
+8F\
+8D\
+8F\
+8C\J
+=40
+8F\L
+8BBn\
+8F\
+8AAn\
+8GG\
+8Bn\J
+=41
+8c\L
+8e-\
+8F\
+8d\
+8G\
+8Bn\J
+=42
+(4c\
+16CC/LL)
+(16GG/
+16AAn/
+16BBn/JJ
+16C/LL
+16BB/
+16C/
+16D/JJ)
+=43
+(16En\LL
+16D\
+16E\
+16F\JJ
+16G\LL
+16F\
+16G\
+16A-\JJ)
+(16B-\LL
+16A-\
+16B-\
+16G\JJ)
+=44
+(12A-\L
+12G\
+12F\J)
+(12F\L
+12E-\
+12D\J)
+(12D/L
+12C/
+12BB-/J)
+=45
+(16BB-/LL
+16C/
+16D/
+16E-/JJ
+16F\LL
+16E-\
+16F\
+16G\JJ)
+(16A-\LL
+16G\
+16A-\
+16F\JJ)
+=46
+(12G\L
+12F\
+12E-\J)
+(12E-\L
+12D\
+12C\J)
+(12C/L
+12BB-/
+12AA-/J)
+=47
+8AA-\L
+16c\L
+16B-\JJ
+(16B-\LL
+16A-\
+16G\
+16F\JJ)
+8En\L
+8B-\J
+=48
+8FF\L
+8B-\J
+(16A-\LL
+16G\
+16F\
+16E-\JJ)
+(8D\L
+8A-\J)
+=49
+8EE-\L
+8e-\J
+(16B-\LL
+16A-\
+16G\
+16F\JJ)
+8E-/L
+8AA-/J
+=50
+8GG\L
+8d-\J
+(16B-\LL
+16A-\
+16G\
+16F\JJ)
+8E-\L
+8d-\J
+=51
+8EE-\L
+8d-\J
+(16c\LL
+16B-\
+16A-\
+16G\JJ)
+8F\L
+8c\J
+=52
+8GG\L
+8c\J
+(16B-\LL
+16A-\
+16G\
+16F\JJ)
+8En\L
+8B-\J
+=53
+8FF\L
+8B-\J
+(16A-\LL
+16G\
+16F\
+16E-\JJ)
+8D\L
+8A-\J
+=54
+8EE-/L
+8A-/J
+(16G\LL
+16F\
+16E-\
+16D\JJ)
+8E-\L
+8G\J
+=55
+8AAn\L
+8C\
+8E-\
+8G-\
+8An\
+8c\J
+=56
+*^
+[4D/	8BB-\
+.	8r
+12D/L]	2r
+(12BB-/	.
+12C/J	.
+12D\L	.
+12E-\	.
+12F\J)	.
+=57	=57
+[4F/	8AA-\
+.	8r
+(12F\L]	2r
+12D\	.
+12E-\J	.
+12F\L	.
+12G\	.
+12A-\J)	.
+=58	=58
+[4A-/	8FF\ 8D\
+.	8r
+12A-\L]	2r
+(12F\	.
+12G\J	.
+12A-\L	.
+12B-\	.
+12c\J)	.
+=59	=59
+4c/	8D\
+.	8r
+(8B-\L	2r
+8A-\	.
+8G\	.
+8F\J)	.
+*v	*v
+=60
+8G\L
+8E-\
+8AA-\
+8F\
+8BB-\
+8D\J
+=61
+(4E-\
+16EE-/LL)
+(16BB-/
+16C/
+16D/JJ
+16E-\LL
+16D\
+16E-\
+16F\JJ)
+=62
+(12G\L
+12E-\
+12F\J)
+(12G\L
+12A-\
+12B-\J)
+(12B-\L
+12c\
+12d\J)
+=63
+*^
+8e-\L	4r
+8G\J	.
+(4.F/	4.BB-\
+8E-/)	8r
+=64	=64
+2E-/	4EE-\ 4BB-\
+.	4r
+8r	8r
+*v	*v
+==:|!
+*-
+!!!ENC: Craig Stuart Sapp
+!!!END: 2004/12/29/

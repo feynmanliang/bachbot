@@ -1,0 +1,99 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 57. Es wird schier der letzte Tag herkommen
+!!!SCT: BWV 310
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#]	*	*k[f#]	*k[f#]	*k[f#]
+*e:	*	*e:	*e:	*e:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+=1-	=1-	=1-	=1-	=1-
+4e/	Es	4B/	4G/	4.E\
+4e/	wird	4B/	8G/L	.
+.	.	.	8A/J	8F#\
+4b\	schier	8e/L	4B\	4G\
+.	.	8f#/J	.	.
+8b\L	der	4g/	4e\	4E\
+8cc\J	.	.	.	.
+=2	=2	=2	=2	=2
+4dd\	letz-	8a/L	4d\	8F#\L
+.	.	8f#/J	.	8D\J
+4b\	-te	8g/L	4d\	4G\
+.	.	8f#/J	.	.
+4g/	Tag	4e/	4.c\	8c\L
+.	.	.	.	8B\J
+8a/L	her-	8f#/L	.	8A\L
+8b/J	.	8g/J	8d\	8G\J
+=3	=3	=3	=3	=3
+2cc\	-kom-	8g/L	8c\L	4A\
+.	.	16f#/L	16d\L	.
+.	.	16e/JJ	16e\JJ	.
+.	.	4f#/	4d\	4D\
+2b;\	-men,	2g;/	2d;\	2G;\
+=4	=4	=4	=4	=4
+4a/	denn	4g/	4e\	4C#/
+4a/	die	8g/L	8.d\L	4D\
+.	.	8f#/J	.	.
+.	.	.	16c\Jk	.
+4g/	Bos-	8f#/L	4B\	4E\
+.	.	8e/J	.	.
+4a/	-heit	8d/L	4d\	4F#\
+.	.	8a/J	.	.
+=5	=5	=5	=5	=5
+4b\	hat	8a/L	4d\	4G\
+.	.	8g/J	.	.
+4a/	sehr	8g/L	4d\	4D\
+.	.	8f#/J	.	.
+4g/	zu-	4e/	8d\L	4E\
+.	.	.	8c#\J	.
+4f#/	-ge-	8A/L	8d\L	4F#\
+.	.	8d/J	8A\J	.
+=6	=6	=6	=6	=6
+2e/	-nom-	8d/L	8B/L	8G\L
+.	.	16c#/L	8G/	8E\
+.	.	16B/JJ	.	.
+.	.	4c#/	8E/	8A\
+.	.	.	16A/L	8AA\J
+.	.	.	16G/JJ	.
+2d;/	-men;	2A;/	2F#;/	2D;\
+=7	=7	=7	=7	=7
+4g/	was	4e/	4B\	4.E\
+4f#/	Chri-	4f#/	4B\	.
+.	.	.	.	8D#\
+8g/L	-stus	4e/	4B\	4E\
+8a/J	.	.	.	.
+4b\	hat	4e/	4B\	4GG/
+=8	=8	=8	=8	=8
+8a/L	vor	4e/	4c\	4AA/
+8g/J	.	.	.	.
+4f#/	ge-	4d#/	8c\L	4BB/
+.	.	.	16B\L	.
+.	.	.	16A\JJ	.
+2e;/	-sagt,	2e;/	2G;/	2C;/
+=9	=9	=9	=9	=9
+4f#/	das	4d#/	4.B\	8BB/L
+.	.	.	.	8AA/J
+8e/L	wird	8e/L	.	8GG/L
+8f#/J	.	8d#/J	8A/	8FF#/J
+4g/	jetzt	4.e/	4B\	4EE/
+4f#/	be-	.	8.B/L	4BB/
+.	.	8d#/	.	.
+.	.	.	16A/Jk	.
+=10	=10	=10	=10	=10
+1e;/	-klagt.	1B;/	1G#;/	1E;\
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/25/
+!!!KEY: 44740257
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

@@ -1,0 +1,150 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 273. Ein' feste Burg ist unser Gott
+!!!ONM: No. 273
+!!!OCL: Erk
+!!!SCA: BWV 80.8
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+!!!ONB: From the end of Cantata 80.
+**kern	**kern	**kern	**kern	**mharm	**mroot	**harm	**tsroot	
+!bass	!tenor	!alto	!sprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A
+*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]
+*D:	*D:	*D:	*D:	*D:	*D:	*	*
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+8d	8f#	4a	4dd	I	4DD	IVb	D
+8c#	8e	.	.	.	.	I	D
+=1	=1	=1	=1	=1	=1	=1	=1
+4B	8d	8a	4dd	vi7	4BB	.	G
+.	8e	8g	.	.	.	.	G
+8A	8f#	8f#	4dd	Ic	4DD	V7c	D
+8G	8g	8e	.	.	.	.	G
+8F#	4a	4d	8a	Ib	8DD	Ib	D
+8G	.	.	8b	IV	8GG	.	G
+8F#	4g	4e	4cc#	viib	4CC#	II	A
+8E	.	.	.	.	.	.	A
+=2	=2	=2	=2	=2	=2	=2	=2
+4F#	4f#	8A	8dd	Ib	8DD	V	D
+.	.	4a	8cc#	iii	8FF#	.	F#
+4E	8B	.	4b	V/V	4EE	vi	E
+.	8e	8g#	.	.	.	.	E
+4AA;	4c#;	4e;	4a;	V;	4AA;	Vb	A
+4BB	8F#	4b	4dd	vi	4BB	ii7	B
+.	8G#	.	.	.	.	.	B
+=3	=3	=3	=3	=3	=3	=3	=3
+8C#	4A	8e	4cc#	Vb	4AA	iii7	A
+8D	.	8f#	.	.	.	.	D
+4E	8e	4g	4b	ii	4EE	IV	E
+.	8d	.	.	.	.	.	E
+4F#	4c#	8f#	4a	iii	4FF#	.	F#
+.	.	8e	.	.	.	.	F#
+8G	8B	8d	8b	IV	8GG	V7	G
+8A	8c#	8c#	8a	V	8AA	.	A
+=4	=4	=4	=4	=4	=4	=4	=4
+8B	4d	4B	8g	IVb	4GG	I	G
+8G	.	.	8f#	.	.	.	G
+8A	8A	4c#	4e	V	4AA	.	A
+8AA	8G	.	.	.	.	.	A
+4D;	4F#;	4A;	4d;	I;	4DD;	.	D
+
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B
+
+!! Repeat from the beginning.
+
+!! Continuing.
+
+8D	8F#	4d	4d	I	4DD	IIb	D
+8E	8G	.	.	.	.	.	E
+=5	=5	=5	=5	=5	=5	=5	=5
+4F#	8A	8c#	4a	iii	4FF#	V	D
+.	8d	8f#	.	.	.	.	D
+4G#	8c#	4e	4b	Vb/V	4EE	II	E
+.	8B	.	.	.	.	.	E
+8A	4c#	8e	4a	V	4AA	V	A
+8D	.	8f#	.	.	.	.	D
+4E	4B	4e	4g#	V/V	4EE	.	E
+=6	=6	=6	=6	=6	=6	=6	=6
+!!linebreak: 2
+2AA;	2c#;	2e;	2a;	V;	2AA;	vi	A
+4BB	8F#	4d	4d	vi	4BB	IV	B
+.	8G	.	.	.	.	.	G
+4F#	4A	8d	4a	Ib	4DD	V7c	D
+.	.	8cn	.	.	.	.	D
+=7	=7	=7	=7	=7	=7	=7	=7
+4G	4d	8B	4b	IV	4GG	I	G
+.	.	8d	.	.	.	.	G
+4E	4e	4g	4cc#	viib	4CC#	iii	A
+4D;	4A;	4f#;	4dd;	I;	4DD;	vi7	D
+4F#	4A	4f#	4cc#	iii	4FF#	Vb	F#
+=8	=8	=8	=8	=8	=8	=8	=8
+4BB	8A	4f#	4dd	vi7	4BB	vi7b	B
+.	8G#	.	.	.	.	.	B
+4C#	4A	8e	4cc#	Vb	4AA	V7/V	A
+.	.	8a	.	.	.	.	A
+4D	4A	4f#	2b	vi7b	4BB	V	B
+4E	4G#	8e	.	V/V	4EE	ii	E
+.	.	8d	.	.	.	.	E
+=9	=9	=9	=9	=9	=9	=9	=9
+4AA;	4E;	4c#;	4a;	V;	4AA;	ii7b	A
+8E	8Gn	4e	4b	ii	4EE	V7/IV	E
+8F#	8A	.	.	.	.	.	E
+4G	8B	8d	4b	IV	4GG	V7b/ii	E
+.	8c#	8e	.	.	.	.	E
+4D	8d	4f#	4a	I	4DD	ii	D
+.	8cn	.	.	.	.	.	D
+=10	=10	=10	=10	=10	=10	=10	=10
+4D#	4B	4f#	8b	Vb/ii	4BB	VI	B
+.	.	.	8a	.	.	.	B
+4E	4B	8f#	4g	ii	4EE	vi7	E
+.	.	8e	.	.	.	.	E
+4BB;	4B;	4d#;	4f#;	VI;	4BB;	V7c	B
+4BB	8B	4f#	4ddn	vi	4BB	ii7	B
+.	8A	.	.	.	.	.	B
+=11	=11	=11	=11	=11	=11	=11	=11
+8E	8G	4e	4cc#	viib	4CC#	V7	A
+8F#	8A	.	.	.	.	.	A
+8G	4B	8dn	4b	IV	8GG	I	E
+8E	.	8g	.	ii	8EE	.	E
+8C#	8e	8g	4a	V7b	8AA	IV	A
+8AA	8c#	16f#	.	V	8AA	.	A
+.	.	16e	.	.	.	.	A
+8D	4d	4f#	8b	I	4DD	V7	D
+8C#	.	.	8a	.	.	.	D
+=12	=12	=12	=12	=12	=12	=12	=12
+8BB	4d	8g	8g	IVb	8GG	I	G
+8GG	.	8B	8f#	IV7	8GG	.	G
+4AA	8A	4c#	4e	V	4AA	.	A
+.	8G	.	.	.	.	.	A
+4DD;	4F#;	4A;	4d;	I;	4DD;	.	D
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

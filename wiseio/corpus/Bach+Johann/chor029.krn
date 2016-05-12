@@ -1,0 +1,120 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Freu dich sehr, o meine Seele
+!!!SCT:	BWV 32/6
+!!!PC#:	29
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*G:	*G:	*G:	*G:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+=1-	=1-	=1-	=1-
+4G	4B	4d	4g
+4F#	4A	4d	4a
+4G	[4G	4d	4b
+4D	8GL]	4d	4a
+.	8F#J	.	.
+=2	=2	=2	=2
+4E	4G	8dL	4g
+.	.	8c#J	.
+8F#L	4A	4d	4f#
+8GJ	.	.	.
+4A	8AL	4c#	4e
+.	8GJ	.	.
+4D;	4F#;	4A;	4d;
+=3	=3	=3	=3
+4E	4B	4e	4g
+4F#	4A	4d	4a
+4G	8GL	4d	4b
+.	8F#J	.	.
+4AA	8EL	4a	4cc
+.	8F#J	.	.
+=4	=4	=4	=4
+8BBL	4.G	4d	4b
+8CJ	.	.	.
+4D	.	4d	4a
+.	8F#	.	.
+2GG;	2B;	2d;	2g;
+=5:|!	=5:|!	=5:|!	=5:|!
+*>B	*>B	*>B	*>B
+8GL	4d	4g	4b
+8F#J	.	.	.
+4E	4e	4g	4cc
+4D	4A	4f#	4dd
+8EL	4e	4g	4cc
+8F#J	.	.	.
+=6	=6	=6	=6
+4G	4d	4.g	4b
+4D	4d	.	4a
+.	.	8f#	.
+2GG;	2d;	2g;	2b;
+=7	=7	=7	=7
+8GL	4B	4g	4dd
+8F	.	.	.
+8E	4B	4g	4dd
+8DJ	.	.	.
+4C	8cL	[4g	4ee
+.	8BJ	.	.
+4D	4A	8gL]	4dd
+.	.	8f#J	.
+=8	=8	=8	=8
+8EL	8GL	4e	4cc
+8F#J	8AJ	.	.
+4G	8BL	8dL	4b
+.	8c#J	8eJ	.
+2D;	2d;	2f#;	2a;
+=9	=9	=9	=9
+4G	8dL	[4g	4b
+.	8cnXJ	.	.
+4GG	4B	8gL]	4dd
+.	.	8f#J	.
+4AA	4c	8eL	4cc
+.	.	8f#J	.
+4BB	4d	8gL	8bL
+.	.	8f#J	8aJ
+=10	=10	=10	=10
+8CL	8eL	4e	4g
+8BBJ	8dJ	.	.
+4AA	4c	4f#	4a
+8GGL	2d	2g	2b
+8AA	.	.	.
+8BB	.	.	.
+8GGJ	.	.	.
+=11	=11	=11	=11
+2C;	2c;	2e;	2g;
+4G	4d	4g	8bL
+.	.	.	8ccJ
+4F#	4d	4a	4dd
+=12	=12	=12	=12
+8EL	8GL	4g	4cc
+8F#J	8AJ	.	.
+4G	8BL	8dL	4b
+.	8cJ	8eJ	.
+4C	4d	4f#	4a
+8BBL	4d	4g	4b
+8CJ	.	.	.
+=13	=13	=13	=13
+2D	4.d	4g	2a
+.	.	4f#	.
+.	8c	.	.
+2GG;	2B;	2d;	2g;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

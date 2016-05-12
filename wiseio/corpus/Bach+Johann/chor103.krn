@@ -1,0 +1,104 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Nun ruhen alle W&auml;lder
+!!!SCT:	BWV 13/6
+!!!PC#:	103
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*B-:	*B-:	*B-:	*B-:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4BB-	4f	4b-	4dd
+=1	=1	=1	=1
+8E-L	4e-	4g	4b-
+8DJ	.	.	.
+4C	4e-	4a	4cc
+4BB-	4f	4b-	8ddL
+.	.	.	8ee-J
+4AA	4c	4f	4ff
+=2	=2	=2	=2
+4GG	4B-	4g	2ee-
+4AA	4c	4f	.
+4BB-;	4B-;	4f;	4dd;
+8BB-L	4B-	8fL	8ddL
+8CJ	.	8e-J	8ee-J
+=3	=3	=3	=3
+8DL	4B-	8dL	4ff
+8C	.	8e-	.
+8D	4B-	8f	4ff
+8E-J	.	8gJ	.
+4F	4f	4a	4cc
+4D	4f	4a	4dd
+=4	=4	=4	=4
+2G	4f	2g	2b-
+.	4e	.	.
+4F;	4A;	4c;	4cc;
+4D	4A	4d	4f
+=5	=5	=5	=5
+4G	4B-	4d	4b-
+8FL	4A	4f	4cc
+8E-XJ	.	.	.
+8DL	4B-	4f	4dd
+8CJ	.	.	.
+4BB-	4B-	4f	8ddL
+.	.	.	8ee-J
+=6	=6	=6	=6
+2.F;	2.A;	2.f;	2.cc;
+4F#	4d	4a	4dd
+=7	=7	=7	=7
+4G	4d	4g	4b-
+4A	4c	4f	4cc
+4B-	8B-L	4f	8ddL
+.	8cJ	.	8ee-J
+4B	4d	4g	4ff
+=8	=8	=8	=8
+4c	4d	2g	2ee-
+4C	4c	.	.
+4G;	4B;	4g;	4dd;
+4B-	4B-	4f	8ddL
+.	.	.	8ee-J
+=9	=9	=9	=9
+8AL	8cL	8fL	4ff
+8GJ	8B-J	8gJ	.
+8FL	8AL	8aL	4ff
+8GJ	8GJ	8b-J	.
+4A	8FL	8ccL	4cc
+.	8GJ	8b-J	.
+4F	4A	8aL	4dd
+.	.	8gJ	.
+=10	=10	=10	=10
+4D	4d	4f	2b-
+4E	4c	4g	.
+4F;	4c;	4f;	4a;
+4E-	4A	4c	4f
+=11	=11	=11	=11
+4D	4B-	4f	4b-
+4C	4E-	8gL	4cc
+.	.	8aJ	.
+4BB-	8FL	4b-	4dd
+.	8GJ	.	.
+4C	4A	8aL	4ee-
+.	.	8gJ	.
+=12	=12	=12	=12
+8DL	4B-	4f	4dd
+8E-J	.	.	.
+4F	4A	8fL	4cc
+.	.	8e-J	.
+4BB-;	4F;	4d;	4b-;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

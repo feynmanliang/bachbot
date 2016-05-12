@@ -1,0 +1,106 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Chorale Harmonizations
+!!!ONR: Nr. 161
+!!!OTL: Uns ist ein Kindlein heut' gebor'n
+!!!SCT: BWV 414
+!!!YEC: Copyright 1996, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Icalto	*Isoprn
+*	*	*Ialto	*
+*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*M4/4	*M4/4	*M4/4	*M4/4
+*clefF4	*clefGv2	*clefG2	*clefG2
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A
+4GG/	4d\	4g/	4b\
+=1	=1	=1	=1
+4G\	4d\	4g/	8b\L
+.	.	.	8cc\J
+4F#\	4d\	4a/	4dd\
+4G\	4d\	4g/	4b\
+4E\	8d\L	4g/	4g/
+.	8c\J	.	.
+=2	=2	=2	=2
+4F\	4c\	8f/L	4a;/
+.	.	8e/J	.
+4G\	4G/	4d/	4b\
+4C;/	4G;/	4e;/	4cc;\
+4GG/	4G/	4d/	4b\
+=3	=3	=3	=3
+4D\	4F#/	8d/L	4a/
+.	.	8c/J	.
+8E\L	4G/	4B/	4g/
+8D\J	.	.	.
+8C\L	2c\	2e/	4.g/
+8D\	.	.	.
+8E\	.	.	.
+8F#\J	.	.	8a/
+=4	=4	=4	=4
+4G\	8B/L	4d/	4b\
+.	8A/J	.	.
+8BB/L	4G/	4d/	4b\
+8C/J	.	.	.
+4D\	4G/	4d/	8a/L
+.	.	.	8g/J
+4D\	4F#/	8d/L	4a/
+.	.	8c/J	.
+=5	=5	=5	=5
+2.GG;/,	2.D;/,	2.B;/,	2.g;/,
+=5b:|!@	=5b:|!@	=5b:|!@	=5b:|!@
+*>B	*>B	*>B	*>B
+4GG/,	4d\,	4g/,	4b\,
+=6	=6	=6	=6
+4D\	8d\L	4f#/	4a/
+.	8c\J	.	.
+4D#\	4B\	4f#/	4b\
+4E\	4B\	8e/L	4g/
+.	.	8d/J	.
+8A\L	4A/	4c#/	4e/
+8G\J	.	.	.
+=7	=7	=7	=7
+4F#\	4A/	4.d/	4f#/
+4E\	4G/	.	4g/
+.	.	8c#/	.
+4D;\	4F#;/	4d;/	4a;/
+4BB/	4F#/	4d#/	4b\
+=8	=8	=8	=8
+8E\L	4G/	4B/	4g/
+8D\J	.	.	.
+8E\L	4c\	4e/	4g/
+8F#\J	.	.	.
+8G\L	8B\L	4d/	4.g/
+8A\	8c\	.	.
+8G\	8B\	8e/L	.
+8F#\J	8A\J	8f#/J	8a/
+=9	=9	=9	=9
+4E\	4G/	4g/	4b\
+8BB/L	4G/	4d/	4b\
+8C/J	.	.	.
+4D\	4G/	4d/	8a;/L
+.	.	.	8g/J
+4D\	4F#/	8d/L	4a/
+.	.	8c/J	.
+=10	=10	=10	=10
+2.GG;/	2.D;/	2.B;/	2.g;/
+==@	==@	==@	==@
+*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!PDT: 1784//
+!!!PPP: Leipzig
+!!!AGN: chorale harmonization
+!!!AST: baroque, choral
+!!!AMT: simple quadruple
+!!!YOR: Bach Gesellschaft, xxxix
+!!!AIN: bass calto soprn tenor vox
+!!!EEV: 1.0
+!!!RDT: 1994 August 08
+!!!YER: 1996 July 11
+!!!YEN: United States of America
+!!!EFL: 161/185
+!!!ENC: S. Rasmussen
+!!!EED: W.B. Hewlett
+!!!VTS: 3579370512

@@ -1,0 +1,151 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 90. Hilf, Gott, lass mir's gelingen
+!!!SCT: BWV 343
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**silbe	**kern	**silbe	**kern	**silbe
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[ALTO]	*I:[TENORE]	*I:[TENORE]	*I:[BASSO]	*I:[BASSO]
+*>[A,A,B]	*	*>[A,A,B]	*	*>[A,A,B]	*	*>[A,A,B]	*
+*>A	*	*>A	*	*>A	*	*>A	*
+*clefG2	*	*clefG2	*	*clefGv2	*	*clefF4	*
+*k[b-]	*	*k[b-]	*	*k[b-]	*	*k[b-]	*
+*d:	*	*d:	*	*d:	*	*d:	*
+*M3/4	*	*M3/4	*	*M3/4	*	*M3/4	*
+4g/	Hilf,die	8d/L	.	4B-\	.	4G\	.
+.	.	8e/J	.	.	.	.	.
+=1	=1	=1	=1	=1	=1	=1	=1
+2a/	Gott,Wort'	2f/	.	2c\	.	2F\	.
+4g/	lassin	8f/L	.	8.c\L	.	4C/	.
+.	.	8e/J	.	.	.	.	.
+.	.	.	.	16B-\Jk	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2
+2f/	mir'sReim'	4d/	.	(4A/	.	2D\	.
+.	.	4A/	.	4.F/)	.	.	.
+4d/	ge-zu	4B-/	.	.	.	4BB-/	.
+.	.	.	.	8G/	.	.	.
+=3	=3	=3	=3	=3	=3	=3	=3
+2.f/	-lin-brin-	8c/L	.	2A/	.	2AA/	.
+.	.	8e-/	.	.	.	.	.
+.	.	8d/	.	.	.	.	.
+.	.	8c/J	.	.	.	.	.
+.	.	4Bn/	.	8G/L	.	4D\	.
+.	.	.	.	8F/J	.	.	.
+=4	=4	=4	=4	=4	=4	=4	=4
+2g;/	-gen,-gen,	2e;/	.	2c;\	.	2C;/	.
+4a/	duzu	8e/L	duzu	4c\	.	4AA/	.
+.	.	8f#/J	.	.	.	.	.
+=5	=5	=5	=5	=5	=5	=5	=5
+2b-\	ed-Lob	8g/L	ed-Lob	4.d\	.	2GG/	.
+.	.	8f#/J	.	.	.	.	.
+.	.	[2g/	.	.	.	.	.
+.	.	.	.	8c\L	.	.	.
+4dd\	-lerdem	.	.	8B-\	.	4BB-/	.
+.	.	.	.	8A\J	.	.	.
+=6	=6	=6	=6	=6	=6	=6	=6
+2cc\	Sch\o3-Na-	4.g/]	.	8G/L	.	2E-\	.
+.	.	.	.	8F#/J	.	.	.
+.	.	.	.	4G/	.	.	.
+.	.	8f#/	.	.	.	.	.
+4b-\	-pfer-men	4g/	-lerdem	4d\	.	4D\	.
+=7	=7	=7	=7	=7	=7	=7	=7
+2.a/	mein,dein,	2g/	Sch\o3-Na-	4e-\	.	4C/	.
+.	.	.	.	8d\L	.	4D\	.
+.	.	.	.	8A\J	.	.	.
+.	.	4f#/	-pfer-men	8d\L	.	4DD/	.
+.	.	.	.	8c\J	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8
+2g;/	.	2d;/	mein,dein,	2B-;\	.	2GG;/	.
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*	*>B	*	*>B	*	*>B	*
+4cc\	dass	[4g/	dass	8c\L	dass	4E\	.
+.	.	.	.	8B-\J	.	.	.
+=9	=9	=9	=9	=9	=9	=9	=9
+2cc\	ich	8g/L]	.	4A/	ich	4F\	.
+.	.	8f/J	.	.	.	.	.
+.	.	8f/L	ich	4B-\	.	4G\	.
+.	.	8e/J	.	.	.	.	.
+4cc\	mag	[4f/	mag	[4c\	mag	4A\	mag
+=10	=10	=10	=10	=10	=10	=10	=10
+2dd\	fr\o3h-	8f/L]	.	4c\]	.	2B-\	fr\o3h-
+.	.	8e/J	.	.	.	.	.
+.	.	8f/L	fr\o3h-	4B-\	fr\o3h-	.	.
+.	.	8g/J	.	.	.	.	.
+4cc\	-lich	8a/L	-lich	4c\	-lich	8F\L	-lich
+.	.	8g/J	.	.	.	8E\J	.
+=11	=11	=11	=11	=11	=11	=11	=11
+4b-\	he-	2f/	he-	2d\	he-	8D/L	he-
+.	.	.	.	.	.	8C/J	.
+4a/	.	.	.	.	.	4BB-/	.
+4g/	-ben	8f/L	-ben	8G/L	-ben	4C/	-ben
+.	.	8e/J	.	8c/J	.	.	.
+=12	=12	=12	=12	=12	=12	=12	=12
+2f;/	an,	2c;/	.	2A;/	.	2FF;/	.
+4f/	von	4d/	.	8B-\L	.	8BB-/L	.
+.	.	.	.	8c\J	.	8AA/J	.
+=13	=13	=13	=13	=13	=13	=13	=13
+2b-\	dei-	2g/	.	8d\L	.	4GG/	.
+.	.	.	.	8B-\J	.	.	.
+.	.	.	.	4.e-\	.	4G\	.
+4a/	-nem	4a/	.	.	.	4F#\	.
+.	.	.	.	8d\	.	.	.
+=14	=14	=14	=14	=14	=14	=14	=14
+2b-\	Wort	8a/L	.	2d\	.	4G\	.
+.	.	8d/J	.	.	.	.	.
+.	.	4g/	.	.	.	8F\L	.
+.	.	.	.	.	.	8E-\J	.
+4cc\	zu	4a/	.	4e-\	.	8D/L	.
+.	.	.	.	.	.	8C/J	.
+=15	=15	=15	=15	=15	=15	=15	=15
+2dd\	sin-	8b-/L	.	4f\	.	4BB-/	.
+.	.	8a/J	.	.	.	.	.
+.	.	4.g/	.	8e-\L	.	4B-\	.
+.	.	.	.	8d\J	.	.	.
+4cc\	.	.	.	8e-\L	.	4A\	.
+.	.	8f#/	.	8c\J	.	.	.
+=16	=16	=16	=16	=16	=16	=16	=16
+4.b-\	.	4g/	.	8d\L	.	4G\	.
+.	.	.	.	8e-\J	.	.	.
+.	.	4.d/	.	8f\L	.	4F\	.
+8a/	.	.	.	8F\J	.	.	.
+4g/	.	.	.	4G/	.	4E-\	.
+.	.	8c/	.	.	.	.	.
+=17	=17	=17	=17	=17	=17	=17	=17
+2f#;/	-gen,	2d;/	.	2A;/	.	2D;\	.
+4a/	Herr,	4f#/	.	[4d\	Herr,	4D\	.
+=18	=18	=18	=18	=18	=18	=18	=18
+2b-\	du	2g/	.	8d\L]	.	4.G\	du
+.	.	.	.	8B-\J	.	.	.
+.	.	.	.	4e-\	du	.	.
+.	.	.	.	.	.	8E-\	.
+4dd\	wollst	4f/	.	8d\L	wollst	[4B-\	wollst
+.	.	.	.	8B-\J	.	.	.
+=19	=19	=19	=19	=19	=19	=19	=19
+2cc\	mir	8e/L	.	4G/	.	4B-\]	.
+.	.	8d/	.	.	.	.	.
+.	.	8e/	.	8c\L	.	4A\	mir
+.	.	8f#/J	.	8A\J	.	.	.
+4b-\	bei-	4g/	.	8B-\L	.	4G\	.
+.	.	.	.	8d\J	.	.	.
+=20	=20	=20	=20	=20	=20	=20	=20
+2.a/	-stah'n.	2g/	.	8e-\L	.	4C/	.
+.	.	.	.	8d\	.	.	.
+.	.	.	.	8c\	.	4AA/	.
+.	.	.	.	8B-\	.	.	.
+.	.	4f#/	.	8c\	.	4D\	.
+.	.	.	.	8A\J	.	.	.
+=21	=21	=21	=21	=21	=21	=21	=21
+2g;/	.	2d;/	.	2Bn;\	.	2GG;/	.
+==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/06/10/
+!!!KEY: 4115313150
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

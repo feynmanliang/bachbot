@@ -1,0 +1,114 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 36. Das alte Jahr vergangen ist
+!!!SCT: BWV 289
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#]	*	*k[f#]	*k[f#]	*k[f#]
+*e:	*	*e:	*e:	*e:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4b\	Das?	4f#/	4d#\	8B\L
+.	.	.	.	8A\J
+=1	=1	=1	=1	=1
+4b\	al-	4g/	4e\	8G\L
+.	.	.	.	8E\J
+8a/L	-te	4e/	4A/	4C#/
+8g/J	.	.	.	.
+4f#/	Jahr	4d/	4A/	4D\
+4b\	ver-	4g/	4d\	8BB/L
+.	.	.	.	8GG/J
+=2	=2	=2	=2	=2
+8a/L	-gan-	4f#/	4d\	4D\
+8g/J	.	.	.	.
+4f#/	-gen	4f#/	8c\L	4D#\
+.	.	.	8B\J	.
+4g;/	ist,	4e;/	4B;\	4E;\
+4b\	wir	4g#/	4e\	8E\L
+.	.	.	.	8Dn\J
+=3	=3	=3	=3	=3
+4b\	dan-	4e/	4e\	4C/
+8a/L	-ken	4e/	4A/	4C#/
+8g/J	.	.	.	.
+4f#/	dir,	8e/L	4A/	4D\
+.	.	8d/J	.	.
+4b\	Herr	4d/	4Fn/	4GG#/
+=4	=4	=4	=4	=4
+8a/L	Je-	4c/	4E/	4AA/
+8g/J	.	.	.	.
+4f#/	-su	8c/L	4F#/	4DD#/
+.	.	8B/J	.	.
+4g;/	Christ,	4B;/	4E;/	4EE;/
+4b\	dass	4g/	4B\	4E\
+=5	=5	=5	=5	=5
+4cc#\	du	4g/	4A/	4AA/
+4dd#\	uns	4f#/	4B\	4A\
+4ee\	in	4e/	4B\	4G#\
+8b\L	so	4e/	4B\	4Gn\
+8cc#\J	.	.	.	.
+=6	=6	=6	=6	=6
+4dd\	gro-	4f#/	4B\	8F#\L
+.	.	.	.	8E\J
+4cc#\	-sser	4f#/	8A#\L	4F#\
+.	.	.	8e\J	.
+4b;\	G'fahr	4f#;/	4d;\	4BB;/
+4cc#\	be-	4f#/	4c#\	4AA#/
+=7	=7	=7	=7	=7
+4dd\	-h\u3-	4f#/	8c#\L	4BB/
+.	.	.	8B\J	.
+4cc#\	-tet	4f#/	8B/L	4F#\
+.	.	.	8A/J	.
+4b\	hast	8f#/L	4B\	8G\L
+.	.	8d/J	.	8F#\J
+4b\	lang'	8g/L	4B\	8E\L
+.	.	8f#/J	.	8D\J
+=8	=8	=8	=8	=8
+8a/L	Zeit	4e/	8c\L	4C/
+8g/J	.	.	8B\J	.
+4f#/	und	8d/L	4A/	4D\
+.	.	8c/J	.	.
+4g;/	Jahr;	4B;/	4G;/	4GG;/
+4a/	dass	4e/	4G/	4C#/
+=9	=9	=9	=9	=9
+4a/	du	4d/	4F#/	4D\
+4b\	uns	4d/	8G/L	4GG/
+.	.	.	8F#/J	.
+8a/L	in	4c#/	4E/	4AA/
+8g/J	.	.	.	.
+4f#/	so	4d#/	4B\	4BB/
+=10	=10	=10	=10	=10
+4g/	gro-	4e/	4B\	8EE/L
+.	.	.	.	8FF#/J
+4g/	-sser	4e/	4B\	8GG/L
+.	.	.	.	8AA/J
+4f#;/	G'fahr	(8e/L	4B;\	4BB;/
+.	.	8d;/J)	.	.
+4cc#\	be-	4f#/	4c#\	4AA#/
+=11	=11	=11	=11	=11
+4dd\	-h\u3-	4f#/	4B\	4BB/
+4cc#\	-tet	4g/	4A#/	4E\
+4b\	hast	4f#/	8B\L	8D/L
+.	.	.	8c#\J	8C#/J
+4f#/	lang'	4f#/	8d\L	8BB/L
+.	.	.	8c#\J	8AA/J
+=12	=12	=12	=12	=12
+4b\	Zeit	4f#/	4B\	4GG#/
+4b\	und	4e#/	4c#\	4C#/
+4a#;/	Jahr.	4f#;/	4c#;\	4FF#;/
+==|!	==|!	==|!	==|!	==|!
+!!!RNB1: *) Strictly speaking, its key signature classifies this chorale
+!!!RNB2: in notational "Locrian" mode!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/16/
+!!!KEY: 1486830822
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

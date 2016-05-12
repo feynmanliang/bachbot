@@ -1,0 +1,199 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-Coethen
+!!!OTL: Brandenburgische Konzerte F
+!!!XEN: Brandenburg Concerto No. 1 in F major
+!!!OMV: Movement 5.
+!!!SCT: BWV 1046
+!!!YEC: Copyright 1994, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!! For the following instrumentation: Oboe I & II, Fagotto
+!! Trio a 2 Oboi e Fagotto.
+**kern	**kern	**kern
+*ICww	*ICww	*ICww
+*Ifagot	*Ioboe	*Ioboe
+!Fagotto	!Oboe II	!Oboe I
+*>[A,B,A,C,D,E,D,F]	*>[A,B,A,C,D,E,D,F]	*>[A,B,A,C,D,E,D,F]
+*>A	*>A	*>A
+*k[b-]	*k[b-]	*k[b-]
+*d:	*d:	*d:
+*M3/4	*M3/4	*M3/4
+*MM106	*MM106	*MM106
+*clefF4	*clefG2	*clefG2
+=1-	=1-	=1-
+4d\	2a/	2ff\
+4c\	.	.
+4B-\	4b-/	4gg\
+=2	=2	=2
+4c\	2g/	2ee\
+4B-\	.	.
+4A\	4a/	4ff\
+=3	=3	=3
+4B-\	4f/	4dd\
+4A\	2dd\	2bb-\
+4G\	.	.
+=4	=4	=4
+4c\	(4.eet\	(4.ggT\
+4C/	.	.
+.	16dd\LL	16ff\LL
+.	16ee\JJ	16gg\JJ
+4F\	4ff\)	4aa\)
+=5	=5	=5
+4B-\	2f/	2dd\
+4A\	.	.
+4G\	4g/	4ee\
+=6	=6	=6
+4A\	2e/	4cc#\
+4G\	.	8b/L
+.	.	8a/J
+4F\	8a/L	4dd\
+.	8b/J	.
+=7	=7	=7
+4E\	8cc#\L	8ee\L
+.	8dd\J	8ff\J
+4D\	4.ddT\	4.ffT\
+4DD/	.	.
+.	8cc#\	8ee\
+*>B	*>B	*>B
+=8	=8	=8
+4AA/	2.cc#\	2.ee\
+8A\L	.	.
+8B\	.	.
+8c#\	.	.
+8A\J	.	.
+=||	=||	=||
+*>C	*>C	*>C
+4AA/	2.cc#\	2.ee\
+4C#/	.	.
+4E\	.	.
+=||	=||	=||
+*>D	*>D	*>D
+4A\	2cc#\	2ee\
+4G\	.	.
+4F\	4dd\	4ff\
+=10	=10	=10
+4E\	4ee\	2gg\
+4A\	[2cc\	.
+4AA/	.	4ee\
+=11	=11	=11
+4D\	4cc\]	4ff\
+4G\	4.bt\	4dd\
+4GG/	.	4gg\
+.	16a/LL	.
+.	16b/JJ	.
+=12	=12	=12
+[2.C/	4cc\	(8ff\L
+.	.	8ee\
+.	4g/	8dd\
+.	.	8ee\)
+.	8e/L	8cc\
+.	8f/J	8dd\J
+=13	=13	=13
+2.C/]	8g/L	8ee\L
+.	8a/J	8ff#\J
+.	(4.at/	(4.ff#t\
+.	16g/LL	16ee\LL
+.	16a/JJ)	16ff#\JJ)
+=14	=14	=14
+4BB-/	(8b-\L	(8gg\L
+.	8cc\J)	8aa\J)
+4B-\	(4.ccT\	(4.aat\
+4A\	.	.
+.	16b-\LL	16gg\LL
+.	16cc\JJ)	16aa\JJ)
+=15	=15	=15
+4G\	4dd\	4bb-\
+4C/	4b-\	4gg\
+4D\	4a/	4ff#\
+=16	=16	=16
+4GG/	2.b-\	2.gg\
+4G\	.	.
+4F\	.	.
+=17	=17	=17
+4E\	[2.gg\	2.bb-\
+4D\	.	.
+4C/	.	.
+=18	=18	=18
+4FF/	2.gg\]	[2.aa\
+4F\	.	.
+4E\	.	.
+=19	=19	=19
+4D\	[2.ff\	2.aa\]
+4C/	.	.
+4BB/	.	.
+=20	=20	=20
+4E\	4ff\]	4.ggT\
+4D\	8ee\L	.
+.	8dd\J	16ff\LL
+.	.	16gg\JJ
+4C#/	4ee\	4aa\
+=21	=21	=21
+4D/	2a/	2ff\
+4C/	.	.
+4BB-/	4b-/	4gg\
+=22	=22	=22
+4C/	2g/	2ee\
+4BB-/	.	.
+4AA/	4a/	4ff\
+=23	=23	=23
+4BB-/	4f/	4dd\
+4AA/	2dd\	2bb-\
+4GG/	.	.
+=24	=24	=24
+4C/	(4.eet\	(4.ggT\
+4CC/	.	.
+.	16dd\LL	16ff\LL
+.	16ee\JJ	16gg\JJ
+4FF/	4ff\)	4aa\)
+=25	=25	=25
+4BB-/	2f/	2dd\
+4AA/	.	.
+4GG/	4g/	4ee\
+=26	=26	=26
+4AA/	2e/	8cc#\L
+.	.	8ee\J
+4C#/	.	4.gg\
+4AA/	4cc#t\	.
+.	.	8aa\
+=27	=27	=27
+4D\	8dd/L	8gg\L
+.	8a/	8ff\
+4A\	8g/	8ee\
+.	8f/	8dd\
+4AA/	8g/	8ee\
+.	8e/J	8cc#\J
+*>E	*>E	*>E
+=28	=28	=28
+4DD/	2.f/	2.dd\
+8D\L	.	.
+8E\	.	.
+8F\	.	.
+8D\J	.	.
+=||	=||	=||
+*>F	*>F	*>F
+2.DD/	2.f/	2.dd\
+==	==	==
+!! Menuetto da Capo, e poi la Polacca.
+*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!ODE: His Royal Highness Christian Ludwig, Margrave of Brandenburg.
+!!!ODT: 1717//
+!!!OPC: ?Coethen; ?Cothen; ?Co2then
+!!!PPR: Peters
+!!!PDT: 1850
+!!!PPP: Leipzig
+!!!AGN: concerto grosso
+!!!AST: baroque, orchestral
+!!!AMT: simple triple
+!!!SCA: Bach-Werke-Verzeichnis
+!!!YOR: Bach Gesellschaft, xix,1
+!!!YOY: 1871; although imprint says 1869
+!!!AIN: fagot; oboe
+!!!EEV: 1.0
+!!!RDT: 1994 February 19
+!!!YER: 1994 October 22
+!!!YEN: United States of America
+!!!EFL: 5/7
+!!!EED: W.B. Hewlett
+!!!VTS: 1887473063

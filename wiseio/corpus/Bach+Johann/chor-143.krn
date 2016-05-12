@@ -1,0 +1,82 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 143. Nun sich der Tag geendet hat
+!!!SCT: BWV 396
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*a:	*	*a:	*a:	*a:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4ee\	Nun	4a/	4c\	8AA/L
+.	.	.	.	8BB/J
+=1	=1	=1	=1	=1
+4a/	sich	4e/	4c\	8C/L
+.	.	.	.	8BB/J
+4b\	der	4e/	4B\	8AA/L
+.	.	.	.	8GG#/J
+4cc\	Tag	8e/L	8B/L	4AA/
+.	.	8f/J	8A/J	.
+4cc\	ge-	4g/	8G/L	4EE/
+.	.	.	8c/J	.
+=2	=2	=2	=2	=2
+4dd\	-en-	4a/	8c\L	4FF/
+.	.	.	16B\L	.
+.	.	.	16A\JJ	.
+4dd\	-det	4g/	4B\	4GG/
+4ee;\	hat,	4g;/	4c;\	4CC;/
+4ee\	und	4g/	4c\	4C/
+=3	=3	=3	=3	=3
+4dd\	kei-	4a/	4c\	4FF#/
+4ee\	-ne	4e/	4B\	4GG#/
+4cc\	Sonn'	4e/	4B\	8AA/L
+.	.	.	.	8BB/J
+4cc\	mehr	4e/	4A/	8C/L
+.	.	.	.	8D/J
+=4	=4	=4	=4	=4
+2b;\	scheint,	2e;/	(4A/	2E;\
+.	.	.	4G#;/)	.
+4r	.	4r	4r	4r
+4ee\	schl\a3ft	4b\	4e\	4GG#/
+=5	=5	=5	=5	=5
+4cc\	Al-	8b/L	4e\	4AA/
+.	.	8a/J	.	.
+4b\	-les,	4g#/	4e\	8E\L
+.	.	.	.	8D\J
+4cc\	was	8a/L	4e\	4C/
+.	.	8gn/J	.	.
+4a/	sich	4f/	4d\	8D/L
+.	.	.	.	8C/J
+=6	=6	=6	=6	=6
+4g#/	ab-	8f/L	8d\L	8BB/L
+.	.	8e/J	8B\J	8E/J
+4a/	-ge-	8e/L	4c\	8C/L
+.	.	8f#/J	.	8AA/J
+4b;\	-matt',	4g#;/	4B;\	4E;\
+4ee\	und	4a/	4A/	4C/
+=7	=7	=7	=7	=7
+4dd\	was	8a/L	4d\	4BB/
+.	.	8g#/J	.	.
+4cc\	zu-	4a/	4e\	4AA/
+4.b\	-vor	4a/	8f\L	4D\
+.	.	.	8d\	.
+.	.	4g#/	8B\J	4E\
+8b\	ge-	.	16e\LL	.
+.	.	.	16d\JJ	.
+=8	=8	=8	=8	=8
+2a;/	-weint.	2e;/	2c#;\	2AA;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/07/27/
+!!!KEY: 2990580639
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

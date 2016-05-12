@@ -1,0 +1,93 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Der du bist drei in Einigkeit
+!!!SCT:	BWV 293
+!!!PC#:	154
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[]	*k[]	*k[]	*k[]
+*G:mix	*G:mix	*G:mix	*G:mix
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4D	4F	[4d	4a
+=1	=1	=1	=1
+4E	4G	8d]	4g
+.	.	4c	.
+4G	4G	.	4d
+.	.	16BLL	.
+.	.	16c#JJ	.
+4D	4A	8dL	4f
+.	.	8cJ	.
+8EL	[4G	4B	4g
+8DJ	.	.	.
+=2	=2	=2	=2
+4C	4G]	4e	4a
+4D	4F#	8dL	4a
+.	.	8cJ	.
+4GG;	4D;	4B;	4g;
+4D	4F	[4d	4a
+=3	=3	=3	=3
+4E	4G	8d]	4g
+.	.	4c	.
+4G	4G	.	4d
+.	.	16BLL	.
+.	.	16c#JJ	.
+4D	4A	8dL	4f
+.	.	8cJ	.
+8EL	[4G	4B	4g
+8DJ	.	.	.
+=4	=4	=4	=4
+4C	4G]	4e	4a
+4D	8F#L	4d	4a
+.	8cJ	.	.
+4GG;	4B;	4d;	4g;
+8FL	4c	4f	4a
+8EJ	.	.	.
+=5	=5	=5	=5
+4D	4d	[4f	4b
+4C	4G	8fL]	4cc
+.	.	[8eJ	.
+8FL	16ALL	8eL]	4a
+.	16BJJ	.	.
+8F#J	4c	8dJ	.
+4G	.	4d	4g
+.	8B	.	.
+=6	=6	=6	=6
+8CL	8cL	4.e	4g
+8C#J	8B-J	.	.
+4D	4A	.	4fnX
+.	.	8d	.
+4AA;	4A;	4c#;	4e;
+4D	4A	8dL	4f
+.	.	8cJ	.
+=7	=7	=7	=7
+4E	4G	8BnX	4g
+.	.	4c	.
+4G	4G	.	4d
+.	.	16BLL	.
+.	.	16c#JJ	.
+4D	4A	8dL	4f
+.	.	8cJ	.
+8EL	[4G	4B	4g
+8DJ	.	.	.
+=8	=8	=8	=8
+4C	4G]	4e	4a
+4D	4F#	8dL	4a
+.	.	8cJ	.
+4GG;	4D;	4B;	4g;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

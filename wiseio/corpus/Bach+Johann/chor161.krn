@@ -1,0 +1,115 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Ihr Gestirn, ihr hohen L&uuml;fte
+!!!SCT:	BWV 366
+!!!PC#:	161
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*d:	*d:	*d:	*d:
+*M3/4	*M3/4	*M3/4	*M3/4
+*MM100	*MM100	*MM100	*MM100
+=1-	=1-	=1-	=1-
+8DL	8FL	2A	2d
+8E	8GJ	.	.
+8F	4A	.	.
+8G	.	.	.
+8F	4G	4c#	4e
+8EJ	.	.	.
+=2	=2	=2	=2
+4D	2A	2d	2f
+8CnXL	.	.	.
+8BB-	.	.	.
+8AA	4B-	4e	4g
+8GGJ	.	.	.
+=3	=3	=3	=3
+8FFL	4c	4.f	2a
+8GG	.	.	.
+8FF	8dL	.	.
+8EEJ	8eJ	8g	.
+4DD	4f	4a	4dd
+=4	=4	=4	=4
+2AA	2e	2a	2cc#
+4AA;	4e;	4a;	4cc#;
+=5	=5	=5	=5
+8DL	2f	2a	2dd
+8E	.	.	.
+8F	.	.	.
+8E	.	.	.
+8D	4e	4a	4ee
+8C#J	.	.	.
+=6	=6	=6	=6
+[2.D	8dL	4.a	2.ff
+.	8c#	.	.
+.	8d	.	.
+.	8e	8gL	.
+.	8d	8f	.
+.	8cJ	8eJ	.
+=7	=7	=7	=7
+8DL]	8B-L	2f	4f
+8CJ	8AJ	.	.
+4BB-	4d	.	4.g
+4C	8.cL	4e	.
+.	.	.	8g
+.	16B-Jk	.	.
+=8	=8	=8	=8
+2.FF;	2.A;	2.c;	2.f;
+=9:|!	=9:|!	=9:|!	=9:|!
+*>B	*>B	*>B	*>B
+4C	2c	4e	2g
+4D	.	4f	.
+4E	4c	[4g	4g
+=10	=10	=10	=10
+4F	4.c	8g]	2a
+.	.	4f	.
+4G	.	.	.
+.	8B-	8e	.
+4A	4A	4f	4cc
+=11	=11	=11	=11
+4G	2d	4f	2b-
+4GG	.	8eL	.
+.	.	8dJ	.
+4C	4c	4e	4g
+=12	=12	=12	=12
+2F	2c	2f	2a
+4F;	4c;	4f;	4a;
+=13	=13	=13	=13
+4F	2f	2a	2cc
+8FFL	.	.	.
+8GGJ	.	.	.
+4AA	8fL	8aL	4cc
+.	8e-J	8gJ	.
+=14	=14	=14	=14
+4BB-	2d	8fL	2dd
+.	.	8e	.
+4B-	.	8f	.
+.	.	8gJ	.
+4A	4c	4a	4ff
+=15	=15	=15	=15
+4G	4B-	8b-L	4ee
+.	.	8gJ	.
+4G#	4B	8fL	4dd
+.	.	8eJ	.
+4A	4A	8eL	4cc#
+.	.	8gJ	.
+=16	=16	=16	=16
+2D	2A	2f#	2dd
+4D;	4A;	4f#;	4dd;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

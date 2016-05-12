@@ -1,0 +1,77 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 3. Ach Gott und Herr, wie gross und schwer
+!!!SCT: BWV 255
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*C:	*	*C:	*C:	*C:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4cc\	Ach	4g/	4e\	4C/
+=1	=1	=1	=1	=1
+4b\	Gott	4g/	4d\	4G\
+4a/	und	4f#/	8d\L	4D\
+.	.	.	8c\J	.
+4g;/	Herr,	4d;/	4B;\	4GG;/
+4g/	wie	8e/L	8c\L	4C/
+.	.	8d/J	8B-\J	.
+=2	=2	=2	=2	=2
+4a/	gross	4c/	8A/L	8F\L
+.	.	.	8G/J	8E\J
+4b\	und	4d/	4F/	4D\
+4cc;\	schwer	4e;/	4G;/	4C;/
+4dd\	sind	4g/	4B\	4GG/
+=3	=3	=3	=3	=3
+4cc\	mein'	8g/L	4c\	4AA/
+.	.	8f#/J	.	.
+4b\	be-	4g/	4d\	8BB/L
+.	.	.	.	8C/J
+4a/	-gang-	4f#/	4d\	4D\
+8b\L	-ne	4g/	4d\	4G\
+8cc\J	.	.	.	.
+=4	=4	=4	=4	=4
+2a/	S\u3n-	4g/	4e\	4C/
+.	.	4f#/	8d\L	4D\
+.	.	.	8c\J	.
+4g;/	-den!	4d;/	4B;\	4GG;/
+4cc\	Da	4g/	4c\	4E\
+=5	=5	=5	=5	=5
+4b\	ist	4f/	4d\	4D\
+4cc\	Nie-	4g/	4e\	4C/
+4dd;\	-mand,	4g;/	4B;\	4G;\
+4dd\	der	4g/	4B\	4G\
+=6	=6	=6	=6	=6
+4ee\	hel-	4g/	4c\	8c\L
+.	.	.	.	8B\J
+8dd\L	-fen	4f#/	4c\	4A\
+8cc\J	.	.	.	.
+4dd;\	kann,	4g;/	4B;\	4G;\
+4g/	in	4g/	4c\	4E\
+=7	=7	=7	=7	=7
+4a/	die-	4d/	4c\	4F#\
+4b\	-ser	4d/	4B\	4G#\
+8cc\L	Welt	4.c/	8e\L	4A\
+8dd\J	.	.	8f\J	.
+8ee\L	zu	.	8g\L	8Gn\L
+8ff\J	.	8a/	8c\J	8Fn\J
+=8	=8	=8	=8	=8
+2dd\	fin-	4.g/	4c\	4G\
+.	.	.	4B\	4GG/
+.	.	8f/	.	.
+4cc;\	-den.	4e;/	4G;/	4C;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/03/
+!!!KEY: 3717640311
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

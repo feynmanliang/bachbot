@@ -1,0 +1,113 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 19. Ich hab' mein' Sach' Gott heimgestellt
+!!!ONM: No. 19
+!!!OCL: Erk
+!!!SCA: BWV 351
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**kern	**kern	**kern	**kern	**harm	**root
+!bass	!tenor	!alto	!sprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*g:	*g:	*g:	*g:	*g:	*g:
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4G	4B-	4d	4g	i	4GG
+=1	=1	=1	=1	=1	=1
+8G	8B-	4d	4g	i	4GG
+8F	8A	.	.	.	.
+4E-	4G	8d	4g	vii/V	4CC#
+.	.	8c#	.	.	.
+8D	4A	4d	4f#	V	4DD
+8Cn	.	.	.	.	.
+8BB-	4d	8g	4b-	ib	4GG
+8GG	.	8fn	.	.	.
+=2	=2	=2	=2	=2	=2
+4C	4c	8e-	4a	iib	4AA
+.	.	8d	.	.	.
+4C#	8B-	4en	4g	viioD7/V	4CC#
+.	8A	.	.	.	.
+4D;	4A;	4d;	4f#;	V;	4DD;
+8D	4A	4d	4f#	V	4DD
+[8E-	.	.	.	.	.
+=3	=3	=3	=3	=3	=3
+8E-]	4A	4c	4f#	V7	4DD
+[8D	.	.	.	.	.
+8D]	4A	4d	4f#	V	4DD
+[8Cn	.	.	.	.	.
+8C]	4G	4d	4g	Ib	4GG
+8BBn	.	.	.	.	.
+8C	4G	4c	4e	IV	4CC
+8BB-	.	.	.	.	.
+=4	=4	=4	=4	=4	=4
+4AA	8A	8c	4f#	viioD7b	4FF#
+.	8c	8e-	.	.	.
+4D	8c	4d	4f#	V7	4DD
+.	16B-	.	.	.	.
+.	16A	.	.	.	.
+4GG;	4B-;	4d;	4g;	I;	4GG;
+4F	4c	4fn	4a	-VII	4FF
+=5	=5	=5	=5	=5	=5
+!!linebreak: 2
+8F	4c	4f	4a	-VII	4FF
+8G	.	.	.	.	.
+8F	4c	4g	4cc	IVb	4CC
+8En	.	.	.	.	.
+8F	4c	4f	4a	-VII	4FF
+[8E-	.	.	.	.	.
+8E-]	4B-	4f	4f	IIIb	4BB-
+8D	.	.	.	.	.
+=6	=6	=6	=6	=6	=6
+8E-	4B-	8e-	4g	VI	4EE-
+8En	.	8d	.	.	.
+8F	8A	8c	4a	-VII	8FF
+8F#	8c	8e-	.	viioD7	8FF#
+4G;	4B-;	4d;	4b-;	i;	4GG;
+4GG	4d	[4g	4b-	i	4GG
+=7	=7	=7	=7	=7	=7
+4D	4.d	8g]	4a	V	4DD
+.	.	8f#	.	.	.
+4E-	.	8g	4g	ivb	4CC
+.	8c	8G	.	.	.
+4D;	4A;	4d;	4f#;	V;	4DD;
+4D	4A	4d	4f#	V	4DD
+=8	=8	=8	=8	=8	=8
+8AA	4A	8c	4f#	viib	4FF#
+8BB-	.	8d	.	.	.
+4C	4A	8e-	4f#	viioD7c	4FF#
+.	.	8d	.	.	.
+8BB-	[4G	4d	4g	ib	4GG
+8BBn	.	.	.	.	.
+8C	16G]	4en	4en	IV	8CC
+.	16A	.	.	.	.
+8C#	8B-y	.	.	viioD7/V	8CC#
+=9	=9	=9	=9	=9	=9
+4D	8A	4d	4f#	V	4DD
+.	8G	.	.	.	.
+4DD	16A	4d	4f#	V	4DD
+.	16B-	.	.	.	.
+.	8cn	.	.	.	.
+4GG;	8c	4d;	4g;	I;	4GG;
+.	8Bn;	.	.	.	.
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

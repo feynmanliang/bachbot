@@ -1,0 +1,114 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 276. Lobt Gott, ihr Christen, allzugleich
+!!!ONM: No. 276
+!!!OCL: Erk
+!!!SCA: BWV 375
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**kern	**kern	**kern	**kern	**harm	**root
+!bass	!tenor	!alto	!sprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*G:	*G:	*G:	*G:	*G:	*G:
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4G	4B	4d	4g	I	4GG
+=1	=1	=1	=1	=1	=1
+4F#	4A	8d	4dd	Vb	4DD
+.	.	8e	.	.	.
+4D	8A	4f#	4dd	V	4DD
+.	16B	.	.	.	.
+.	16c	.	.	.	.
+8G	8B	4g	4dd	I	4GG
+8A	8A	.	.	.	.
+8B	4G	8g	4dd	I	4GG
+8G	.	8fn	.	.	.
+=2	=2	=2	=2	=2	=2
+4c	4G	8e	4ee	IV	4CC
+.	.	8g	.	.	.
+4d	4d	4f#y	8dd	V	4DD
+.	.	.	8cc	.	.
+4G;	4d;	4g;	4b;	I;	4GG;
+4F#	4d	4a	4a	Vb	4DD
+=3	=3	=3	=3	=3	=3
+4E	4G	4g	8b	vi	4EE
+.	.	.	8cc#	.	.
+8B	8d	4f#	4dd	iii	4BB
+8A	8c#	.	.	.	.
+4G	8B	4e	4dd	vi7b	4EE
+.	8e	.	.	.	.
+4A	8a	4e	4cc#	V/V	4AA
+.	8g	.	.	.	.
+=4	=4	=4	=4	=4	=4
+2.D;	2.f#;	2.d;	2.dd;	V;	2.DD;
+4D	8d	4f#	4dd	V	4DD
+.	8c	.	.	.	.
+=5	=5	=5	=5	=5	=5
+8G	8B	4g	4dd	I	4GG
+8A	8c	.	.	.	.
+8B	8d	4f#	4dd	iii	4BB
+8A	8c	.	.	.	.
+4.G	8B	8g	8dd	I	2GG
+.	8c	8a	8cc	.	.
+.	4d	8b	8b	.	.
+8A	.	8a	8cc	.	.
+=6	=6	=6	=6	=6	=6
+!!linebreak: 2
+4B	4d	4g	8dd	Ib	4GG
+.	.	.	8cc	.	.
+4c	4e	8g	4b	IV7	4CC
+.	.	16f#	.	.	.
+.	.	16e	.	.	.
+4d;	4A;	4f#;	4a;	V;	4DD;
+4B	8B	4f#	4dd	iii	4BB
+.	8A	.	.	.	.
+=7	=7	=7	=7	=7	=7
+[4E	8G	4g	4cc	IVb	4CC
+.	8A	.	.	.	.
+8E]	8B	8g	4b	vi	8EE
+8D	8d	8f#	.	iiib	8BB
+8C	4e	4e	4a	iib	4AA
+8AA	.	.	.	.	.
+8D	4d	4f#	4a	V	4DD
+8c	.	.	.	.	.
+=8	=8	=8	=8	=8	=8
+4B	4d	4g	8g	Ib	4GG
+.	.	.	8a	.	.
+4A	4c	4f#	8b	viib	4FF#
+.	.	.	8cc	.	.
+4G#;	4B;	4fn;	4dd;	viioD7/ii;	4GG#;
+4GG#y	4B	4e	4dd	V7b/ii	4EE
+=9	=9	=9	=9	=9	=9
+4AA	8c	8e	4cc	ii	4AA
+.	8d	8f#y	.	.	.
+8E	4e	8g	4b	vi	4EE
+8D	.	8f#	.	.	.
+8C	8e	4e	4a	iib	4AA
+8AA	8c	.	.	.	.
+4D	8A	4f#	4a	V	4DD
+.	16B	.	.	.	.
+.	16c	.	.	.	.
+=10	=10	=10	=10	=10	=10
+2.GG;	2.B;	2.d;	2.g;	I;	2.GG;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

@@ -1,0 +1,103 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 179. Wenn wir in höchsten Nöten sein
+!!!SCT: BWV 432
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*>[A,A]	*	*>[A,A]	*>[A,A]	*>[A,A]
+*>A	*	*>A	*>A	*>A
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#]	*	*k[f#]	*k[f#]	*k[f#]
+*G:	*	*G:	*G:	*G:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4g/	Wennso	4d/	4B\	8G\L
+.	.	.	.	8F#\J
+=1	=1	=1	=1	=1
+4g/	wirist	4.e/	4B\	8E\L
+.	.	.	.	8D\J
+4a/	indas	.	8A/L	8C/L
+.	.	8d/	8F#/J	8D/J
+4b\	h\o3ch-un-	8d/L	4G/	4GG/
+.	.	8e/J	.	.
+8a/L	-sten-ser	4f#/	4A/	4D\
+8b/J	.	.	.	.
+=2	=2	=2	=2	=2
+8cc\L	N\o3-Trost	8e/L	8A\L	8AA/L
+8b\J	.	16g/L	8d\J	8BB/J
+.	.	16f#/JJ	.	.
+4a/	-tenal-	8e/L	8c\L	8C/L
+.	.	8f#/J	16B\L	8D/J
+.	.	.	16A\JJ	.
+4g;/	sein-lein,	4d;/	4B;\	4GG;/
+4b\	unddass	4g/	4d\	8G\L
+.	.	.	.	8F#\J
+=3	=3	=3	=3	=3
+4cc\	wis-wir	8g/L	8e\L	4E\
+.	.	8a/J	8d#\J	.
+4b\	-senzu-	8a/L	8d#\L	4E\
+.	.	8g/J	8e\J	.
+4a/	nicht,-sam-	8f#/L	4c\	4E\
+.	.	16e/L	.	.
+.	.	16d#/JJ	.	.
+4g/	wo-men	4e/	4B\	8E\L
+.	.	.	.	8D\J
+=4	=4	=4	=4	=4
+8f#/L	ausins-	4d/	4A/	8C/L
+8g/J	.	.	.	8BB/J
+8.gT/L	und-ge-	4d/	4B\	8AA/L
+.	.	.	.	8GG/J
+32f#/LL	.	.	.	.
+32g/JJJ	.	.	.	.
+4a;/	ein,-mein	4d;/	4F#;/	4D;\
+4dd\	unddich	4f#/	8B/L	4BB/
+.	.	.	8A/J	.
+=5	=5	=5	=5	=5
+4cc\	fin-an-	4e/	8G/L	8E\L
+.	.	.	8A/J	8F#\J
+4b\	-den-ru-	8d/L	4B\	4.G\
+.	.	16c#/L	.	.
+.	.	16d/JJ	.	.
+4a/	we--fen,	8e/L	4c#\	.
+.	.	16f#/L	.	8F#\L
+.	.	16e/JJ	.	.
+8g/L	-derdu	4d/	4B\	8B\J
+8f#/J	.	.	.	8A\
+=6	=6	=6	=6	=6
+8.e/L	H\u3lf'treu-	4d/	8B/L	8G\L
+.	.	.	8G/J	8E\J
+32f#/LL	.	.	.	.
+32g/JJJ	.	.	.	.
+4e/	noch-er	4c#/	4A/	4A\
+4d;/	Rat,Gott,	4d;/	4F#;/	4D;\
+4b\	obum	4f#/	4F#/	4D#\
+=7	=7	=7	=7	=7
+4cc\	wirRet-	4e/	8G/L	8E\L
+.	.	.	8A/J	8F#\J
+4b\	gleich-tung	4d/	4B\	4G\
+4a/	sor-aus	8e/L	(8E/	8C#/L
+.	.	8f#/J	4B\)	8D#/J
+8g/L	-gender	4g/	.	8E\L
+8a/J	.	.	8c\	16Dn\L
+.	.	.	.	16Cn\JJ
+=8	=8	=8	=8	=8
+4b\	fr\u3hAngst	4g/	4d\	8BB/L
+.	.	.	.	8C/J
+4a/	undund	4f#/	16c\LL	4D\
+.	.	.	16B\J	.
+.	.	.	8c\J	.
+4g;/	spat,Not.	4d;/	4B;\	4GG;/
+==:|!	==:|!	==:|!	==:|!	==:|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/08/08/
+!!!KEY: 3459537822
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

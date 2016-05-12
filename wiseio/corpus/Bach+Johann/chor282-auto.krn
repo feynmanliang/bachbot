@@ -1,0 +1,123 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Freu' dich sehr, O meine Seele
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 282
+!!!SCT: BWV 25
+!!!YEC: Copyright 1994, David Huron
+!!!YEC: Changes/Additions 2001 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually
+**kern	**kern	**kern	**kern	**mroot	**mharm	**harm	**tsroot	
+!bass	!tenor	!alto	!soprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*	*	*
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*C:	*C:	*C:	*C:	*C:	*C:	*	*
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A
+=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-
+*	*	*	*	*	*	*C:	*C:
+4C	4e	4g	4cc	4CC	I	I	C
+4G	4B	4g	4dd	4GG	V	V	G
+4c	4c	4g	4ee	4CC	I	I	C
+4B	4d	4g	4dd	4GG	Vb	Vb	G
+=2	=2	=2	=2	=2	=2	=2	=2
+4A	8e	4a	4cc	4AA	vi	vi	A
+.	8f#	.	.	.	.	.	D
+4G	4g	4d	4b	4GG	V	V	G
+4D	8g	4d	4a	4DD	V/V	II	D
+.	8f#	.	.	.	.	.	D
+4G;	4B;	4d;	4g;	4GG;	V;	V	G
+=3	=3	=3	=3	=3	=3	=3	=3
+4E	4c	4g	4cc	4CC	Ib	Ib	C
+4D	4fn	8a	4dd	4DD	ii	ii	D
+.	.	8b	.	.	.	.	D
+4C	8g	8cc	4ee	4CC	I	I	C
+.	8c	8g	.	.	.	.	C
+4BB	[4d	4g	8dd	4GG	Vb	V7b	G
+.	.	.	16ee	.	.	.	G
+.	.	.	16ff	.	.	.	G
+=4	=4	=4	=4	=4	=4	=4	=4
+4C	8d]	4g	4ee	4CC	I	I	C
+.	8c	.	.	.	.	.	C
+4GG	8c	4g	8.dd	4GG	V	V	G
+.	8B	.	.	.	.	.	G
+.	.	.	16cc	.	.	.	C
+2C;	2e;	2g;	2cc;	2CC;	I;	I	C
+*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B
+=5:|!	=5:|!	=5:|!	=5:|!	=5:|!	=5:|!	=5:|!	=5:|!
+4c	4c	4g	4ee	4CC	I	.	C
+4A	4c	8a	4ff	4FF	IVb	IVb	F
+.	.	16b-	.	.	.	.	F
+.	.	16cc	.	.	.	.	F
+4E	4c	4b-	4gg	4CC	I7b	V7b/IV	C
+4F	8c	4a	4ff	4FF	IV	IV	F
+.	8d	.	.	.	.	.	D
+=6	=6	=6	=6	=6	=6	=6	=6
+4C#	8e	4g	4ee	4AA	V7b/ii	V7b/ii	A
+.	8A	.	.	.	.	.	A
+4D	8A	8f	4dd	4DD	ii	ii	D
+.	8B	16a	.	.	.	.	D
+.	.	16g#	.	.	.	.	D
+2AA;	2c#;	2a;	2ee;	2AA;	VI;	VI	A
+!!linebreak: 2
+=7	=7	=7	=7	=7	=7	=7	=7
+4E	8cn	4gn	4gg	4CC	Ib	Ib	C
+.	8d	.	.	.	.	.	C
+4C	4e	4cc	4gg	4CC	I	.	C
+4F	8f	4cc	4aa	4FF	IV	IV	F
+.	8e	.	.	.	.	.	F
+4G	4d	4b	4gg	4GG	V	V	G
+=8	=8	=8	=8	=8	=8	=8	=8
+8A	4c	4a	4ff	4FF	IVb	IVb	F
+8B	.	.	.	.	.	.	F
+4c	4c	8g	4ee	4CC	I	I	C
+.	.	8f#	.	.	.	.	C
+2G;	2B;	2g;	2dd;	2GG;	V;	V	G
+=9	=9	=9	=9	=9	=9	=9	=9
+4c	8c	4g	4ee	4CC	I	I	C
+.	8d	.	.	.	.	.	C
+4C	4e	8cc	4gg	4CC	I	.	C
+.	.	8b	.	.	.	.	C
+4D	4f	8a	4ff	4DD	ii	ii	D
+.	.	8b	.	.	.	.	D
+4E	8g	4cc	8ee	4CC	Ib	Ib	C
+.	8G	.	8dd	.	.	.	C
+=10	=10	=10	=10	=10	=10	=10	=10
+4F	8A	4a	4cc	4FF	IV7	vi	A
+.	8e	.	.	.	.	.	A
+4F#	8d	4a	4dd	4DD	Vb/V	V7b/V	D
+.	8c	.	.	.	.	.	D
+4G	2B	4b	2ee	4EE	iiib	iiib	E
+4G#	.	4e	.	4EE	Vb/vi	IIIb	E
+=11	=11	=11	=11	=11	=11	=11	=11
+2A;	2A;	2e;	2cc;	2AA;	vi;	vi	A
+4Gn	4B-	8g	4ee	4EE	iiiob	V7c/IV	C
+.	.	8a	.	.	.	.	A
+4C	4E	4b-	4gg	4CC	V7/IV	.	C
+=12	=12	=12	=12	=12	=12	=12	=12
+4D	4F	8a	4ff	4DD	ii	ii	D
+.	.	8bn	.	.	.	.	D
+8E	8G	4cc	4ee	4CC	Ib	Ib	C
+8F	8A	.	.	.	.	.	F
+8G	4B	4g	4dd	4GG	V	V7d	G
+8F	.	.	.	.	.	.	G
+8E	4c	4g	4cc	4CC	Ib	I	C
+8C	.	.	.	.	.	.	C
+=13	=13	=13	=13	=13	=13	=13	=13
+2GG	4c	2g	2dd	2GG	V	V	G
+.	4B	.	.	.	.	.	G
+2C;	2e;	2g;	2cc;	2CC;	I;	I	C
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

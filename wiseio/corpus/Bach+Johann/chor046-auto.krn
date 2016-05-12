@@ -1,0 +1,107 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 46. Vom Himmel hoch, da komm' ich her
+!!!ONM: No. 46
+!!!OCL: Erk
+!!!SCA: BWV 248.9
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+!!!ONB: From the end of the "Christmas Oratorio"
+**kern	**kern	**kern	**kern	**mharm	**mroot	**harm	**tsroot	
+!bass	!tenor	!alto	!sprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]
+*D:	*D:	*D:	*D:	*D:	*D:	*	*
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4D	4f#	4a	4dd	I	4DD	V	D
+=1	=1	=1	=1	=1	=1	=1	=1
+4.A	4e	8a	4cc#	V	4AA	V7d	A
+.	.	8g#	.	.	.	.	A
+.	4d	4f#	4b	vi7d	4BB	Ib	D
+8G#	.	.	.	.	.	.	D
+8A	4c#	4e	4cc#	V	4AA	IV	A
+8Gn	.	.	.	.	.	.	A
+4F#	8d	8f#	4a	Ib	4DD	V7c	D
+.	8c#	8e	.	.	.	.	A
+=2	=2	=2	=2	=2	=2	=2	=2
+8G	8B	4d	4b	IV	4GG	I	G
+8F#	8A	.	.	.	.	.	D
+4E	4G	4e	4cc#	viib	4CC#	.	A
+4D;	4A;	4f#;	4dd;	I;	4DD;	.	D
+8D	4A	8f#	4dd	I	4DD	.	D
+8E	.	8g	.	.	.	.	D
+=3	=3	=3	=3	=3	=3	=3	=3
+4F#	4d	8a	4dd	Ib	4DD	V	D
+.	.	8g	.	.	.	.	D
+8F#	4d	4f#	4a	Ib	4DD	V7/IV	D
+8G	.	.	.	.	.	.	D
+4A	4c#	4e	4a	V	4AA	.	A
+8A	8cn	4d	8f#	V7c/IV	8DD	V7b	D
+8G	8B	.	8g	IV	8GG	.	G
+=4	=4	=4	=4	=4	=4	=4	=4
+8F#	4A	4d	4a	Ib	4DD	I	D
+8E	.	.	.	.	.	.	D
+8D	4A	4e	4g	V7b	4AA	.	A
+8C#y	.	.	.	.	.	.	A
+4D;	4A;	4d;	4f#;	I;	4DD;	V7b/ii	D
+4D	4A	8d	4f#	I	4DD	V7d/V	D
+.	.	8e	.	.	.	.	D
+=5	=5	=5	=5	=5	=5	=5	=5
+!!linebreak: 2
+4D#	4A	4f#	4b	V7b/ii	4BB	V	B
+8E	4G#	4e	4b	II	4EE	.	E
+8Dn	.	.	.	.	.	.	E
+8C#	8A	8e	8a	Vb	8AA	I	A
+8BB	8d	8g#	8b	viib/V	8GG#	.	E
+4AA	8c#	4a	4cc#	V	4AA	vi7b	A
+.	8B	.	.	.	.	.	A
+=6	=6	=6	=6	=6	=6	=6	=6
+8F#	8A	4.a	8dd	Ib	8DD	V	D
+8E	8c#	.	8cc#	Vb	8AA	.	A
+8D	8f#	.	4b	vii7b	8CC#	vi	B
+8E	8e	8g#	.	V/V	8EE	.	E
+4AA;	4c#;	4e;	4a;	V;	4AA;	V	A
+8B	8d	8f#	4dd	vi	8BB	vi7b	B
+8E	[8B	8e	.	V7/V	8EE	.	E
+=7	=7	=7	=7	=7	=7	=7	=7
+4A	8B]	8e	4cc#	V	8AA	V	A
+.	8A	[8f#	.	iiib	8FF#	.	F#
+8D	8A	8f#]	4b	vi7b	8BB	ii	B
+[8Gn	8Gn	8e	.	iib	8EE	.	E
+8G]	4A	8c#	4a	V7d	8AA	IVc	A
+8F#	.	8d	.	Ib	8DD	.	D
+8G	8G	8B	8b	IV	8GG	V7	E
+8A	8F#	8c#	8a	iii	8FF#	.	F#
+=8	=8	=8	=8	=8	=8	=8	=8
+8B	4D	4.d	8g	IVb	4GG	I	G
+8G	.	.	8f#	.	.	.	G
+8A	8A	.	4e	V	8AA	.	A
+8AA	8G	8c#	.	V7	8AA	.	A
+4D;	4F#;	4A;	4d;	I;	4DD;	.	D
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

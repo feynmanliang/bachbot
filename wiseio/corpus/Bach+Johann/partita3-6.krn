@@ -1,0 +1,332 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/02/21/-1750/07/28/
+!!!OPR: Partita for solo violin, No. 3 in E Major
+!!!OTL: Movement 6: Boure&eacute;
+!!!ODT: 1720///
+!!!SCT: BWV 1006
+**kern	**dynam
+*Ivioln	*Ivioln
+*>[A,A,B,B]	*>[A,A,B,B]
+*>norep[A,B]	*>norep[A,B]
+=1-	=1-
+*>A	*>A
+*clefG2	*clefG2
+*k[]	*k[]
+*M4/4	*M4/4
+*MM144	*MM144
+*^	*
+4b/	4e\	.
+=2	=2	=2
+4cc#/	4a\	.
+2.ryy	(8a\L	.
+.	8b\J	.
+.	8cc#\L	.
+.	8dd#\J)	.
+.	4ee\	.
+*v	*v	*
+=3	=3
+(8g#\L	.
+8b\J	.
+4ee\)	.
+(8ee\L	.
+8dd#\J	.
+4ee\)	.
+=4	=4
+8f#/L	.
+8g#/	.
+8a/	.
+8b/J	.
+8cc#/L	.
+8a/J	.
+4b/	.
+=5	=5
+(8a/L	.
+8g#/	.
+8f#/	.
+8g#/J)	.
+4e/	.
+8gg#\L	.
+8ee\J	.
+=6	=6
+(8ff#\L	.
+8dd#\	.
+8b\	.
+8cc#\J	.
+8dd#\L	.
+8ee\	.
+8ff#\	.
+8aa\J)	.
+=7	=7
+(8gg#\L	.
+8ee\	.
+8b\	.
+8dd#\J	.
+8ee\L	.
+8ff#\	.
+8gg#\	.
+8bb\J)	.
+=8	=8
+(8ff#\L	p
+8dd#\	.
+8b\	.
+8cc#\J	.
+8dd#\L	.
+8ee\	.
+8ff#\	.
+8aa\J)	.
+=9	=9
+(8gg#\L	.
+8ee\	.
+8b\	.
+8dd#\J	.
+8ee\L	.
+8ff#\	.
+8gg#\	.
+8bb\J)	.
+=10	=10
+(8ee\L	f
+8dd#\	.
+8cc#\	.
+8dd#\J)	.
+(8ee\L	.
+8dd#\	.
+8cc#\	.
+8b\J)	.
+=11	=11
+(8a#/L	.
+8g#/	.
+8f#/	.
+8g#/J	.
+8a#/L	.
+8b/	.
+8cc#/	.
+8dd#/J)	.
+=12	=12
+(8ee\L	p
+8dd#\	.
+8cc#\	.
+8dd#\J)	.
+(8ee\L	.
+8dd#\	.
+8cc#\	.
+8b\J)	.
+=13	=13
+(8a#/L	.
+8g#/	.
+8f#/	.
+8g#/J	.
+8a#/L	.
+8b/	.
+8cc#/	.
+8ee/J)	.
+=14	=14
+(8dd#\L	f
+8cc#\	.
+8b\	.
+8cc#\J)	.
+8dd#\L	.
+8ee\	.
+8ff#\	.
+8a\J	.
+=15	=15
+8g#\L	.
+8b\	.
+8ee\	.
+8dd#\J	.
+(8ee\L	.
+8aa#\	.
+8bb\)	.
+8cc#\J	.
+=16	=16
+8e/L	.
+(8dd#/	.
+8cc#/	.
+8b/J)	.
+8f#/L	.
+(8cc#/	.
+8b/	.
+8a#/J)	.
+=17	=17
+8b/L	.
+8f#/	.
+8d#/	.
+8f#/J	.
+4B/	.
+=18:|!|:	=18:|!|:
+*>B	*>B
+*^	*
+4ff#/	4b\	.
+=19	=19	=19
+4gg#/	4ee\	.
+2.ryy	(8ee\L	.
+.	8ff#\J	.
+.	8gg#\L	.
+.	8aa#\J)	.
+.	4bb\	.
+*v	*v	*
+=20	=20
+(8dd#\L	.
+8ff#\J	.
+4bb\)	.
+(8bb\L	.
+8aa#\J	.
+4bb\)	.
+=21	=21
+8cc#\L	.
+8ee\	.
+8aa\	.
+8cc#\J	.
+8b#\L	.
+8dd#\	.
+8gg#\	.
+8ff#\J	.
+=22	=22
+(8ff#\L	.
+8ee\	.
+8dd#\	.
+8ee\J)	.
+4cc#\	.
+8ee\L	.
+8cc#\J	.
+=23	=23
+(8g#\L	.
+8a\	.
+8b\	.
+8cc#\J	.
+8dd\L	.
+8gg#\	.
+8bb\)	.
+8dd\J	.
+=24	=24
+(8cc#\L	.
+8b\	.
+8a\	.
+8b\J	.
+8cc#\L	.
+8ee\	.
+8aa\)	.
+8cc#\J	.
+=25	=25
+(8g#\L	p
+8a\	.
+8b\	.
+8cc#\J	.
+8dd\L	.
+8gg#\	.
+8bb\)	.
+8dd\J	.
+=26	=26
+(8cc#\L	.
+8b\	.
+8a\	.
+8b\J	.
+8cc#\L	.
+8ee\	.
+8aa\)	.
+8cc#\J	.
+=27	=27
+8dd/L	f
+8b/	.
+8g#/	.
+8f#/J	.
+(8e#/L	.
+8g#/	.
+8b/)	.
+8dd/J	.
+=28	=28
+8cc#/L	.
+8a/	.
+8f#/	.
+8e/J	.
+(8d/L	.
+8c#/	.
+8d/)	.
+8cc#/J	.
+=29	=29
+8b\L	.
+(8aa\	.
+8gg#\	.
+8ff#\J)	.
+8cc#\L	.
+(8gg#\	.
+8ff#\	.
+8ee#\J)	.
+=30	=30
+8ff#\L	.
+8cc#\	.
+8a\	.
+8cc#\J	.
+4f#/	.
+8aa\L	.
+8ff#\J	.
+=31	=31
+8dd#\L	.
+8ff#\	.
+(8b\	.
+8cc#\J	.
+8dd#\L	.
+8ee\	.
+8ff#\)	.
+8aa\J	.
+=32	=32
+8gg#\L	.
+8bb\	.
+(8ee\	.
+8ff#\J	.
+8gg#\L	.
+8aa\	.
+8bb\)	.
+8dd\J	.
+=33	=33
+8cc#\L	.
+8ee\	.
+8a\	.
+8cc#\J	.
+(8ff#\L	.
+8gg#\	.
+8aa\)	.
+8ff#\J	.
+=34	=34
+(8ee\L	.
+8dd#\	.
+8cc#\	.
+8dd#\J)	.
+4b\	.
+*^	*
+4e\	4b/	.
+=35	=35	=35
+4a\	4cc#/	.
+*v	*v	*
+(8a\L	.
+8b\J	.
+8cc#\L	.
+8dd#\	.
+8ee\	.
+8ff#\J)	.
+=36	=36
+8dd#\L	.
+8ff#\	.
+8aa\	.
+8ff#\J	.
+(8dd#\L	.
+8b\)	.
+(8cc#\	.
+8a\J)	.
+=37	=37
+8g#\L	.
+*^	*
+4.ryy	8ee\J	.
+.	4bb\	.
+8aa/L	4b\	.
+8gg#/	.	.
+8ff#/	4r	.
+8gg#/J	.	.
+*v	*v	*
+=38	=38
+8ee\L	.
+8b\	.
+8g#\	.
+8b\J	.
+4e/	.
+==:|!	==:|!
+*-	*-

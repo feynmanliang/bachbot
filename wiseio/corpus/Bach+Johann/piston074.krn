@@ -1,0 +1,42 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: Well-Tempered Clavier I, Prelude No. 4
+!!!ONM: No. 4
+!!!SCT: Piston 74
+!!!citation: Harmony by Walter Piston.  W.W.Norton: New York; 1941.
+!!!label: Ex. 74.  Bach -- <i>Well-tempered Clavichord, I, Prelude no. 4</i>
+!!!chapter: Chapter 4 (Tonality and Modality)
+!!!page: 38
+!!!ENC: Craig Stuart Sapp
+**kern	**kern	**root	**harm
+*staff2	*staff1	*staff3	*staff3
+*clefF4	*clefG2	*clefF4	*
+*M6/4	*M6/4	*M6/4	*M6/4
+*MM90	*MM90	*MM90	*MM90
+*k[f#c#g#d#]	*k[f#c#g#d#]	*k[f#c#g#d#]	*k[f#c#g#d#]
+*c#:	*c#:	*c#:	*c#:
+*	*^	*	*
+8r	8e	[2.cc#	2CC#	i
+8d#	8b	.	.	.
+8c#	8a	.	.	.
+8B	8g#	.	.	.
+8A	8f#	.	4FF#	IV
+8F#	8a	.	.	.
+8G#	4.e	4.cc#]	2CC#	i
+8D#	.	.	.	.
+8E	.	.	.	.
+8C#	8f#	8d#	.	.
+*^	*	*^	*	*
+4GG#	8GG#	4d	8d#	4b#	4GG#	V
+.	[8G#	.	[8f#	.	.	.
+=	=	=	=	=	=	=
+[2.C#	4G#]	2c#	8f#]	[2cc#	2FF#	IV(I pedal)
+.	.	.	8g#	.	.	.
+.	4F#	.	8a	.	.	.
+.	.	.	[8f#	.	.	.
+.	4A	2d	4f#]	8c#]	4GG#	V(I pedal)
+.	.	.	.	8b#	.	.
+2.C#];	2.G#;	2.e#;	2.g#;	2.cc#;	2.CC#	I
+*	*	*v	*v	*v	*	*
+*v	*v	*	*	*
+=||	=||	=||	=||
+*-	*-	*-	*-

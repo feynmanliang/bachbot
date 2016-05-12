@@ -1,0 +1,92 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Herr Jesu Christ, dich zu uns wend'
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 136
+!!!SCT: BWV 332
+!!!YEC: Copyright 2003 by Craig Stuart Sapp
+!!!license: GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually by Craig Sapp
+**kern	**kern	**kern	**kern	**mroot	**mharm	**harm	**tsroot	
+!bass	!tenor	!alto	!soprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*	*	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*	*	*
+*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*G:	*G:	*G:	*G:	*G:	*G:	*	*
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*	*	*	*	*	*	*D:	*D:
+4GG	4B	4d	4g	4GG	I	IV	G
+=1	=1	=1	=1	=1	=1	=1	=1
+4GG	4d	4g	4b	4GG	I	.	G
+4FF#	4d	[4a	4dd	4DD	Vb	Ib	D
+8GG	4d	8a]	4b	4GG	I	IV	G
+8BB	.	4g	.	.	.	.	G
+4D	4d	.	4a	4DD	V	I	D
+.	.	8f#	.	.	.	.	D
+=2	=2	=2	=2	=2	=2	=2	=2
+8G	4d	4g	4b	4GG	I	IV	G
+8F#	.	.	.	.	.	.	G
+4E	4e	4g	4cc#	4CC#	viiob/V	V7c	A
+4D;	4A;	4f#;	4dd;	4DD;	V;	I	D
+8A	4cn	4a	4ee	4AA	ii	v7d	A
+8G	.	.	.	.	.	.	A
+=3	=3	=3	=3	=3	=3	=3	=3
+4F#	4d	4.a	8dd	4DD	V7	V7b/IV	D
+.	.	.	8cc	.	.	.	D
+4G	4d	.	4b	4GG	I	IV	G
+.	.	[8g	.	.	.	.	G
+8C#	8e	8g]	4a	8AA	V7b/V	V7b	A
+8D#	4B	8f#	.	8BB	V7b/VI	.	B
+8E	.	8e	8g	8EE	vi	ii7	E
+8F#	[8A	8d	8a	8DD	Vb	.	D
+=4	=4	=4	=4	=4	=4	=4	=4
+4G	8A/]	4d	4b	4GG	I	IV	G
+.	4G	.	.	.	.	.	G
+4Dn	.	4d	4a	4DD	V	I	D
+.	8F#	.	.	.	.	.	D
+4GG;	4B;	4d;	4g;	4GG;	I;	IV	G
+4D	4d	4f#	4a	4DD	V	I	D
+!!linebreak: 2
+=5	=5	=5	=5	=5	=5	=5	=5
+8GG	4d	4g	4b	4GG	I	IV	G
+8AA	.	.	.	.	.	.	G
+8BB	4d	4g	4b	4GG	Ib	.	G
+8C#	.	.	.	.	.	.	G
+8D	4d	4g	4a	2DD	V	I	D
+8E	.	.	.	.	.	.	D
+8F#	8A	4f#	4dd	.	.	.	D
+8B	8d	.	.	.	.	.	B
+=6	=6	=6	=6	=6	=6	=6	=6
+8G	8B	4e	4dd	4EE	vi7	ii7	E
+8E	8G	.	.	.	.	.	E
+8A	4A	4e	4cc#	4AA	V/V	V	A
+8AA	.	.	.	.	.	.	A
+4D;	4A;	4f#;	4dd;	4DD;	V;	I	D
+8G	4G	4d	4b	4GG	V7/IV	V7d/VII	G
+8Fn	.	.	.	.	.	.	G
+=7	=7	=7	=7	=7	=7	=7	=7
+8E	8G	4e	4ccn	4CC	IVb	v7c	A
+8F#y	8A	.	.	.	.	.	A
+4G	4B	8d	4b	4GG	I	IV	G
+.	.	[8g	.	.	.	.	G
+8C#	8e	8g]	4a	8AA	V7b/V	V7b	A
+8D#	8B	4f#	.	8BB	V7b/VI	.	B
+4E	4B	.	4g	4EE	vi	ii	E
+.	.	8e	.	.	.	.	E
+=8	=8	=8	=8	=8	=8	=8	=8
+8BB	4B	4d	4g	4GG	Ib	IVb	G
+8Cn	.	.	.	.	.	.	G
+4Dn	4A	4d	4f#	4DD	V	I	D
+4GG;	4B;	4d;	4g;	4GG;	I;	IV	G
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

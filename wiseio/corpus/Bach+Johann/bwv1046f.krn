@@ -1,0 +1,287 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-Coethen
+!!!OTL: Brandenburgische Konzerte F
+!!!XEN: Brandenburg Concerto No. 1 in F major
+!!!OMV: Movement 6.
+!!!SCT: BWV 1046
+!!!YEC: Copyright 1994, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!! For the following instrumentation: Violino I & II,
+!!    Viola, Violoncello, Cembalo.
+!! Polacca.  Tutti i Violini e Viola, ma piano.  Violino piccolo si tace.  
+**kern	**kern	**kern	**kern	**kern
+*ICklav	*ICstr	*ICstr	*ICstr	*ICstr
+*Icemba	*Icello	*Iviola	*Ivioln	*Ivioln
+*IGcont	*IGcont	*	*	*
+!harpsichord	!Continuo cello	!Viola	!Violino II	!Violino I
+*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]
+*>A	*>A	*>A	*>A	*>A
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*F:	*F:	*F:	*F:	*F:
+*M3/8	*M3/8	*M3/8	*M3/8	*M3/8
+*MM56	*MM56	*MM56	*MM56	*MM56
+*clefF4	*clefF4	*clefC3	*clefG2	*clefG2
+8FF/	8FF/	8F/	8A/	8c/
+=1||	=1||	=1||	=1||	=1||
+*>B	*>B	*>B	*>B	*>B
+(8FF/L	(8FF/L	(8A/L	(8c/L	(16f/LL
+.	.	.	.	16a/)
+8FF/	8FF/	8B-/	8e/	(16g/
+.	.	.	.	16e/)
+8FF/J)	8FF/J)	8A/J)	8c/J)	(16f/
+.	.	.	.	16c/JJ)
+=2	=2	=2	=2	=2
+(8FF/L	(8FF/L	(8B-/L	(8e/L	(16g/LL
+.	.	.	.	16b-/)
+8FF/	8FF/	8c/	8f/	(16a/
+.	.	.	.	16f/)
+8FF/J)	8FF/J)	8B-/J)	8e/J)	(16g/
+.	.	.	.	16c/JJ)
+=3	=3	=3	=3	=3
+(8FF/L	(8FF/L	(8c\L	(8f/L	(16a/LL
+.	.	.	.	16cc/)
+8FF/	8FF/	8e\	8g/	(16b-/
+.	.	.	.	16g/)
+8FF/J)	8FF/J)	8c\J)	8f/J)	(16a/
+.	.	.	.	16f/JJ)
+=4	=4	=4	=4	=4
+(8FF/L	(8FF/L	(8e\L	(8g/L	8b-/L
+8FF/	8FF/	8e\	8g/	(8.b-/
+8FF/J)	8FF/J)	8e\J)	8g/J)	.
+.	.	.	.	16g/Jk)
+=5	=5	=5	=5	=5
+(8FF/L	(8FF/L	(8c/L	(8f/L	(16a/LL
+.	.	.	.	16f/JJ)
+8FF/	8FF/	8A/	8f/	(8.cc/
+8FF/J)	8FF/J)	8B-/J)	8e/J)	.
+.	.	.	.	16g/Jk)
+=6	=6	=6	=6	=6
+(8FF/L	(8FF/L	(8c/L	(8f/L	(16a/LL
+.	.	.	.	16f/JJ)
+8FF/	8FF/	8B-/	8e/	(8.g/
+8FF/J)	8FF/J)	8G/J)	8B-/J)	.
+.	.	.	.	16e/Jk)
+=7	=7	=7	=7	=7
+(8FF/L	(8FF/L	(8A/L	(8c/L	(16f/LL
+.	.	.	.	16c/)
+8EE/	8EE/	8G/	8c/	(16b-/
+.	.	.	.	16g/)
+8FF/J)	8FF/J)	8F/J)	8c/J)	(16a/
+.	.	.	.	16f/JJ)
+=8	=8	=8	=8	=8
+(8CC/L	(8CC/L	(8E/L	(8c/L	8g/L
+8DD/	8DD/	8F/	8B/	(16f/LL
+.	.	.	.	16e/
+8EE/J)	8EE/J)	8G/J)	8c/J)	16d/
+.	.	.	.	16c/JJ)
+=9	=9	=9	=9	=9
+(8FF/L	(8FF/L	(8A/L	(8c/L	(16f/LL
+.	.	.	.	16a/)
+8FF/	8FF/	8B-/	8e/	(16g/
+.	.	.	.	16e/)
+8FF/J)	8FF/J)	8A/J)	8c/J)	(16f/
+.	.	.	.	16c/JJ)
+=10	=10	=10	=10	=10
+(8FF/L	(8FF/L	(8B-/L	(8e/L	(16g/LL
+.	.	.	.	16b-/)
+8FF/	8FF/	8c/	8f/	(16a/
+.	.	.	.	16f/)
+8FF/J)	8FF/J)	8B-/J)	8e/J)	(16g/
+.	.	.	.	16c/JJ)
+=11	=11	=11	=11	=11
+(8FF/L	(8FF/L	(8c\L	(8f/L	(16a/LL
+.	.	.	.	16cc/)
+8FF/	8FF/	8e\	8g/	(16b-/
+.	.	.	.	16g/)
+8FF/J)	8FF/J)	8c\J)	8f/J)	(16a/
+.	.	.	.	16f/JJ)
+=12	=12	=12	=12	=12
+(8FF/L	(8FF/L	(8d\L	(8g/L	8b/L
+8FF/	8FF/	8d\	8g/	(8.b/
+8FF/J)	8FF/J)	8d\J)	8g/J)	.
+.	.	.	.	16g/Jk)
+=13	=13	=13	=13	=13
+(8FF/L	(8FF/L	(8g\L	(8b\L	(16dd\LL
+.	.	.	.	16b\)
+8FF/	8FF/	8d\	8b\	(16ff\
+.	.	.	.	16dd\)
+8FF/J)	8FF/J)	8c\J)	8cc\J)	(16ee\
+.	.	.	.	16cc\JJ)
+=14	=14	=14	=14	=14
+(8FF/L	(8FF/L	(8g\L	(8b/L	(16dd\LL
+.	.	.	.	16b\)
+8FF/	8FF/	8e\	8a/	(16cc\
+.	.	.	.	16a\)
+8FF/J)	8FF/J)	8d\J)	8g/J)	(16b\
+.	.	.	.	16g\JJ)
+=15	=15	=15	=15	=15
+(8EE/L	(8EE/L	(8c/L	8g/L	8gg\L
+8FF/	8FF/	8c/	(16a/LL	(16ff\LL
+.	.	.	16g/)	16ee\)
+8GG/J)	8GG/J)	8B/J)	(16f/	(16dd\
+.	.	.	16e/JJ)	16cc\JJ)
+*>C	*>C	*>C	*>C	*>C
+=16	=16	=16	=16	=16
+8CC/L	8CC/L	(8G/L	(16f/LL	(16dd\LL
+.	.	.	16d/JJ)	16b\JJ)
+16C/LL	16C/LL	8G/J)	8e/J	8cc\J
+16BB-/	16BB-/	.	.	.
+16AA/	16AA/	8F/	8A/	8c/
+16GG/JJ	16GG/JJ	.	.	.
+=||	=||	=||	=||	=||
+*>D	*>D	*>D	*>D	*>D
+(8CC/L	(8CC/L	(8G/L	(16f/LL	(16dd\LL
+.	.	.	16d/JJ)	16b\JJ)
+8CC/J)	8CC/J)	8G/J)	8e/J	8cc\J
+8C/	8C/	8c/	8e/	8g/
+=||	=||	=||	=||	=||
+*>E	*>E	*>E	*>E	*>E
+(8C/L	(8C/L	(8e\L	(8g/L	(16cc\LL
+.	.	.	.	16ee\)
+8C/	8C/	8f\	8b/	(16dd\
+.	.	.	.	16b\)
+8C/J)	8C/J)	8e\J)	8g/J)	(16cc\
+.	.	.	.	16g\JJ)
+=18	=18	=18	=18	=18
+(8C/L	(8C/L	(8f\L	(8b\L	(16dd\LL
+.	.	.	.	16ff\)
+8C/	8C/	8g\	8cc\	(16ee\
+.	.	.	.	16cc\)
+8C/J)	8C/J)	8f\J)	8b\J)	(16dd\
+.	.	.	.	16g\JJ)
+=19	=19	=19	=19	=19
+(8C/L	(8C/L	(8g\L	(8cc\L	(16ee\LL
+.	.	.	.	16gg\)
+8C/	8C/	8b\	8dd\	(16ff\
+.	.	.	.	16dd\)
+8C/J)	8C/J)	8g\J)	8cc\J)	(16ee\
+.	.	.	.	16g\JJ)
+=20	=20	=20	=20	=20
+(8C#/L	(8C#/L	(8g\L	(8ee\L	8bb-\L
+8C#/	8C#/	8g\	8ee\	(8.bb-\
+8E/J)	8E/J)	8g\J)	8dd\J)	.
+.	.	.	.	16aa\Jk)
+=21	=21	=21	=21	=21
+(8AA/L	(8AA/L	(8e\L	(8cc#\L	(16gg\LL
+.	.	.	.	16ee\)
+8AA/	8AA/	8a\	8dd\	(16ff\
+.	.	.	.	16dd\)
+8AA/J)	8AA/J)	8e\J)	8a\J)	(16cc#\
+.	.	.	.	16a\JJ)
+=22	=22	=22	=22	=22
+(8AA/L	(8AA/L	(8c#/L	(8g/L	(16b-/LL
+.	.	.	.	16g/)
+8AA/	8AA/	8A/)	8f/	(16a/
+.	.	.	.	16f/)
+8AA/J)	8AA/J)	8A/J	8c#/J)	(16e/
+.	.	.	.	16g/JJ)
+=23	=23	=23	=23	=23
+(8D/L	(8D/L	(8A/L	8d/L	(16f\LL
+.	.	.	.	16b-\)
+8FF/	8FF/	8A/	(16d/LL	(16a\
+.	.	.	16f/)	16dd\)
+8AA/J)	8AA/J)	8A/J)	(16e/	(16cc#\
+.	.	.	16a/JJ)	16ff\JJ)
+=24	=24	=24	=24	=24
+8DD/L	8DD/L	(8A/L	(16g/LL	(16ee\LL
+.	.	.	16e/JJ)	16cc#\JJ)
+(8D/	(8D/	8A/	8f/	8.dd\
+8C/J)	8C/J)	8A/J)	8f/J	.
+.	.	.	.	16ff\Jk
+=25	=25	=25	=25	=25
+8BB-/L	8BB-/L	8d\L	8b-/L	16ff\LL
+.	.	.	.	32ee-\LLL
+.	.	.	.	32dd\JJJ
+8BB-/	8BB-/	8c\	8a/	16ee-\LL
+.	.	.	.	32dd\LLL
+.	.	.	.	32cc\JJJ
+8BB-/J	8BB-/J	8B-\J	8g/J	16dd\LL
+.	.	.	.	32cc\LLL
+.	.	.	.	32b-\JJJ
+=26	=26	=26	=26	=26
+8BB-/L	8BB-/L	8e-\L	8a/L	16cc\LL
+.	.	.	.	32dd\LLL
+.	.	.	.	32ee-\JJJ
+8BB-/	8BB-/	8f\	8b-/	16dd\LL
+.	.	.	.	32cc\LLL
+.	.	.	.	32b-\JJJ
+8BB-/J	8BB-/J	8e-\J	8a/J	16cc\LL
+.	.	.	.	32b-\LLL
+.	.	.	.	32a\JJJ
+=27	=27	=27	=27	=27
+8BB-/L	8BB-/L	8d\L	8g/L	16b-/LL
+.	.	.	.	32a/LLL
+.	.	.	.	32g/JJJ
+8BB-/	8BB-/	8d\	8f/	16a/LL
+.	.	.	.	32b-/LLL
+.	.	.	.	32cc/JJJ
+8BB-/J	8BB-/J	8e\J	8g/J	16b-/LL
+.	.	.	.	32a/LLL
+.	.	.	.	32g/JJJ
+=28	=28	=28	=28	=28
+8BB/L	8BB/L	8f\L	8d/L	16a/LL
+.	.	.	.	32g/LLL
+.	.	.	.	32f/JJJ
+16C/LL	16C/LL	8c\	8G/	16e/LL
+16D/	16D/	.	.	32f/LLL
+.	.	.	.	32g/JJJ
+16E/	16E/	8G\J	8G/J	16c/LL
+16C/JJ	16C/JJ	.	.	16B-/JJ
+=29	=29	=29	=29	=29
+(8F\L	(8F\L	(16F/LL	8A/	(16A/LL
+.	.	16A/)	.	16c/)
+8F\	8F\	(16G/	8r	(16B-/
+.	.	16E/)	.	16G/)
+8F\J)	8F\J)	(16F/	8r	(16A/
+.	.	16A/JJ)	.	16c/JJ)
+=30	=30	=30	=30	=30
+(8D\L	(8D\L	(16d\LL	(16A/LL	(16f/LL
+.	.	16f\)	16d/)	16a/)
+8D\	8D\	(16e\	(16B-/	(16g/
+.	.	16c#\)	16G/)	16e/)
+8D\J)	8D\J)	(16d\	(16A/	(16f/
+.	.	16f\JJ)	16d/JJ)	16a/JJ)
+=31	=31	=31	=31	=31
+(8AA/L	(8AA/L	8F/L	8c/L	8cc/L
+8BB-/	8BB-/	(8F/	(16d/LL	(16b-/LL
+.	.	.	16c/)	16a/)
+8C/J)	8C/J)	8E/J)	(16B-/	(16g/
+.	.	.	16A/JJ)	16f/JJ)
+*>F	*>F	*>F	*>F	*>F
+=32	=32	=32	=32	=32
+16FF\LL	16FF\LL	(8C/L	(16B-/LL	(16g/LL
+16A\	16A\	.	16G/JJ)	16e/JJ)
+16G\	16G\	8C/J)	8A/J	8f/J
+16F\	16F\	.	.	.
+16E\	16E\	8c/	8e/	8g/
+16D\JJ	16D\JJ	.	.	.
+=||	=||	=||	=||	=||
+*>G	*>G	*>G	*>G	*>G
+(8FF/L	(8FF/L	(8C/L	(16B-/LL	(16g/LL
+.	.	.	16G/JJ)	16e/JJ)
+8FF/J)	8FF/J)	8C/J)	8A/J	8f/J
+==	==	==	==	==
+*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!ODE: His Royal Highness Christian Ludwig, Margrave of Brandenburg.
+!!!ODT: 1717//
+!!!OPC: ?Coethen; ?Cothen; ?Co2then
+!!!PPR: Peters
+!!!PDT: 1850
+!!!PPP: Leipzig
+!!!AGN: concerto grosso
+!!!AST: baroque, orchestral
+!!!AMT: simple triple
+!!!SCA: Bach-Werke-Verzeichnis
+!!!YOR: Bach Gesellschaft, xix,1
+!!!YOY: 1871; although imprint says 1869
+!!!AIN: cemba; cello; viola; violn
+!!!EEV: 1.0
+!!!RDT: 1994 February 19
+!!!YER: 1994 October 22
+!!!YEN: United States of America
+!!!EFL: 6/7
+!!!EED: W.B. Hewlett
+!!!VTS: 481204928

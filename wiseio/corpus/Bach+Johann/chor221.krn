@@ -1,0 +1,124 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Herr, straf mich nicht in deinem Zorn
+!!!SCT:	BWV 338
+!!!PC#:	221
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[]	*k[]	*k[]	*k[]
+*a:	*a:	*a:	*a:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4AA	4c	4e	4a
+=1	=1	=1	=1
+4A	4e	4a	4cc
+4E	8.eL	8aL	4b
+.	.	8gJ	.
+.	16dJk	.	.
+8FL	4c	4f	4a
+8E	.	.	.
+8D	[4d	[4f	4a
+8CJ	.	.	.
+=2	=2	=2	=2
+8BBL	8dL]	8fL]	4g
+8C#J	8AJ	[8eJ	.
+4D	4A	8eL]	4f
+.	.	8dJ	.
+4AA;	4A;	4c#;	4e;
+[4C	4A	4e	4e
+=3	=3	=3	=3
+8CL]	4A	8.dL	4f#
+16DL	.	.	.
+16CJJ	.	16eJk	.
+8BBL	8dL	8fL	4g#
+8EJ	16cL	8eJ	.
+.	16BJJ	.	.
+8CL	8cL	8eL	4a
+8BBJ	8dJ	16f#L	.
+.	.	16g#JJ	.
+8AAL	4e	4a	4cc
+8CJ	.	.	.
+=4	=4	=4	=4
+8DL	8fnXL	4a	2b
+8BBJ	8dJ	.	.
+4E	8BL	4g#	.
+.	16eL	.	.
+.	16dJJ	.	.
+4AA;	4c;	4e;	4a;
+=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B
+4E	4e	4gnX	4b
+=5	=5	=5	=5
+8BL	4d#	4f#	4b
+8A	.	.	.
+8G	4e	4g	4b
+8F#J	.	.	.
+8EL	4B	4.f#	4b
+8D#XJ	.	.	.
+4E	8BL	.	4g
+.	[8cJ	[8e	.
+=6	=6	=6	=6
+4F#	8cL]	8eL]	4a
+.	16dnXL	[8dnXJ	.
+.	16cJJ	.	.
+4G#	16BLL	8dL]	4b
+.	16AJ	.	.
+.	8BJ	8eJ	.
+4A;	4A;	4e;	4cc;
+4E	4G	4e	4b
+=7	=7	=7	=7
+4D#	4B	16f#LL	4b
+.	.	16gJJ	.
+.	.	4a	.
+4D	4e	.	4b
+.	.	8g#	.
+8CL	4e	4.a	4cc
+8DJ	.	.	.
+4E	8.eL	.	4b
+.	.	[8g	.
+.	16dJk	.	.
+=8	=8	=8	=8
+8FL	4c	8gL]	4a
+8EJ	.	16fnXL	.
+.	.	16eJJ	.
+4F	8BL	4d	4a
+.	8AJ	.	.
+4E;	4B;	4e;	4g#;
+8EL	4B	4e	4g#
+8DJ	.	.	.
+=9	=9	=9	=9
+8CL	4c	4e	4a
+8BB	.	.	.
+8AA	4B	[4e	4b
+8GG#J	.	.	.
+4AA	[4A	8eL]	4cc
+.	.	16aL	.
+.	.	16g#JJ	.
+8FL	8AL]	[4a	4dd
+8DJ	8fJ	.	.
+=10	=10	=10	=10
+2E	8eL	8aL]	2b
+.	8BJ	16g#L	.
+.	.	16f#JJ	.
+.	8eL	4g#	.
+.	8dJ	.	.
+4AA;	4c#;	4e;	4a;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

@@ -1,0 +1,60 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 71. Meine Seele erhebet den Herrn
+!!!SCT: BWV 324
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#]	*	*k[f#]	*k[f#]	*k[f#]
+*G:	*	*G:	*G:	*G:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+=1-	=1-	=1-	=1-	=1-
+2b\	Mei-	2e/	2G/	2E\
+2dd\	.	2d/	2A/	2F#\
+=2	=2	=2	=2	=2
+4b\	-ne	4d/	4B/	4G\
+4b\	See-	4d#/	4A/	4F#\
+4b\	-le	4e/	4G/	4E\
+4b\	er-	4f#/	4F#/	4D#\
+=3	=3	=3	=3	=3
+2cc\	-he-	4e/	4G/	4E\
+.	.	2d/	2A/	4F#\
+2b\	.	.	.	4G\
+.	.	4e/	4G/	4E\
+=4	=4	=4	=4	=4
+2a/	-bet	2e/	2G/	4C/
+.	.	.	.	4AA/
+2a/	den	2d/	2F#/	2D\
+=5	=5	=5	=5	=5
+1g;/	Herrn,	1d;/	1B;\	1GG;/
+=6	=6	=6	=6	=6
+2b\	und	1d/	1G/	2G\
+2dd\	.	.	.	2BB/
+=7	=7	=7	=7	=7
+! ERROR: The lange cannot be expressed in recip notation.	!	! ERROR: The lange cannot be expressed in recip notation.	! ERROR: The lange cannot be expressed in recip notation.	! ERROR: The lange cannot be expressed in recip notation.
+2a\	mein_Geist_freu-_et_sich_Got-_tes_mei-	2d/	2F#/	2D\
+1.a]	.	1.d]	1.F#]	1.D]
+2e/	-nes	2e/	2A/	2C/
+=8	=8	=8	=8	=8
+2g/	Hei-	2e/	2.B/	4BB/
+.	.	.	.	4AA/
+2f#/	.	2d#/	.	2BB/
+.	.	.	4A/	.
+=9	=9	=9	=9	=9
+1e;/	-lands.	1B;/	1G;/	1EE;/
+==|!	==|!	==|!	==|!	==|!
+!!!RNB1: *) These reciting notes are stemless in the source.
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/06/07/
+!!!KEY: 2252484956
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

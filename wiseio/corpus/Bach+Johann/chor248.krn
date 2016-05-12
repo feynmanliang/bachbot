@@ -1,0 +1,111 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Sei Lob und Ehr' dem hoechsten Gut
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 248
+!!!SCT: BWV 117
+!!!YEC: Copyright 1994, David Huron
+!!!YEC: Changes/Additions 2001 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually 
+**kern	**kern	**kern	**kern	**root	**harm
+!bass	!tenor	!alto	!soprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*G:	*G:	*G:	*G:	*G:	*G:
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A	*>A	*>A
+4F#	8d	4a	4dd	4DD	Vb
+.	8c	.	.	.	.
+=1	=1	=1	=1	=1	=1
+4G	4B	4g	4dd	4GG	I
+4D	4A	8g	4dd	4DD	V
+.	.	8f#	.	.	.
+4GG	4B	4g	8dd	4GG	I
+.	.	.	8ee	.	.
+8AA	4A	8c	4ffn	8FF	-VIIb
+8BB	.	8d	.	8BB	viio7/IV
+=2	=2	=2	=2	=2	=2
+4C	8G	8.e	4ee	4CC	I/IV
+.	8c	.	.	.	.
+.	.	16fn	.	.	.
+4GG	8c	4g	4dd	4GG	V/IV
+.	8B	.	.	.	.
+4C;	4e;	4g;	4cc;	4CC;	I/IV;
+4F#	4d	4a	4dd	4DD	V
+=3	=3	=3	=3	=3	=3
+4.G	8d	4g	8b	4GG	I
+.	8c	.	8a	.	.
+.	8B	4d	8g	8GG	I
+8F#	8A	.	8a	8DD	Vb
+8E	4G	8g	4b	4EE	vi
+8F#	.	8f#	.	.	.
+8G	4A	4e	4cc#	4AA	V7d/V
+8A	.	.	.	.	.
+=4	=4	=4	=4	=4	=4
+8F#	8A	8a	4dd	8DD	Vb
+8D	4d	8f#	.	8DD	V
+4A	.	4g	4ee	4AA	V7/V
+.	8c#	.	.	.	.
+4D;	4d;	4f#;	4dd;	4DD;	V;
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B	*>B	*>B
+8G	4d	4b	4dd	4GG	I
+8A	.	.	.	.	.
+=5	=5	=5	=5	=5	=5
+8B	8d	4b	4gg	4GG	Ib
+8c#	8e	.	.	.	.
+4d	8f#	8a	4ff#	4DD	V
+.	8g	8b	.	.	.
+4A	8a	4cc#	4ee	4AA	V/V
+.	8g	.	.	.	.
+4A#	8f#	4cc#	4ff#	4FF#	Vb/iii
+.	8e	.	.	.	.
+!!linebreak: 2
+=6	=6	=6	=6	=6	=6
+8B	4d	4dd	8gg	4GG	Ib
+8G	.	.	8ff#	.	.
+4A	4c#	8a	4ee	4AA	V/V
+.	.	8g	.	.	.
+4D;	4A;	4f#;	4dd;	4DD;	V;
+8G	4B	4g	4dd	4GG	I
+8F#	.	.	.	.	.
+=7	=7	=7	=7	=7	=7
+8E	8B	4g	4gg	4EE	vi
+8D	8c	.	.	.	.
+8C	4d	4g	4dd	4GG	Ib
+8BB	.	.	.	.	.
+8C	4c	4g	4ee	4CC	IV
+8D	.	.	.	.	.
+4E	8G	4g	8b	4EE	vi
+.	8e	.	8cc	.	.
+=8	=8	=8	=8	=8	=8
+8F#	8d	8a	4dd	8DD	Vb
+8G#	8B	8b	.	8GG#	viio/V/V
+4A	8c	8e	4cc	4AA	V/V
+.	16e	8a	.	.	.
+.	16d#	.	.	.	.
+4E;	4e;	4g#;	4b;	4EE;	VI;
+4Gn	4dn	4gn	4b	4GG	I
+=9	=9	=9	=9	=9	=9
+4F#	4d	4a	8a	4DD	Vb
+.	.	.	8b	.	.
+8E	4e	8g	4cc	8CC	IVb
+8F#	.	8a	.	8FF#	viio7
+4G	4d	8b	4b	4GG	I
+.	.	8g	.	.	.
+4C	8c	4e	4a	4AA	iib
+.	8B	.	.	.	.
+=10	=10	=10	=10	=10	=10
+4C#	2A	4e	4e	4AA	Vb/V
+4D	.	4d	4f#	4DD	V
+4GG;	4B;	4d;	4g;	4GG;	I;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!!ONB: Near duplicate with erk354.krn
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

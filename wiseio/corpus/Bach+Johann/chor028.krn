@@ -1,0 +1,100 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 28. Nun komm, der Heiden Heiland
+!!!ONM: No. 28
+!!!OCL: Erk
+!!!SCA: BWV 36.8
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+!!!ONB: From the end of Canata No. 36
+**kern	**kern	**kern	**kern	**harm	**root
+!bass	!tenor	!alto	!sprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]
+*b:	*b:	*b:	*b:	*b:	*b:
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+=1-	=1-	=1-	=1-	=1-	=1-
+8B	4d	4f#	4b	i	4BB
+8A	.	.	.	.	.
+4G	8c#	4e	4b	ivb	4EE
+.	8B	.	.	.	.
+8F#	4c#	4f#	4a	v	4FF#
+8E	.	.	.	.	.
+8D	4B	8f#	4dd	ib	8BB
+8BB	.	16g	.	vib	8GG
+.	.	16a	.	.	.
+=2	=2	=2	=2	=2	=2
+8E	4.B	8g	8cc#	iv	8EE
+8D	.	8f#	8b	ib	8BB
+8E	.	4e	4cc#	-VIIc	8AA
+8F#	8A#	.	.	V7	8FF#
+2BB;	2F#;	2d;	2b;	i;	2BB;
+=3	=3	=3	=3	=3	=3
+4BB	8d	4f#	8b	i	4BB
+.	8c#	.	8cc#	.	.
+4B	4B	8f#	4dd	i	4BB
+.	.	8g#	.	.	.
+8An	4c#	4a	4ee	-VII	4AA
+8Gn	.	.	.	.	.
+4F#	4d	8a	4dd	ic	4BB
+.	.	8b	.	.	.
+=4	=4	=4	=4	=4	=4
+4E	4G	4cc#	4ee	iio	4CC#
+4D	8A	8dd	4ff#	V/VI	4DD
+.	16B	8f#	.	.	.
+.	16cn	.	.	.	.
+2G;	2B;	2g;	2dd;	VI;	2GG;
+!!linebreak: 2
+=5	=5	=5	=5	=5	=5
+8F#	4A	4a	4dd	Vb/VI	4DD
+8E	.	.	.	.	.
+8D	4e	4a	4ee	Vb/III	4AA
+8C#	.	.	.	.	.
+4D	8d	8a	8ff#	III	8DD
+.	8c#	8a#	8ee	viio	8AA#
+8G	4B	4b	4dd	VI	4GG
+8F#	.	.	.	.	.
+=6	=6	=6	=6	=6	=6
+4E	4g	8cc#	8ee	iiob	4CC#
+.	.	8b	8dd	.	.
+4F#	8c#	4a#	4cc#	V	4FF#
+.	8f#	.	.	.	.
+2BB;	2d;	2f#;	2b;	i;	2BB;
+=7	=7	=7	=7	=7	=7
+8B	4d	4f#	4b	i	4BB
+8A	.	.	.	.	.
+4G#	8c#	4e#	4b	viib/V	4EE#
+.	8B	.	.	.	.
+8F#	4c#	8f#	4a	v	4FF#
+8E	.	8g#	.	.	.
+8F#	4f#	8a	4dd	IIIb	4DD
+8G#y	.	8b	.	.	.
+=8	=8	=8	=8	=8	=8
+8A#	8e	8f#	8cc#	V7b	8FF#
+8B	8d	[8b	8b	i	8BB
+4F#	16c#	8b]	4cc#	V	4FF#
+.	16d	.	.	.	.
+.	8e	8a#	.	.	.
+2BB;	2d#;	2f#;	2b;	I;	2BB;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

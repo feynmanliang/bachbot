@@ -1,0 +1,84 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 74. Für deinen Thron tret' ich hiermit
+!!!SCT: BWV 327
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**silbe	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*	*clefGv2	*clefF4
+*k[f#c#]	*	*k[f#c#]	*	*k[f#c#]	*k[f#c#]
+*D:	*	*D:	*	*D:	*D:
+*M3/4	*	*M3/4	*	*M3/4	*M3/4
+4dd\	F\u3r	4a/	.	4f#\	4D\
+=1	=1	=1	=1	=1	=1
+2dd\	dei-	2b/	.	2f#\	4BB/
+.	.	.	.	.	4D\
+4cc#\	-nen	4a/	.	4f#\	4F#\
+=2	=2	=2	=2	=2	=2
+2b\	Thron	2g/	.	2d\	4G\
+.	.	.	.	.	4B\
+4a/	tret'	4f#/	.	4d\	4d\
+=3	=3	=3	=3	=3	=3
+4dd\	ich	4f#/	ich	2d\	4B\
+2ee\	hier-	4b/	.	.	4G\
+.	.	4a/	hier-	4c#\	4A\
+=4	=4	=4	=4	=4	=4
+2ff#;\	-mit,	2a;/	-mit,	2d;\	2D;\
+4ff#\	o	4cc#\	.	4c#\	4A#\
+=5	=5	=5	=5	=5	=5
+2ff#\	Gott,	2b\	.	2d\	2B\
+4ff#\	und	4b\	.	4d\	4A\
+=6	=6	=6	=6	=6	=6
+2ee\	dich	4b\	.	4d\	4G#\
+.	.	4a/	.	4c#\	4A\
+4ff#\	de-	4a/	.	4d\	4F#\
+=7	=7	=7	=7	=7	=7
+4gg\	-m\u3-	4a/	.	4e\	4C#/
+2ff#\	-tig	(4dd\	.	(4A/	(4D\
+.	.	4a/)	.	4d\)	4F#\)
+=8	=8	=8	=8	=8	=8
+2ee;\	bitt':	2a;/	.	2c#;\	2A;\
+4dd\	wend'	4b/	.	4f#\	4B\
+=9	=9	=9	=9	=9	=9
+2ee\	dein	2a/	.	2e\	2c#\
+4ff#\	ge-	4a/	.	4d\	4d\
+=10	=10	=10	=10	=10	=10
+2ee\	-n\a3-	4b/	.	4d\	4G\
+.	.	8a/L	.	4c#\	4A\
+.	.	8g/J	.	.	.
+4dd\	-dig	4f#/	.	4d\	4B\
+=11	=11	=11	=11	=11	=11
+4b\	An-	4b/	.	4d\	4G\
+2cc#\	-ge-	(4b/	.	(4g\	(4E\
+.	.	4a#/)	.	4f#\)	4F#\)
+=12	=12	=12	=12	=12	=12
+2dd;\	-sicht	2b;/	.	2f#;\	2BB;/
+4aa\	von	4a/	.	4e\	4c#\
+=13	=13	=13	=13	=13	=13
+2ff#\	mir,	2a/	.	2f#\	4d\
+.	.	.	.	.	4c#\
+4dd\	dem	4b/	.	4f#\	4B\
+=14	=14	=14	=14	=14	=14
+2ee\	ar-	2a/	.	2e\	4c#\
+.	.	.	.	.	4B\
+4gg\	-men	4a/	.	4c#\	4A\
+=15	=15	=15	=15	=15	=15
+4ff#\	S\u3n-	4a/	.	4A/	4d\
+2ee\	-der,	2g/	.	(4B\	(4G\
+.	.	.	.	4c#\)	4A\)
+=16	=16	=16	=16	=16	=16
+2dd;\	nicht.	2f#;/	.	2A;/	2D;\
+==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/06/08/
+!!!KEY: 863890111
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

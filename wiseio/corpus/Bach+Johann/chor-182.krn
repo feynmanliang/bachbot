@@ -1,0 +1,118 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 182. Wie bist du Seele in mir so gar betrübt
+!!!SCT: BWV 435
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[f#]	*	*k[f#]	*k[f#]	*k[f#]
+*e:	*	*e:	*e:	*e:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4b\	Wie	8e/L	8G/L	8E\L
+.	.	8d#/J	8A/J	8F#\J
+=1	=1	=1	=1	=1
+4b\	bist	8e/L	(8B\	4G\
+.	.	8B/J	4e\)	.
+4a/	du	8c#/L	.	8G\L
+.	.	8d#/J	8A/	8F#\J
+2g/	See-	8e/L	2B\	8E\L
+.	.	8d#/J	.	8F#\
+.	.	4e/	.	8G\
+.	.	.	.	8E\J
+=2	=2	=2	=2	=2
+4f#;/	-le	(8e/L	4B;\	4BB;/
+.	.	8d#;/J)	.	.
+4g/	in	4e/	4B\	4E\
+4a/	mir	8e/L	8A\L	4F#\
+.	.	8d#/J	16B\L	.
+.	.	.	16c\JJ	.
+4g/	so	4e/	4B\	8G\L
+.	.	.	.	8E\J
+=3	=3	=3	=3	=3
+4f#/	gar	4e/	8c#/L	4AA#/
+.	.	.	8F#/J	.
+4f#/	be-	4d#/	8B/L	4BB/
+.	.	.	8A/J	.
+4e;/	-tr\u3bt?	4B;/	4G;/	4EE;/
+4f#/	Dein	4d#/	4B\	4BB/
+=4	=4	=4	=4	=4
+4g/	Hei-	4e/	8B\L	4E\
+.	.	.	8c\J	.
+4a/	-land	8d/L	8B/L	4F#\
+.	.	8c/J	8A/J	.
+2b\	le-	8B/L	8G/L	4G\
+.	.	8d/J	8B/J	.
+.	.	4g/	4d\	8GG/L
+.	.	.	.	8BB/J
+=5	=5	=5	=5	=5
+4a;/	-bet,	4f#;/	4d;\	4D;\
+4cc\	der	4e/	8c\L	8A\L
+.	.	.	8B\J	8G\J
+4cc\	dich	4d/	8A/L	8F#\L
+.	.	.	8F#/J	8D\J
+4b\	ja	4d/	4G/	8G\L
+.	.	.	.	8BB\J
+=6	=6	=6	=6	=6
+4a/	treu-	4e/	4G/	8C/L
+.	.	.	.	8AA/J
+4a/	-lich	8d/L	4F#/	4D\
+.	.	8c/J	.	.
+4g;/	liebt;	4B;/	4G;/	4GG;/
+4a/	er-	4d/	8F#/L	8D\L
+.	.	.	8G/J	8E\J
+=7	=7	=7	=7	=7
+4a/	-gib	8d/L	4A/	8F#\L
+.	.	8c#/J	.	8G\J
+4a/	dich	8d/L	4A/	8F#\L
+.	.	8e/J	.	8E\J
+4a/	g\a3nz-	4f#/	4d\	8D\L
+.	.	.	.	8E\J
+4f#/	-lich	4d/	4A/	8D/L
+.	.	.	.	8C/J
+=8	=8	=8	=8	=8
+4g/	sei-	8d/L	4B\	8BB/L
+.	.	8e/J	.	8C/J
+4a/	-nem	4f#/	4c\	8BB/L
+.	.	.	.	8AA/J
+2b\	Wil-	4g/	4d\	8GG/L
+.	.	.	.	8AA/
+.	.	4d/	4G/	8BB/
+.	.	.	.	8C/J
+=9	=9	=9	=9	=9
+4a;/	-len,	4d;/	(8G/L	4D;\
+.	.	.	8F#;/J)	.
+4f#/	er	4f#/	8B/L	4D#\
+.	.	.	8A/J	.
+4g/	kann	8B/L	4G/	4E\
+.	.	8e/J	.	.
+4a/	al-	8d/L	4d\	4F#\
+.	.	8c/J	.	.
+=10	=10	=10	=10	=10
+4b\	-lein	4B/	8d\L	4G\
+.	.	.	8fn\J	.
+4b\	dein	4e/	8e\L	4G#\
+.	.	.	8d\J	.
+4a/	Trau-	8e/L	4c\	4A\
+.	.	8d#/J	.	.
+8g/L	-ern	4e/	4c#\	4A#\
+8f#/J	.	.	.	.
+=11	=11	=11	=11	=11
+2f#/	stil-	4e/	4.B\	4B\
+.	.	4d#/	.	4BB/
+.	.	.	8A/	.
+4e;/	-len.	4B;/	4G#;/	4E;\
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/08/09/
+!!!KEY: 1328126420
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

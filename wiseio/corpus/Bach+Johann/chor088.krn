@@ -1,0 +1,104 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Helft mir Gott's Guete preisen
+!!!AGN: 4-Part Chorale; Chorale Prelude
+!!!SCT: BH 088
+!!!SCT: BWV 28
+!!!YEC: Copyright 1994, David Huron
+!!!YEC: Changes/Additions 2001 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually
+**kern	**kern	**kern	**kern	**root	**harm
+!bass	!tenor	!alto	!soprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*k[]	*k[]	*k[]	*k[]	*k[]	*k[]
+*a:	*a:	*a:	*a:	*a:	*a:
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A	*>A	*>A
+4AA	4c	4e	4a	4AA	i
+=1	=1	=1	=1	=1	=1
+4A	4c	4e	4a	4AA	i
+4G#	4B	4e	4b	4EE	Vb
+4A	4A	4e	4cc	4AA	i
+4F#	4A	4d	4dd	4DD	Vb/-VII
+=2	=2	=2	=2	=2	=2
+2Gn	8Gn	4d	4.b	4.GG	I/-VII
+.	8F#	.	.	.	.
+.	8G	8g	.	.	.
+.	8A	8f#	8cc	8FF#	viiob/-VII
+4GG;	4B;	4g;	4dd;	4GG;	I/-VII;
+4G#	4B	4e	4ee	4EE	Vb
+=3	=3	=3	=3	=3	=3
+8A	8A	4e	4cc	4AA	i
+8Gn	8B	.	.	.	.
+8Fn	4c	4a	4a	4FF	VI
+8E	.	.	.	.	.
+4D	4f	4a	4b	4BB	ii7b
+4E	8e	4g#	4b	4EE	V
+.	8d	.	.	.	.
+=4	=4	=4	=4	=4	=4
+2.AA;	2.c;	2.e;	2.a;	2.AA;	i;
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B	*>B	*>B
+4AA	4c	4a	4ee	4AA	i
+=5	=5	=5	=5	=5	=5
+4BB	4d	8a	4dd	4GG#	viiob
+.	.	8g#	.	.	.
+4C	4e	4a	4cc	4AA	ib
+8D	8f	8a	4b	8BB	ii7b
+8E	8e	8g#	.	8EE	V
+4F	8e	8a	4a	4DD	ivb
+.	8d	8A	.	.	.
+=6	=6	=6	=6	=6	=6
+2.E;	2.G#;	2.e;	2.b;	2.EE;	V;
+4E	4e	4g#	4b	4EE	V
+!!linebreak: 2
+=7	=7	=7	=7	=7	=7
+4A	4e	4a	4cc	4AA	i
+4B	4d	4gn	4dd	4GG	Vb/III
+8c	8c	4g	4ee	4CC	III
+8B	8d	.	.	.	.
+8A	4e	4a	4cc	4AA	i
+8G	.	.	.	.	.
+=8	=8	=8	=8	=8	=8
+8F#	4A	4a	4.dd	4DD	Vb/-VII
+8E	.	.	.	.	.
+4D	4d	8g	.	4DD	V/-VII
+.	.	8f#	8cc	.	.
+4G;	4d;	4g;	4b;	4GG;	I/-VII;
+4Fn	4d	4g	4b	4GG	V7d/III
+=9	=9	=9	=9	=9	=9
+4E	4G	4g	4cc	4CC	IIIb
+4D	8A	4fn	4dd	4DD	iv
+.	8B	.	.	.	.
+4C	8c	4e	4ee	4CC	III
+.	8d	.	.	.	.
+8BB	4e	4a	4cc	4AA	i
+8AA	.	.	.	.	.
+=10	=10	=10	=10	=10	=10
+8BB	4d	8a	4.dd	4GG	Ib/-VII
+8C	.	8g	.	.	.
+4D	4A	8f#	.	4DD	V/-VII
+.	.	8e	8cc	.	.
+4GG;	4B;	4d;	4b;	4GG;	I/-VII;
+4G#	4B	4e	4ee	4EE	Vb
+=11	=11	=11	=11	=11	=11
+8A	8A	4e	8cc	8AA	i
+8Gn	8B	.	8b	8EE	vb
+8F	4c	4a	4a	4FF	VI
+8E	.	.	.	.	.
+4D	4f	4a	4b	4BB	ii7b
+4E	8e	4g#	4b	4EE	V
+.	8d	.	.	.	.
+=12	=12	=12	=12	=12	=12
+2.AA;	2.c#;	2.e;	2.a;	2.AA;	I;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!!ONB: m.7, b.3: bass note 8C should perhaps be 8c
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

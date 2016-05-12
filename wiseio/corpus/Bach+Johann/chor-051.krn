@@ -1,0 +1,183 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 51. Eins ist not, ach Herr, dies Eine
+!!!SCT: BWV 304
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**silbe	**kern	**silbe	**kern	**silbe
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[ALTO]	*I:[TENORE]	*I:[TENORE]	*I:[BASSO]	*I:[BASSO]
+*clefG2	*	*clefG2	*	*clefGv2	*	*clefF4	*
+*k[f#c#]	*	*k[f#c#]	*	*k[f#c#]	*	*k[f#c#]	*
+*D:	*	*D:	*	*D:	*	*D:	*
+*M4/4	*	*M4/4	*	*M4/4	*	*M4/4	*
+=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-
+4a/	Eins	4f#/	.	4d\	.	4D\	.
+8g/L	ist	4d/	.	4A/	.	4D\	.
+8f#/J	.	.	.	.	.	.	.
+4b\	not,	4d/	.	4B\	.	8G\L	.
+.	.	.	.	.	.	8F#\J	.
+4b\	ach	8g/L	.	8e\L	.	4E\	.
+.	.	8f#/J	.	8d\J	.	.	.
+=2	=2	=2	=2	=2	=2	=2	=2
+4cc#\	Herr,	4e/	.	8c#\L	.	8A\L	.
+.	.	.	.	8B\J	.	8G\J	.
+4cc#\	dies	8a/L	.	4A/	.	8F#\L	.
+.	.	8g/J	.	.	.	8E\J	.
+4dd\	Ei-	4f#/	.	4A/	.	4D\	.
+4dd;\	-ne	4f#;/	.	4A;/	.	4D;\	.
+=3	=3	=3	=3	=3	=3	=3	=3
+4.b\	leh-	4d/	.	8G/L	.	8G\L	.
+.	.	.	.	8A/J	.	8F#\J	.
+.	.	8g/L	.	4B\	.	4E\	.
+8a/	-re	8f#/J	.	.	.	.	.
+4g/	mich	4e/	.	4B\	.	8E\L	.
+.	.	.	.	.	.	8D\J	.
+4a/	er-	4e/	.	4A/	.	4C#/	.
+=4	=4	=4	=4	=4	=4	=4	=4
+8g/L	-ken-	4d/	.	4A/	.	4D;\	.
+8f#/J	.	.	.	.	.	.	.
+8e/L	-nen	4c#/	.	8A/L	.	4AA/	.
+8f#/J	.	.	.	8G/J	.	.	.
+2d;/	doch:	2A;/	.	2F#;/	.	2D\	.
+=5	=5	=5	=5	=5	=5	=5	=5
+4a/	al-	4e/	.	4A/	.	4C#/	.
+8g/L	-les	4d/	.	4A/	.	4D\	.
+8f#/J	.	.	.	.	.	.	.
+4b\	An-	4f#/	.	8A/L	.	4D#\	.
+.	.	.	.	8F#/J	.	.	.
+4b\	-dre,	8e/L	.	8G/	.	4E\	.
+.	.	8d/J	.	[8B/	wie's	.	.
+=6	=6	=6	=6	=6	=6	=6	=6
+4cc#\	wie's	4c#/	.	8B/L]	.	4E#\	.
+.	.	.	.	8G#/J	.	.	.
+4cc#\	auch	4f#/	.	4A#/	auch	4F#\	.
+4dd\	schei-	4f#/	.	4B\	.	4BB/	.
+4dd;\	-ne,	4f#;/	.	4B;\	.	4BB;/	.
+=7	=7	=7	=7	=7	=7	=7	=7
+4.b\	ist	8g/L	.	4d\	.	4GG/	.
+.	.	8f#/J	.	.	.	.	.
+.	.	4e/	.	4c#\	.	4AA/	.
+8a/	ja	.	.	.	.	.	.
+4g/	nur	4d/	.	8B/L	.	4BB/	.
+.	.	.	.	8G/J	.	.	.
+4a/	ein	4e/	.	8E/L	.	4C#/	.
+.	.	.	.	8A/J	.	.	.
+=8	=8	=8	=8	=8	=8	=8	=8
+8g/L	schwe-	8e/L	.	4A/	.	4D\	.
+8f#/J	.	8d/J	.	.	.	.	.
+8e/L	-res	8d/L	.	4A/	.	4AA/	.
+8f#/J	.	8c#/J	.	.	.	.	.
+2d;/	Joch,	2A;/	.	2F#;/	.	2D;\	.
+=9||	=9||	=9||	=9||	=9||	=9||	=9||	=9||
+*M3/4	*	*M3/4	*	*M3/4	*	*M3/4	*
+8d/L	da-	4A/	.	8F#/L	.	4D\	.
+8e/J	.	.	.	8G/J	.	.	.
+=10	=10	=10	=10	=10	=10	=10	=10
+4f#/	-run-	4d/	.	4A/	.	8D/L	.
+.	.	.	.	.	.	8C#/J	.
+4f#/	-ter	4d/	.	4A/	.	8D\L	.
+.	.	.	.	.	.	8E\J	.
+4f#/	das	4d/	.	8A/L	.	8F#\L	.
+.	.	.	.	8B/J	.	8G\J	.
+=11	=11	=11	=11	=11	=11	=11	=11
+4e/	Her-	8c#/L	.	8c#\L	.	4A\	.
+.	.	8B/J	.	8d\J	.	.	.
+4e/	-ze	8c#/L	.	8e\L	.	4AA/	.
+.	.	8d/J	.	8d\J	.	.	.
+8e/L	sich	4e/	.	4c#\	.	4A\	.
+8f#/J	.	.	.	.	.	.	.
+=12	=12	=12	=12	=12	=12	=12	=12
+4g/	na-	4e/	.	4B\	.	8E\L	.
+.	.	.	.	.	.	8D#\J	.
+4g/	-get	4e/	.	4B\	.	8E\L	.
+.	.	.	.	.	.	8F#\J	.
+8g/L	und	4e/	.	8B\L	.	8G\L	.
+8f#/J	.	.	.	8c#\J	.	8A\J	.
+=13	=13	=13	=13	=13	=13	=13	=13
+4f#/	pla-	8d/L	.	8d\L	.	4B\	.
+.	.	8c#/J	.	8e\J	.	.	.
+4f#/	-get,	8d/L	.	8f#\L	.	4BB/	.
+.	.	8e/J	.	8e\J	.	.	.
+4f#/	und	4f#/	.	8d\L	.	8B\L	.
+.	.	.	.	8c#\J	.	8A\J	.
+=14	=14	=14	=14	=14	=14	=14	=14
+4.b\	den-	4.g/	.	8B/L	.	8G\L	.
+.	.	.	.	8A/J	.	8F#\J	.
+.	.	.	.	8G/L	.	4E\	.
+8a/	-noch	8f#/	.	8A/J	.	.	.
+4g/	kein	4e/	.	4B\	.	8E\L	.
+.	.	.	.	.	.	8D\J	.
+=15	=15	=15	=15	=15	=15	=15	=15
+4.a/	wah-	8e/L	.	4A/	.	8C#/L	.
+.	.	8d/J	.	.	.	8BB/J	.
+.	.	4c#/	.	4A/	.	4AA/	.
+8g/	-res	.	.	.	.	.	.
+4f#/	Ver-	4d/	.	4A/	.	8D/L	.
+.	.	.	.	.	.	8C#/J	.
+=16	=16	=16	=16	=16	=16	=16	=16
+4g/	-gn\u3-	4d/	.	8G/L	.	8BB/L	.
+.	.	.	.	8A/J	.	8AA/J	.
+4f#/	-gen	4d/	.	4B\	.	4GG/	.
+4e/	er-	4c#/	.	4E/	.	4AA/	.
+=17	=17	=17	=17	=17	=17	=17	=17
+4d/	-ja-	4A/	.	4F#/	.	4D\	.
+4d;/	-get;	4A;/	.	4F#;/	.	4D;\	.
+8d/L	er-	4A/	.	4F#/	.	8D/L	.
+8e/J	.	.	.	.	.	8C#/J	.
+=18	=18	=18	=18	=18	=18	=18	=18
+4f#/	-lang'	4d/	.	4B\	.	4BB/	.
+4f#/	ich	4d/	.	4B\	.	8B\L	.
+.	.	.	.	.	.	8A\J	.
+4f#/	dies	4d/	.	4A/	.	8G\L	.
+.	.	.	.	.	.	8F#\J	.
+=19	=19	=19	=19	=19	=19	=19	=19
+4e/	Ei-	4d/	.	4B\	.	4G#\	.
+4e/	-ne,	8c#/L	.	8A/L	.	4E\	.
+.	.	8B/J	.	8G#/J	.	.	.
+8e/L	das	8c#/L	.	4A/	.	4A\	.
+8f#/J	.	8d/J	.	.	.	.	.
+=20	=20	=20	=20	=20	=20	=20	=20
+4g/	Al-	4e/	.	4A/	.	4C#/	.
+4g/	-les	4e/	.	4B\	.	8D/L	.
+.	.	.	.	.	.	8C#/J	.
+8g/L	er-	4e/	.	4c#\	.	8BB/L	.
+8f#/J	.	.	.	.	.	8AA/J	.
+=21	=21	=21	=21	=21	=21	=21	=21
+2f#/	-setzt,	(4e/	.	2A/	.	2D\	.
+.	.	4d/)	.	.	.	.	.
+4f#/	so	4r	.	4A/	so	4r	.
+=22	=22	=22	=22	=22	=22	=22	=22
+4.b\	werd'	4d/	so	8d\L	werd'	4BB/	so
+.	.	.	.	8c#\J	.	.	.
+.	.	8g/L	werd'	4.B\	ich	4E\	werd'
+8a/	ich	8f#/J	.	.	.	.	.
+4g/	mit	[4e/	ich	.	.	8E\L	ich
+.	.	.	.	8B\	mit	8D\J	mit
+=23	=23	=23	=23	=23	=23	=23	=23
+4.a/	Ei-	8e/]	.	4.A/	Ei-	8C#/L	Ei-
+.	.	8g/	mit	.	.	8AA/J	.
+.	.	8f#/L	Ei-	.	.	4.D\	-nem
+8g/	-nem	8e/J	.	8c#\	-nem	.	.
+4f#/	in	8d/	-nem	4d\	in	.	.
+.	.	8A/	in	.	.	8C#/	in
+=24	=24	=24	=24	=24	=24	=24	=24
+4g/	Al-	4.d/	.	4D/	.	4BB/	.
+4f#/	-lem	.	.	4A/	.	8AA/L	.
+.	.	8e/	.	.	.	8GG/J	.
+4e/	er-	4c#/	.	8A/L	.	4AA/	.
+.	.	.	.	8G/J	.	.	.
+=25	=25	=25	=25	=25	=25	=25	=25
+2.d;/	-g\o3tzt.	2.A;/	.	2.F#;/	.	2.D;\	.
+==|!	==|!	==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/25/
+!!!KEY: 2747174195
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

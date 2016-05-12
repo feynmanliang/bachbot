@@ -1,0 +1,117 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Chorale Harmonizations
+!!!ONR: Nr. 43
+!!!OTL: Die Nacht ist kommen
+!!!SCT: BWV 296
+!!!YEC: Copyright 1996, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Icalto	*Isoprn
+*	*	*Ialto	*
+*k[]	*k[]	*k[]	*k[]
+*M4/4	*M4/4	*M4/4	*M4/4
+*clefF4	*clefGv2	*clefG2	*clefG2
+4G\	4B\	4d/	4g/
+=1	=1	=1	=1
+4F#\	4A/	4d/	4a/
+4Fn\	4G/	4d/	4b\
+4E\	4G/	4e/	2cc\
+4F#\	4A/	4d/	.
+=2	=2	=2	=2
+2G;\,	2G;/,	2d;/,	2b;\,
+4C#/	4G/	4e/	4a/
+4D\	8F/L	8d/L	4a/
+.	8E/J	8c/J	.
+=3	=3	=3	=3
+4D\	4E/	4B/	4g#/
+4C/	8E/L	4e/	4a/
+.	8A/J	.	.
+4D\	4A/	4f/	2b\
+4E\	4G#/	8e/L	.
+.	.	8d/J	.
+=4	=4	=4	=4
+2AA;/	2A;/	2c;/	2a;/
+4r	4r	4r	4r
+4A\	4e\	4a/	4cc\
+=5	=5	=5	=5
+4E\	8e\L	8g/L	4cc\
+.	8d\J	8f/J	.
+4C/	4e\	4g/	8cc\L
+.	.	.	8b\J
+8F\L	8c\L	8g/L	2a;/
+8G\	8c#\	16f/LL	.
+.	.	16e/JJ	.
+8F\	8d\	8f/	.
+8E\J	8e\J	8g/J	.
+=6	=6	=6	=6
+2D;\	2f;\	2a;/	2dd;\
+4r	4r	4r	4r
+8G\L	4d\	4g/	4b\
+8F\J	.	.	.
+=7	=7	=7	=7
+4E\	4e\	4g/	4cc\
+4F#\	4d\	4a/	4a/
+4G\	4.d\	8a/L	4b\
+.	.	8g/J	.
+4D\	.	8g/L	4a/
+.	8c\	8f#/J	.
+=8	=8	=8	=8
+2GG;/,	2B;\,	2d;/,	2g;/,
+4r	4r	4r	4r
+4G\	4B\	4g/	4dd\
+=9	=9	=9	=9
+4F#\	4A/	8a/L	4dd\
+.	.	8d/J	.
+8G\L	4B\	4g/	4dd\
+8Fn\J	.	.	.
+8E\L	2c\	8g/L	2cc\
+8D\	.	8f/	.
+8E\	.	8g/	.
+8C\J	.	8e/J	.
+=10	=10	=10	=10
+2F;\	2c;\	2f;/	2a;/
+4r	4r	4r	4r
+4E\	4e\	4g/	4cc\
+=11	=11	=11	=11
+4F#\	4d\	4a/	4cc\
+4G\	4d\	8a/L	4b\
+.	.	8g/J	.
+4C/	8e\L	4g/	8cc\L
+.	8d\J	.	8b\J
+4C#/	4e\	4g/	4a:/
+=12	=12	=12	=12
+2D;\,	2d;\,	2f#;/,	2a;/,
+4r	4r	4r	4r
+4BB/	4d\	4g/	4dd\
+=13	=13	=13	=13
+4E\	8G/L	8g/L	4cc\
+.	8A/J	8f#/J	.
+8D/L	8B\L	4g/	4b\
+8C/J	8e\J	.	.
+4D\	8A/	4g/	2a/
+.	4d\	.	.
+4DD/	.	4f#/	.
+.	8c\	.	.
+=14	=14	=14	=14
+1GG;/	1B;\	1d;/	1g;/
+==	==	==	==
+*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!PDT: 1784//
+!!!PPP: Leipzig
+!!!AGN: chorale harmonization
+!!!AST: baroque, choral
+!!!AMT: simple quadruple
+!!!YOR: Bach Gesellschaft, xxxix
+!!!AIN: bass calto soprn tenor vox
+!!!EEV: 1.0
+!!!RDT: 1994 May 05
+!!!YER: 1996 July 11
+!!!YEN: United States of America
+!!!EFL: 43/185
+!!!ENC: S. Rasmussen
+!!!EED: W.B. Hewlett
+!!!VTS: 3942877927

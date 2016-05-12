@@ -1,0 +1,101 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 224. Das walt' Gott Vater und Gott Sohn
+!!!ONM: No. 224
+!!!OCL: Erk
+!!!SCA: BWV 290
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**kern	**kern	**kern	**kern	**harm	**root
+!bass	!tenor	!alto	!sprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*F:	*F:	*F:	*F:	*F:	*F:
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4F	4A	4c	4f	I	4FF
+=1	=1	=1	=1	=1	=1
+4F	4c	4f	4a	I	4FF
+8AA	4c	4f	4cc	Ib	4FF
+8BB-	.	.	.	.	.
+4C	4G	4e	4cc	V	4CC
+4C#	4A	[4e	4a	Vb/vi	4AA
+=2	=2	=2	=2	=2	=2
+4D	4A	8e]	4f	vi	4DD
+.	.	8d	.	.	.
+4E	4G	4c	4g	Vb	4CC
+4F;	4F;	4c;	4a;	I;	4FF;
+4F	4A	4c	4f	I	4FF
+=3	=3	=3	=3	=3	=3
+4.F	4A	4f	4cc	I	4FF
+.	4c	4g	4cc	Vb	4CC
+8E	.	.	.	.	.
+4D	4f	8a	4dd	vi	4DD
+.	.	8bn	.	.	.
+8A	4e	4cc	4ee	iii	4AA
+8G	.	.	.	.	.
+=4	=4	=4	=4	=4	=4
+4F	4a	4.cc	8ff	I	4FF
+.	.	.	8ee	.	.
+4G	8d	.	4dd	V/V	4GG
+.	16g	8bn	.	.	.
+.	16f	.	.	.	.
+4C;	4e;	4g;	4cc;	V;	4CC;
+4E	4c	[4g	4cc	Vb	4CC
+=5	=5	=5	=5	=5	=5
+!!linebreak: 2
+4F	4c	8g]	4a	I	4FF
+.	.	16f	.	.	.
+.	.	16e	.	.	.
+8AA	[4c	4f	4cc	Ib	4FF
+8FF	.	.	.	.	.
+4BB-	8c]	4f	4dd	IV	4BB-
+.	[8B-	.	.	.	.
+[4F	8B-]	4f	4cc	I	4FF
+.	8A	.	.	.	.
+=6	=6	=6	=6	=6	=6
+8F]	4G	8g	4b-	V7b	4CC
+8E	.	8c	.	.	.
+4F	8.A	8c	4a	I	4FF
+.	.	[8f	.	.	.
+.	16B-	.	.	.	.
+4C;	4c;	8f]	4g;	V;	4CC;
+.	.	8e;	.	.	.
+4E	4c	4g	4cc	Vb	4CC
+=7	=7	=7	=7	=7	=7
+4F	4c	4f	8a	I	4FF
+.	.	.	8b-	.	.
+4AA	4c	4f	4cc	Ib	4FF
+4BB-	4d	4f	4b-	IV	4BB-
+4C	8c	4e	8a	V7	4CC
+.	8B-	.	8g	.	.
+=8	=8	=8	=8	=8	=8
+4D	8A	16d	4f	vi	4DD
+.	.	16e	.	.	.
+.	16G	4f	.	.	.
+.	16F	.	.	.	.
+4C	8.c	.	4g	V	4CC
+.	.	8e	.	.	.
+.	16B-	.	.	.	.
+4F;	4A;	4c;	4f;	I;	4FF;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

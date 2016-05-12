@@ -1,0 +1,116 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 34. Dank sei Gott in der Höhe
+!!!SCT: BWV 287
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*>[A,A,B]	*	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*	*>A	*>A	*>A
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[b-]	*	*k[b-]	*k[b-]	*k[b-]
+*F:	*	*F:	*F:	*F:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4cc\	Dankdurch	4g/	4c\	4E\
+=1	=1	=1	=1	=1
+4a/	seiden	8f/L	4c\	8F\L
+.	.	8g/J	.	8E-\J
+4cc\	Gottich	4a/	4e-\	8D/L
+.	.	.	.	8C/J
+4dd\	inauf-	8b-/L	4f\	4BB-/
+.	.	8a/J	.	.
+4cc\	der-er-	8g/L	4en\	4C/
+.	.	8a/J	.	.
+=2	=2	=2	=2	=2
+2b-\	H\o3--ste-	8b-/L	4f\	4D\
+.	.	8a/J	.	.
+.	.	4g/	4c\	4E\
+4a;/	-he-he	4f;/	4c;\	4F;\
+4a/	invom	4f/	4c\	4F\
+=3	=3	=3	=3	=3
+4g/	die-Schlaf	4e/	4c\	8B-\L
+.	.	.	.	8A\J
+4a/	-serfrisch	4f/	4c\	8G\L
+.	.	.	.	8F\J
+4g/	Mor-und	4f/	8c\L	4c\
+.	.	.	16B-\L	.
+.	.	.	16A\JJ	.
+4g/	-gen-ge-	4e/	4B-\	4C/
+=4	=4	=4	=4	=4
+2.f;/	-stund',-sund.	2.c;/	2.A;/	2.F;\
+=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*	*>B	*>B	*>B
+4g/	Mich	8c/L	4G/	8E\L
+.	.	8d/J	.	8D\J
+=5	=5	=5	=5	=5
+4g/	hat-	4e/	4c\	8C\L
+.	.	.	.	8c\J
+4a/	-te	4c/	4F/	8B-\L
+.	.	.	.	8A\J
+4b-\	zwar	4d/	8B-/L	8G\L
+.	.	.	8A/J	8F\J
+8cc\L	ge-	4c/	4G/	4E\
+8b-\J	.	.	.	.
+=6	=6	=6	=6	=6
+2a/	-bun-	4.c/	8A/L	4F\
+.	.	.	8G/J	.
+.	.	.	4F/	8AA/L
+.	.	8d/	.	8BB-/J
+4g;/	-den	4e;/	4c;\	4C;/
+4g/	mit	4e/	4c\	4C/
+=7	=7	=7	=7	=7
+8a/L	Fin-	4f/	8c\L	8F\L
+8bn/J	.	.	8d\J	8E\J
+4cc\	-ster-	4g/	4e\	8D/L
+.	.	.	.	8C/J
+8dd\L	-niss	4a/	4.d\	4F\
+8cc\J	.	.	.	.
+4b\	die	4g/	.	4G\
+.	.	.	16e\LL	.
+.	.	.	16f\JJ	.
+=8	=8	=8	=8	=8
+2.cc;\	Nacht,	2.g;/	2.e;\	2.C;/
+4cc\	ich	4e/	4G/	4C/
+=9	=9	=9	=9	=9
+4a/	hab'	4c/	4A/	(8F\
+.	.	.	.	4E-\)
+4cc\	sie	4f/	4A/	.
+.	.	.	.	16D/LL
+.	.	.	.	16C/JJ
+4dd\	\u3-	4f/	4B-\	8BB-\L
+.	.	.	.	8A\J
+4cc\	-ber-	4e-/	4A/	8G\L
+.	.	.	.	8F#\J
+=10	=10	=10	=10	=10
+2b-\	-wun-	4.d/	8B-\L	8G\L
+.	.	.	8c\J	8A\
+.	.	.	4d\	8B-\
+.	.	8e/	.	8c\J
+4a;/	-den	4f#;/	4d;\	4d;\
+4a/	mit	4d/	4f\	8d\L
+.	.	.	.	8c\J
+=11	=11	=11	=11	=11
+4g/	Gott,	4e/	4c\	8B-\L
+.	.	.	.	8A\J
+4a/	der	4f/	4c\	8G\L
+.	.	.	.	8F\J
+4g/	mich	4f/	8c\L	4c\
+.	.	.	16B-\L	.
+.	.	.	16A\JJ	.
+4g/	be-	4e/	4B-\	4C/
+=12	=12	=12	=12	=12
+2.f;/	-wacht.	2.c;/	2.A;/	2.F;\
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/13/
+!!!KEY: 2061455668
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

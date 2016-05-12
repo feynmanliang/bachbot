@@ -1,0 +1,88 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Nun komm, der Heiden Heiland
+!!!SCT:	BWV 62/6
+!!!PC#:	170
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[]	*k[]	*k[]	*k[]
+*a:	*a:	*a:	*a:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+=1-	=1-	=1-	=1-
+8AL	4c	4e	4a
+8GJ	.	.	.
+4F	8BL	4d	4a
+.	8AJ	.	.
+4E	8BL	4e	4g
+.	8AJ	.	.
+8EL	8GL	4e	4cc
+8F#J	8AJ	.	.
+=2	=2	=2	=2
+8G#L	8BL	8eL	8bL
+8AJ	8cJ	8f#J	8aJ
+8EL	4d	4g#	4b
+8EEJ	.	.	.
+2AA;	2c;	2e;	2a;
+=3	=3	=3	=3
+4AA	8cL	8eL	8aL
+.	8dJ	8g#J	8bJ
+4A	8eL	4a	4cc
+.	8fnXJ	.	.
+8GnXL	8BL	4d	4dd
+8FnXJ	8AJ	.	.
+4E	8GL	4g	4cc
+.	8AJ	.	.
+=4	=4	=4	=4
+4D	4B	4f	4dd
+4C	8cL	8eL	4ee
+.	8GJ	16fL	.
+.	.	16gJJ	.
+2F;	2A;	2f;	2cc;
+=5	=5	=5	=5
+8FL	4A	4f	4cc
+8EJ	.	.	.
+4D	8BL	4f	4dd
+.	8cJ	.	.
+4G#	4B	4e	8eeL
+.	.	.	8ddJ
+8AL	4A	4e	4cc
+8GJ	.	.	.
+=6	=6	=6	=6
+8FL	4A	8dL	8ddL
+8DJ	.	8aJ	8ccJ
+4E	8eL	4g#	4b
+.	8dJ	.	.
+2AA;	2c;	2e;	2a;
+=7	=7	=7	=7
+8BBL	4F#	8d#L	4a
+8C#J	.	8eJ	.
+8D#L	4B	4f#	4a
+8BBJ	.	.	.
+8EL	4B	4e	4gnX
+8DJ	.	.	.
+8CL	4A	4e	4cc
+8AAJ	.	.	.
+=8	=8	=8	=8
+8DL	4.A	8fnXL	8bL
+16EL	.	8cJ	8aJ
+16FnXJJ	.	.	.
+4E	.	4d	4b
+.	8G#	.	.
+2AA;	2E;	2c#;	2a;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

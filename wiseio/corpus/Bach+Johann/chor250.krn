@@ -1,0 +1,122 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Ein faste Burg ist unser Gott
+!!!SCT:	BWV 303
+!!!PC#:	250
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]
+*D:	*D:	*D:	*D:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+8dL	8f#L	4a	4dd
+8c#J	8eJ	.	.
+=1	=1	=1	=1
+4B	4d	8aL	4dd
+.	.	8gJ	.
+8AL	8cL	8f#L	4dd
+8GJ	8BJ	8gJ	.
+4F#	4d	8aL	8aL
+.	.	8f#J	8bJ
+4E	4e	8gL	4cc#X
+.	.	8aJ	.
+=2	=2	=2	=2
+4D	4A	8f#L	8ddL
+.	.	8eJ	8cc#J
+4E	8AL	8dL	4b
+.	8G#J	8eJ	.
+4AA;	4A;	4c#;	4a;
+4BB	8F#L	4f#	4dd
+.	8G#J	.	.
+=3	=3	=3	=3
+8C#L	4A	8eL	4cc#
+8DJ	.	8f#J	.
+4E	8eL	4gnX	4b
+.	8dJ	.	.
+4F#	4c#	8f#L	4a
+.	.	8eJ	.
+8GnXL	8BL	4d	8bL
+8AJ	8c#J	.	8aJ
+=4	=4	=4	=4
+8BL	4d	4d	8gL
+8G	.	.	8f#J
+8A	8AL	4c#	4e
+8AAJ	8GJ	.	.
+4D;	4F#;	4A;	4d;
+=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B
+8DL	8F#L	4d	4d
+8EJ	8G#J	.	.
+=5	=5	=5	=5
+4F#	8AL	8c#L	4a
+.	8dJ	8f#J	.
+4G#	8c#L	8eL	4b
+.	8BJ	8dJ	.
+8AL	8eL	8c#L	4a
+8DJ	8f#J	8dJ	.
+4E	8eL	4B	4g#
+.	8dJ	.	.
+=6	=6	=6	=6
+4AA;	4c#;	4A;	4a;
+4BB	8F#L	4d	4d
+.	8GJ	.	.
+4F#	4A	4d	4a
+8EL	8eL	8gL	8bL
+8AAJ	8eJ	8gJ	8cc#J
+=7	=7	=7	=7
+4D;	4d;	4f#;	4dd;
+4F#	4A	4f#	4cc#
+8BBL	8BL	16f#LL	8ddL
+.	.	16g#J	.
+8C#J	8eJ	8aJ	8cc#J
+8DL	8f#L	8aL	8bL
+8EJ	8eJ	8g#J	8bJ
+=8	=8	=8	=8
+4AA;	4c#;	4a;	4a;
+4E	8BL	4gnX	4b
+.	8c#J	.	.
+8BBL	4d	4g	4b
+8C#J	.	.	.
+4D	8dL	4f#	4a
+.	8cJ	.	.
+=9	=9	=9	=9
+4D#	4B	4f#	8bL
+.	.	.	8aJ
+4E	4B	4e	4g
+4BB;	4B;	4d#;	4f#;
+4BB	4B	8f#L	4dd
+.	.	8g#J	.
+=10	=10	=10	=10
+8C#L	4e	4a	4cc#
+8DnXJ	.	.	.
+8EL	4e	4gnX	4b
+8DJ	.	.	.
+8C#L	4e	4g	4a
+8AAJ	.	.	.
+8DL	8dL	8f#L	8bL
+8C#J	8AJ	8eJ	8aJ
+=11	=11	=11	=11
+8BBL	4B	4d	8gL
+8GGJ	.	.	8f#J
+4AA	8EL	4c#	4e
+.	8AJ	.	.
+4D;	4F#;	4A;	4d;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

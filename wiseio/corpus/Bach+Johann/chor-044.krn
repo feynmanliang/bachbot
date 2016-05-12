@@ -1,0 +1,110 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 44. Die Sonn' hat sich mit ihrem Glanz
+!!!SCT: BWV 297
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*a:	*	*a:	*a:	*a:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4d/	Die	4A/	4F/	4D\
+=1	=1	=1	=1	=1
+4f/	Sonn'	4d/	4A/	4D\
+4g/	hat	8d/L	4B-\	4GG/
+.	.	8e/J	.	.
+4a;/	sich	4f;/	4d;\	4DD;/
+4dd\	mit	4a/	4f\	4D\
+=2	=2	=2	=2	=2
+4.cc\	ih-	4a/	4e\	4A\
+.	.	4g#/	8.e\L	4E\
+8b\	-rem	.	.	.
+.	.	.	16d\Jk	.
+8a/L	Glanz	8a/L	8c\L	4F\
+8b/J	.	8g#/J	8d\J	.
+4cc\	ge-	4a/	8e\L	8C/L
+.	.	.	8f\J	8D/J
+=3	=3	=3	=3	=3
+2b\	-wen-	8a/L	8B\	4E\
+.	.	16g#/L	4e\	.
+.	.	16f#/JJ	.	.
+.	.	4g#/	.	4EE/
+.	.	.	8d\	.
+4a;/	-det	4e;/	4c#;\	4AA;/
+4dd\	und,	4a/	4d\	4F\
+=4	=4	=4	=4	=4
+4dd\	was	8a/L	8d\L	4B-\
+.	.	8g/J	8e\J	.
+4dd\	sie	4b\	4f\	8A\L
+.	.	.	.	8G#\J
+4cc#;\	soll,	4a;/	4e;\	4A;\
+4ee\	auf	8a/L	4A/	4C#/
+.	.	8g/J	.	.
+=5	=5	=5	=5	=5
+4dd\	die-	4f/	4A/	8D\L
+.	.	.	.	8E\J
+4a/	-sen	4f/	4d\	4F\
+4b-\	Tag	4g/	8d\L	8F\L
+.	.	.	8c\J	8E\J
+8a/L	voll-	4f/	4c\	4F\
+8g/J	.	.	.	.
+=6	=6	=6	=6	=6
+2g/	-en-	8f/L	8d\L	4BB-/
+.	.	16e/L	8B-\	.
+.	.	16d/JJ	.	.
+.	.	4e/	8G\	4C/
+.	.	.	16c\L	.
+.	.	.	16B-\JJ	.
+4f;/	-det;	4c;/	4A;/	4FF;/
+4f/	die	4d/	4B-\	4BB-/
+=7	=7	=7	=7	=7
+4e/	dun-	4d/	4B-\	4GG/
+4e/	-kle	4c#/	8A/L	4AA/
+.	.	.	8G/J	.
+4d;/	Nacht	4A;/	4F;/	4DD;/
+4a/	dringt	4f/	4d\	4D\
+=8	=8	=8	=8	=8
+4cc\	al-	8f/L	4c\	8AA/L
+.	.	8e/J	.	8GG/J
+4cc\	-len-	4f/	4c\	8AA/L
+.	.	.	.	8BB-/J
+8g/L	-hal-	4e/	8c\L	4C/
+8a/J	.	.	8A\J	.
+4b-\	-ben	8f/L	8d\L	8D\L
+.	.	8g/J	8c\J	8E\J
+=9	=9	=9	=9	=9
+4a;/	zu,	4f;/	4c;\	4F;\
+4a/	bringt	4f/	4d\	4D\
+4cc\	Men-	4f/	4c\	4AA/
+4dd\	-schen,	4f/	8c\L	4BB-/
+.	.	.	8B-\J	.
+=10	=10	=10	=10	=10
+4a;/	Vieh	4f;/	4c;\	4FF;/
+4cc\	und	4g/	4c\	4EE/
+4a/	al-	8g/L	4c\	4FF/
+.	.	16f/L	.	.
+.	.	16e/JJ	.	.
+8g/L	-le	4d/	4B-\	4BB-/
+8f/J	.	.	.	.
+=11	=11	=11	=11	=11
+4.e/	Welt	4d/	8B-/L	4GG/
+.	.	.	8G/J	.
+.	.	4c#/	8E/L	4AA/
+8d/	zur	.	16A/L	.
+.	.	.	16G/JJ	.
+2d;/	Ruh'.	2A;/	2F#;/	2DD;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/17/
+!!!KEY: 1439232339
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

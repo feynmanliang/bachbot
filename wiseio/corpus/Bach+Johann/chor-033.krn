@@ -1,0 +1,71 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 33. Danket dem Herren
+!!!SCT: BWV 286
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*a:	*	*a:	*a:	*a:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4a/	Dan-	4e/	4c\	4AA/
+=1	=1	=1	=1	=1
+4cc\	-ket	4a/	4e\	4.A\
+4b\	dem	4b\	4e\	.
+.	.	.	.	8G#\
+4cc\	Herr-	8b/L	4e\	8A\L
+.	.	8a/J	.	8AA\J
+4dd\	-en,	8a/L	4d\	4BB/
+.	.	8g/J	.	.
+=2	=2	=2	=2	=2
+4ee\	denn	4g/	8d\L	8C/L
+.	.	.	16c\L	8D/J
+.	.	.	16B\JJ	.
+4ee\	er	4g/	4c\	8E\L
+.	.	.	.	8F\J
+4dd\	ist	8g/L	4B\	4G\
+.	.	8f/J	.	.
+4cc\	sehr	4e/	8B/L	4A\
+.	.	.	8A/J	.
+=3	=3	=3	=3	=3
+2b\	freund-	2e/	4A/	2E\
+.	.	.	8G#/L	.
+.	.	.	8F#/J	.
+4b;\	-lich,	4e;/	4G#;/	4EE;/
+4b\	und	4e/	4G#/	8E\L
+.	.	.	.	8D\J
+=4	=4	=4	=4	=4
+4ee\	sei-	4e/	4A/	4C/
+4dd\	-ne	4f#/	4A/	4C/
+4dd\	G\u3t'	4g#/	4B\	4BB/
+4cc\	und	4a/	8c\L	4AA/
+.	.	.	8d\J	.
+=5	=5	=5	=5	=5
+4b\	Wahr-	8a/L	4e\	4E\
+.	.	8g#/J	.	.
+4cc\	-heit	4a/	4e\	8A\L
+.	.	.	.	8G\J
+4dd\	blei-	8a/L	4d\	4F\
+.	.	8g#/J	.	.
+4cc\	-bet	4a/	4e\	4E\
+=6	=6	=6	=6	=6
+4b\	e-	4.a/	4f\	4D\
+4b\	-wig-	.	8.e\L	4E\
+.	.	8g#/	.	.
+.	.	.	16d\Jk	.
+4a;/	-lich.	4e;/	4c#;\	4AA;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/13/
+!!!KEY: 1794257462
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

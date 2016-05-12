@@ -1,0 +1,97 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Wer nur den lieben Gott l&auml;&szlig;t walten
+!!!SCT:	BWV 88/7
+!!!PC#:	104
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[f#c#]	*k[f#c#]	*k[f#c#]	*k[f#c#]
+*b:	*b:	*b:	*b:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4BB	8BL	8dL	4f#
+.	8c#J	8eJ	.
+=1	=1	=1	=1
+4B	4d	4f#	4b
+4A#	4c#	4f#	4cc#
+4B	4B	8f#L	4dd
+.	.	8gJ	.
+4F#	8c#L	4anX	4cc#
+.	8dJ	.	.
+=2	=2	=2	=2
+8GL	4e	4g	4b
+8F#J	.	.	.
+4E	8eL	4g	4cc#
+.	8dJ	.	.
+2F#	2c#	2f#	2a#
+=3	=3	=3	=3
+4FF#;	4A#;	4c#;	4f#;
+4F#	4A	8c#L	4anX
+.	.	8dJ	.
+4C#	8AL	4e	4a
+.	8BJ	.	.
+8BBL	4c#	4e	4g
+8AAJ	.	.	.
+=4	=4	=4	=4
+4D	4c#	8f#L	4f#
+.	.	8eJ	.
+8GL	8BL	4d	4b
+8F#J	8AJ	.	.
+4E	4G	8c#L	4b
+.	.	8dJ	.
+4F#	4F#	4e	4a#
+=5	=5	=5	=5
+2.BB;	2.F#;	2.d;	2.b;
+=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B
+4F#	4A#	4f#	4cc#
+=6	=6	=6	=6
+4B	8BL	8f#L	4dd
+.	8gJ	8bJ	.
+4c#	8f#L	8anXL	4ee
+.	8eJ	8gJ	.
+8dL	4d	4f#	8ff#L
+8c#J	.	.	8eeJ
+8BL	4d	4b	8ff#L
+8AJ	.	.	8ggJ
+=7	=7	=7	=7
+4G	8dL	4b	4ee
+.	8BJ	.	.
+4A	4c#	8aL	4ee
+.	.	8gJ	.
+4D;	4A;	4f#;	4dd;
+4D	8AL	4a	4ff#
+.	8BJ	.	.
+=8	=8	=8	=8
+4C#	4c#	4a#	4ee
+4BB	8F#L	4b	4dd
+.	8GJ	.	.
+4AA	8AnXL	8eL	4cc#
+.	8F#J	8d#J	.
+8GGL	4B	4e	8bL
+8GJ	.	.	8cc#J
+=9	=9	=9	=9
+8F#L	4B	8f#L	8ddL
+8EJ	.	8gJ	8eeJ
+4F#	4A#	8f#L	4cc#
+.	.	8eJ	.
+4BB;	4F#;	4d#;	4b;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

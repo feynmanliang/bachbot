@@ -1,0 +1,140 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL: 165. O Lamm Gottes, unschuldig
+!!!ONM: No. 165
+!!!OCL: Erk
+!!!SCA: BWV 401
+!!!YOE: Riemenschneider, Albert
+!!!OPR: 371 Harmonized Chorales and 69 Chorale Melodies with Figured Bass
+!!!OPT: Bach Chorale Harmonizations
+**kern	**kern	**kern	**kern	**mharm	**mroot	**harm	**tsroot	
+!bass	!tenor	!alto	!sprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]	*>norep[A,B]
+*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*F:	*F:	*F:	*F:	*F:	*F:	*	*
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+8FF	8A	4c	4f	I	4FF	V7b/IV	F
+8GG	8B-	.	.	.	.	IV	F
+=1	=1	=1	=1	=1	=1	=1	=1
+4AA	[4c	16c	4f	I7b	4FF	V7d	F
+.	.	16d	.	.	.	.	F
+.	.	8e-	.	.	.	.	F
+[4BB-	8c]	8e-	4f	IV	4BB-	I	B-
+.	16B-	8d	.	.	.	.	B-
+.	16A	.	.	.	.	.	B-
+4BB-]	4G	8en	4cc	V7c	4CC	vi7b	C
+.	.	8c	.	.	.	.	C
+8AA	[4c	8f	4cc	Ib	4FF	V7/V	F
+8GG	.	8e	.	.	.	.	C
+=2	=2	=2	=2	=2	=2	=2	=2
+4FF	4c]	4a	2dd	vi7b	4DD	V	D
+4GG	4Bn	8g	.	V/V	4GG	iii	G
+.	.	8f	.	.	.	.	G
+4C;	4G;	4e;	4cc;	V;	4CC;	vi	C
+4AA	4A	[4e	4cc	iii	4AA	Vb	A
+=3	=3	=3	=3	=3	=3	=3	=3
+4D	4A	8e]	4f	vi	4DD	I	D
+.	.	[8d	.	.	.	.	D
+4E	4G	8d]	4g	Vb	4CC	IV	C
+.	.	8c	.	.	.	.	C
+8F	4.F	8c	4a	I	4FF	Ic	F
+8E	.	16d	.	.	.	.	A
+.	.	16e	.	.	.	.	A
+8D	.	[4f	4b-	IVb	4BB-	V7	B-
+8BB-	8d	.	.	.	.	.	B-
+=4	=4	=4	=4	=4	=4	=4	=4
+4C	4c	8f]	4a	Ic	4FF	I	F
+.	.	16e	.	.	.	.	C
+.	.	16d	.	.	.	.	C
+4CC	8.c	4e	8g	V	4CC	.	C
+.	.	.	8f	.	.	.	C
+.	16B-	.	.	.	.	.	C
+4FF;	4A;	4c;	4f;	I;	4FF;	.	F
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B
+[4F	4c	4f	4a	I	4FF	vi7d	F
+=5	=5	=5	=5	=5	=5	=5	=5
+8F]	4c	4f	4a	I	4FF	V7b/V	F
+8E	.	.	.	.	.	.	F
+8D	4d	4f	4a	vi	4DD	IIIb	D
+8C	.	.	.	.	.	.	D
+4BBn	4d	4f	4g	V7b/V	4GG	vi7	G
+4C#	4A	4e	4a	Vb/vi	4AA	.	A
+=6	=6	=6	=6	=6	=6	=6	=6
+!!linebreak: 2
+8D	8A	8d	8f	vi	8DD	V	D
+8E	8G	[8c	8e	Vb	8CC	.	C
+8F	8A	8c]	4d	vi7b	8DD	V7b/IV	D
+8G	16G	8Bn	.	V/V	8GG	.	G
+.	16F	.	.	.	.	.	G
+4C;	4E;	4G;	4c;	V;	4CC;	ii7b	C
+4AA	4F	4e-	4cc	V7b/IV	4FF	I	F
+=7	=7	=7	=7	=7	=7	=7	=7
+4BB-	8F	8d	4dd	IV	8BB-	Vb	G
+.	8G	8en	.	(vii7c)	8EE	.	G
+[4F	8A	8f	4cc	I	4FF	I	F
+.	8B-	16g	.	.	.	.	F
+.	.	16a	.	.	.	.	F
+8F]	[4c	4g	4cc	Vb	4CC	V7/IV	C
+8E	.	.	.	.	.	.	C
+4F	8c]	4f	8a	I	8FF	ii	F
+.	8d	.	8b-	IVc	8BB-	.	B-
+=8	=8	=8	=8	=8	=8	=8	=8
+8F	4e-	4.a	4cc	V7/IV	8FF	VI	F
+8F#	.	.	.	viioD7/ii	8FF#	.	F
+8G	4d	.	4b-	v/VI	4AA	V7b/V	G
+8GG	.	[8g	.	.	.	.	G
+4D;	4d;	8g]	4a;	VI;	4DD;	V7	D
+.	.	8f#;	.	.	.	.	D
+8BB-	8d	4g	4dd	iib	8GG	vi	G
+8BBn	8fn	.	.	V7b/V	8GG	.	G
+=9	=9	=9	=9	=9	=9	=9	=9
+4C	[4en	4g	8cc	V	4CC	Vb	C
+.	.	.	8b-	.	.	.	C
+4D	8e]	4f	4a	vi	4DD	I	D
+.	[8d	.	.	.	.	.	D
+4E	8d]	[4g	4g	Vb	4CC	.	C
+.	8c	.	.	.	.	.	C
+4F	4c	8g]	4a	I	4FF	.	F
+.	.	16f	.	.	.	.	F
+.	.	16e	.	.	.	.	F
+=10	=10	=10	=10	=10	=10	=10	=10
+8AA	8c	4f	4cc	Ib	4FF	ii7b	F
+16BB-	8A	.	.	.	.	.	F
+16C	.	.	.	.	.	.	F
+8D	8F	[4f	4a	vi	4DD	V7	F
+8C	8A	.	.	.	.	.	F
+4BB-	4d	4f]	2g	ii7b	4GG	I	G
+4C	8c	4e	.	V	4CC	.	C
+.	8B-	.	.	.	.	.	C
+=11	=11	=11	=11	=11	=11	=11	=11
+2.FF;	2.A;	2.c;	2.f;	I;	2.FF;	.	F
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!AGN: chorale
+!!!AST: Baroque
+!!!AIN: vox
+!!!YOY: 1941
+!!!PPP: New York; London
+!!!PPR: G. Schirmer
+!!!ENC: David Huron
+!!!EED: David Huron
+!!!YEN: United States of America
+!!!YER: 1992
+!!!YEC: Copyright 1992 David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YER: March 20, 1996
+!!!AMT: simple quadruple
+!!!EEV: 1.1
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

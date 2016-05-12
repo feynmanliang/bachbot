@@ -1,0 +1,224 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Six Concerts Avec plusieurs ... le prince regnant d'Anhalt-Coethen
+!!!OTL: Brandenburgische Konzerte F
+!!!XEN: Brandenburg Concerto No. 1 in F major
+!!!OMV: Movement 4.
+!!!SCT: BWV 1046
+!!!YEC: Copyright 1994, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+!! For the following instrumentation: Corno I & II, Oboe I, II & III,
+!!    Fagotto, Violino Piccolo, Violino I, Violino II, Viola,
+!!    Violoncello, Continuo, Violone grosso
+!! Menuetto.
+**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern	**kern
+*ICstr	*ICklav	*ICstr	*ICstr	*ICstr	*ICstr	*ICstr	*ICww	*ICww	*ICww	*ICww	*ICbras	*ICbras
+*Icbass	*Icemba	*Icello	*Iviola	*Ivioln	*Ivioln	*Iviolp	*Ifagot	*Ioboe	*Ioboe	*Ioboe	*Icor	*Icor
+*IGcont	*IGcont	*	*	*	*	*	*	*	*	*	*	*
+!vgroso	!contin	!'cello	!viola	!v'lin2	!v'lin1	!v'linP	!fagot	!oboe3	!oboe2	!oboe1	!corno2	!corno1
+*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]	*>[A,B,C,B,D,E,F,E,G]
+*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A	*>A
+*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[f#c#]	*k[b-]	*k[b-]	*k[b-]	*k[b-]	*k[]	*k[]
+*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:	*F:
+*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4
+*MM102	*MM102	*MM102	*MM102	*MM102	*MM102	*MM102	*MM102	*MM102	*MM102	*MM102	*MM102	*MM102
+*clefF4	*clefF4	*clefF4	*clefC3	*clefG2	*clefG2	*clefG2	*clefF4	*clefG2	*clefG2	*clefG2	*clefG2	*clefG2
+=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-	=1-
+2A\	2A\	2A\	2f\	(4a/	(4cc\	(4cc/	2A\	2f/	(4a/	(4cc\	2.r	4F/
+.	.	.	.	4cc\)	4ee-\)	4ee-\)	.	.	4cc\)	4ee-\)	.	8F/L
+.	.	.	.	.	.	.	.	.	.	.	.	8F/
+4B-\	4B-\	4B-\	4f\	4b-\	4dd\	4dd\	4B-\	4f/	4b-\	4dd\	.	8F/
+.	.	.	.	.	.	.	.	.	.	.	.	8F/J
+=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:	=2!|:
+*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B	*>B
+(4c\	(4c\	(4c\	(4e-T\	(4a/	(4cc\	(4cc/	(4c\	(4e-/	(4a/	(4cc\	4F/	4F/
+4e-\)	4e-\)	4e-\)	8d\L	4f/)	8b-/L	8b-/L	4e-\)	8d/L	4f/)	8b-/L	8F/L	4r
+.	.	.	8c\J)	.	8a/J)	8an/J)	.	8c/J)	.	8a/J)	8F/	.
+4d\	4d\	4d\	4d\	4f/	4b-/	4b-/	4d\	4d/	4f/	4b-/	8F/	4r
+.	.	.	.	.	.	.	.	.	.	.	8F/J	.
+=3	=3	=3	=3	=3	=3	=3	=3	=3	=3	=3	=3	=3
+(4c\	(4c\	(4c\	4e-\	(4a/	(4cc\	(4cc/	(4c\	4e-/	(4a/	(4cc\	4F/	4F/
+8B-\L	8B-\L	8B-\L	4c\	4cc\)	4ee-\)	4ee-\)	8B-\L	4c/	4cc\)	4ee-\)	4r	8F/L
+8A\J)	8A\J)	8A\J)	.	.	.	.	8A\J)	.	.	.	.	8F/
+4B-\	4B-\	4B-\	4f\	4b-\	4dd\	4dd\	4B-\	4f/	4b-\	4dd\	4r	8F/
+.	.	.	.	.	.	.	.	.	.	.	.	8F/J
+=4	=4	=4	=4	=4	=4	=4	=4	=4	=4	=4	=4	=4
+4A\	4A\	4A\	2f\	4cc\	2ccT\	2ccT/	4A\	2f/	4cc\	2ccT\	4F/	4F/
+(8B-\L	(8B-\L	(8B-\L	.	4b-\	.	.	(8B-\L	.	4b-\	.	8F/L	4r
+8A\	8A\	8A\	.	.	.	.	8A\	.	.	.	8F/	.
+8G\	8G\	8G\	4c\	4a/	4ff\	4ff\	8G\	4c/	4a/	4ff\	8F/	4r
+8F\J)	8F\J)	8F\J)	.	.	.	.	8F\J)	.	.	.	8F/J	.
+=5	=5	=5	=5	=5	=5	=5	=5	=5	=5	=5	=5	=5
+2Et\	2Et\	2Et\	2c\	2g/	(4b-/	(4b-/	2Et\	2c/	2g/	(4b-/	4c/	4c/
+.	.	.	.	.	4g/)	4g/)	.	.	.	4g/)	4r	8c/L
+.	.	.	.	.	.	.	.	.	.	.	.	8c/
+4F\	4F\	4F\	4c\	4f/	4a/	4an/	4F\	4c/	4f/	4a/	4r	8c/
+.	.	.	.	.	.	.	.	.	.	.	.	8c/J
+=6	=6	=6	=6	=6	=6	=6	=6	=6	=6	=6	=6	=6
+(4G\	(4G\	(4G\	4G/	(8e/L	4b-\	4b-/	(4G\	4e/	(8e/L	4b-\	4c/	4c/
+.	.	.	.	8f/J)	.	.	.	.	8f/J)	.	.	.
+8F\L	8F\L	8F\L	4A/	(4.fT/	2dd\	2dd\	8F\L	8a/L	(4.fT/	2dd\	8c/L	4r
+8E\J)	8E\J)	8E\J)	.	.	.	.	8E\J)	8g/J	.	.	8c/	.
+4F\	4F\	4F\	4F/	.	.	.	4F\	4a/	.	.	8c/	4r
+.	.	.	.	16e/LL	.	.	.	.	16e/LL	.	8c/J	.
+.	.	.	.	16f/JJ)	.	.	.	.	16f/JJ)	.	.	.
+=7	=7	=7	=7	=7	=7	=7	=7	=7	=7	=7	=7	=7
+4E\	4E\	4E\	2c\	(4g/	(4b-T/	(4b-T/	4E\	4g/	(4g/	(4b-/	4c/	4c/
+(8F\L	(8F\L	(8F\L	.	4f/)	8a/L	8an/L	(8F\L	4c/	4f/)	8a/L	4r	8c/L
+8E\	8E\	8E\	.	.	8g/J)	8g/J)	8E\	.	.	8g/J)	.	8c/
+8D\	8D\	8D\	4c\	4e/	4cc\	4cc/	8D\	4c/	4e/	4cc\	4r	8c/
+8C\J)	8C\J)	8C\J)	.	.	.	.	8C\J)	.	.	.	.	8c/J
+=8	=8	=8	=8	=8	=8	=8	=8	=8	=8	=8	=8	=8
+(4F\	(4F\	(4F\	2c\	2f/	2at/	2ant/	(4F\	2c/	2f/	2a/	4c/	4c/
+8E\L	8E\L	8E\L	.	.	.	.	8E\L	.	.	.	8c/L	4r
+8D\J)	8D\J)	8D\J)	.	.	.	.	8D\J)	.	.	.	8c/	.
+4E\	4E\	4E\	4c\	4g/	4g/	4g/	4E\	4c/	4g/	4g/	8c/	4r
+.	.	.	.	.	.	.	.	.	.	.	8c/J	.
+=9	=9	=9	=9	=9	=9	=9	=9	=9	=9	=9	=9	=9
+4D\	4D\	4D\	4dT\	4f/	(8b\L	(8bn/L	4D\	4dT/	4f/	(8b\L	4g\	4g\
+.	.	.	.	.	8cc\J)	8cc/J)	.	.	.	8cc\J)	.	.
+4E\	4E\	4E\	8c\L	2g/	(4.ccT\	(4.ccT/	4E\	8c/L	2g/	(4.ccT\	4r	8g\L
+.	.	.	8d\J	.	.	.	.	8d/J	.	.	.	8g\
+4C/	4C/	4C/	4e\	.	.	.	4C/	4e/	.	.	4r	8g\
+.	.	.	.	.	16b\LL	16bn/LL	.	.	.	16b\LL	.	8g\J
+.	.	.	.	.	16cc\JJ)	16cc/JJ)	.	.	.	16cc\JJ)	.	.
+=10	=10	=10	=10	=10	=10	=10	=10	=10	=10	=10	=10	=10
+4BB/	4BB/	4BB/	2d\	2g/	(4dd\	(4dd/	4BB/	2d/	2g/	(4dd\	4g\	4g\
+(8AA/L	(8AA/L	(8AA/L	.	.	8cc\L	8cc/L	(8AA/L	.	.	8cc\L	8g\L	4r
+8GG/	8GG/	8GG/	.	.	8b\J)	8bn/J)	8GG/	.	.	8b\J)	8g\	.
+8FF/	8FF/	8FF/	4e\	4g/	4cc\	4cc/	8FF/	4e/	4g/	4cc\	8g\	4r
+8EE/J)	8EE/J)	8EE/J)	.	.	.	.	8EE/J)	.	.	.	8g\J	.
+=11	=11	=11	=11	=11	=11	=11	=11	=11	=11	=11	=11	=11
+8AA/L	8AA/L	8AA/L	(4c\	8a/L	8ff\L	8ff\L	8AA/L	(4c/	8a/L	8ff\L	4a\	8cc\L
+8FF/J	8FF/J	8FF/J	.	8b/J	8gg\J	8gg\J	8FF/J	.	8b/J	8gg\J	.	8bn\J
+4GG/	4GG/	4GG/	4g\)	4.bt/	4.ddT\	4.ddT\	4GG/	4g/)	4.bt/	4.ddT\	8g\L	4.bnt\
+.	.	.	.	.	.	.	.	.	.	.	8g\	.
+4GG/	4GG/	4GG/	4f\	.	.	.	4GG/	4f/	.	.	8g\	.
+.	.	.	.	8g/	8cc\	8cc/	.	.	8g/	8cc\	8g\J	8cc\
+*>C	*>C	*>C	*>C	*>C	*>C	*>C	*>C	*>C	*>C	*>C	*>C	*>C
+=12	=12	=12	=12	=12	=12	=12	=12	=12	=12	=12	=12	=12
+4CC/	4CC/	4CC/	2.e\	2.g/	2.cc\	2.cc/	4CC/	2.e/	2.g/	2.cc\	2.g\	2.cc\
+8C/L	8C/L	8C/L	.	.	.	.	8C/L	.	.	.	.	.
+8BB-/	8BB-/	8BB-/	.	.	.	.	8BB-/	.	.	.	.	.
+8AA/	8AA/	8AA/	.	.	.	.	8AA/	.	.	.	.	.
+8GG/J	8GG/J	8GG/J	.	.	.	.	8GG/J	.	.	.	.	.
+=13	=13	=13	=13	=13	=13	=13	=13	=13	=13	=13	=13	=13
+4FF/	4FF/	4FF/	2f\	(4a/	(4cc\	(4cc/	4FF/	2f/	(4a/	(4cc\	2.r	4F/
+4A\	4A\	4A\	.	4cc\)	4ee-\)	4ee-\)	4A\	.	4cc\)	4ee-\)	.	8F/L
+.	.	.	.	.	.	.	.	.	.	.	.	8F/
+4B-\	4B-\	4B-\	4f\	4b-\	4dd\	4dd\	4B-\	4f/	4b-\	4dd\	.	8F/
+.	.	.	.	.	.	.	.	.	.	.	.	8F/J
+=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||
+*>D	*>D	*>D	*>D	*>D	*>D	*>D	*>D	*>D	*>D	*>D	*>D	*>D
+4CC/	4CC/	4CC/	2.e\	2.g/	2.cc\	2.cc/	4CC/	2.e/	2.g/	2.cc\	2.g\	2.cc\
+4C/	4C/	4C/	.	.	.	.	4C/	.	.	.	.	.
+4D/	4D/	4D/	.	.	.	.	4D/	.	.	.	.	.
+=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||
+*>E	*>E	*>E	*>E	*>E	*>E	*>E	*>E	*>E	*>E	*>E	*>E	*>E
+2E\	2E\	2E\	2g\	(4cc\	(4gg\	(4gg\	2E\	2g/	(4cc\	(4gg\	2.r	4c/
+.	.	.	.	4gg\)	4bb-\)	4bb-\)	.	.	4gg\)	4bb-\)	.	8c/L
+.	.	.	.	.	.	.	.	.	.	.	.	8c/
+4F\	4F\	4F\	4cc\	4ff\	4aa\	4aan\	4F\	4cc\	4ff\	4aa\	.	8c/
+.	.	.	.	.	.	.	.	.	.	.	.	8c/J
+=14	=14	=14	=14	=14	=14	=14	=14	=14	=14	=14	=14	=14
+(4G\	(4G\	(4G\	(4b-T\	(4ee\	(4gg\	(4ggT\	(4G\	(4b-/	(4ee\	(4gg\	4c/	4c/
+4B-\)	4B-\)	4B-\)	8a\L	4cc\)	8ff\L	8ff\L	4B-\)	8a/L	4cc\)	8ff\L	8c/L	4r
+.	.	.	8g\J)	.	8ee\J)	8een\J)	.	8g/J)	.	8ee\J)	8c/	.
+4A\	4A\	4A\	4a\	4cc\	4ff\	4ff\	4A\	4a/	4cc\	4ff\	8c/	4r
+.	.	.	.	.	.	.	.	.	.	.	8c/J	.
+=15	=15	=15	=15	=15	=15	=15	=15	=15	=15	=15	=15	=15
+(4G\	(4G\	(4G\	4b-\	(4ee\	(4gg\	(4gg\	(4G\	4b-\	(4ee\	(4gg\	4c/	4c/
+8F\L	8F\L	8F\L	4g\	4gg\)	4bb-\)	4bb-\)	8F\L	4g/	4gg\)	4bb-\)	4r	8c/L
+8E\J)	8E\J)	8E\J)	.	.	.	.	8E\J)	.	.	.	.	8c/
+4F\	4F\	4F\	4cc\	4ff\	4aa\	4aan\	4F\	4cc\	4ff\	4aa\	4r	8c/
+.	.	.	.	.	.	.	.	.	.	.	.	8c/J
+=16	=16	=16	=16	=16	=16	=16	=16	=16	=16	=16	=16	=16
+4E\	4E\	4E\	2cc\	(4gg\	2ggT\	2ggT\	4E\	2cc\	(4gg\	2ggT\	4c/	4c/
+(8F\L	(8F\L	(8F\L	.	4ff\)	.	.	(8F\L	.	4ff\)	.	8c/L	4r
+8E\	8E\	8E\	.	.	.	.	8E\	.	.	.	8c/	.
+8D\	8D\	8D\	4g\	4ee\	4ccc\	4ccc\	8D\	4g/	4ee\	4ccc\	8c/	4r
+8C\J)	8C\J)	8C\J)	.	.	.	.	8C\J)	.	.	.	8c/J	.
+=17	=17	=17	=17	=17	=17	=17	=17	=17	=17	=17	=17	=17
+2BBt/	2BBt/	2BBt/	2g\	2dd\	(4ff\	(4ff\	2BBt/	2g/	2dd\	(4ff\	4g\	4g\
+.	.	.	.	.	4dd\)	4dd\)	.	.	.	4dd\)	4r	8g\L
+.	.	.	.	.	.	.	.	.	.	.	.	8g\
+4C/	4C/	4C/	4g\	4cc\	4ee\	4een\	4C/	4g/	4cc\	4ee\	4r	8g\
+.	.	.	.	.	.	.	.	.	.	.	.	8g\J
+=18	=18	=18	=18	=18	=18	=18	=18	=18	=18	=18	=18	=18
+4D/	4D/	4D/	4d\	(8b\L	4ff\	4ff\	4D/	4d/	(8b\L	4ff\	4g\	4g\
+.	.	.	.	8cc\J)	.	.	.	.	8cc\J)	.	.	.
+(8C/L	(8C/L	(8C/L	4e\	(4.ccT\	2aa\	2aan\	(8C/L	4e/	(4.ccT\	2aa\	8g\L	4r
+8BB/J	8BB/J	8BB/J	.	.	.	.	8BB/J	.	.	.	8g\	.
+4C/)	4C/)	4C/)	4c\	.	.	.	4C/)	4c/	.	.	8g\	4r
+.	.	.	.	16b\LL	.	.	.	.	16b\LL	.	8g\J	.
+.	.	.	.	16cc\JJ)	.	.	.	.	16cc\JJ)	.	.	.
+=19	=19	=19	=19	=19	=19	=19	=19	=19	=19	=19	=19	=19
+4BB/	4BB/	4BB/	2g\	(4dd\	(4ff\	(4ff\	4BB/	2g/	(4dd\	(4ff\	4g\	4g\
+(8C/L	(8C/L	(8C/L	.	4cc\)	8ee\L	8een\L	(8C/L	.	4cc\)	8ee\L	4r	8g\L
+8BB/	8BB/	8BB/	.	.	8dd\J)	8dd\J)	8BB/	.	.	8dd\J)	.	8g\
+8AA/	8AA/	8AA/	4g\	4b\	4gg\	4gg\	8AA/	4g/	4b\	4gg\	4r	8g\
+8GG/J)	8GG/J)	8GG/J)	.	.	.	.	8GG/J)	.	.	.	.	8g\J
+=20	=20	=20	=20	=20	=20	=20	=20	=20	=20	=20	=20	=20
+4C/	4C/	4C/	2.g\	2.cc\	(4.ee\	(4.een\	4C/	2.g/	2.cc\	(4.ee\	4g\	4g\
+8BB-/L	8BB-/L	8BB-/L	.	.	.	.	8BB-/L	.	.	.	8g\L	4r
+8AA/	8AA/	8AA/	.	.	8ff\)	8ff\)	8AA/	.	.	8ff\)	8g\	.
+8GG/	8GG/	8GG/	.	.	(8.ffT\L	(8.ffT\L	8GG/	.	.	(8.ffT\L	8g\	4r
+8FF/J	8FF/J	8FF/J	.	.	.	.	8FF/J	.	.	.	8g\J	.
+.	.	.	.	.	32ee\LLL	32een\LLL	.	.	.	32ee\LLL	.	.
+.	.	.	.	.	32ff\JJJ)	32ff\JJJ)	.	.	.	32ff\JJJ)	.	.
+=21	=21	=21	=21	=21	=21	=21	=21	=21	=21	=21	=21	=21
+4EE/	4EE/	4EE/	(8g\L	2cc\	(8gg\L	(8gg\L	4EE/	4g/	2cc\	(8gg\L	4g\	4cc\
+.	.	.	8f\J)	.	8aa\J)	8aan\J)	.	.	.	8aa\J)	.	.
+8FF/L	8FF/L	8FF/L	(4.fT\	.	(4.aat\	(4.aant\	8FF/L	(4.fT/	.	(4.aat\	4r	8cc\L
+8EE/	8EE/	8EE/	.	.	.	.	8EE/	.	.	.	.	8cc\
+8DD/	8DD/	8DD/	.	4ff\	.	.	8DD/	.	4ff\	.	4r	8cc\
+8EE/J	8EE/J	8EE/J	16e\LL	.	16gg\LL	16gg\LL	8EE/J	16e/LL	.	16gg\LL	.	8cc\J
+.	.	.	16f\JJ)	.	16aa\JJ)	16aan\JJ)	.	16f/JJ)	.	16aa\JJ)	.	.
+=22	=22	=22	=22	=22	=22	=22	=22	=22	=22	=22	=22	=22
+4CC/	4CC/	4CC/	4g\	4ee\	4bb-\	4bb-\	4CC/	4g/	4ee\	4bb-\	4g\	2cc\
+8C/L	8C/L	8C/L	4cc\	4ffT\	(8aa\L	(8aan\L	8C/L	4cc\	4ffT\	(8aa\L	8c/L	.
+8D/	8D/	8D/	.	.	8gg\J)	8gg\J)	8D/	.	.	8gg\J)	8c/	.
+8E/	8E/	8E/	4e\	4gg\	4ccc\	4ccc\	8E/	4e/	4gg\	4ccc\	8c/	4b-\
+8C/J	8C/J	8C/J	.	.	.	.	8C/J	.	.	.	8c/J	.
+=23	=23	=23	=23	=23	=23	=23	=23	=23	=23	=23	=23	=23
+8D/L	8D/L	8D/L	8a\L	4dd\	8ff\L	8ff\L	8D/L	8a/L	4dd\	8ff\L	4f\	4a\
+8BB-/J	8BB-/J	8BB-/J	8b-\J	.	8gg\J	8gg\J	8BB-/J	8b-/J	.	8gg\J	.	.
+4C/	4C/	4C/	4.gT\	4.ccT\	4.eet\	4.eent\	4C/	4.g/	4.ccT\	4.eet\	8c/L	8b-\L
+.	.	.	.	.	.	.	.	.	.	.	8c/	8a\
+4CC/	4CC/	4CC/	.	.	.	.	4CC/	.	.	.	8c/	8g\
+.	.	.	8a\	8cc\	8ff\	8ff\	.	8a/	8cc\	8ff\	8c/J	8a\J
+*>F	*>F	*>F	*>F	*>F	*>F	*>F	*>F	*>F	*>F	*>F	*>F	*>F
+=24	=24	=24	=24	=24	=24	=24	=24	=24	=24	=24	=24	=24
+8FF/L	8FF/L	8FF/L	2.a\	2.cc\	2.ff\	2.ff\	8FF/L	2.a/	2.cc\	2.ff\	2.A/	2.f\
+8GG/	8GG/	8GG/	.	.	.	.	8GG/	.	.	.	.	.
+8AA/	8AA/	8AA/	.	.	.	.	8AA/	.	.	.	.	.
+8BB-/	8BB-/	8BB-/	.	.	.	.	8BB-/	.	.	.	.	.
+8C/	8C/	8C/	.	.	.	.	8C/	.	.	.	.	.
+8D/J	8D/J	8D/J	.	.	.	.	8D/J	.	.	.	.	.
+=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||	=||
+*>G	*>G	*>G	*>G	*>G	*>G	*>G	*>G	*>G	*>G	*>G	*>G	*>G
+2.FF/	2.FF/	2.FF/	2.a\	2.cc\	2.ff\	2.ff\	2.FF/	2.a/	2.cc\	2.ff\	2.A/	2.f\
+==	==	==	==	==	==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!ODE: His Royal Highness Christian Ludwig, Margrave of Brandenburg.
+!!!ODT: 1717//
+!!!OPC: ?Coethen; ?Cothen; ?Co2then
+!!!PPR: Peters
+!!!PDT: 1850
+!!!PPP: Leipzig
+!!!AGN: concerto grosso
+!!!AST: baroque, orchestral
+!!!AMT: simple triple
+!!!SCA: Bach-Werke-Verzeichnis
+!!!YOR: Bach Gesellschaft, xix,1
+!!!YOY: 1871; although imprint says 1869
+!!!AIN: cbass; cello; cemba; cont; cor; fagot; oboe; viola; violn; violp
+!!!EEV: 1.0
+!!!RDT: 1994 February 19
+!!!YER: 1994 October 22
+!!!YEN: United States of America
+!!!EFL: 4/7
+!!!EED: W.B. Hewlett
+!!!VTS: 3417002468

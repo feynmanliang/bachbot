@@ -1,0 +1,125 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Chorale Harmonizations
+!!!ONR: Nr. 34
+!!!OTL: Dank sei Gott in der Ho2he
+!!!SCT: BWV 287
+!!!YEC: Copyright 1996, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Icalto	*Isoprn
+*	*	*Ialto	*
+*k[b-]	*k[b-]	*k[b-]	*k[b-]
+*M4/4	*M4/4	*M4/4	*M4/4
+*clefF4	*clefGv2	*clefG2	*clefG2
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A
+4E\	4c\	4g/	4cc\
+=1	=1	=1	=1
+8F\L	4c\	8f/L	4a/
+8E-\J	.	8g/J	.
+8D/L	4e-\	4a/	4cc\
+8C/J	.	.	.
+4BB-/	4f\	8b-/L	4dd\
+.	.	8a/J	.
+4C/	4en\	8g/L	4cc\
+.	.	8a/J	.
+=2	=2	=2	=2
+4D\	4f\	8b-/L	2b-\
+.	.	8a/J	.
+4E\	4c\	4g/	.
+4F;\	4c;\	4f;/	4a;/
+4F\	4c\	4f/	4a/
+=3	=3	=3	=3
+8B-\L	4c\	4e/	4g:/
+8A\J	.	.	.
+8G\L	4c\	4f/	4a/
+8F\J	.	.	.
+4c\	8c\L	4f/	4g/
+.	16B-\L	.	.
+.	16A\JJ	.	.
+4C/	4B-\	4e/	4g/
+=4	=4	=4	=4
+2.F;\,	2.A;/,	2.c;/,	2.f;/,
+=4b:|!@	=4b:|!@	=4b:|!@	=4b:|!@
+*>B	*>B	*>B	*>B
+8E\L	4G/	8c/L	4g/
+8D\J	.	8d/J	.
+=5	=5	=5	=5
+8C\L	4c\	4e/	4g/
+8c\J	.	.	.
+8B-\L	4F/	4c/	4a/
+8A\J	.	.	.
+8G\L	8B-/L	4d/	4b-\
+8F\J	8A/J	.	.
+4E\	4G/	4c/	8cc\L
+.	.	.	8b-\J
+=6	=6	=6	=6
+4F\	8A/L	4.c/	2a/
+.	8G/J	.	.
+8AA/L	4F/	.	.
+8BB-/J	.	8d/	.
+4C;/	4c;\	4e;/	4g;/
+4C/	4c\	4e/	4g/
+=7	=7	=7	=7
+8F\L	8c\L	4f/	8a;/L
+8E\J	8d\J	.	8b/J
+8D/L	4e\	4g/	4cc\
+8C/J	.	.	.
+4F\	4.d\	4a/	8dd\L
+.	.	.	8cc\J
+4G\	.	4g/	4b\
+.	16e\LL	.	.
+.	16f\JJ	.	.
+=8	=8	=8	=8
+2.C;/,	2.e;\,	2.g;/,	2.cc;\,
+4C/	4G/	4e/	4cc\
+=9	=9	=9	=9
+8F\	4A/	4c/	4a/
+4E-\	.	.	.
+.	4A/	4f/	4cc\
+16D/LL	.	.	.
+16C/JJ	.	.	.
+8BB-\L	4B-\	4f/	4dd\
+8A\J	.	.	.
+8G\L	4A/	4e-/	4cc\
+8F#\J	.	.	.
+=10	=10	=10	=10
+8G\L	8B-\L	4.d/	2b-\
+8A\	8c\J	.	.
+8B-\	4d\	.	.
+8c\J	.	8e/	.
+4d;\	4d;\	4f#;/	4a;/
+8d\L	4fn\	4d/	4a/
+8c\J	.	.	.
+=11	=11	=11	=11
+8B-\L,	4c\,	4e/,	4g/,
+8A\J	.	.	.
+8G\L	4c\	4f/	4a/
+8F\J	.	.	.
+4c\	8c\L	4f/	4g/
+.	16B-\L	.	.
+.	16A\JJ	.	.
+4C/	4B-\	4e/	4g/
+=12	=12	=12	=12
+2.F;\	2.A;/	2.c;/	2.f;/
+==@	==@	==@	==@
+*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!PDT: 1784//
+!!!PPP: Leipzig
+!!!AGN: chorale harmonization
+!!!AST: baroque, choral
+!!!AMT: simple quadruple
+!!!YOR: Bach Gesellschaft, xxxix
+!!!AIN: bass calto soprn tenor vox
+!!!EEV: 1.0
+!!!RDT: 1994 May 05
+!!!YER: 1996 July 11
+!!!YEN: United States of America
+!!!EFL: 34/185
+!!!ENC: S. Rasmussen
+!!!EED: W.B. Hewlett
+!!!VTS: 188656904

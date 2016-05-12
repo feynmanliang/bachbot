@@ -1,0 +1,132 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Aus meines Herzens Grunde
+!!!OTL@EN:  From the depths of my heart
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 001
+!!!SCT: BWV 269
+!!!ONB1: Text by Georg Niege; 16th Century secular melody, first appears 
+!!!ONB2: in sacred use in Neu Catechismus-Gesangbüchlein, Hamburg, 1598. 
+!!!YEC: Copyright 2001 by Craig Stuart Sapp
+!!!license: GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+!!!ONB: Harmony and Root analysis done manually by Craig Sapp
+!! Beat 2 of measure 1 chord could also be IVb (with root on C)
+**kern	**kern	**kern	**kern	**root	**harm
+!bass	!tenor	!alto	!sprno	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*
+*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*G:	*G:	*G:	*G:	*G:	*G:
+*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]
+*>A	*>A	*>A	*>A	*>A	*>A
+4GG	4B	4d	4g	4GG	I
+=1	=1	=1	=1	=1	=1
+4G	4B	4d	2g	4GG	I
+4E	8c	4e	.	4EE	IVb[vi]
+.	8B	.	.	.	.
+4F#	4A	4d	4dd	4DD	Vb
+=2	=2	=2	=2	=2	=2
+4G	4G	2d	4.b	4GG	I
+4D	4F#	.	.	4DD	V
+.	.	.	8a	.	.
+4E	4G	4B	4g	4EE	vi
+=3	=3	=3	=3	=3	=3
+4C	8c	8e	4.g	4CC	IV
+.	8B	8d	.	.	.
+8BB	4c	8e	.	8CC	IV7d
+8AA	.	8f#	8a	8FF#	viiob
+4GG	4d	4g	4b	4GG	I
+=4	=4	=4	=4	=4	=4
+2D;	2d;	2f#;	2a;	2DD;	V;
+4GG	4d	4g	4b	4GG	I
+=5	=5	=5	=5	=5	=5
+4FF#	4A	4d	2dd	4DD	Vb
+4GG	4B	4e	.	4EE	vi7b
+4AA	4c	4f#	4cc	4FF#	viiob
+=6	=6	=6	=6	=6	=6
+4BB	4d	2g	4b	4GG	Ib
+4C	4e	.	2a	4AA	ii7b
+4D	8d	4f#	.	4DD	V7
+.	8c	.	.	.	.
+=7	=7	=7	=7	=7	=7
+2GG;	2B;	2d;	2g;	2GG;	I;
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*>B	*>B	*>B	*>B	*>B
+4GG	4d	[4g	4b	4GG	I
+=8	=8	=8	=8	=8	=8
+4GG	4d	8g]	4b	4GG	I
+.	.	8f#	.	.	.
+4AA	4c	8e	4cc	4AA	ii
+.	.	8f#	.	.	.
+4BB	8B	[4g	4dd	4GG	Ib
+.	8A	.	.	.	.
+=9	=9	=9	=9	=9	=9
+4.BB	8B	8g]	4.dd	4.GG	Ib
+.	8c	8a	.	.	.
+.	4d	8g	.	.	.
+8AA	.	8f#	8cc	8DD	V7c
+4GG	4d	4g	4b	4GG	I
+!!linebreak: 2
+=10	=10	=10	=10	=10	=10
+2D;	2d;	2f#;	2a;	2DD;	V;
+[4E	4B	4e	4g	4EE	vi
+=11	=11	=11	=11	=11	=11
+4E]	4G	4e	2b	4EE	vi
+4D	4B	8f#	.	4BB	iiib[Ic]
+.	.	8g	.	.	.
+4C	4e	4a	4cc	4AA	iib
+=12	=12	=12	=12	=12	=12
+4.BB	2d	4a	2dd	2GG	Ib
+.	.	4.g	.	.	.
+8C	.	.	.	.	.
+4D	4d	.	4cc	4DD	V7
+.	.	8f#	.	.	.
+=13	=13	=13	=13	=13	=13
+8GG	2.d	2g	2.b	4GG	I
+8AA	.	.	.	.	.
+4BB	.	.	.	4GG	Ib
+4GG	.	4fn	.	4GG	V7/IV
+=14	=14	=14	=14	=14	=14
+2C;	2c;	2e;	2g;	2CC;	IV;
+4GG	4d	4g	4b	4GG	I
+=15	=15	=15	=15	=15	=15
+4FF#	8d	4.a	2dd	4DD	Vb
+.	8c	.	.	.	.
+4GG	4B	.	.	4GG	I
+.	.	8g	.	.	.
+4AA	4c	4f#	4cc	4FF#	viiob
+=16	=16	=16	=16	=16	=16
+4BB	2d	2g	2b	2GG	I
+4GG	.	.	.	.	.
+4D	8d	[4f#	4a	4DD	V
+.	8c	.	.	.	.
+=17	=17	=17	=17	=17	=17
+8E	4B	8f#]	4.g	4EE	vi
+8D	.	8e	.	.	.
+8C	4c	8e	.	8CC	IV
+8BB	.	8f#	8a	8FF#	viio7d
+8AA	4d	4g	4b	4GG	I
+8GG	.	.	.	.	.
+=18	=18	=18	=18	=18	=18
+2D;	2d;	2f#;	2a;	2DD;	V;
+[4G	4d	4g	4b	4GG	I
+=19	=19	=19	=19	=19	=19
+4G]	2d	2a	2dd	2DD	Vb
+4F#	.	.	.	.	.
+[4E	4e	8g	4cc	4CC	IVb
+.	.	8f#	.	.	.
+=20	=20	=20	=20	=20	=20
+8E]	2e	2g	4b	4EE	vi
+8D	.	.	.	.	.
+4C	.	.	2a	4AA	ii7b
+4D	8d	4f#	.	4DD	V7
+.	8c	.	.	.	.
+=21	=21	=21	=21	=21	=21
+2GG;	2B;	2d;	2g;	2GG;	I;
+==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx

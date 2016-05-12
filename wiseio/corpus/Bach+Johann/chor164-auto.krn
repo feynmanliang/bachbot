@@ -1,0 +1,124 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Herr Gott, dich loben alle wir
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 164
+!!!SCT: BWV 326
+!!!YEC: Copyright 2003 by Craig Stuart Sapp
+!!!license: GNU General Public License (http://www.gnu.org/copyleft/gpl.html)
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+**kern	**kern	**kern	**kern	**mroot	**mharm	**harm	**tsroot	
+!bass	!tenor	!alto	!soprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*	*	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*	*	*
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*B-:	*B-:	*B-:	*B-:	*B-:	*B-:	*	*
+*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4	*M3/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+8BB-	4d	4f	4b-	4BB-	I	vi	B-
+8AA	.	.	.	.	.	.	B-
+=1	=1	=1	=1	=1	=1	=1	=1
+8GG	2d	2g	2b-	2GG	vi	.	G
+8AA	.	.	.	.	.	.	G
+8BB-	.	.	.	.	.	.	G
+8C	.	.	.	.	.	.	G
+8D	4d	4f	4a	4BB-	I7	.	D
+8BB-	.	.	.	.	.	.	B-
+=2	=2	=2	=2	=2	=2	=2	=2
+8E-	2B-	2e-	2g	2EE-	IV	IV	E-
+8F	.	.	.	.	.	.	E-
+8G	.	.	.	.	.	.	E-
+8A	.	.	.	.	.	.	E-
+8B-	4B-	4d	4f	4BB-	I	I	B-
+8A	.	.	.	.	.	.	B-
+=3	=3	=3	=3	=3	=3	=3	=3
+8G	2B-	4d	4b-	4GG	vi	.	B-
+8F	.	.	.	.	.	.	B-
+8E-	.	4g	2cc	4CC	V7b/V	ii7	C
+8D	.	.	.	.	.	.	C
+8E-	4A	4f	.	4FF	V7d	V7d	F
+8F	.	.	.	.	.	.	F
+=4	=4	=4	=4	=4	=4	=4	=4
+2BB-;	2B-;	2f;	2dd;	2BB-;	I;	I	B-
+4FF#	4A	4a	4dd	4DD	V/VI	IIIb	D
+=5	=5	=5	=5	=5	=5	=5	=5
+8GG	2B-	2g	2dd	2.GG	vi	vi	G
+8D	.	.	.	.	.	.	G
+8G	.	.	.	.	.	vi7d	G
+8F	.	.	.	.	.	.	G
+8E-	4B-	4g	4dd	.	.	.	G
+8D	.	.	.	.	.	.	G
+=6	=6	=6	=6	=6	=6	=6	=6
+8E-	4B-	4g	2cc	4EE-	IV7	ii7	C
+8C	.	.	.	.	.	.	C
+8F	4A	4f	.	4FF	V	V7d	F
+8E-	.	.	.	.	.	.	F
+8D	4B-	4f	4dd	4BB-	Ib	I	B-
+8C	.	.	.	.	.	.	B-
+=7	=7	=7	=7	=7	=7	=7	=7
+8BB-	4c	4f	4ee-	4FF	V7b	V7b	F
+8AA	.	.	.	.	.	.	F
+8BB-	2B-	2f	2dd	2BB-	I	I	B-
+8C	.	.	.	.	.	.	B-
+8D	.	.	.	.	.	.	B-
+8E-	.	.	.	.	.	.	B-
+!!linebreak: 2
+=8	=8	=8	=8	=8	=8	=8	=8
+2F;	2A;	2f;	2cc;	2FF;	V;	V	F
+4G	4d	4g	4b-	4GG	vi	vi	G
+=9	=9	=9	=9	=9	=9	=9	=9
+8A	2c	2f	2cc	2FF	V	V	F
+8F	.	.	.	.	.	.	F
+8G	.	.	.	.	.	.	F
+8A	.	.	.	.	.	.	F
+8B-	4B-	8f	4dd	4GG	vi7	I	B-
+8G	.	8b-	.	.	.	.	G
+=10	=10	=10	=10	=10	=10	=10	=10
+8E-	4B-	4g	2cc	4CC	ii7	ii7	C
+8D	.	.	.	.	.	.	C
+8E-	4A	8f	.	4FF	V7d	V7d	F
+8F	.	8e-	.	.	.	.	F
+8G	4B-	4d	4b-	4GG	vi	vic	G
+8D	.	.	.	.	.	.	G
+=11	=11	=11	=11	=11	=11	=11	=11
+8E-	8B-	4g	4g	4EE-	IV	ii7d	C
+8BB-	8d	.	.	.	.	.	G
+8C	4e-	4g	2a	4AA	vii7D	.	C
+8AA	.	.	.	.	.	.	A
+8D	4d	4f#	.	4DD	V/VI	III	D
+8DD	.	.	.	.	.	.	D
+=12	=12	=12	=12	=12	=12	=12	=12
+2GG;	2d;	2g;	2b-;	2GG;	vi;	vi	G
+4A	4c	4f	4ff	4FF	Vb	Vb	F
+=13	=13	=13	=13	=13	=13	=13	=13
+8B-	2d	2f	2dd	2BB-	I	iii7	D
+8c	.	.	.	.	.	.	D
+8B-	.	.	.	.	.	.	D
+8A	.	.	.	.	.	.	D
+8G	4d	4g	4b-	4GG	vi	vi7d	G
+8F	.	.	.	.	.	.	G
+=14	=14	=14	=14	=14	=14	=14	=14
+8E-	2A	2f	2cc	2FF	V7d	V7d	F
+8G	.	.	.	.	.	.	F
+8F	.	.	.	.	.	.	F
+8E-	.	.	.	.	.	.	F
+8D	4A	4f	4ee-	4DD	iii7	.	F
+8C	.	.	.	.	.	.	F
+=15	=15	=15	=15	=15	=15	=15	=15
+8BB-	2B-	4f	4dd	4BB-	I	I	B-
+8D	.	.	.	.	.	.	B-
+8E-	.	4g	2cc	4CC	ii7b	ii7	C
+8C	.	.	.	.	.	.	C
+8F	4A	8f	.	4FF	V7	V7	F
+8FF	.	8e-	.	.	.	.	F
+=16	=16	=16	=16	=16	=16	=16	=16
+2BB-;	2F;	2d;	2b-;	2BB-;	I;	I	B-
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

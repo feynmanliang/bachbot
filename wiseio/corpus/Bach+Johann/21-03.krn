@@ -1,0 +1,30 @@
+!! Example 21.3. J.S. Bach, Well-Tempered Clavier, Vol. 2, Fugue 4.
+!!!url: http://www.music-cog.ohio-state.edu/Humdrum/guide21.html
+!!!imgurl: http://www.music-cog.ohio-state.edu/Humdrum/guide.figures/guide21.3.gif
+!!!date: 2004/03/17/
+!!!COM: Bach, Johann Sebastian
+!!!XEN: The Well-Tempered Clavier, Volume 2, Fugue 4.
+**kern	**kern	**kern
+*clefF4	*clefG2	*clefG2
+*M12/16	*M12/16	*M12/16
+*k[f#c#g#d#]	*k[f#c#g#d#]	*k[f#c#g#d#]
+*c#:	*c#:	*c#:
+=70	=70	=70
+16E	8.f#]	8b#
+16D#	.	.
+16E	.	16g#
+16FF##	8e	4.cc#
+16GG#	.	.
+16AAn	16d#	.
+4.GG#	16e	.
+.	16a	.
+.	16g#	.
+.	16f#	8.b#
+.	16e	.
+.	16d#	.
+=71	=71	=71
+8.CC#	8.e#	8.cc#
+8.r	8.r	8.r
+4.r	4.r	4.r
+==	==	==
+*-	*-	*-

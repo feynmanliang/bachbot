@@ -1,0 +1,94 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Warum betr&uuml;bst du dich, mein Herz
+!!!SCT:	BWV 47/5
+!!!PC#:	94
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*g:	*g:	*g:	*g:
+*M4/4	*M4/4	*M4/4	*M4/4
+*met(c)	*met(c)	*met(c)	*met(c)
+*MM100	*MM100	*MM100	*MM100
+4BB	4G	4d	4g
+=1	=1	=1	=1
+4C	4c	4e-	8gL
+.	.	.	8aJ
+4GG	8B-L	8dL	4b-
+.	8cJ	8eJ	.
+4D	4d	4f#	4a
+4B-	4d	4g	4dd
+=2	=2	=2	=2
+4F#	4d	4a	4cc
+4G	4d	4g	4b-
+4D;	4d;	4f#;	4a;
+4GG	8dL	4g	8b-L
+.	8cJ	.	8aJ
+=3	=3	=3	=3
+8GL	8B-L	4g	4g
+8AJ	8cJ	.	.
+4B-	8dL	8fnXL	4dd
+.	8e-J	8gJ	.
+4F	4f	4a	4cc
+4D	4f	4b	4dd
+=4	=4	=4	=4
+8E-L	4g	4cc	8gL
+8FJ	.	.	8aJ
+4G	4d	4g	4b
+4C;	4e-;	4g;	4cc;
+4G	4d	4g	4b-
+=5	=5	=5	=5
+8DL	4d	4f#	4a
+8CJ	.	.	.
+4BB-	4d	4g	4dd
+4AA	4F#	4a	4cc
+4GG	4G	4d	4b-
+=6	=6	=6	=6
+2D;	2F#;	2d;	2a;
+4r	4ry	4ry	4r
+4GG	8B-L	4d	8gL
+.	8cJ	.	8aJ
+=7	=7	=7	=7
+8GL	4d	4g	4b-
+8FnXJ	.	.	.
+4E-	4d-	8gL	4b-
+.	.	8fJ	.
+8A-L	8cL	4e-	4cc
+8GJ	8B-J	.	.
+4F	8A-XL	8fL	4cc
+.	8GJ	8gJ	.
+=8	=8	=8	=8
+4B-	4F	4a-	4dd
+4BB-	4f	8gL	4dd
+.	.	8fJ	.
+4E-;	4e-;	4g;	4b-;
+4BB	4f	4g	4dd
+=9	=9	=9	=9
+4C	4e-	8gL	4cc
+.	.	8f#J	.
+4C#	4e	4g	4b-
+4D	8AL	4f#	4aX
+.	8B-J	.	.
+4E-	4c	4g	8gL
+.	.	.	8aJ
+=10	=10	=10	=10
+8DL	8dL	4g	4b-
+8C#J	8eJ	.	.
+4D	8AL	4f#	4a
+.	8cJ	.	.
+4GG;	4B;	4d;	4g;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22

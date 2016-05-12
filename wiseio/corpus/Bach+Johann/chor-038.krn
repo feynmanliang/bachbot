@@ -1,0 +1,105 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 38. Das walt' mein Gott, Vater, Sohn
+!!!SCT: BWV 291
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[b-]	*	*k[b-]	*k[b-]	*k[b-]
+*F:	*	*F:	*F:	*F:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4f/	Das	4d/	4A/	4D\
+=1	=1	=1	=1	=1
+4f/	walt'	4c/	4A/	8AA/L
+.	.	.	.	8BB-/J
+4e/	mein	4c/	16G/LL	4C/
+.	.	.	16A/J	.
+.	.	.	8B-/J	.
+2f/	Gott,	2c/	2A/	2FF/
+=2	=2	=2	=2	=2
+4a/	Va-	4f/	4c\	4.F\
+4cc\	-ter,	4g/	4c\	.
+.	.	.	.	8E\
+4b-\	Sohn	8f/L	8d\L	8D\L
+.	.	8g/J	8c\J	8E\J
+4a/	und	8g/L	4c\	4F\
+.	.	8f/J	.	.
+=3	=3	=3	=3	=3
+4g/	heil'-	8f/L	4c\	4C/
+.	.	8e/J	.	.
+4g/	-ger	4d/	8G/L	4BBn/
+.	.	.	8F/J	.
+4g;/	Geist,	4c;/	(8F/L	4C;/
+.	.	.	8E;/J)	.
+4c/	der	4c/	4F/	4AA/
+=4	=4	=4	=4	=4
+8d/L	mich	4B-/	8F/L	4BB-/
+8e/J	.	.	8G/J	.
+4f/	er	8c/L	4A/	8AA/L
+.	.	8d/J	.	8BB-/J
+4f/	schaf-	4c/	8G/L	4C/
+.	.	.	8A/J	.
+4e/	-fen	4c/	4B-\	4CC/
+=5	=5	=5	=5	=5
+2f;/	hat,	2c;/	2A;/	2FF;/
+4r	.	4r	4r	4r
+8f/L	mir	4c/	8A/L	4FF/
+8g/J	.	.	8B-/J	.
+=6	=6	=6	=6	=6
+4a/	Leib	4f/	4c\	4.F\
+4g/	und	4g/	4c\	.
+.	.	.	.	8E\
+4a/	Seel'	4f/	4c\	8F\L
+.	.	.	.	8E\J
+4b-\	ge-	4f/	4d\	4D\
+=7	=7	=7	=7	=7
+2cc\	-ge-	2f/	2c\	8AA/L
+.	.	.	.	8GG/
+.	.	.	.	8AA/
+.	.	.	.	8BB-/J
+4g;/	-ben,	4e;/	4c;\	4C;/
+4g/	im	8g/L	4d\	4BBn/
+.	.	8f/J	.	.
+=8	=8	=8	=8	=8
+4g/	Mut-	4e/	4c\	8C\L
+.	.	.	.	8E\J
+4g/	-ter-	4d/	4Bn\	8G\L
+.	.	.	.	8F\J
+4g/	-leib	4e/	4c\	8E\L
+.	.	.	.	8D\J
+4g/	das	4e/	4c\	8C/L
+.	.	.	.	8BB-/J
+=9	=9	=9	=9	=9
+2a/	Le-	8e/L	8c#\L	8AA/L
+.	.	8d/	8Bn\	8BBn/
+.	.	8e/	8A\	8C#/
+.	.	8c#/J	8G\J	8AA/J
+4a;/	-ben,	4d;/	4F;/	4D;\
+4f/	ge-	8d/L	4A/	4D\
+.	.	8cn/J	.	.
+=10	=10	=10	=10	=10
+4e/	-sund	4B-/	4.G/	8D/L
+.	.	.	.	8C#/J
+4d/	ohn'	4A/	.	8D/L
+.	.	.	8F/	8FF/J
+4d/	al-	4B-/	4E/	8GG/L
+.	.	.	.	8EE/J
+4c#/	-len	4A/	8E/L	4AA/
+.	.	.	8G/J	.
+=11	=11	=11	=11	=11
+2.d;/	Schad'.	2.A;/	2.F#;/	2.DD;/
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/16/
+!!!KEY: 1743360848
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

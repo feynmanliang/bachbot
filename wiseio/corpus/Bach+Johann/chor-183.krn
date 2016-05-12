@@ -1,0 +1,118 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 183. Wie schön leuchtet der Morgenstern
+!!!SCT: BWV 436
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**silbe	**kern	**silbe
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[TENORE]	*I:[BASSO]	*I:[BASSO]
+*>[A,A,B]	*	*>[A,A,B]	*>[A,A,B]	*	*>[A,A,B]	*
+*>A	*	*>A	*>A	*	*>A	*
+*clefG2	*	*clefG2	*clefGv2	*	*clefF4	*
+*k[f#c#g#d#]	*	*k[f#c#g#d#]	*k[f#c#g#d#]	*	*k[f#c#g#d#]	*
+*E:	*	*E:	*E:	*	*E:	*
+*M4/4	*	*M4/4	*M4/4	*	*M4/4	*
+4e/	Wiedu	4B/	4G#/	.	4E\	.
+=1	=1	=1	=1	=1	=1	=1
+4b\	sch\o3nSohn	4B/	4F#/	.	4D#\	.
+4g#/	leuch-Da-	4B/	8E/L	.	4E\	.
+.	.	.	8F#/J	.	.	.
+4e/	-tet-vids	4c#/	8G#/L	.	4C#/	.
+.	.	.	8A#/J	.	.	.
+4b\	deraus	4d#/	4B\	.	4G#\	.
+=2	=2	=2	=2	=2	=2	=2
+4cc#\	Mor-Ja-	4g#/	4B\	.	4E\	.
+4cc#\	-gen--kobs	4f#/	4A#/	.	4F#\	.
+4b;\	-sternStamm,	4f#;/	4d#;\	.	4BB;/	.
+4b\	vollmein	4g#/	4e\	.	4E\	.
+=3	=3	=3	=3	=3	=3	=3
+4cc#\	Gnad'K\o3-	4a/	4e\	.	4A\	.
+4dd#\	und-nig	4a/	4f#\	.	8G#\L	.
+.	.	.	.	.	8F#\J	.
+4ee\	Wahr-und	4g#/	4B\	.	8G#\L	.
+.	.	.	.	.	8A#\J	.
+4dd#\	-heitmein	4f#/	4B\	.	4B\	.
+=4	=4	=4	=4	=4	=4	=4
+4cc#\	vonBr\a3u-	8f#/L	4B\	.	4F#\	.
+.	.	8g#/J	.	.	.	.
+4cc#\	dem-ti-	8f#/L	4A#/	.	4FF#/	.
+.	.	8e/J	.	.	.	.
+4b;\	Herrn,-gam,	4d#;/	4B;\	.	4BB;/	.
+4g#/	diehast	4e/	4B\	.	4E\	.
+=5	=5	=5	=5	=5	=5	=5
+4cc#\	s\u3-mir	4e/	8A/L	.	4AA/	.
+.	.	.	8G#/J	.	.	.
+4b\	-ssemein	4d#/	4F#/	.	4BB/	.
+4a/	Wur-Herz	8e/L	4c#\	.	8C#/L	.
+.	.	8f#/J	.	.	8D#/J	.
+4g#/	-zelbe-	8g#/L	4B\	.	4E\	.
+.	.	8e/J	.	.	.	.
+=6	=6	=6	=6	=6	=6	=6
+2f#/	Jes--ses-	4e/	4.B\	.	2BB/	.
+.	.	4d#/	.	.	.	.
+.	.	.	8A/	.	.	.
+4e;/	-se;-sen.	4B;/	4G#;/	.	4E;\	.
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*	*>B	*>B	*	*>B	*
+4r	.	4r	4r	.	4r	.
+=7	=7	=7	=7	=7	=7	=7
+2b\	Lieb-	2f#/	2B\	.	2D#\	.
+2g#;/	-lich,	2e;/	2B;\	.	2E;\	.
+=8	=8	=8	=8	=8	=8	=8
+2b\	freund-	2f#/	2d#\	.	2BB/	.
+2g#;/	-lich,	2e;/	2c#;\	.	2C#;/	.
+=9	=9	=9	=9	=9	=9	=9
+4a/	sch\o3n	4f#/	4c#\	.	4F#\	.
+4g#/	und	4e/	4B\	.	4G#\	.
+4f#/	herr-	4d#/	4B\	.	8A\L	.
+.	.	.	.	.	8G#\J	.
+4g#/	-lich,	4e/	4B\	.	8F#\L	.
+.	.	.	.	.	8E\J	.
+=10	=10	=10	=10	=10	=10	=10
+4a/	gross	4f#/	4B\	.	4D#\	.
+4g#/	und	4e/	4B\	.	4E\	.
+4f#/	ehr-	4d#/	4B\	.	8BB\L	.
+.	.	.	.	.	8B\J	.
+4g#/	-lich,	4e/	4B\	.	8A\L	.
+.	.	.	.	.	8G#\J	.
+=11	=11	=11	=11	=11	=11	=11
+4a/	reich	4f#/	8c#\	reich	4F#\	reich
+.	.	.	8d#\	von	.	.
+4g#/	von	8e/L	[4e\	Ga-	8C#/L	von
+.	.	8d#/J	.	.	8BB/J	.
+2f#/	Ga-	8c#/L	8e\L]	.	4AA/	Ga-
+.	.	16d#/L	8c#\	.	.	.
+.	.	16e/JJ	.	.	.	.
+.	.	4d#/	8B\	.	4BB/	.
+.	.	.	8A\J	.	.	.
+=12	=12	=12	=12	=12	=12	=12
+2e;/	-ben,	2B;/	2G#;/	-ben,	2E;\	-ben,
+4ee\	hoch	4g#/	8c#\L	.	4C#/	.
+.	.	.	8B\J	.	.	.
+4dd#\	und	4f##/	4A#/	.	4D#\	.
+=13	=13	=13	=13	=13	=13	=13
+4cc#\	sehr	4g#/	4G#/	.	8E#\L	.
+.	.	.	.	.	8F##\J	.
+4b\	pr\a3ch-	8g#/L	4d#\	.	4G#\	.
+.	.	8f#/J	.	.	.	.
+4a/	-tig	4e/	4c#\	.	8C#/L	.
+.	.	.	.	.	8D#/J	.
+4g#/	er-	4e/	4B\	.	4En\	.
+=14	=14	=14	=14	=14	=14	=14
+2f#/	-ha-	4e/	4c#\	.	4AA#/	.
+.	.	4d#/	8B/L	.	4BB/	.
+.	.	.	8A/J	.	.	.
+4e;/	-ben.	4B;/	4G#;/	.	4E;\	.
+==|!	==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/08/09/
+!!!KEY: 504316090
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

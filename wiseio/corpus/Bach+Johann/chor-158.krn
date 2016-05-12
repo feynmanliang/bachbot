@@ -1,0 +1,144 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 158. Singt dem Herrn ein neues Lied
+!!!SCT: BWV 411
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**silbe	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*>[A,A,B,A,A,B,C]	*	*>[A,A,B]	*	*>[A,A,B]	*>[A,A,B]
+*>A	*	*>A	*	*>A	*>A
+*clefG2	*	*clefG2	*	*clefGv2	*clefF4
+*k[f#]	*	*k[f#]	*	*k[f#]	*k[f#]
+*G:	*	*G:	*	*G:	*G:
+*M4/4	*	*M4/4	*	*M4/4	*M4/4
+=1-	=1-	=1-	=1-	=1-	=1-
+4g/	Singtweil	8d/L	.	8B\L	8G\L
+.	.	8c/J	.	8c\J	8A\J
+4g/	demer	8B/L	.	8d\L	8B\L
+.	.	8c/J	.	8c\J	8A\J
+4g/	Herrnih-	4d/	.	8B\L	8G\L
+.	.	.	.	8c\J	8A\J
+4d/	ein-ren	4d/	.	8B/L	8G\L
+.	.	.	.	8A/J	8F#\J
+=2	=2	=2	=2	=2	=2
+4g/	neu-Gren-	(16e/LL	.	4B\	8E\L
+.	.	16f#/JJ	.	.	.
+.	.	4g/)	.	.	8D\J
+4a/	-es-zen	.	.	8e\L	8C/L
+.	.	8f#/	.	8d\J	8D/J
+2b;\	Lied:Fried'	2g;/	.	2d;\	2GG;/
+*>B	*	*	*	*	*
+=3	=3	=3	=3	=3	=3
+8g/	diehat	4d/	diehat	8B/L	8G\L
+8a/	Ge-ver-	.	.	8A/J	8F#\J
+8b\	-mei--lie-	8d/L	Ge-ver-	4G/	8G\L
+8cc#\	-ne-hen	8g/J	.	.	8E\J
+4dd\	sollhoch	4f#/	-mei--lie-	4A/	8F#\L
+.	.	.	.	.	8E\
+4ff#\	ihnvon	4a/	-ne-hen	4d\	8D\J
+.	.	.	.	.	16E\LL
+.	.	.	.	.	16F#\JJ
+=4	=4	=4	=4	=4	=4
+2ee\	lo-o-	8b/	sollhoch	8d\	8G\
+.	.	8g/	ihnvon	16c#\LL	8E\
+.	.	.	.	16B\JJ	.
+.	.	8e/L	lo-o-	4c#\	4A\
+.	.	16a/L	.	.	.
+.	.	16g/JJ	.	.	.
+2dd;\	-ben,-ben.	2f#;/	-ben,-ben.	2A;/	2D;\
+=5:|!	=5:|!	=5:|!	=5:|!	=5:|!	=5:|!
+*>C	*	*>B	*	*>B	*>B
+4ee\	Is-	8g/L	.	4c\	4.c\
+.	.	8e/J	.	.	.
+4dd\	-ra-	8f#/L	.	4d\	.
+.	.	8g#/J	.	.	8B\
+4cc\	-el	4a/	.	8e\L	4.A\
+.	.	.	.	8d\J	.
+4ee\	er-	4e/	.	8c\L	.
+.	.	.	.	8B\J	8G\
+=6	=6	=6	=6	=6	=6
+4dd\	-freu'	8a/L	.	8A/L	4.Fn\
+.	.	8g#/J	.	8B/J	.
+4cc\	sich	4a/	.	8c\L	.
+.	.	.	.	16d\L	8E\
+.	.	.	.	16e\JJ	.
+2b\	des-	8a/L	.	8fn\L	8D/L
+.	.	16g#/L	.	8d\	8BB/J
+.	.	16f#/JJ	.	.	.
+.	.	4g#/	.	8B\	4E\
+.	.	.	.	16e\L	.
+.	.	.	.	16d\JJ	.
+=7	=7	=7	=7	=7	=7
+2a;/	-sen,	2e;/	.	2c;\	2AA;/
+4a/	wel-	4e/	.	4c\	8AA/L
+.	.	.	.	.	8C/J
+4g#/	-cher	4e/	.	4B\	8E\L
+.	.	.	.	.	8D\J
+=8	=8	=8	=8	=8	=8
+4a/	ihn	4e/	.	4c\	8C/L
+.	.	.	.	.	8BB/J
+4b\	ge-	4e/	.	4B\	8AA/L
+.	.	.	.	.	8GG#/J
+4cc\	-ma-	4e/	.	8B/L	8AA/L
+.	.	.	.	16A/L	8BB/J
+.	.	.	.	16G#/JJ	.
+4cc\	-chet	4e/	.	4A/	8C/L
+.	.	.	.	.	8D/J
+=9	=9	=9	=9	=9	=9
+2b;\	hat,	2e;/	.	(4A/	2E;\
+.	.	.	.	4G#;/)	.
+4g/	und	4.e/	.	8B\L	8E\L
+.	.	.	.	16c\L	8C\J
+.	.	.	.	16B\JJ	.
+4a/	in	.	.	4A/	4Fn\
+.	.	16d/LL	.	.	.
+.	.	16c/JJ	.	.	.
+=10	=10	=10	=10	=10	=10
+4b\	Aeng-?	(8d/	.	8G/L	8Fn\L
+.	.	4g/)	.	8B/J	8E\J
+4cc\	-sten	.	.	16A\LL	8A\L
+.	.	.	.	16B\J	.
+.	.	16fn/LL	.	8c\J	8G\J
+.	.	16e/JJ	.	.	.
+4cc\	schaf-	4a/	.	4d\	8F\L
+.	.	.	.	.	8D\J
+4b\	-fet	4g/	.	8d\L	4G\
+.	.	.	.	8fn\J	.
+=11	=11	=11	=11	=11	=11
+2cc;\	Rat:	2g;/	.	2e;\	2C;/
+4.dd\	Sei-	4g/	.	4d\	8BB/L
+.	.	.	.	.	8C/J
+.	.	4f#/	.	4A/	4D\
+8cc\	-ner	.	.	.	.
+=12	=12	=12	=12	=12	=12
+4b\	soll	4d/	.	4G/	(8GG/
+.	.	.	.	.	4G\)
+4a/	er	4d/	.	4A/	.
+.	.	.	.	.	8F#\
+8g/L	nicht	8e/L	.	8B\L	8E\L
+8a/J	.	8f#/J	.	8c\J	8D\J
+4b\	ver-	4g/	.	4d\	8C/L
+.	.	.	.	.	8BB/J
+=13	=13	=13	=13	=13	=13
+2a/	-ges-	8g/L	.	8e\L	8C/L
+.	.	16f#/L	.	8c\	8AA/J
+.	.	16e/JJ	.	.	.
+.	.	4f#/	.	8A\	4D\
+.	.	.	.	16d\L	.
+.	.	.	.	16c\JJ	.
+2g;/	-sen.	2d;/	.	2B;\	2GG;/
+==|!	==|!	==|!	==|!	==|!	==|!
+!!!RNB1: *) "Aengsten": sic in BG.
+*-	*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/07/29/
+!!!KEY: 3935754420
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

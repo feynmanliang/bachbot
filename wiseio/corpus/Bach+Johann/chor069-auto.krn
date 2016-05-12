@@ -1,0 +1,220 @@
+!!!COM: Bach, Johann Sebastian
+!!!CDT: 1685/3//-1750/7/28/
+!!!OTL@@DE: Komm, heiliger Geist, Herre Gott
+!!!AGN: 4-Part Chorale
+!!!SCT: BH 069
+!!!SCT: BWV 226
+!!!ONB: Transposed down a minor third from original BWV 226 chorale.
+!!!YEC: Copyright 1994, David Huron
+!!!YEC: Changes/Additions 2001 by Craig Stuart Sapp
+!!!YEN: United States of America
+!!!SMA: 371 Bach Chorales, edited by Ludwig Erk, C.F. Peters
+!!!PDT: 1850, 1865
+**kern	**kern	**kern	**kern	**mroot	**mharm	**harm	**tsroot	
+!bass	!tenor	!alto	!soprno	!	!	!	!
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*	*	*
+*clefF4	*clefF4	*clefG2	*clefG2	*	*	*	*
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*G:	*G:	*G:	*G:	*G:	*G:	*	*
+4G	4B	4g	4dd	4GG	I	IV	G
+=1	=1	=1	=1	=1	=1	=1	=1
+4C	8c	4g	4ee	4CC	IV	IVb	C
+.	8B	.	.	.	.	.	C
+4D	4A	4f#	8dd	4DD	V	Ib	D
+.	.	.	8cc	.	.	.	D
+4E	4G	4g	8b	4EE	vi	V	C
+.	.	.	8cc	.	.	.	C
+8BB	4G	8d	4dd	4GG	Ib	.	G
+8C	.	8e	.	.	.	.	G
+=2	=2	=2	=2	=2	=2	=2	=2
+2D;	2d;	2f#;	2a;	2DD;	V;	I	D
+8G	4d	4g	4b	4GG	I	V	G
+8F#	.	.	.	.	.	.	G
+4E	4G	4g	4cc#	4CC#	viib/V	.	G
+=3	=3	=3	=3	=3	=3	=3	=3
+2D;	2A;	2f#;	2dd;	2DD;	V;	I	D
+4r	4r	4r	4r	4r	r	IV	G
+4BB	4G	4g	4dd	4GG	Ib	V	G
+=4	=4	=4	=4	=4	=4	=4	=4
+4C	8c	4g	4ee	4CC	IV	V7	C
+.	8B	.	.	.	.	.	C
+4D	8A	8f#	4dd	4DD	V	ii	D
+.	8G	8e	.	.	.	.	G
+8C	8F#	4d	8a	8DD	V7d	Ib	D
+8BB	8G	.	8b	8GG	Ib	.	G
+4AA	4C	8e	4cc	4AA	ii	V7	A
+.	.	8f#	.	.	.	.	A
+=5	=5	=5	=5	=5	=5	=5	=5
+8BB	4D	4g	4b	4GG	Ib	I	G
+8C	.	.	.	.	.	.	G
+4D	8d	4f#	4a	4DD	V	.	D
+.	8c	.	.	.	.	.	D
+4GG;	4B;	4d;	4g;	4GG;	I;	Vb	G
+4G	4B	4d	4g	4GG	I	IVb	G
+=6	=6	=6	=6	=6	=6	=6	=6
+4F#	4A	4d	8a	4DD	Vb	I	D
+.	.	.	8b	.	.	.	D
+8E	8G	4e	4cc	4CC	IVb	V	C
+8F#	8A	.	.	.	.	.	A
+4G	4B	8d	8b	4GG	I	.	G
+.	.	8e	8cc	.	.	.	E
+8F#	8A	[4f#	[4dd	4DD	Vb	.	D
+8E	8G	.	.	.	.	.	D
+!!linebreak: 4
+=7	=7	=7	=7	=7	=7	=7	=7
+8F#	4A	8f#]	4dd]	4DD	Vb	I	D
+8E	.	8g	.	.	.	.	D
+8D	4d	8f#	4a	4DD	V	V7/V	D
+8C#	.	8e	.	.	.	.	D
+8BB	4d	8d	8g	4GG	Ib	V	G
+8GG	.	8B	8f#	.	.	.	G
+4AA	8A	4c#	4e	4AA	V/V	.	A
+.	8G	.	.	.	.	.	A
+=8	=8	=8	=8	=8	=8	=8	=8
+2D;	2F#;	2A;	2d;	2DD;	V;	.	D
+4r	4r	4r	4r	4r	r	.	r
+8D	4F#	4A	4d	4DD	V	V7c	D
+8Cn	.	.	.	.	.	.	D
+=9	=9	=9	=9	=9	=9	=9	=9
+8BB	4G	8d	4g	8GG	Ib	I	G
+8C	.	8e	.	8CC	IV	.	C
+8BB	4c	4f#	4a	4FF#	viib	V7d/IV	D
+8AA	.	.	.	.	.	.	D
+4GG	8d	4.g	8b	4GG	I	V7/ii	G
+.	8c	.	8cc	.	.	.	C
+8G	8B	.	[4dd	8GG	I	ii	G
+8Fn	8A	8a	.	8DD	vb	.	D
+=10	=10	=10	=10	=10	=10	=10	=10
+4E	8G#	4.b	4dd]	4EE	V7/ii	III	E
+.	8F#y	.	.	.	.	.	E
+4AA	4E	.	4cc	4AA	ii	iib	A
+.	.	8a	.	.	.	.	A
+4BB	4D#	8g	4b	4BB	V/vi	III	B
+.	.	8f#	.	.	.	.	B
+4C	4E	4e	4a	4AA	iib	.	A
+=11	=11	=11	=11	=11	=11	=11	=11
+2BB;	2F#;	2d#;	2b;	2BB;	V/vi;	vic	B
+4r	4r	4r	4r	4r	r	.	r
+4E	8G	4g	8b	4EE	vi	V7d/V	E
+.	8A	.	8cc	.	.	.	A
+=12	=12	=12	=12	=12	=12	=12	=12
+4B	4B	8f#	4dd	4GG#	viib/V/V	V	B
+.	.	8g#	.	.	.	.	E
+8A	4c#	4a	4ee	4AA	V/V	V7	A
+8G	.	.	.	.	.	.	A
+8F#	4.d	8a	4dd	4DD	Vb	I	D
+8E	.	8gn	.	.	.	.	D
+4D	.	8f#	4a	4DD	V	V7c/V	D
+.	8cn	8e	.	.	.	.	D
+!!linebreak: 4
+=13	=13	=13	=13	=13	=13	=13	=13
+8G	8B	4d	4b	4GG	I	V	G
+8F#	8A	.	.	.	.	.	D
+4E	4G	4e	4cc#	4CC#	viib/V	I	A
+4D;	4A;	4f#;	4dd;	4DD;	V;	IV	D
+4G	4B	8g	4dd	4GG	I	Ib	G
+.	.	8f#	.	.	.	.	G
+=14	=14	=14	=14	=14	=14	=14	=14
+4C	4c	8e	4ee	4CC	IV	V	C
+.	.	8f#	.	.	.	.	C
+8BB	4d	4g	4dd	4GG	Ib	IVb	G
+8C	.	.	.	.	.	.	G
+4D	4d	4f#	8a	4DD	V	I	D
+.	.	.	8b	.	.	.	D
+8E	8G	4e	4cc	4CC	IVb	V7	C
+8F#	8A	.	.	.	.	.	A
+=15	=15	=15	=15	=15	=15	=15	=15
+8G	8B	8d	4b	8GG	I	I	G
+8C	8G	8e	.	8CC	IV7	.	C
+4D	8d	4f#	4a	4DD	V	IV	D
+.	8c	.	.	.	.	.	D
+4GG;	4B;	4d;	4g;	4GG;	I;	ii	G
+8C	4c	4e	4g	4CC	IV	.	C
+8BB	.	.	.	.	.	.	C
+=16	=16	=16	=16	=16	=16	=16	=16
+4AA	8c	4e	8a	4AA	ii	vi	A
+.	8B	.	8b	.	.	.	A
+4A	4A	8e	4cc	4AA	ii	Ib	A
+.	.	8f#	.	.	.	.	D
+4E	8B	[2g	8b	4EE	vi	.	E
+.	8A	.	8cc	.	.	.	A
+8BB	8G	.	[4dd	4GG	Ib	V	G
+8C	8A	.	.	.	.	.	G
+=17	=17	=17	=17	=17	=17	=17	=17
+8D	8B	4g]	4dd]	4GG	I	I	G
+8E	8c#	.	.	.	.	.	G
+8F#	2d	4f#	4a	4DD	Vb	V7d/V	D
+8D	.	.	.	.	.	.	D
+8B	.	8g	8g	4GG	Ib	V	G
+8G	.	[8d	8f#	.	.	.	G
+4A	8A	8d]	4e	4AA	V/V	.	A
+.	8G	8c#	.	.	.	.	A
+=18	=18	=18	=18	=18	=18	=18	=18
+2D;	2F#;	2A;	2d;	2DD;	V;	.	D
+4r	4r	4r	4r	4r	r	.	r
+4BB	4F#	8d	4d	4BB	iii	V7b	B
+.	.	8cn	.	.	.	.	B
+!!linebreak: 4
+=19	=19	=19	=19	=19	=19	=19	=19
+4E	8G	8B	4g	8EE	vi	vib	E
+.	8c	8e	.	8CC	IVb	.	E
+4F#	8B	8d	4a	4DD	Vb	V7c	D
+.	8A	8c	.	.	.	.	D
+8G	4.G	4.B	8b	2GG	I	V7/ii	E
+8A	.	.	8cc	.	.	.	A
+8B	.	.	[4dd	.	.	ii	D
+8A	8A	16c	.	.	.	.	D
+.	.	16d	.	.	.	.	D
+=20	=20	=20	=20	=20	=20	=20	=20
+8G#	4.B	4e	4dd]	4EE	V7b/ii	vi7d	E
+8E	.	.	.	.	.	.	E
+4A	.	4e	4cc	4AA	ii	ii	A
+.	8A	.	.	.	.	.	A
+8E	8Gn	4e	4b	4EE	vi	.	E
+8D	8F#	.	.	.	.	.	E
+8C	4E	8e	4a	4AA	iib	V7	A
+8BB	.	8d	.	.	.	.	A
+=21	=21	=21	=21	=21	=21	=21	=21
+8C	2A	2c	4e	4AA	ii7b	I	A
+8AA	.	.	.	.	.	.	A
+4D	.	.	4f#	4DD	V7	V	D
+4GG;	4G;	4B;	4g;	4GG;	I;	I	G
+4D	4F#	4d	4a	4DD	V	.	D
+=22	=22	=22	=22	=22	=22	=22	=22
+8GG	2.G	[2d	4b	4GG	I	IV	G
+8AA	.	.	.	.	.	.	G
+4BB	.	.	4g	4GG	Ib	.	G
+2C	.	8d]	2e	2CC	IV	I	C
+.	.	8B	.	.	.	.	C
+.	8G	4c	.	.	.	V7b	C
+.	8F#	.	.	.	.	.	C
+=23	=23	=23	=23	=23	=23	=23	=23
+4G;	4G;	4B;	4d;	4GG;	I;	I	G
+4F#	2A	2d	8a	4DD	Vb	vi7d	D
+.	.	.	16b	.	.	.	D
+.	.	.	16cc	.	.	.	D
+8G	.	.	2b	4GG	I	ii7	G
+8F#	.	.	.	.	.	.	G
+8E	[4G	[4e	.	4EE	vi	V7	E
+8D	.	.	.	.	.	.	E
+=24	=24	=24	=24	=24	=24	=24	=24
+8C	4G]	4e]	2a	4AA	ii7b	I	A
+8AA	.	.	.	.	.	.	A
+4D	16F#	8d	.	4DD	V	.	D
+.	16E	.	.	.	.	.	D
+.	8F#	8c	.	.	.	.	D
+4GG;	4D;	4B;	4g;	4GG;	I;	.	G
+====	====	====	====	====	====	====	====
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!ONB1: changed line measure 6, beat 2: vi chord to a IVb chord, since 
+!!!ONB2: there is no B and the C is not dissonant and does not resolve.
+!!!ONB3: Now m.6, b.2 matches the analysis of m.14, b.4.
+!!chor2scor: -l 4 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

@@ -1,0 +1,128 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 62. Gib dich zufrieden und sei stille
+!!!SCT: BWV 315
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern	**silbe
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]	*I:[BASSO]
+*>[A,A,B]	*	*>[A,A,B]	*>[A,A,B]	*>[A,A,B]	*
+*>A	*	*>A	*>A	*>A	*
+*clefG2	*	*clefG2	*clefGv2	*clefF4	*
+*k[f#]	*	*k[f#]	*k[f#]	*k[f#]	*
+*e:	*	*e:	*e:	*e:	*
+*M4/4	*	*M4/4	*M4/4	*M4/4	*
+4b\	Gibin	4e/	4G/	4E\	.
+=1	=1	=1	=1	=1	=1
+4g/	dichihm	4e/	4B\	8E\L	.
+.	.	.	.	8D#\J	.
+8a\L	zu-ruht	8f#/L	8c/L	8E\L	.
+16b\L	.	16g/L	8F#/J	8D#\J	.
+16cc\JJ	.	16a/JJ	.	.	.
+4.b\	-frie-al-	8g/L	8G/L	8E\L	.
+.	.	8d#/J	8A/J	8F#\J	.
+.	.	8e/L	8B\L	8G\L	.
+8a/	-den-ler	8f#/J	8c\J	8A\J	.
+=2	=2	=2	=2	=2	=2
+4g/	undFreu-	8f#/L	4B\	4B\	.
+.	.	8e/J	.	.	.
+8f#/L	sei-den	8e/L	4B\	4BB/	.
+16g/L	.	8d#/J	.	.	.
+16a/JJ	.	.	.	.	.
+(4.g/	stil-F\u3l-	(4.e/	8B/L	2E\	.
+.	.	.	8G/J	.	.
+.	.	.	4A/	.	.
+8f#/)	.	8d#/)	.	.	.
+=3	=3	=3	=3	=3	=3
+2e;/	-le-le,	2e;/	2G;/	2E;\	.
+4cc\	inohn'	4.g/	8G/L	4.E\	.
+.	.	.	8A/J	.	.
+4b\	demihn	.	4B\	.	.
+.	.	8f#/	.	8D\	.
+=4	=4	=4	=4	=4	=4
+4ee\	Got-m\u3hst	8e/L	8B/L	(8C/	.
+.	.	8f#/J	8A/J	4c\)	.
+4dd\	-tedu	8f#/L	8A/L	.	.
+.	.	8g/J	8B/J	8B\	.
+8f#/L	dei-dich	4f#/	4c\	4A\	.
+8cc/J	.	.	.	.	.
+8b/L	-nesver-	4g/	4d\	4G\	.
+8a/J	.	.	.	.	.
+=5	=5	=5	=5	=5	=5
+2a/	Le--ge-	4g/	4e\	4C/	.
+.	.	4f#/	8d\L	4D\	.
+.	.	.	8c\J	.	.
+4g;/	-bens,-bens.	4d;/	4B;\	4GG;/	.
+=:|!	=:|!	=:|!	=:|!	=:|!	=:|!
+*>B	*	*>B	*>B	*>B	*
+4b\	Er	4g/	4d\	4G\	.
+=6	=6	=6	=6	=6	=6
+4a/	ist	8a/L	4d\	8F#\L	.
+.	.	8f#/J	.	8D\J	.
+8b/L	dein	8g/L	8d\L	4G\	.
+8g/J	.	8e/J	8c#\J	.	.
+4a/	Quell	4f#/	4d\	8D\L	.
+.	.	.	.	8E\J	.
+8b\L	und	4e/	8G#/L	8D/L	.
+8cc\J	.	.	8A/J	8C/J	.
+=7	=7	=7	=7	=7	=7
+4dd\	dei-	4d/	8A/L	4BB/	.
+.	.	.	8B/J	.	.
+8cc\L	-ne	4e/	4G#/	4E\	.
+8b\J	.	.	.	.	.
+8cc\L	Son-	8e/L	8A/L	4A\	.
+8b\J	.	8d/J	8B/J	.	.
+4a;/	-ne,	4e;/	4c;\	4AA;/	.
+=8	=8	=8	=8	=8	=8
+4r	.	4r	4r	4r	.
+4cc\	scheint	4e/	4c\	4A\	.
+4f#/	t\a3g-	8d#/L	4.B\	8B\L	.
+.	.	8e/J	.	8c\J	.
+8ee\L	-lich	4f#/	.	8B\L	.
+8dd#\J	.	.	8c\	8A\J	.
+=9	=9	=9	=9	=9	=9
+8ee\L	hell	8e/L	8B/L	8G\L	.
+8dd\J	.	8f#/J	8A/J	8F#\J	.
+8cc\L	zu	8g/L	8G/L	8E\L	.
+8b\J	.	8fn/J	8G#/J	8D\J	.
+8a\L	dei-	4e/	8A/L	8C/L	.
+8gg\J	.	.	8B/J	8BB/J	.
+8ff#\L	-ner	(8a\L	4c\	4AA/	.
+8ee\J	.	16b\L	.	.	.
+.	.	16cc\JJ)	.	.	.
+=10	=10	=10	=10	=10	=10
+8dd#\L	Won-	8f#/L	4B\	4BB/	.
+8cc#\J	.	8e/J	.	.	.
+4b;\	-ne,	4d#;/	4F#;/	4BB;/	.
+4r	.	4r	4r	4r	.
+4ee\	gib	4e/	4B\	4G#\	.
+=11	=11	=11	=11	=11	=11
+! (8ddP/	!	!	!	!	!
+4ccp\)	dich	4.e/	8A/L	8A\	dich
+.	.	.	8B/J	8AA/	zu-
+8b/L	zu-	.	4c\	[4A\	-frie-
+8a/J	.	8f#/	.	.	.
+8b/L	-frie-	8d#/L	8F#/L	8A\L]	.
+8d#/J	.	8f#/J	8A/J	8F#\J	.
+8e/	-den,	8e/	8B/	8G\	-den,
+8a/	zu-	8e/	8A/	8C/	.
+=12	=12	=12	=12	=12	=12
+4g/	-frie-	4e/	4B\	8BB/L	.
+.	.	.	.	8AA/J	.
+8f#/L	.	4d#/	8A/L	4BB/	.
+8e/J	.	.	8G/J	.	.
+4e;/	-den.	4B;/	4G;/	4E;\	.
+==|!	==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-	*-
+!!!RWG: Appoggiaturas of spine '[SOPRANO]' need manual editing in measures: 11
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/06/06/
+!!!KEY: 4115416801
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

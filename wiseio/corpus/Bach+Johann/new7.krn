@@ -1,0 +1,44 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTA: Das wohltemperirte Clavier
+!!!OPR: Das wohltemperierte Klavier
+!!!OTL: Fuga 1, Vol. 1
+!!!XEN: The Well-Tempered Clavier, Volume 1, Fugue 1.
+!!!ONB: C major, 4-part
+!!!SCT: BWV 846b
+!!!YEC: Copyright 1994, David Huron
+!!!YEM: Rights to all derivative electronic formats reserved.
+**kern	**kern	**kern	**kern
+*staff2	*staff2	*staff1	*staff1
+*clefF4	*clefF4	*clefG2	*clefG2
+*k[]	*k[]	*k[]	*k[]
+*M4/4	*M4/4	*M4/4	*M4/4
+*C:	*C:	*C:	*C:
+*MM58	*MM58	*MM58	*MM58
+=1	=1	=1	=1
+1r	1r	8r	1r
+.	.	8c	.
+.	.	8d	.
+.	.	8e	.
+.	.	8.f	.
+.	.	32g	.
+.	.	32f	.
+.	.	8e	.
+==	==	==	==
+*-	*-	*-	*-
+!!!CDT: 1685/3/-1750/7/28
+!!!OCY: Deutschland
+!!!PPP: Coethen; Cothen; Co2then
+!!!ODT: <1722//
+!!!PDT: 1722
+!!!AFR: fuga; fugue
+!!!AST: polyphony
+!!!AMT: simple quadruple
+!!!SCA: Bach-Werke-Verzeichnis
+!!!YOR: Bach Gesellschaft
+!!!SMS: British Library, various
+!!!AIN: cemba; clavi
+!!!EEV: 1.0
+!!!RDT: 1986 November 14
+!!!YER: 1994 August 10
+!!!EFL: 1/48
+!!!VTS: 652652838

@@ -1,0 +1,101 @@
+!!!COM: Bach, Johann Sebastian
+!!!OTL@@DE: 281. Wo soll ich fliehen hin
+!!!OTL@EN: Whither am I to flee?
+!!!SCA: BWV 89.6
+**kern	**kern	**kern	**kern	**mharm	**mroot	**harm	**tsroot	
+*staff2	*staff2	*staff1	*staff1	*staff2	*	*	*
+*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan	*Iorgan
+!bass	!tenor	!alto	!sprno	!	!	!	!
+*clefF4	*clefF4	*clefG2	*clefG2	*	*	*	*
+*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]	*k[b-e-]
+*g:	*g:	*g:	*g:	*g:	*g:	*	*
+*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)	*met(C)
+*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4	*M4/4
+*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60	*MM60
+4GG\	4B-/	4d\	4g/	i	4GG	.	G
+=1	=1	=1	=1	=1	=1	=1	=1
+4G\	4B-/	4d\	4g/	i	4GG	i	G
+4F#\	4A/	4d\	4a/	V	4DD	ivb	D
+4G\	8G/L	4d\	4b-/	i	4GG	V	G
+.	8B-/J	.	.	.	.	.	G
+4E-\	4e-/	4g\	4cc/	ivb	4CC	.	C
+=2	=2	=2	=2	=2	=2	=2	=2
+2.D;\	2.A;/	2.f#;\	2.dd;/	V;	2.DD;	.	D
+4C\	4A/	4f#\	4dd/	V7c	4DD	iv	D
+=3	=3	=3	=3	=3	=3	=3	=3
+4BB-\	4B-/	4g\	4dd/	ib	4GG	i	G
+4AA\	4c/	8g\L	4cc/	viiob	4FF#	iv	C
+.	.	8f#\J	.	.	.	.	C
+*	*	*	*	*	*	*B-:	*B-:
+4GG\	4d/	4g\	4b-/	i	4GG	Ib	G
+4C\	4e-/	4a\	4cc/	iiob	4AA	.	C
+=4	=4	=4	=4	=4	=4	=4	=4
+2.D;\	2.d;/	2.f;\	2.a#;/	V;	2.DD;	.	B-
+*B-:	*B-:	*B-:	*B-:	*B-:	*B-:	*	*
+4D\	4d/	4f\	4a#/	V/VI	4DD	V	B-
+=5	=5	=5	=5	=5	=5	=5	=5
+4G\	4d/	4g\	4b-/	vi	4GG	I	G
+4F\	4f/	4a\	4cc/	V	4FF	vi7d	F
+8B-\L	4f/	4b-\	4dd/	I	4BB-	ii7b	B-
+8A\	.	.	.	.	.	.	B-
+8G\	4g/	4b-\	4dd/	vi	4GG	V	G
+8F\J	.	.	.	.	.	.	G
+=6	=6	=6	=6	=6	=6	=6	=6
+4E-\	4g/	4b-\	2cc/	iv7b	4EE-	I	C
+4F\	4f/	4a\	.	V	4FF	IIIb	F
+4BB-;\	4f;/	4b-;\	4dd;/	I;	4BB-;	vi	B-
+4F#\	4d/	4a\	4dd/	Vb/VI	4DD	V7d	D
+=7	=7	=7	=7	=7	=7	=7	=7
+!!linebreak: 2
+(4G\	4d/	4g\	4b-/	vi	4GG	I	G
+8F\L	4f/	8a\L	4cc/	V	4FF	.	F
+8E-\J)	.	8g\J	.	.	.	.	F
+8D\L	4B-/	4f\	4dd/	Ib	4BB-	ii7	B-
+8C\	.	.	.	.	.	.	B-
+8BB-\	4B-/	4f\	4dd/	I	4BB-	V	B-
+8D\J	.	.	.	.	.	.	B-
+=8	=8	=8	=8	=8	=8	=8	=8
+8E-\L	4B-/	4g\	2cc/	ii7	4CC	I	C
+8C\J	.	.	.	.	.	.	C
+4F\	4A/	4f\	.	V	4FF	.	F
+4BB-;\	4d;/	4f;\	4b-;/	I;	4BB-;	Vb	B-
+4B-\	4f/	4b-\	4dd/	I	4BB-	I	B-
+=9	=9	=9	=9	=9	=9	=9	=9
+4A\	4f/	4cc\	4ff/	Vb	4FF	IIIb	F
+4B-\	8f/L	4b-\	4dd/	I	4BB-	vi	B-
+.	8g/J	.	.	.	.	.	B-
+4F#\	8a/L	4a\	4dd/	Vb/VI	4DD	V7b/V	D
+.	8A/J	.	.	.	.	.	D
+4G\	4B-/	4g\	4dd/	vi	4GG	Vc	G
+=10	=10	=10	=10	=10	=10	=10	=10
+4En\	4B-/	4g\	2cc/	V7b/V	4CC	.	C
+4C\	8A/L	8f\L	.	Vc	8FF	iib	F
+.	8G/J	8en\J	.	V/V	8CC	.	C
+4F;\	4A;/	4f;\	4cc;/	V;	4FF;	V7d/vi	F
+*g:	*g:	*g:	*g:	*g:	*g:	*	*
+4E-\	4G/	4g\	4cc/	ivb	4CC	.	C
+=11	=11	=11	=11	=11	=11	=11	=11
+8D\L	4A/	4f#\	4dd/	V	4DD	vi7	D
+8C\J	.	.	.	.	.	.	D
+8BB-\L	4d/	4f#\	4cc/	V7c	4DD	ii7	D
+8AA\J	.	.	.	.	.	.	D
+*	*	*	*	*	*	*G:	*G:
+8GG\L	4d/	4g\	4b-/	i	4GG	iv	G
+8F\J	.	.	.	.	.	.	G
+8E-\L	8c/L	4g\	8cc/L	ivb	8CC	V7	C
+8D\J	8d/J	.	8b-/J	ic	8GG	.	G
+=12	=12	=12	=12	=12	=12	=12	=12
+4C\	4e-/	4g\	2a/	iio7	4AA	I	C
+4D\	8d/L	4f#\	.	V7	4DD	.	D
+.	8c/J	.	.	.	.	.	D
+4GG;\	4Bn;/	4d;\	4g;/	I;	4GG;	.	G
+==	==	==	==	==	==	==	==
+*-	*-	*-	*-	*-	*-	*-	*-
+!!!ENC: Craig Stuart Sapp
+!!!END: 2004/12/06/
+!!chor2scor: -l 2 -s 0.6 -o %b.pmx
+!!!ONB: **mroot	 = manual (human) chord root analysis
+!!!ONB: **mharm	 = manual (human) harmonic analysis 
+!!!ONB: **harm	 = automatic harmonic analysis with melisma music analyzer
+!!!ONB: **tsroot = automatic chord root analysis with melisma music analyzer
+!!!ONB: Automatic analyses added 2005/01/30/ by Craig Sapp.

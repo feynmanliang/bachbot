@@ -1,0 +1,86 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Joh. Seb. Bachs vierstimmige Choralgesänge
+!!!XEN: Four-part Chorales
+!!!OTL: 13. Als Jesus Christus in der Nacht
+!!!SCT: BWV 265
+!!!SCA: Thematisch-systematisches Verzeichnis der musikalischen Werke Johann Sebastian Bach: Bach-Werke-Verzeichnis (Schmieder)
+!!!YOR: Bach Gesellschaft Edition xxxix
+!!!ENC: Steven Rasmussen
+!!!CDT: 1685/3//-1750/7/28/
+!!!OCY: Deutschland
+!!!YEC: Copyright (c) 1994, 2000 Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative editions reserved
+!!!YEN: United States of America
+**kern	**silbe	**kern	**kern	**kern
+*I:[SOPRANO]	*I:[SOPRANO]	*I:[ALTO]	*I:[TENORE]	*I:[BASSO]
+*clefG2	*	*clefG2	*clefGv2	*clefF4
+*k[]	*	*k[]	*k[]	*k[]
+*a:	*	*a:	*a:	*a:
+*M4/4	*	*M4/4	*M4/4	*M4/4
+4a/	Als	4f/	4d\	4D\
+=1	=1	=1	=1	=1
+4cc\	Je-	4g/	4c\	4E\
+4a/	-sus	8g/L	4c\	4F\
+.	.	8f/J	.	.
+4b-\	Chri-	8f/L	4B-\	4G\
+.	.	8e/J	.	.
+4a/	-stus	4f/	4c\	4A\
+=2	=2	=2	=2	=2
+4g/	in	4f/	4d\	4B-\
+4g/	der	8f/L	8.c\L	4c\
+.	.	8e/J	.	.
+.	.	.	16B-\Jk	.
+4f;/	Nacht,	4c;/	4A;/	4F;\
+4a/	da-	4a/	4c\	8F\L
+.	.	.	.	8E\J
+=3	=3	=3	=3	=3
+4b\	-rin	8a/L	4f\	4D\
+.	.	8g#/J	.	.
+4cc\	er	4a/	4e\	4C/
+4dd\	ward	8a/L	4d\	4BB/
+.	.	8g#/J	.	.
+4cc\	ver-	4a/	4e\	4AA/
+=4	=4	=4	=4	=4
+2b\	-ra-	4a/	4f\	4D\
+.	.	4g#/	8e\L	4E\
+.	.	.	8d\J	.
+4a;/	-ten,	4e;/	4c#;\	4AA;/
+4e/	auf	4c#/	4A/	4AA/
+=5	=5	=5	=5	=5
+4f/	un-	4d/	4A/	(8DD/
+.	.	.	.	4D\)
+4f/	-ser	4d/	4A/	.
+.	.	.	.	8C/
+4g/	Heil	8d/L	4G/	(8BB/
+.	.	8B/J	.	4E\)
+4g/	war	8c#/L	4B-\	.
+.	.	8d/J	.	8D\
+=6	=6	=6	=6	=6
+4a/	ganz	8e/L	4A/	8C#/L
+.	.	8d/J	.	8BB/J
+4a/	be-	8e/L	4A/	8C#/L
+.	.	8c#/J	.	8AA/J
+4f;/	-dacht,	4d;/	4A;/	4D;\
+4d/	das-	8A/L	4F/	4D\
+.	.	8B/J	.	.
+=7	=7	=7	=7	=7
+4e/	-selb'	4c/	4G/	8C/L
+.	.	.	.	8BB-/J
+4f/	uns	4c/	8A/L	4AA/
+.	.	.	8F/J	.
+4g/	zu	4c#/	8B-/L	4EE/
+.	.	.	8G/J	.
+4f/	er-	4d/	4A/	8FF/L
+.	.	.	.	8GG/J
+=8	=8	=8	=8	=8
+2e/	-stat-	4d/	8A/L	2AA/
+.	.	.	8E/	.
+.	.	4c#/	8A/	.
+.	.	.	8G/J	.
+4d;/	-ten.	4A;/	4F#;/	4D;\
+==|!	==|!	==|!	==|!	==|!
+*-	*-	*-	*-	*-
+!!!RWG: Key is interpreted using the Humdrum key tool.
+!!!END: 1994/05/06/
+!!!KEY: 3314609575
+!!!EMD: Converted from MuseData to Humdrum Dec 19, 2000, by Andreas Kornstaedt using muse2kern.

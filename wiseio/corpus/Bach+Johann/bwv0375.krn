@@ -1,0 +1,111 @@
+!!!COM: Bach, Johann Sebastian
+!!!OPR: Chorale Harmonizations
+!!!ONR: Nr. 122
+!!!OTL: Lobt Gott, ihr Christen allzugleich
+!!!SCT: BWV 375
+!!!YEC: Copyright 1996, Center for Computer Assisted Research in the Humanities
+!!!YEM: Rights to all derivative electronic formats reserved.
+!!!YEM: Refer to licensing agreement for further details.
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Icalto	*Isoprn
+*	*	*Ialto	*
+*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*M4/4	*M4/4	*M4/4	*M4/4
+*clefF4	*clefGv2	*clefG2	*clefG2
+4G\	4B\	4d/	4g/
+=1	=1	=1	=1
+4F#\,	4A/,	8d/L,	4dd\,
+.	.	8e/J	.
+4D\	16A\LL	4f#/	4dd\
+.	16B\JJ	.	.
+.	8c\J	.	.
+8G\L	8B/L	4g/	4dd\
+8A\J	8A/J	.	.
+8B\L	4G/	8g/L	4dd\
+8G\J	.	8fn/J	.
+=2	=2	=2	=2
+4c\	4G/	8e/L	4ee\
+.	.	8g/J	.
+4d\	4d\	4f#/	8dd\L
+.	.	.	8cc\J
+4G;\,	4d;\,	4g;/,	4b;\,
+4F#\	4d\	4a/	4a/
+=3	=3	=3	=3
+4E\	4G/	4g/	8b\L
+.	.	.	8cc#\J
+8B\L	8d\L	4f#/	4dd\
+8A\J	8c#\J	.	.
+4G\	8B\L	4e/	4dd\
+.	8e\J	.	.
+4A\	8a\L	4e/	4cc#\
+.	8g\J	.	.
+=4	=4	=4	=4
+2.D;\	2.f#;\	2.d;/	2.dd;\
+4D\	8d\L	4f#/	4dd\
+.	8c\J	.	.
+=5	=5	=5	=5
+8G\L	8B\L	4g/	4dd\
+8A\J	8c\J	.	.
+8B\L	8d\L	4f#/	4dd\
+8A\J	8c\J	.	.
+4.G\	8B\L	8g/L	8dd\L
+.	8c\J	8a/J	8cc\J
+.	4d\	8b/L	8b\L
+8A\	.	8a/J	8cc\J
+=6	=6	=6	=6
+4B\	4d\	4g/	8dd\L
+.	.	.	8cc\J
+4c\	4e\	8g/L	4b\
+.	.	16f#/L	.
+.	.	16e/JJ	.
+4d;\	4A;/	4f#;/	4a;/
+4B\	8B/L	4f#/	4dd\
+.	8A/J	.	.
+=7	=7	=7	=7
+4E\	8G/L	4g/	4cc\
+.	8A/J	.	.
+8E\L	8B\L	8g/L	4b\
+8D\J	8d\J	8f#/J	.
+8C/L	4e\	4e/	4a/
+8AA/J	.	.	.
+8D\L	4d\	4f#/	4a/
+8c\J	.	.	.
+=8	=8	=8	=8
+4B\,	4d\,	4g/,	8g:/L,
+.	.	.	8a/
+4A\	4c\	4f#/	8b/
+.	.	.	8cc/J
+4G#;\	4B;\	4fn;/	4dd;\
+4GG#/	4B\	4e/	4dd\
+=9	=9	=9	=9
+4AA/	8c\L	8e/L	4cc\
+.	8d\J	8f#/J	.
+8E\L	4e\	8g/L	4b\
+8D\J	.	8f#/J	.
+8C/L	8e\L	4e/	4a/
+8AA/J	8c\J	.	.
+4D\	8A\L	4f#/	4a/
+.	16B\L	.	.
+.	16c\JJ	.	.
+=10	=10	=10	=10
+2.GG;/	2.B;\	2.d;/	2.g;:/
+==@	==@	==@	==@
+*-	*-	*-	*-
+!!!CDT: 1685/3//-1750/7/28
+!!!OCY: Deutschland
+!!!PDT: 1784//
+!!!PPP: Leipzig
+!!!AGN: chorale harmonization
+!!!AST: baroque, choral
+!!!AMT: simple quadruple
+!!!YOR: Bach Gesellschaft, xxxix
+!!!AIN: bass calto soprn tenor vox
+!!!EEV: 1.0
+!!!RDT: 1994 July 07
+!!!YER: 1996 July 11
+!!!YEN: United States of America
+!!!EFL: 122/185
+!!!ENC: S. Rasmussen
+!!!EED: W.B. Hewlett
+!!!VTS: 3898209799

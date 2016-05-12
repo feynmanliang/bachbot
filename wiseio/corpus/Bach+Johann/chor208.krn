@@ -1,0 +1,132 @@
+!!!COM:	Bach, Johann Sebastian
+!!!CDT:	1685/02/21/-1750/07/28/
+!!!OTL@@DE:	Als vierzig Tag nach Ostern
+!!!SCT:	BWV 266
+!!!PC#:	208
+!!!AGN:	chorale
+**kern	**kern	**kern	**kern
+*ICvox	*ICvox	*ICvox	*ICvox
+*Ibass	*Itenor	*Ialto	*Isoprn
+*I"Bass	*I"Tenor	*I"Alto	*I"Soprano
+*clefF4	*clefGv2	*clefG2	*clefG2
+*k[f#]	*k[f#]	*k[f#]	*k[f#]
+*e:	*e:	*e:	*e:
+*M3/4	*M3/4	*M3/4	*M3/4
+*MM100	*MM100	*MM100	*MM100
+=1-	=1-	=1-	=1-
+4E	4G	4B	4e
+4G	4G	4B	4e
+4E	4G	4B	4e
+=2	=2	=2	=2
+4D#	4F#	2f#	2b
+4BB	4d#X	.	.
+4E	4e	[4g	4b
+=3	=3	=3	=3
+4C#	4e	4g]	4a
+4D#	4B	4f#	4b
+4E	4B	4e	8gL
+.	.	.	8aJ
+=4	=4	=4	=4
+4DnX	4B	4f#	4b
+8CnXL	8cL	8eL	4a
+8BBJ	8eJ	8gJ	.
+4C	8d#L	8f#L	4a
+.	8eJ	8eJ	.
+=5	=5	=5	=5
+2BB;	2d#;	2f#;	2b;
+4E	4e	8BL	4g
+.	.	8c#J	.
+=6	=6	=6	=6
+8DnXL	4A	2dnX	4f#
+8CJ	.	.	.
+4BB	4B	.	4g
+4AA	4cnX	8eL	4a
+.	.	8f#J	.
+=7	=7	=7	=7
+4GG	4.d	4.g	4b
+4D	.	.	4a
+.	8c	[8f#	.
+4E	4B	8f#L]	4g
+.	.	8eJ	.
+=8	=8	=8	=8
+4C	4.c	8eL	2g
+.	.	8dJ	.
+4AA	.	4c	.
+.	8B	.	.
+4D	4A	4d	4f#
+=9	=9	=9	=9
+2GG;	2B;	2d;	2g;
+4D	4d	4f#	4a
+=10	=10	=10	=10
+4G	2d	2g	2b
+4F#	.	.	.
+[4E	8eL	4g	4b
+.	8dJ	.	.
+=11	=11	=11	=11
+4E]	4c	8f#L	2a
+.	.	8eJ	.
+4D#	4B	4f#	.
+4BB	4B	4d#	4a
+=12	=12	=12	=12
+4E	2B	8eL	2g
+.	.	8d#J	.
+4G	.	[2e	.
+4E	4B	.	4g
+=13	=13	=13	=13
+2.BB;	2.B;	4e]	2.f#;
+.	.	2d#;	.
+=14	=14	=14	=14
+4C	4G	4e	4e
+4AA	4A	4c	4f#
+4BB	4F#	4B	4d#
+=15	=15	=15	=15
+2E;	2G;	2B;	2e;
+4E	[4G	4B	4e
+=16	=16	=16	=16
+4C#	4G]	4e	2a
+8DL	4F#	4d	.
+8C	.	.	.
+8BB	4F#	4c	4a
+8AAJ	.	.	.
+=17	=17	=17	=17
+4GG	4G	4d	2b
+8GL	2B	4e	.
+8F#	.	.	.
+8E	.	[4f#	4b
+8D#J	.	.	.
+=18	=18	=18	=18
+4E	2B	4f#]	2g
+8EEL	.	8eL	.
+8FF#	.	8d#J	.
+8GG	4B	[4e	4g
+8AAJ	.	.	.
+=19	=19	=19	=19
+2.BB;	2.B;	4e]	2.f#;
+.	.	2d#;	.
+=20	=20	=20	=20
+4EE	4G	4B	8eL
+.	.	.	8f#
+4E	4B	4e	8g
+.	.	.	8aJ
+4D#	8BL	4f#	4b
+.	8AJ	.	.
+=21	=21	=21	=21
+8EL	8GL	4.e	2b
+8DnX	8F#	.	.
+8C	8E	.	.
+8BBJ	8D#J	8gL	.
+4C	4E	8f#	4a
+.	.	8eJ	.
+=22	=22	=22	=22
+2.BB;	2.F#;	2.d#;	2.b;
+==	==	==	==
+*-	*-	*-	*-
+!!!hum2abc: -Q ''
+!!!title: @{PC#}. @{OTL@@DE}
+!!!YOR1: 371 vierstimmige Choralges&auml;nge von Johann Sebastian Bach, 
+!!!YOR2: 4th ed. by Alfred D&ouml;rffel (Leipzig: Breitkopf und H&auml;rtel, 
+!!!YOR2: c.1875). 178 pp. Plate "V.A.10".  reprint: J.S. Bach, 371 Four-Part 
+!!!YOR4: Chorales (New York: Associated Music Publishers, Inc., c.1940).
+!!!SMS: B&H, 4th ed, Alfred D&ouml;rffel, c.1875, plate V.A.10
+!!!EED:  Craig Stuart Sapp
+!!!EEV:  2009/05/22
