@@ -21,12 +21,13 @@ RUN apt-get -y install \
     python \
     build-essential \
     python2.7-dev \
-    python-pip \
-    python-virtualenv \
     git \
     ssh \
     libhdf5-dev \
+    libxml2-dev \
+    libxslt-dev \
     software-properties-common
+
 
 # Torch and luarocks
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive && cd ~/torch && \
@@ -40,10 +41,24 @@ ENV LD_LIBRARY_PATH=~/torch/install/lib:$LD_LIBRARY_PATH
 ENV DYLD_LIBRARY_PATH=~/torch/install/lib:$DYLD_LIBRARY_PATH
 ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 
-#torch-rnn and python requirements
+#BachBot
+RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
+
+#pyenv
+RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
+RUN pyenv install 2.7.11
+
+#BachBot virtualenv
+RUN cd ~/bachbot && \
+    pyenv virtualenv 2.7.11 bachbot && \
+    /bin/bash -c "pyenv activate bachbot && \
+    pip install -r requirements.txt"
+
+#torch-rnn and python requirements installed to bachbot venv
 WORKDIR ~
 RUN git clone https://github.com/jcjohnson/torch-rnn && \
-    pip install -r torch-rnn/requirements.txt
+    /bin/bash -c "pyenv activate bachbot && \
+    pip install -r torch-rnn/requirements.txt"
 
 #Lua requirements
 WORKDIR ~
@@ -60,16 +75,6 @@ RUN luarocks make hdf5-0-0.rockspec
 WORKDIR ~
 RUN luarocks install cutorch
 RUN luarocks install cunn
-
-#BachBot
-RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
-RUN apt-get -y install \
-    libxml2-dev \
-    libxslt-dev
-RUN cd ~/bachbot && \
-	/bin/bash -c "virtualenv -p python2.7 venv/ && \
-	source venv/bin/activate && \
-	pip install -r requirements.txt"
 
 # Clean tmps
 RUN apt-get clean && \

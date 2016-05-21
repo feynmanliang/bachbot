@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
 
-source venv/bin/activate
+pyenv activate bachbot
 source ~/torch/install/bin/torch-activate

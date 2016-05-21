@@ -21,11 +21,11 @@ RUN apt-get -y install \
     python \
     build-essential \
     python2.7-dev \
-    python-pip \
-    python-virtualenv \
     git \
     ssh \
     libhdf5-dev \
+    libxml2-dev \
+    libxslt-dev \
     software-properties-common
 
 # Torch and luarocks
@@ -42,18 +42,21 @@ ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 
 #BachBot
 RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
-RUN apt-get -y install \
-    libxml2-dev \
-    libxslt-dev
+
+#pyenv
+RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
+RUN pyenv install 2.7.11
+
+#BachBot virtualenv
 RUN cd ~/bachbot && \
-	/bin/bash -c "virtualenv -p python2.7 venv/ && \
-	source venv/bin/activate && \
-	pip install -r requirements.txt"
+    pyenv virtualenv 2.7.11 bachbot && \
+    /bin/bash -c "pyenv activate bachbot && \
+    pip install -r requirements.txt"
 
 #torch-rnn and python requirements installed to bachbot venv
 WORKDIR ~
 RUN git clone https://github.com/jcjohnson/torch-rnn && \
-    /bin/bash -c "source ~/bachbot/venv/bin/activate && \
+    /bin/bash -c "pyenv activate bachbot && \
     pip install -r torch-rnn/requirements.txt"
 
 #Lua requirements
