@@ -9,7 +9,7 @@
 #   docker run -i -t fliang/bachbot:CUDA-7.5
 ############################################################
 
-FROM ubuntu:14.04
+FROM nvidia/cuda:7.5
 MAINTAINER Feynman Liang "feynman.liang@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -28,6 +28,9 @@ RUN apt-get -y install \
     libxslt-dev \
     software-properties-common
 
+#pyenv
+RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
+RUN pyenv install 2.7.11
 
 # Torch and luarocks
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive && cd ~/torch && \
@@ -42,15 +45,12 @@ ENV DYLD_LIBRARY_PATH=~/torch/install/lib:$DYLD_LIBRARY_PATH
 ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 
 #BachBot
+WORKDIR ~/bachbot
 RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
 
-#pyenv
-RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
-RUN pyenv install 2.7.11
-
 #BachBot virtualenv
-RUN cd ~/bachbot && \
-    pyenv virtualenv 2.7.11 bachbot && \
+WORKDIR ~/bachbot
+RUN pyenv virtualenv 2.7.11 bachbot && \
     /bin/bash -c "pyenv activate bachbot && \
     pip install -r requirements.txt"
 
