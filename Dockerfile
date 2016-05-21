@@ -40,10 +40,21 @@ ENV LD_LIBRARY_PATH=/root/torch/install/lib:$LD_LIBRARY_PATH
 ENV DYLD_LIBRARY_PATH=/root/torch/install/lib:$DYLD_LIBRARY_PATH
 ENV LUA_CPATH='/root/torch/install/lib/?.so;'$LUA_CPATH
 
-#torch-rnn and python requirements
+#BachBot
+RUN git clone https://github.com/feynmanliang/bachbot.git /root/bachbot
+RUN apt-get -y install \
+    libxml2-dev \
+    libxslt-dev
+RUN cd /root/bachbot && \
+	/bin/bash -c "virtualenv -p python2.7 venv/ && \
+	source venv/bin/activate && \
+	pip install -r requirements.txt"
+
+#torch-rnn and python requirements installed to bachbot venv
 WORKDIR /root
 RUN git clone https://github.com/jcjohnson/torch-rnn && \
-    pip install -r torch-rnn/requirements.txt
+    /bin/bash -c "source /root/bachbot/venv/bin/activate && \
+    pip install -r torch-rnn/requirements.txt"
 
 #Lua requirements
 WORKDIR /root
@@ -55,16 +66,6 @@ RUN luarocks install lua-cjson
 RUN git clone https://github.com/deepmind/torch-hdf5 /root/torch-hdf5
 WORKDIR /root/torch-hdf5
 RUN luarocks make hdf5-0-0.rockspec
-
-#BachBot
-RUN git clone https://github.com/feynmanliang/bachbot.git /root/bachbot
-RUN apt-get -y install \
-    libxml2-dev \
-    libxslt-dev
-RUN cd /root/bachbot && \
-	/bin/bash -c "virtualenv -p python2.7 venv/ && \
-	source venv/bin/activate && \
-	pip install -r requirements.txt"
 
 # Clean tmps
 RUN apt-get clean && \
