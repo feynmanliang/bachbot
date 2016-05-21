@@ -18,4 +18,4 @@ docker pull fliang/bachbot:CUDA-7.5
 
 ## Workflow
 
-* `source ./activate.zsh` sources an existing intallation
+* `source ./scripts/activate.zsh` to set up the working environment
