@@ -13,10 +13,10 @@ import os
 from os.path import expanduser
 
 @click.command()
-@click.option('--query', default='Bach+Johann', help='Query string to submit.')
+@click.argument('query', default='Bach+Johann')
 @click.option('--out-dir', help='Directory to save results under.')
 def scrape_humdrum(query, out_dir):
-    """Scrapes kern.humdrum.org to a corpus of hits."""
+    """Scrapes kern.humdrum.org to a local directory."""
     if not out_dir:
         home = expanduser("~")
         out_dir = '{0}/bachbot/corpus/{1}/'.format(home, query)
