@@ -11,8 +11,8 @@ cd ~/torch-rnn
 SCRATCH_DIR=~/bachbot/scratch
 
 for wordvec_size in 16 32 64 128; do
-    for num_layers in 1 2 3 4; do
-        for rnn_size in 128 256 512; do
+    for num_layers in 2; do
+        for rnn_size in 256; do
             fname="wordvec=${wordvec_size},num_layers=${num_layers},rnn_size=${rnn_size}"
             print $fname
             th train.lua \
