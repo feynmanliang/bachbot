@@ -1,5 +1,10 @@
+click==6.6
+Cython==0.23.4
+h5py==2.5.0
 lxml==3.6.0
 music21==2.2.1
+numpy==1.10.4
 recordtype==1.1
 requests==2.10.0
+six==1.10.0
 urlparse2==1.1.1
