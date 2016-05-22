@@ -54,12 +54,6 @@ RUN pyenv virtualenv 2.7.11 bachbot && \
     /bin/bash -c "pyenv activate bachbot && \
     pip install -r requirements.txt"
 
-#torch-rnn and python requirements installed to bachbot venv
-WORKDIR ~
-RUN git clone https://github.com/jcjohnson/torch-rnn && \
-    /bin/bash -c "pyenv activate bachbot && \
-    pip install -r torch-rnn/requirements.txt"
-
 #Lua requirements
 WORKDIR ~
 RUN luarocks install torch
@@ -71,10 +65,21 @@ RUN git clone https://github.com/deepmind/torch-hdf5 ~/torch-hdf5
 WORKDIR ~/torch-hdf5
 RUN luarocks make hdf5-0-0.rockspec
 
+#torch-rnn and python requirements installed to bachbot venv
+WORKDIR ~
+RUN git clone https://github.com/jcjohnson/torch-rnn && \
+    /bin/bash -c "pyenv activate bachbot && \
+    pip install -r torch-rnn/requirements.txt"
+
+#Element-Research/rnn
+WORKDIR ~
+RUN luarocks install rnn
+
 #CUDA
 WORKDIR ~
 RUN luarocks install cutorch
 RUN luarocks install cunn
+RUN luarocks install cunnx
 
 # Clean tmps
 RUN apt-get clean && \
