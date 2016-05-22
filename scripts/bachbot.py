@@ -10,6 +10,7 @@ def cli():
 
 @click.command()
 def extract_melody():
+    """TODO: finish this"""
     click.echo("hi")
 
 cli.add_command(scrape_humdrum)

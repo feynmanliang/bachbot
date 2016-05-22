@@ -12,15 +12,15 @@ from constants import BACHBOT_DIR
 
 @click.command()
 @click.argument('query', default='Bach+Johann')
-@click.option('--out-dir', help='Directory to save results under.')
+@click.option('--out-dir', type=click.Path(exists=True), help='Directory to save results under.')
 def scrape_humdrum(query, out_dir):
     """Scrapes kern.humdrum.org to a local directory."""
     if not out_dir:
         out_dir = BACHBOT_DIR + '/corpus/' + query
+        if not os.path.exists(out_dir):
+            os.makedirs(out_dir)
 
     click.echo('Saving scrape results to {0}'.format(out_dir))
-    if not os.path.exists(out_dir):
-        os.makedirs(out_dir)
 
     search_url='http://kern.humdrum.org/search?s=t&keyword={0}'.format(query)
     click.echo('Requesting {0}'.format(search_url))

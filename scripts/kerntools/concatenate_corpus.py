@@ -5,9 +5,10 @@ import os
 from constants import BACHBOT_DIR
 
 @click.command()
-@click.option('--file-list', help='A text file where each line is a path to an input kern file.')
+@click.option('--file-list', type=click.File('rb'),
+        help='A text file where each line is a path to an input kern file.')
 @click.option('--remove-metadata', default=True, help='Strips kern metadata header information.')
-@click.option('--out-dir', default=BACHBOT_DIR + '/scratch',
+@click.option('--out-dir', default=BACHBOT_DIR + '/scratch', type=click.Path(exists=True),
         help='The directory to write the processed and concatenated corpus (with same filename as the file-list).')
 def concatenate_corpus(file_list, remove_metadata, out_dir):
     """Preprocesses raw kern files and concatenates into corpus."""
@@ -15,14 +16,11 @@ def concatenate_corpus(file_list, remove_metadata, out_dir):
         file_list = glob.glob('{0}/corpus/Bach+Johann/*.krn'.format(BACHBOT_DIR))
         out_filepath = out_dir + '/Bach+Johann.txt'
     else:
-        file_list = open(file_list, 'r').readlines()
+        file_list = file_list.readlines()
         out_filepath = out_dir + '/' + os.path.basename(file_list)
 
     click.echo('Writing combined corpus to {0}'.format(out_filepath))
-    if not os.path.exists(os.path.dirname(out_filepath)):
-        os.makedirs(os.path.dirname(out_filepath))
-
-    with open(out_filepath, 'w+') as out_file:
+    with open(out_filepath, 'w') as out_file:
         for song in file_list:
             lines = open(song,'r').readlines()
             out = preprocess_kern(lines, remove_metadata)
