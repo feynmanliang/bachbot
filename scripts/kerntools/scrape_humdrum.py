@@ -1,16 +1,14 @@
-#!/usr/bin/env python
-
 import click
-
+import copy
 from lxml import html
+import os
+import re
+import requests
+import shutil
 import urllib
 import urlparse
-import requests
-import re
-import copy
-import shutil
-import os
-from os.path import expanduser
+
+from constants import BACHBOT_DIR
 
 @click.command()
 @click.argument('query', default='Bach+Johann')
@@ -18,8 +16,8 @@ from os.path import expanduser
 def scrape_humdrum(query, out_dir):
     """Scrapes kern.humdrum.org to a local directory."""
     if not out_dir:
-        home = expanduser("~")
-        out_dir = '{0}/bachbot/corpus/{1}/'.format(home, query)
+        out_dir = BACHBOT_DIR + '/corpus/' + query
+
     click.echo('Saving scrape results to {0}'.format(out_dir))
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
@@ -42,7 +40,7 @@ def scrape_humdrum(query, out_dir):
         kern_url = urlparse.urlunparse(parsed_url[:4] + (new_query,) + parsed_url[5:])
         click.echo('Saving {0}'.format(kern_url))
         response = requests.get(kern_url, stream=True)
-        with open(out_dir + filename, 'wb') as out_file:
+        with open(out_dir + '/' + filename, 'wb') as out_file:
             shutil.copyfileobj(response.raw, out_file)
         del response
 
