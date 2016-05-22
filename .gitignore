@@ -1,3 +1,5 @@
 .ipynb_checkpoints/
 venv/
 scratch/
+*.pyc
+*.egg-info/
