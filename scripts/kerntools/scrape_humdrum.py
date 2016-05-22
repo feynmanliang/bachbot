@@ -10,18 +10,21 @@ import re
 import copy
 import shutil
 import os
+from os.path import expanduser
 
 @click.command()
-@click.argument('keyword', default='Bach+Johann')
-def scrape_humdrum(keyword):
-    '''Queries kern.humdrum.org with and constructs a corpus of the hits in ./corpus/{keyword}/'''
+@click.option('--query', default='Bach+Johann', help='Query string to submit.')
+@click.option('--out-dir', help='Directory to save results under.')
+def scrape_humdrum(query, out_dir):
+    """Scrapes kern.humdrum.org to a corpus of hits."""
+    if not out_dir:
+        home = expanduser("~")
+        out_dir = '{0}/bachbot/corpus/{1}/'.format(home, query)
+    click.echo('Saving scrape results to {0}'.format(out_dir))
+    if not os.path.exists(out_dir):
+        os.makedirs(out_dir)
 
-    directory = './corpus/{0}/'.format(keyword)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    click.echo('Saving scrape results to {0}'.format(directory))
-
-    search_url='http://kern.humdrum.org/search?s=t&keyword={0}'.format(keyword)
+    search_url='http://kern.humdrum.org/search?s=t&keyword={0}'.format(query)
     click.echo('Requesting {0}'.format(search_url))
     tree = html.fromstring(requests.get(search_url).content)
     all_urls = tree.xpath('//a/@href')
@@ -39,7 +42,7 @@ def scrape_humdrum(keyword):
         kern_url = urlparse.urlunparse(parsed_url[:4] + (new_query,) + parsed_url[5:])
         click.echo('Saving {0}'.format(kern_url))
         response = requests.get(kern_url, stream=True)
-        with open(directory + filename, 'wb') as out_file:
+        with open(out_dir + filename, 'wb') as out_file:
             shutil.copyfileobj(response.raw, out_file)
         del response
 

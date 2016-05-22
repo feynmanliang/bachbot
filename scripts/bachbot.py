@@ -1,6 +1,6 @@
 import click
 
-from scrape_humdrum import scrape_humdrum
+from kerntools.scrape_humdrum import scrape_humdrum
 
 @click.group()
 def cli():
