@@ -1,3 +1,9 @@
+# 5-23
+
+* `wordvec_size=64` appears to perform best, should use for defaults in future:
+	* `rnnsize=256`
+	* `num_layers=2`
+	* `wordvec_size=64`
 
 # 5-22-overnight
 
