@@ -10,7 +10,7 @@ rnn_size=256
 cd ~/torch-rnn
 SCRATCH_DIR=~/bachbot/scratch
 
-for wordvec_size in 16 32 64 128; do
+for wordvec_size in 64; do
     for num_layers in 2; do
         for rnn_size in 256; do
             fname="wordvec=${wordvec_size},num_layers=${num_layers},rnn_size=${rnn_size}"
