@@ -1,5 +1,7 @@
 import click
 
+from music21 import environment
+
 from kerntools.scrape_humdrum import scrape_humdrum
 from kerntools.concatenate_corpus import concatenate_corpus
 from kerntools.renumber_measures import renumber_measures
@@ -8,9 +10,14 @@ from constants import BACHBOT_DIR
 
 @click.group()
 def cli():
+    us = environment.UserSettings()
+    # ~/.music21rc should be edited to support using musescore for score.show()
+    # us.create()
+
     pass
 
 import glob
+import os.path
 from music21 import *
 @click.command()
 @click.option('--file-list', type=click.File('rb'),
@@ -20,7 +27,7 @@ from music21 import *
 def extract_melody(file_list, out_dir):
     """Extracts a monophonic melody voices from a list of kern file.
 
-    We currently define the melody line to be the soprano voice.
+    We define the melody line to be the [0]th spine in the parsed music21 score.
     """
 
     if not file_list:
@@ -28,15 +35,16 @@ def extract_melody(file_list, out_dir):
     else:
         file_list = file_list.readlines()
 
-    for f in file_list[0:2]:
-        print f
+    for f in file_list:
         score = converter.parseFile(f)
-        print score.analyze('key')
-        #print score.show('text')
-        partStream = score.parts.stream()
-        for p in partStream:
-            #print p[0][1]
-            continue
+        melodyPart = score.parts.stream()[0]
+
+        fname = os.path.splitext(os.path.basename(f))[0]
+        outPath = out_dir + '/{0}-mono.kern'.format(fname)
+        print("Writing to {0}".format(outPath))
+        melodyPart.write('humdrum', fp=outPath)
+
+
 
 cli.add_command(scrape_humdrum)
 cli.add_command(extract_melody)
