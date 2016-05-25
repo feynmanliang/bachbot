@@ -28,10 +28,6 @@ RUN apt-get -y install \
     libxslt-dev \
     software-properties-common
 
-#pyenv
-RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
-RUN pyenv install 2.7.11
-
 # Torch and luarocks
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive && cd ~/torch && \
     bash install-deps && \
@@ -47,6 +43,12 @@ ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 #BachBot
 WORKDIR ~/bachbot
 RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
+
+#pyenv
+RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
+ENV PYENV_ROOT ~/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATHENV PATH=~/.pyenv/bin:$PATH
+RUN pyenv install 2.7.11
 
 #BachBot virtualenv
 WORKDIR ~/bachbot
