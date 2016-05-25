@@ -12,7 +12,7 @@ from constants import BACHBOT_DIR
 def concatenate_corpus(file_list, out_dir):
     """Preprocesses raw kern files and concatenates into corpus."""
     if not file_list:
-        file_list = glob.glob('{0}/scratch/*-mono.kern'.format(BACHBOT_DIR))
+        file_list = glob.glob('{0}/scratch/*-mono.xml'.format(BACHBOT_DIR))
         out_filepath = out_dir + '/concat.txt'
     else:
         file_list = file_list.readlines()

@@ -29,5 +29,10 @@ def extract_melody(file_list, out_dir):
         fname = os.path.splitext(os.path.basename(f))[0]
         outPath = out_dir + '/{0}-mono.xml'.format(fname)
         print("Writing to {0}".format(outPath))
-        score.write(fmt='musicxml', fp=outPath)
+        try:
+            score.write(fmt='musicxml', fp=outPath)
+        except StreamException:
+            print "Unexpected error:", sys.exc_info()[0]
+            print "Skipping " + outPath
+            continue
 
