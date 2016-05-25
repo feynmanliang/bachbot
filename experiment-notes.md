@@ -1,3 +1,14 @@
+# 5-25
+
+* Added `extract_melody`, which extracts the 0th part from `music21.stream.Score`
+  and assumes they are the melody
+
+* Music representation:
+	* Since music21 cannot output kern, use musicXML output
+	* We currently include all header and dynamics info; should we strip that?
+
+
+
 # 5-23
 
 * `wordvec_size=64` appears to perform best, should use for defaults in future:
