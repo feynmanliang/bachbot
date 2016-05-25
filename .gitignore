@@ -3,3 +3,4 @@ venv/
 scratch/
 *.pyc
 *.egg-info/
+tags
