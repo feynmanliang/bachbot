@@ -1,6 +1,7 @@
 import click
 import glob
 import os.path
+import sys
 
 from music21 import *
 
@@ -15,6 +16,7 @@ def extract_melody(file_list, out_dir):
     """Extracts a monophonic melody voices from a list of kern file.
 
     We define the melody line to be the [0]th spine in the parsed music21 score.
+    Existing files are not overwritten.
     """
 
     if not file_list:
@@ -28,11 +30,14 @@ def extract_melody(file_list, out_dir):
 
         fname = os.path.splitext(os.path.basename(f))[0]
         outPath = out_dir + '/{0}-mono.xml'.format(fname)
-        print("Writing to {0}".format(outPath))
-        try:
-            score.write(fmt='musicxml', fp=outPath)
-        except StreamException:
-            print "Unexpected error:", sys.exc_info()[0]
+        if not os.path.isfile(outPath):
+            print("Writing to {0}".format(outPath))
+            try:
+                score.write(fmt='musicxml', fp=outPath)
+            except stream.StreamException:
+                print "Unexpected error:", sys.exc_info()[0]
+                print "Skipping " + outPath
+                continue
+        else:
             print "Skipping " + outPath
-            continue
 
