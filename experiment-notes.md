@@ -7,6 +7,17 @@
 	* Since music21 cannot output kern, use musicXML output
 	* We currently include all header and dynamics info; should we strip that?
 
+Results
+=======
+|seq length |wordvec size|num layers|rnn size|dropout|batchnorm|lr  |nepoch|final train loss|final val loss |
+|-----------|------------|----------|--------|-------|---------|----|------|----------------|---------------|
+|50         |64          |2         |256     |0      |0        |2e-3|51    |0.443295        |0.619          |
+|500        |64          |2         |256     |0      |1        |2e-3|21.45 |0.4094          |0.5779         |
+|500        |64          |2         |256     |0      |1        |2e-3|
+|500        |64          |2         |256     |0      |1        |1e-2|28.73 |0.287570        |0.6176         |
+|50         |64          |2         |256     |0      |1        |1e-2|13.65 |0.390861        |0.6316         |
+
+
 
 
 # 5-23
