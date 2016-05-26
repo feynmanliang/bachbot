@@ -33,7 +33,7 @@ def extract_melody(file_list, out_dir):
         if not os.path.isfile(outPath):
             print("Writing to {0}".format(outPath))
             try:
-                score.write(fmt='musicxml', fp=outPath)
+                melodyPart.write(fmt='musicxml', fp=outPath)
             except stream.StreamException:
                 print "Unexpected error:", sys.exc_info()[0]
                 print "Skipping " + outPath

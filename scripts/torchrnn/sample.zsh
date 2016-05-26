@@ -1,11 +1,33 @@
 #!/usr/bin/env zsh
 
-ITER=55350
-TEMP=0.8
+CHECKPOINT=$1
+TEMP=$2
 
-cd ./torch-rnn/
+start_text="<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE score-partwise
+  PUBLIC '-//Recordare//DTD MusicXML 2.0 Partwise//EN'
+  'http://www.musicxml.org/dtds/partwise.dtd'>
+<score-partwise>
+  <movement-title>Music21 Fragment</movement-title>
+  <identification>
+    <creator type="composer">Music21</creator>
+    <encoding>
+      <encoding-date>2016-05-26</encoding-date>
+      <software>Music21</software>
+    </encoding>
+  </identification>
+  <defaults>
+    <scaling>
+      <millimeters>7</millimeters>
+      <tenths>40</tenths>
+    </scaling>
+  </defaults>
+  <part-list>"
+
+cd ~/torch-rnn/
 th sample.lua \
-  -checkpoint cv/checkpoint_$ITER.t7 \
+  -checkpoint $CHECKPOINT \
   -temperature $TEMP \
-  -start_text "@" -sample 1 -length 15000 \
-  > ../scratch/b5_$TEMP.txt
+  -start_text "@" \
+  -sample 1 -length 15000 \
+  > ~/bachbot/scratch/sampled_$TEMP.txt
