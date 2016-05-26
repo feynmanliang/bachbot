@@ -1,10 +1,18 @@
+-e git+git@github.com:feynmanliang/bachbot@ccd494c299c0929932d796e91bd37c509d5641bb#egg=bachbot&subdirectory=scripts
 click==6.6
+cycler==0.10.0
 Cython==0.23.4
 h5py==2.5.0
 lxml==3.6.0
+matplotlib==1.5.1
+multiprocessing==2.6.2.1
 music21==2.2.1
 numpy==1.10.4
+pyparsing==2.1.4
+python-dateutil==2.5.3
+pytz==2016.4
 recordtype==1.1
 requests==2.10.0
+scipy==0.17.1
 six==1.10.0
 urlparse2==1.1.1

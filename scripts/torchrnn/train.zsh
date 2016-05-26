@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-input=Bach+Johann
+input=concat
 
 seqlength=500
 wordvec_size=64
@@ -26,7 +26,7 @@ th train.lua \
     -batchnorm $batchnorm \
     -seq_length $seqlength\
     -learning_rate $lr \
-    -checkpoint_name $fname/checkpoint \
+    -checkpoint_name checkpoints/$fname/checkpoint \
     -print_every 50 \
     -checkpoint_every 1000 \
     -max_epochs 30 \
