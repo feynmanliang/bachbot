@@ -4,12 +4,13 @@
 #
 # Building, pushing, and running:
 #   docker build -f Dockerfile -t bachbot:base .
-#   docker tag -f <tag of last container> fliang/bachbot:base
+#   docker tag <tag of last container> fliang/bachbot:base
 #   docker push fliang/bachbot:base
 #   docker run -i -t fliang/bachbot:base
 ############################################################
 
 FROM ubuntu:14.04
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 MAINTAINER Feynman Liang "feynman.liang@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -18,12 +19,12 @@ ENV DEBCONF_NONINTERACTIVE_SEEN true
 # Required packages
 RUN apt-get update
 RUN apt-get -y install \
-    python \
     build-essential \
     python2.7-dev \
     git \
     ssh \
     libhdf5-dev \
+    libssl-dev \
     libxml2-dev \
     libxslt-dev \
     software-properties-common
@@ -41,40 +42,46 @@ ENV DYLD_LIBRARY_PATH=~/torch/install/lib:$DYLD_LIBRARY_PATH
 ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 
 #BachBot
-WORKDIR ~/bachbot
 RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
 
 #pyenv
 RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
-ENV PYENV_ROOT ~/.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATHENV PATH=~/.pyenv/bin:$PATH
-RUN pyenv install 2.7.11
+
+# Set environment variables.
+ENV PYENV_ROOT /root/.pyenv
+ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+RUN echo -e '\n\n# pyenv' >> ~/.bash_profile && \
+    echo 'export PYENV_ROOT="/root/.pyenv"' >> ~/.bash_profile && \
+    echo 'export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile && \
+    echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+
+RUN pyenv install 2.7.11 && \
+    pyenv global 2.7.11 && \
+    pyenv rehash
 
 #BachBot virtualenv
-WORKDIR ~/bachbot
-RUN pyenv virtualenv 2.7.11 bachbot && \
-    /bin/bash -c "pyenv activate bachbot && \
+RUN bash -c "pyenv virtualenv 2.7.11 bachbot && \
+    source ~/.bash_profile && \
+    pyenv activate bachbot && \
+    cd ~/bachbot && \
     pip install -r requirements.txt"
 
 #Lua requirements
-WORKDIR ~
-RUN luarocks install torch
 RUN luarocks install nn
 RUN luarocks install optim
 RUN luarocks install lua-cjson
 
-RUN git clone https://github.com/deepmind/torch-hdf5 ~/torch-hdf5
-WORKDIR ~/torch-hdf5
-RUN luarocks make hdf5-0-0.rockspec
+RUN git clone https://github.com/deepmind/torch-hdf5 ~/torch-hdf5 && \
+    cd ~/torch-hdf5 && \
+    luarocks make hdf5-0-0.rockspec
 
 #torch-rnn and python requirements installed to bachbot venv
-WORKDIR ~
-RUN git clone https://github.com/jcjohnson/torch-rnn && \
-    /bin/bash -c "pyenv activate bachbot && \
-    pip install -r torch-rnn/requirements.txt"
+RUN git clone https://github.com/jcjohnson/torch-rnn ~/torch-rnn
+RUN bash -c "source ~/.bash_profile && \
+    pyenv activate bachbot && \
+    pip install -r ~/torch-rnn/requirements.txt"
 
 #Element-Research/rnn
-WORKDIR ~
 RUN luarocks install rnn
 
 # Clean tmps
@@ -87,4 +94,4 @@ RUN apt-get clean && \
 
 ##################### INSTALLATION END #####################
 WORKDIR ~/
-ENTRYPOINT bash
+CMD ["bash"]
