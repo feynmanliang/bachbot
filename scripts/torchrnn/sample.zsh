@@ -3,7 +3,8 @@
 CHECKPOINT=$1
 TEMP=$2
 
-start_text="<?xml version="1.0" encoding="utf-8"?>
+start_text=`cat <<EOF
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE score-partwise
   PUBLIC '-//Recordare//DTD MusicXML 2.0 Partwise//EN'
   'http://www.musicxml.org/dtds/partwise.dtd'>
@@ -22,12 +23,16 @@ start_text="<?xml version="1.0" encoding="utf-8"?>
       <tenths>40</tenths>
     </scaling>
   </defaults>
-  <part-list>"
+  <part-list>
+EOF`
+
+print temperature=$TEMP,start_text:
+print $start_text
 
 cd ~/torch-rnn/
 th sample.lua \
   -checkpoint $CHECKPOINT \
   -temperature $TEMP \
-  -start_text "@" \
+  -start_text $start_text \
   -sample 1 -length 15000 \
   > ~/bachbot/scratch/sampled_$TEMP.txt
