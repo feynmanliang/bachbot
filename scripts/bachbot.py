@@ -2,7 +2,6 @@ import click
 
 from music21 import environment
 
-from clean_checkpoints import clean_checkpoints
 from concatenate_corpus import concatenate_corpus
 from kerntools.extract_melody import extract_melody
 from kerntools.renumber_measures import renumber_measures
@@ -21,7 +20,6 @@ cli.add_command(extract_melody)
 
 # torch-rnn
 cli.add_command(concatenate_corpus)
-cli.add_command(clean_checkpoints)
 
 # kern file post-processing
 cli.add_command(renumber_measures)
