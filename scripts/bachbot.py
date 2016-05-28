@@ -57,13 +57,38 @@ def train():
 def sample(checkpoint, temperature):
     """Samples torch-rnn model. Calls bachbot/scripts/torchrnn/sample.zsh."""
     subprocess.call(
-    BACHBOT_DIR + '/scripts/torchrnn/sample.zsh {0} {1} {2}'.format(checkpoint, temperature, START_DELIM),
-    shell=True)
+            BACHBOT_DIR + '/scripts/torchrnn/sample.zsh {0} {1} {2}'.format(checkpoint, temperature, START_DELIM),
+            shell=True)
+
+@click.command()
+@click.argument('utf8-file', type=click.Path(exists=True))
+@click.argument('json-file', type=click.File('rb'))
+def postprocess_utf(utf8_file, json_file):
+    """Post-process UTF encoded LSTM output back into music21."""
+    import json
+    import codecs
+    utf_to_txt = json.load(json_file)
+
+    files = []
+    curr_file = []
+    utf8_file = codecs.open(utf8_file, "r", "utf-8")
+    for symb in filter(lambda x: x != u'\n', utf8_file.read()):
+        if symb == START_DELIM:
+            curr_file = []
+        elif symb == END_DELIM:
+            files.append(curr_file)
+            curr_file = []
+        else:
+            curr_file.append(utf_to_txt[symb])
+    print files
+
 
 # instantiate the CLI
 map(cli.add_command, [
     prepare_bach_chorales_mono,
+    concatenate_corpus,
     make_h5,
     train,
-    sample
+    sample,
+    postprocess_utf
 ])
