@@ -46,7 +46,13 @@ def make_h5(infile, outdir):
         '--output_json', outdir + '/' + fileName + '.json'
     ]), shell=True)
 
+@click.command()
+def train():
+    """Trains torch-rnn model. Alias to bachbot/scripts/torchrnn/train.zsh"""
+    subprocess.call(BACHBOT_DIR + '/scripts/torchrnn/train.zsh')
 
-cli.add_command(prepare_bach_chorales_mono)
-
-cli.add_command(make_h5)
+# instantiate the CLI
+map(cli.add_command, [
+    prepare_bach_chorales_mono,
+    make_h5,
+    train])
