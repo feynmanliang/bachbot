@@ -1,7 +1,5 @@
 import click
-import glob
-import os.path
-import sys
+import json
 
 from music21 import analysis, converter, corpus, meter
 
@@ -11,35 +9,52 @@ from constants import *
 def prepare_bach_chorales_mono():
     """Prepares the Bach chorale training dataset.
 
+    Existing files are overwritten because the vocabulary can change between runs.
+
     The following steps are performed:
         * `music21` is used to get Bach chorales using BWV numbering system
+        * Only 4/4 time signatures are considered
         * The soprano / top part is extraced
         * The data is encoded into a `(Note+Octave|Rest, Duration) :: (Char+Int|'REST', Float)` format
-          and written to `bachbot/scratch/{bwv_id}-mono.txt`
-
-    Existing files are not overwritten.
+          and written to `bachbot/scratch/{bwv_id}-mono.{txt,utf,json}`
+            * The `.txt` file contains the tuples in plain text
+            * The `.utf` file contains the encoding of the tuples into unique UTF8 symbols
+            * The `.json` file contains a dictionary mapping UTF8 symbols to decoded tuples
     """
     for score in corpus.chorales.Iterator(
             numberingSystem='bwv',
-            #currentNumber='300',
-            #highestNumber='300',
             returnType='stream'):
             #analysis=True): # analysis only available for riemenschneider
+
+        # used for UTF8 encoding later
+        plain_text_data = []
+        vocabulary = set() # remember all unique (note,duration) tuples seen
+
+        # convert all the files and build vocabulary
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
             bwv_id = score.metadata.title
-            out_path = SCRATCH_DIR + '/{0}-mono.txt'.format(bwv_id)
+            out_path = SCRATCH_DIR + '/{0}-mono'.format(bwv_id)
 
-            if not os.path.isfile(out_path):
-                score = _standardize_key(score)
-                soprano_part = _get_soprano_part(score)
-                note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
+            score = _standardize_key(score)
+            soprano_part = _get_soprano_part(score)
+            note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
+            pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
+            plain_text_data.append((out_path, pairs_text))
+            for txt in pairs_text:
+                vocabulary.add(txt)
 
-                print('Writing {0}'.format(out_path))
-                with open(out_path, 'w') as fd:
-                    for entry in note_duration_pairs:
-                        fd.write('{0},{1}\n'.format(*entry))
-            else:
-                print('Skipping {0}: Already exists.'.format(bwv_id))
+        # construct vocab <=> UTF8 mapping
+        pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
+
+        # save outputs
+        for out_path, pairs_text in plain_text_data:
+            with open(out_path + '.txt', 'w') as fd:
+                fd.write('\n'.join(pairs_text))
+            with open(out_path + '.utf', 'w') as fd:
+                fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
+            with open(out_path + '.json', 'w') as fd:
+                utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
+                json.dump(utf_to_txt, fd)
 
 def _get_soprano_part(bwv_score):
     """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
