@@ -48,11 +48,22 @@ def make_h5(infile, outdir):
 
 @click.command()
 def train():
-    """Trains torch-rnn model. Alias to bachbot/scripts/torchrnn/train.zsh"""
+    """Trains torch-rnn model. Alias to bachbot/scripts/torchrnn/train.zsh."""
     subprocess.call(BACHBOT_DIR + '/scripts/torchrnn/train.zsh')
+
+@click.command()
+@click.argument('checkpoint', type=click.Path(exists=True), required=True)
+@click.option('-t', '--temperature', type=float, default=0.9)
+def sample(checkpoint, temperature):
+    """Samples torch-rnn model. Calls bachbot/scripts/torchrnn/sample.zsh."""
+    subprocess.call(
+    BACHBOT_DIR + '/scripts/torchrnn/sample.zsh {0} {1} {2}'.format(checkpoint, temperature, START_DELIM),
+    shell=True)
 
 # instantiate the CLI
 map(cli.add_command, [
     prepare_bach_chorales_mono,
     make_h5,
-    train])
+    train,
+    sample
+])
