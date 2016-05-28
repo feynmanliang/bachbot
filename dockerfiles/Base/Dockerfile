@@ -76,7 +76,8 @@ RUN git clone https://github.com/deepmind/torch-hdf5 ~/torch-hdf5 && \
     luarocks make hdf5-0-0.rockspec
 
 #torch-rnn and python requirements installed to bachbot venv
-RUN git clone https://github.com/jcjohnson/torch-rnn ~/torch-rnn
+RUN luarocks install lua-utf8
+RUN git clone https://github.com/feynmanliang/torch-rnn ~/torch-rnn
 RUN bash -c "source ~/.bash_profile && \
     pyenv activate bachbot && \
     pip install -r ~/torch-rnn/requirements.txt"
