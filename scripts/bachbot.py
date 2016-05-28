@@ -21,7 +21,12 @@ cli.add_command(extract_melody)
 # get scores directly from music21
 @click.command()
 def get_chorales():
-    from music21 import analysis, corpus
+    import glob
+    import os.path
+    import sys
+
+    from music21 import analysis, converter, corpus, meter
+
     def _get_soprano_part(bwv_score):
         """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
         soprano_part_ids = set([
@@ -43,6 +48,7 @@ def get_chorales():
                     'Could not find a unique soprano part id from: {0}'.format(
                             map(lambda part: part.id, bwv_score.parts))
             return bwv_score.parts[is_soprano_part.index(True)]
+
     def _standardize_key(score):
         """Converts into the key of C major or A minor.
 
@@ -65,15 +71,38 @@ def get_chorales():
             ks.transpose(halfSteps, inPlace=True)
         return tScore
 
+    def _encode_note_duration_tuples(part):
+        """Generator yielding the notes/rests and durations for a single part."""
+        for nr in part.flat.notesAndRests:
+            if nr.isNote:
+                yield (nr.nameWithOctave, nr.quarterLength)
+            else:
+                yield ('REST',nr.quarterLength)
+
+    tmp_dir = os.path.expanduser('~/bachbot/scratch')
+
     for score in corpus.chorales.Iterator(
             numberingSystem='bwv',
             #currentNumber='300',
             #highestNumber='300',
             returnType='stream'):
             #analysis=True): # analysis only available for riemenschneider
-        score = _standardize_key(score)
-        soprano_part = _get_soprano_part(score)
-    print 'OK!'
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            bwv_id = score.metadata.title
+            out_path = tmp_dir + '/{0}-mono.txt'.format(bwv_id)
+
+            if not os.path.isfile(out_path):
+                score = _standardize_key(score)
+                soprano_part = _get_soprano_part(score)
+                note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
+
+                print('Writing {0}'.format(out_path))
+                with open(out_path, 'w') as fd:
+                    for entry in note_duration_pairs:
+                        fd.write('{0},{1}\n'.format(*entry))
+            else:
+                print('Skipping {0}: Already exists.'.format(bwv_id))
+
 
 
 
