@@ -27,3 +27,7 @@ docker pull fliang/bachbot:CUDA-7.5
 	```
 	The `bachbot` shell command will use the entry
 	point defined inside `./scripts/setup.py`.
+* To generate `ctags` which include system Python libraries
+	```
+	ctags -R -f ./tags `python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`<CR>
+	```
