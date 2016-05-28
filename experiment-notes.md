@@ -1,6 +1,10 @@
 # 5-28
 
-* Get corpus with `music21`, transpose to Cmaj/Amin
+* Improved preprocessing using `bachbot get_chorales`
+    * Get corpus with `music21`
+    * Transpose to Cmaj/Amin (is there a standard way to do this?)
+    * Strip all information except `(Note+Octave|Rest, Duration)`
+    * Write processed data to `bachbot/scratch/{bwv_id}-mono.txt`
 
 # 5-25
 
