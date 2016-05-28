@@ -67,6 +67,7 @@ def postprocess_utf(utf8_file, json_file):
     """Post-process UTF encoded LSTM output back into music21."""
     import json
     import codecs
+    from music21 import note, stream
     utf_to_txt = json.load(json_file)
 
     files = []
@@ -80,8 +81,22 @@ def postprocess_utf(utf8_file, json_file):
             curr_file = []
         else:
             curr_file.append(utf_to_txt[symb])
-    print files
 
+    melodies = []
+    for f in files:
+        melody = stream.Stream()
+        for note_txt in f:
+            pitch, dur = note_txt.split(',')
+            if pitch == u'REST':
+                n = note.Rest()
+            else:
+                n = note.Note(pitch)
+            n.duration.quarterLength = float(dur)
+            melody.append(n)
+        melodies.append(melody)
+
+    for i,m in enumerate(melodies):
+        m.write('musicxml', SCRATCH_DIR + '/out-{0}.xml'.format(i))
 
 # instantiate the CLI
 map(cli.add_command, [
