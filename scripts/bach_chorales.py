@@ -16,23 +16,23 @@ def prepare_bach_chorales_mono():
         * Only 4/4 time signatures are considered
         * The soprano / top part is extraced
         * The data is encoded into a `(Note+Octave|Rest, Duration) :: (Char+Int|'REST', Float)` format
-          and written to `bachbot/scratch/{bwv_id}-mono.{txt,utf,json}`
+          and written to `bachbot/scratch/{bwv_id}-mono.{txt,utf}`
             * The `.txt` file contains the tuples in plain text
-            * The `.utf` file contains the encoding of the tuples into unique UTF8 symbols
-            * The `.json` file contains a dictionary mapping UTF8 symbols to decoded tuples
+        * Also outputs `utf_to_txt.json`, a dictionary mapping UTF8 symbols to decoded tuples
     """
+    # used for UTF8 encoding later
+    plain_text_data = []
+    vocabulary = set() # remember all unique (note,duration) tuples seen
+
     for score in corpus.chorales.Iterator(
             numberingSystem='bwv',
             returnType='stream'):
             #analysis=True): # analysis only available for riemenschneider
 
-        # used for UTF8 encoding later
-        plain_text_data = []
-        vocabulary = set() # remember all unique (note,duration) tuples seen
-
         # convert all the files and build vocabulary
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
             bwv_id = score.metadata.title
+            print('Processing BWV {0}'.format(bwv_id))
             out_path = SCRATCH_DIR + '/{0}-mono'.format(bwv_id)
 
             score = _standardize_key(score)
@@ -43,18 +43,21 @@ def prepare_bach_chorales_mono():
             for txt in pairs_text:
                 vocabulary.add(txt)
 
-        # construct vocab <=> UTF8 mapping
-        pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
+    # construct vocab <=> UTF8 mapping
+    pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
+    utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
 
-        # save outputs
-        for out_path, pairs_text in plain_text_data:
-            with open(out_path + '.txt', 'w') as fd:
-                fd.write('\n'.join(pairs_text))
-            with open(out_path + '.utf', 'w') as fd:
-                fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
-            with open(out_path + '.json', 'w') as fd:
-                utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
-                json.dump(utf_to_txt, fd)
+    # save outputs
+    with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
+        print 'Writing ' + SCRATCH_DIR + '/utf_to_txt.json'
+        json.dump(utf_to_txt, fd)
+
+    for out_path, pairs_text in plain_text_data:
+        print 'Writing {0}'.format(out_path)
+        with open(out_path + '.txt', 'w') as fd:
+            fd.write('\n'.join(pairs_text))
+        with open(out_path + '.utf', 'w') as fd:
+            fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
 
 def _get_soprano_part(bwv_score):
     """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
