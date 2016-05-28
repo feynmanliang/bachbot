@@ -24,6 +24,9 @@ start_text=`cat <<EOF
     </scaling>
   </defaults>
   <part-list>
+  <part id="P160d1f4b61250f17d96ae18a1f838f6d">
+    <measure number="0">
+      <attributes>
 EOF`
 
 print temperature=$TEMP,start_text:
@@ -34,5 +37,5 @@ th sample.lua \
   -checkpoint $CHECKPOINT \
   -temperature $TEMP \
   -start_text $start_text \
-  -sample 1 -length 15000 \
+  -sample 1 -length 50000 \
   > ~/bachbot/scratch/sampled_$TEMP.txt

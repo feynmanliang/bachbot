@@ -1,3 +1,7 @@
+# 5-28
+
+* Get corpus with `music21`, transpose to Cmaj/Amin
+
 # 5-25
 
 * Added `extract_melody`, which extracts the 0th part from `music21.stream.Score`
@@ -11,7 +15,11 @@
 
 |seq length |wordvec size|num layers|rnn size|dropout|batchnorm|lr  |nepoch|final train loss|final val loss |
 |-----------|------------|----------|--------|-------|---------|----|------|----------------|---------------|
-|500        |64          |2         |256     |0      |1        |2e-3|
+|500        |64          |2         |256     |0      |1        |2e-3|16.19 | 0.022378       |0.029262       |
+|50         |64          |2         |256     |0      |1        |2e-3|13.41 | 0.028490       |0.032692       |
+|100        |64          |2         |256     |0      |1        |2e-3|13.41 | 0.028490       |0.032692       |
+
+
 
 ## Results on kern format data
 
