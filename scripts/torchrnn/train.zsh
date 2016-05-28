@@ -3,9 +3,9 @@
 input=concat_corpus
 
 seq_length=8
-wordvec_size=64
+wordvec_size=128
 num_layers=2
-rnn_size=32
+rnn_size=256
 dropout=0
 batchnorm=1
 lr=2e-3

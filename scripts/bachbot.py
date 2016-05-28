@@ -96,6 +96,7 @@ def postprocess_utf(utf8_file, json_file):
         melodies.append(melody)
 
     for i,m in enumerate(melodies):
+        print('Writing {0}'.format(SCRATCH_DIR + '/out-' + str(i) + '.xml'))
         m.write('musicxml', SCRATCH_DIR + '/out-{0}.xml'.format(i))
 
 # instantiate the CLI

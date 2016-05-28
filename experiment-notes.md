@@ -31,6 +31,15 @@
 |8          |64          |3         |16      |0      |1        |2e-3|50    |1.264           |1.2311         |
 |12         |64          |3         |32      |0      |1        |2e-3|50    |1.030           |1.1909         |
 
+Generative results don't sound too realistic...
+
+## Try overfitting a model and sampling
+
+`seq_length=8,wordvec=128,num_layers=2,rnn_size=256,dropout=0,batchnorm=1,lr=2e-3`
+
+* Sounds much better with an overfit LSTM and `temperature=0.98`...
+    * Maybe generalizable modeling isn't a good criteria... 
+
 
 # 5-25
 
