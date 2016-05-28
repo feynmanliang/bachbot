@@ -1,0 +1,27 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 Here are some comments on evaluation metrics as requested (supplemented by .png and .py files that I'll upload to github):\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \ul 1. Global statistical comparison of BachBot\'92s output with repertoire \'91archetypes\'92.\ulnone \
+\
+Common practice, Classical music tends to exhibit regular hierarchical structures in several parameters including the overall usage of metrical positions (which relate to the metre) and pitches (which reflect the key). We can use these as a metric, but they're obviously rather crude.\
+\
+There is also often a big difference between the kind of information contained in one work and that of general practice so a consideration of variance would need to be built in. For instance, compare the position usage in Fugue no.5 (\'91Fugue-5.png\'92) with its distinctive dotted rhythm from the wider collection of fugues (\'91Fugues.png\'92). This division is much less pronounced in the chorales than most repertoires (both in terms of pitch and rhythm), so it\'92s possible that we won\'92t be too troubled by it for that dataset.\
+\
+Examples:\
+\ul a. Metrical position usage\ulnone \
+Chorales (individually and collectively) have a distinctive metrical profile which differs in clear ways from wider practice. See the difference between the histograms for Bach chorales (\'91Bach-chorales.png\'92) as compared with those for Bach fugues, for instance. I\'92ve also uploaded some code for extracting this information (\'91Beat-count-4.py\'92 and \'91Chorale-Beat-Count.py\'92) and can add other examples if needed. This should help with engaging with music21, extracting pieces in a certain key signature, etc etc.\
+\
+\ul b. Pitch usage\ulnone \
+Again, we would expect to see at least some hierarchy reflecting the key profile. For illustration, see the image \'92C major fugue histogram\'92 in which the key notes (C, D, E, F, G, A, B) are used more than the others. As we discussed, for a larger corpus we might see a hierarchy on a greater number of levels, assuming that we\'92ve compared like with like (normalised for key, and separated major from minor chorales).\
+\
+\ul 2. More sophisticated models of melodic likelihood from expectancy models\ulnone \
+\
+Apart from these rather crude metrics, we could assess the models\'92 output in relation to more specific existing models of  melodic expectation, for instance. Big names in this field include Leonard Meyer, Eugene Narmour, and David Temperley, and now emerging figures like Marcus Pearce. See, for instance, recent work by Marcus Pearce after Meyer / Narmour (\'91implication-realisation model\'92) here;\
+http://webprojects.eecs.qmul.ac.uk/marcusp/index.php?page=4\
+Pearce also provides a 120 hymn dataset that could be a useful alternative corpus for testing \'91hymn tune likelihood\'92. As discussed, \'91hymns\'92 and \'91chorales\'92 will be perfectly similar enough for our purposes. There might be one or two overlaps between these collections to eliminate (\'91hymns\'92 by Bach) but conversely, there are plenty more hymns encoded and available on the web.}
