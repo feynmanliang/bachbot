@@ -5,6 +5,14 @@
   * Split major/minor pieces apart
   * Model only the duration
 
+## Observations
+
+* Low validation loss doesn't imply poor perceptual performance. In contrast,
+  overfit models tended to yield more realistic samples
+* Subsetting to only major/minor pieces significantly improves sample quality
+* Training on all four parts significantly improves performance over using just
+  Soprano, but introduces obvious non-melodic parts (e.g. periods of rest)
+
 # 5-28
 
 * Improved preprocessing using `bachbot get_chorales`
