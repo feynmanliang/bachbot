@@ -1,3 +1,10 @@
+# 5-29
+
+* Will try:
+  * Train on all voices
+  * Split major/minor pieces apart
+  * Model only the duration
+
 # 5-28
 
 * Improved preprocessing using `bachbot get_chorales`
