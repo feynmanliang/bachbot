@@ -18,7 +18,8 @@ def prepare_mono_all():
         * Only 4/4 time signatures are considered
         * The key is transposed to Cmaj/Amin
         * All monophonic parts are extracted and sequentially concatenated
-        * A (Pitch,Duration) sequence is returned
+        * Multiple (Pitch,Duration) sequence are returned
+        * The files output have names `{bwv_id}-{major|minor}-{part_id}`
     """
     def _fn(score):
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
@@ -26,10 +27,11 @@ def prepare_mono_all():
             print('Processing BWV {0}'.format(bwv_id))
 
             score = _standardize_key(score)
+            key = score.analyze('key')
             for part in score.parts:
                 note_duration_pairs = list(_encode_note_duration_tuples(part))
                 pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
-                yield ('{0}-{1}-mono-all'.format(bwv_id, part.id), pairs_text)
+                yield ('{0}-{1}-{2}-mono-all'.format(bwv_id, key.mode, part.id), pairs_text)
     _process_scores_with(_fn)
 
 @click.command()
@@ -41,6 +43,7 @@ def prepare_soprano():
         * The key is transposed to Cmaj/Amin
         * Only the soprano part is extracted
         * A (Pitch,Duration) sequence is returned
+        * The files output have names `{bwv_id}-soprano`
     """
     def _fn(score):
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
