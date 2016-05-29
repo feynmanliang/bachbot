@@ -72,6 +72,10 @@ def postprocess_utf(utf8_file, json_file):
         melodies.append(melody)
 
     for i,m in enumerate(melodies):
-        print('Writing {0}'.format(SCRATCH_DIR + '/out-' + str(i) + '.xml'))
-        m.write('musicxml', SCRATCH_DIR + '/out-{0}.xml'.format(i))
+        out_dir = SCRATCH_DIR + '/out'
+        if not os.path.exists(out_dir):
+            print('Creating directory {0}'.format(out_dir))
+            os.makedirs(out_dir)
+        print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
+        m.write('musicxml', out_dir + '/out-{0}.xml'.format(i))
 
