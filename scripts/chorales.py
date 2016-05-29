@@ -12,9 +12,8 @@ def chorales():
 
 @click.command()
 def prepare_mono_all():
-    """Prepares a corpus containing all monophonic parts.
+    """Prepares a corpus containing all monophonic parts, with major/minor labels.
 
-    For each score, we extract a univariate discrete time series representing:
         * Only 4/4 time signatures are considered
         * The key is transposed to Cmaj/Amin
         * All monophonic parts are extracted and sequentially concatenated
@@ -36,9 +35,8 @@ def prepare_mono_all():
 
 @click.command()
 def prepare_soprano():
-    """Prepares a corpus containing all monophonic parts.
+    """Prepares a corpus containing all soprano parts.
 
-    For each score, we extract a univariate discrete time series representing:
         * Only 4/4 time signatures are considered
         * The key is transposed to Cmaj/Amin
         * Only the soprano part is extracted
@@ -55,6 +53,22 @@ def prepare_soprano():
             note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
             pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
             yield ('{0}-soprano'.format(bwv_id), pairs_text)
+    _process_scores_with(_fn)
+
+@click.command()
+def prepare_durations():
+    """Prepares a corpus containing durations from all parts."""
+    def _fn(score):
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            bwv_id = score.metadata.title
+            print('Processing BWV {0}'.format(bwv_id))
+
+            score = _standardize_key(score)
+            key = score.analyze('key')
+            for part in score.parts:
+                note_duration_pairs = list(map(lambda note: note.quarterLength, part))
+                pairs_text = map(lambda entry: '{0}'.format(entry), note_duration_pairs)
+                yield ('{0}-{1}-{2}-duration'.format(bwv_id, key.mode, part.id), pairs_text)
     _process_scores_with(_fn)
 
 def _process_scores_with(fn):
@@ -156,5 +170,6 @@ def _encode_note_duration_tuples(part):
 
 map(chorales.add_command, [
     prepare_soprano,
-    prepare_mono_all
+    prepare_mono_all,
+    prepare_durations
 ])
