@@ -5,20 +5,68 @@ from music21 import analysis, converter, corpus, meter
 
 from constants import *
 
+@click.group()
+def chorales():
+    """Constructs various corpuses using BWV Bach chorales."""
+    pass
+
 @click.command()
-def prepare_bach_chorales_mono():
-    """Prepares the Bach chorale training dataset.
+def prepare_mono_all():
+    """Prepares a corpus containing all monophonic parts.
+
+    For each score, we extract a univariate discrete time series representing:
+        * Only 4/4 time signatures are considered
+        * The key is transposed to Cmaj/Amin
+        * All monophonic parts are extracted and sequentially concatenated
+        * A (Pitch,Duration) sequence is returned
+    """
+    def _fn(score):
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            bwv_id = score.metadata.title
+            print('Processing BWV {0}'.format(bwv_id))
+
+            score = _standardize_key(score)
+            for part in score.parts:
+                note_duration_pairs = list(_encode_note_duration_tuples(part))
+                pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
+                yield ('{0}-{1}-mono-all'.format(bwv_id, part.id), pairs_text)
+    _process_scores_with(_fn)
+
+@click.command()
+def prepare_soprano():
+    """Prepares a corpus containing all monophonic parts.
+
+    For each score, we extract a univariate discrete time series representing:
+        * Only 4/4 time signatures are considered
+        * The key is transposed to Cmaj/Amin
+        * Only the soprano part is extracted
+        * A (Pitch,Duration) sequence is returned
+    """
+    def _fn(score):
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            bwv_id = score.metadata.title
+            print('Processing BWV {0}'.format(bwv_id))
+
+            score = _standardize_key(score)
+            soprano_part = _get_soprano_part(score)
+            note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
+            pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
+            yield ('{0}-soprano'.format(bwv_id), pairs_text)
+    _process_scores_with(_fn)
+
+def _process_scores_with(fn):
+    """Extracts data from all BWV scores using `fn`.
+
+    `fn` should take a `music21.stream.Score` and return a `[(FileName, [String]|None)]` where
+    each element represents an extracted univariate sequence of discrete tokens from the
+    score.
+
+        * `music21` is used to get Bach chorales using BWV numbering system
+        * Each chorale is processed using `fn`
+        * The output is written to `${SCRATCH_DIR}/${FileName}.{txt,utf}
+        * `utf_to_txt.json` is a dictionary mapping UTF8 symbols to plain text
 
     Existing files are overwritten because the vocabulary can change between runs.
-
-    The following steps are performed:
-        * `music21` is used to get Bach chorales using BWV numbering system
-        * Only 4/4 time signatures are considered
-        * The soprano / top part is extraced
-        * The data is encoded into a `(Note+Octave|Rest, Duration) :: (Char+Int|'REST', Float)` format
-          and written to `bachbot/scratch/{bwv_id}-mono.{txt,utf}`
-            * The `.txt` file contains the tuples in plain text
-        * Also outputs `utf_to_txt.json`, a dictionary mapping UTF8 symbols to decoded tuples
     """
     # used for UTF8 encoding later
     plain_text_data = []
@@ -27,21 +75,10 @@ def prepare_bach_chorales_mono():
     for score in corpus.chorales.Iterator(
             numberingSystem='bwv',
             returnType='stream'):
-            #analysis=True): # analysis only available for riemenschneider
-
-        # convert all the files and build vocabulary
-        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            bwv_id = score.metadata.title
-            print('Processing BWV {0}'.format(bwv_id))
-            out_path = SCRATCH_DIR + '/{0}-mono'.format(bwv_id)
-
-            score = _standardize_key(score)
-            soprano_part = _get_soprano_part(score)
-            note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
-            pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
-            plain_text_data.append((out_path, pairs_text))
-            for txt in pairs_text:
-                vocabulary.add(txt)
+        for fname, pairs_text in fn(score):
+            if pairs_text:
+                plain_text_data.append((fname, pairs_text))
+                vocabulary.update(set(pairs_text))
 
     # construct vocab <=> UTF8 mapping
     pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
@@ -52,12 +89,13 @@ def prepare_bach_chorales_mono():
         print 'Writing ' + SCRATCH_DIR + '/utf_to_txt.json'
         json.dump(utf_to_txt, fd)
 
-    for out_path, pairs_text in plain_text_data:
+    for fname, pairs_text in plain_text_data:
+        out_path = SCRATCH_DIR + '/{0}'.format(fname)
         print 'Writing {0}'.format(out_path)
         with open(out_path + '.txt', 'w') as fd:
-            fd.write('\n'.join(pairs_text))
+            fd.write('\n'.join(pairs_text) + '\n')
         with open(out_path + '.utf', 'w') as fd:
-            fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
+            fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)) + '\n')
 
 def _get_soprano_part(bwv_score):
     """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
@@ -112,3 +150,8 @@ def _encode_note_duration_tuples(part):
             yield (nr.nameWithOctave, nr.quarterLength)
         else:
             yield ('REST',nr.quarterLength)
+
+map(chorales.add_command, [
+    prepare_soprano,
+    prepare_mono_all
+])

@@ -2,7 +2,7 @@ import click
 
 from music21 import environment
 
-from bach_chorales import prepare_bach_chorales_mono
+from chorales import chorales
 from concatenate_corpus import concatenate_corpus
 from torch_rnn import make_h5, train, sample, postprocess_utf
 
@@ -15,7 +15,7 @@ def cli():
 
 # instantiate the CLI
 map(cli.add_command, [
-    prepare_bach_chorales_mono,
+    chorales,
     concatenate_corpus,
     make_h5,
     train,
