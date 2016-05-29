@@ -93,9 +93,9 @@ def _process_scores_with(fn):
         out_path = SCRATCH_DIR + '/{0}'.format(fname)
         print 'Writing {0}'.format(out_path)
         with open(out_path + '.txt', 'w') as fd:
-            fd.write('\n'.join(pairs_text) + '\n')
+            fd.write('\n'.join(pairs_text))
         with open(out_path + '.utf', 'w') as fd:
-            fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)) + '\n')
+            fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
 
 def _get_soprano_part(bwv_score):
     """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""

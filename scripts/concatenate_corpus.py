@@ -10,8 +10,9 @@ def concatenate_corpus(files, output):
 
     Try `bachbot concatenate_corpus scratch/*.utf`.
     """
+    print 'Writing concatenated corpus to {0}'.format(output.name)
     for fp in files:
         with open(fp, 'rb') as fd:
-            output.write(START_DELIM + '\n' + fd.read() + '\n' + END_DELIM + '\n')
+            output.write(START_DELIM + '\n' + fd.read().strip() + '\n' + END_DELIM + '\n')
 
 
