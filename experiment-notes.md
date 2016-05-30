@@ -2,7 +2,7 @@
 
 Used `Spearmint` to do hyperparam optimization over major soprano monophonic
 LSTM models; Best result `val_loss=1.13967` with `seq_length=6.94253`,
-`rnn_size=29.5404`, `wordvec_size=126.366`, `num_layers=1.00082`
+`rnn_size=29.5404`, `wordvec_size=126.366`, `num_layers=1.00082`, all floored.
 
 |   val_loss |   seq_length |   rnn_size |   wordvec_size |   num_layers |
 |:-----------|-------------:|-----------:|---------------:|-------------:|

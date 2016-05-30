@@ -2,10 +2,10 @@
 
 input=concat_corpus
 
-seq_length=8
-wordvec_size=128
-num_layers=2
-rnn_size=256
+seq_length=6
+wordvec_size=126
+num_layers=1
+rnn_size=29
 dropout=0
 batchnorm=1
 lr=2e-3
@@ -29,6 +29,6 @@ th train.lua \
     -checkpoint_name checkpoints/$fname/checkpoint \
     -print_every 50 \
     -checkpoint_every 1000 \
-    -max_epochs 50 \
+    -max_epochs 200 \
     -gpu_backend cuda \
     | tee ~/bachbot/logs/$fname.log
