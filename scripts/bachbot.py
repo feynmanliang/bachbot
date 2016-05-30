@@ -4,7 +4,7 @@ from music21 import environment
 
 from chorales import chorales
 from concatenate_corpus import concatenate_corpus
-from torch_rnn import make_h5, train, sample, postprocess_utf
+from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_constant_timestep
 
 @click.group()
 def cli():
@@ -20,5 +20,6 @@ map(cli.add_command, [
     make_h5,
     train,
     sample,
-    postprocess_utf
+    postprocess_utf,
+    postprocess_utf_constant_timestep
 ])
