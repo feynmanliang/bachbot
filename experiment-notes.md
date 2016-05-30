@@ -1,9 +1,16 @@
 # 5-30
 
-Used `Spearmint` to do hyperparam optimization over major soprano monophonic
-LSTM models; Best result `val_loss=1.13967` with `seq_length=6.94253`,
-`rnn_size=29.5404`, `wordvec_size=126.366`, `num_layers=1.00082`, all floored.
+**TODO**: Currently give sequence of notes, try giving sequence of time steps (frames)
+  so the time difference between inputs is the same
 
+
+* Used `Spearmint` to do hyperparam optimization over major soprano monophonic
+  LSTM models
+* Best result `val_loss=1.13967` with `seq_length=6.94253`,
+ `rnn_size=29.5404`, `wordvec_size=126.366`, `num_layers=1.00082`, all floored.
+   * Sampling with `temp=0.8` yielded believable melody lines
+
+All `Spearmint` results:
 |   val_loss |   seq_length |   rnn_size |   wordvec_size |   num_layers |
 |:-----------|-------------:|-----------:|---------------:|-------------:|
 |    1.81279 |      1       |    1       |        1       |      1       |

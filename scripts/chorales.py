@@ -10,6 +10,29 @@ from constants import *
 def chorales():
     """Constructs various corpuses using BWV Bach chorales."""
     pass
+@click.command()
+def prepare_mono_all_constant_t():
+    """Prepares all monophonic parts, constant timestep between samples"""
+    def _fn(score):
+        K = 8 # quantize delta T = 1 / (4*K) i.e. expand quarter notes to K frames
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            bwv_id = score.metadata.title
+            print('Processing BWV {0}'.format(bwv_id))
+
+            score = _standardize_key(score)
+            key = score.analyze('key')
+            for part in score.parts:
+                note_duration_pairs = list(_encode_note_duration_tuples(part))
+
+                assert all(map(lambda x: x >= 1.0, set([K*dur for _,dur in note_duration_pairs]))),\
+                        "Could not quantize constant timesteps"
+
+                pairs_text = [
+                        str(note)
+                        for note,dur in note_duration_pairs
+                        for _ in range(int(K*dur))]
+                yield ('{0}-{1}-{2}-mono-all'.format(bwv_id, key.mode, part.id), pairs_text)
+    _process_scores_with(_fn)
 
 @click.command()
 def prepare_mono_all():
