@@ -1,6 +1,7 @@
 import click
 import json
 
+from multiprocess import Pool
 from music21 import analysis, converter, corpus, meter
 
 from constants import *
@@ -89,10 +90,13 @@ def _process_scores_with(fn):
     plain_text_data = []
     vocabulary = set() # remember all unique (note,duration) tuples seen
 
-    for score in corpus.chorales.Iterator(
+
+    p = Pool(processes=16)
+    processed_scores = p.map(lambda score: list(fn(score)), corpus.chorales.Iterator(
             numberingSystem='bwv',
-            returnType='stream'):
-        for fname, pairs_text in fn(score):
+            returnType='stream'))
+    for processed_score in processed_scores:
+        for fname, pairs_text in processed_score:
             if pairs_text:
                 plain_text_data.append((fname, pairs_text))
                 vocabulary.update(set(pairs_text))
