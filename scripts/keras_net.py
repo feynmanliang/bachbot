@@ -105,12 +105,11 @@ def train_lstm(ctx, maxlen, output_json, output_h5, output_tok):
 @click.option('--model_json', default=SCRATCH_DIR + '/model-lstm.json', type=click.File('rb'))
 @click.option('--model_h5', default=SCRATCH_DIR + '/model-lstm_weights.h5', type=click.Path(exists=True))
 @click.option('--model_tok', default=SCRATCH_DIR + '/model-lstm_tok.pickle', type=click.File('rb'))
+@click.option('--start_txt', default=SCRATCH_DIR + '/20.7-major-soprano-mono.txt', type=click.File('r'),
+        help='Uses the first `maxlen` notes of the provided mono text to prime the RNN')
 @click.option('--out_prefix', default=OUT_DIR + '/sample', type=str)
-def sample_lstm(model_json, model_h5, model_tok, out_prefix):
+def sample_lstm(model_json, model_h5, model_tok, start_txt, out_prefix):
     """Samples a trained LSTM and outputs to stdout."""
-    # TODO: Make this an argument/option
-    start_sentence = ['C,1.0', 'C,1.0', 'F,0.5', 'E,0.5', 'D,1.0', 'C,0.5', 'B,0.5']
-
     tok = cPickle.load(model_tok)
     V = tok.nb_words
     model = model_from_json(model_json.read())
@@ -120,6 +119,9 @@ def sample_lstm(model_json, model_h5, model_tok, out_prefix):
             metrics=['accuracy'])
     model.summary()
     maxlen = model.layers[0].input_shape[1]
+
+    # prime RNN with existing chorale
+    start_sentence = start_txt.read().split('\n')[:maxlen]
 
     # helper function to sample an index from a probability array
     def sample(a, temperature=1.0):
@@ -143,7 +145,7 @@ def sample_lstm(model_json, model_h5, model_tok, out_prefix):
 
             for i in range(100):
                 x = np.zeros((1,maxlen,V))
-                x[0,:,:] = tok.texts_to_matrix([sentence[maxlen:]])
+                x[0,:,:] = tok.texts_to_matrix([sentence])
 
                 preds = model.predict(x, verbose=0)[0]
                 next_index = sample(preds, temperature)
