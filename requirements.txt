@@ -1,18 +1,25 @@
--e git+git@github.com:feynmanliang/bachbot@ccd494c299c0929932d796e91bd37c509d5641bb#egg=bachbot&subdirectory=scripts
+-e git+git@github.com:feynmanliang/bachbot@828f726023cd59b7f7cf15549ac25f82024e4aff#egg=bachbot&subdirectory=scripts
 click==6.6
 cycler==0.10.0
 Cython==0.23.4
+dill==0.2.5
 h5py==2.5.0
+Keras==1.0.3
 lxml==3.6.0
 matplotlib==1.5.1
-multiprocessing==2.6.2.1
+multiprocess==0.70.4
 music21==2.2.1
-numpy==1.10.4
+numpy==1.11.0
+protobuf==3.0.0b2
 pyparsing==2.1.4
 python-dateutil==2.5.3
 pytz==2016.4
+PyYAML==3.11
 recordtype==1.1
 requests==2.10.0
 scipy==0.17.1
 six==1.10.0
+tensorflow==0.7.1
+Theano==0.8.2
 urlparse2==1.1.1
+virtualenv==15.0.2

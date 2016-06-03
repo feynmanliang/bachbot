@@ -3,6 +3,7 @@ import json
 import multiprocess as mp
 
 from music21 import analysis, converter, corpus, meter
+from music21.note import Note
 
 from constants import *
 
@@ -40,7 +41,9 @@ def prepare_mono_all_constant_t():
     _process_scores_with(_fn)
 
 @click.command()
-def prepare_mono_all():
+@click.option('--use-pitch-classes',
+        type=bool, default=False, help='Use pitch equivalence classes, discarding octave information')
+def prepare_mono_all(use_pitch_classes):
     """Prepares a corpus containing all monophonic parts, with major/minor labels.
 
         * Only 4/4 time signatures are considered
@@ -57,7 +60,9 @@ def prepare_mono_all():
             score = _standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
-                note_duration_pairs = list(_encode_note_duration_tuples(part))
+                note_duration_pairs = map(
+                        lambda x: x if (x[0] == u'REST') else (Note(x[0]).name, x[1]),
+                        _encode_note_duration_tuples(part))
                 pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
                 yield ('{0}-{1}-{2}-mono-all'.format(bwv_id, key.mode, part.id), pairs_text)
     _process_scores_with(_fn)

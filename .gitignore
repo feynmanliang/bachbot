@@ -4,3 +4,4 @@ scratch/
 *.pyc
 *.egg-info/
 tags
+logs/
