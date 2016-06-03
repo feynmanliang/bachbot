@@ -41,9 +41,11 @@ def prepare_mono_all_constant_t():
     _process_scores_with(_fn)
 
 @click.command()
+@click.option('--soprano-only',
+        type=bool, default=False, help='Only extract Soprano parts')
 @click.option('--use-pitch-classes',
         type=bool, default=False, help='Use pitch equivalence classes, discarding octave information')
-def prepare_mono_all(use_pitch_classes):
+def prepare_mono_all(soprano_only, use_pitch_classes):
     """Prepares a corpus containing all monophonic parts, with major/minor labels.
 
         * Only 4/4 time signatures are considered
@@ -59,34 +61,22 @@ def prepare_mono_all(use_pitch_classes):
 
             score = _standardize_key(score)
             key = score.analyze('key')
+            parts = []
+            if soprano_only:
+                parts.append(_get_soprano_part(score))
+            else:
+                parts = score.parts
             for part in score.parts:
-                note_duration_pairs = map(
-                        lambda x: x if (x[0] == u'REST') else (Note(x[0]).name, x[1]),
-                        _encode_note_duration_tuples(part))
+                note_duration_pairs = _encode_note_duration_tuples(part)
+                if use_pitch_classes:
+                    note_duration_pairs = map(
+                            lambda x: x if (x[0] == u'REST') else (Note(x[0]).name, x[1]),
+                            note_duration_pairs)
                 pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
-                yield ('{0}-{1}-{2}-mono-all'.format(bwv_id, key.mode, part.id), pairs_text)
-    _process_scores_with(_fn)
-
-@click.command()
-def prepare_soprano():
-    """Prepares a corpus containing all soprano parts.
-
-        * Only 4/4 time signatures are considered
-        * The key is transposed to Cmaj/Amin
-        * Only the soprano part is extracted
-        * A (Pitch,Duration) sequence is returned
-        * The files output have names `{bwv_id}-soprano`
-    """
-    def _fn(score):
-        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            bwv_id = score.metadata.title
-            print('Processing BWV {0}'.format(bwv_id))
-
-            score = _standardize_key(score)
-            soprano_part = _get_soprano_part(score)
-            note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
-            pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
-            yield ('{0}-soprano'.format(bwv_id), pairs_text)
+                if soprano_only:
+                    yield ('{0}-{1}-soprano-mono'.format(bwv_id, key.mode, part.id), pairs_text)
+                else:
+                    yield ('{0}-{1}-{2}-mono'.format(bwv_id, key.mode, part.id), pairs_text)
     _process_scores_with(_fn)
 
 @click.command()
@@ -207,7 +197,6 @@ def _encode_note_duration_tuples(part):
             yield ('REST',nr.quarterLength)
 
 map(chorales.add_command, [
-    prepare_soprano,
     prepare_mono_all,
     prepare_durations,
     prepare_mono_all_constant_t
