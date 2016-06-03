@@ -157,59 +157,6 @@ def sample_lstm(model_json, model_h5, model_tok, out_prefix):
             out_fp = '{0}-{1}-{2}.xml'.format(out_prefix, temperature, iteration)
             write_monophonic_part(generated, out_fp)
 
-#def make_skipgrams(data, V):
-#    X, Y = list(), list()
-#    for d in data:
-#        x, y = skipgrams(d, V, window_size=3)
-#        x = map(np.array, x)
-#        y = map(np.array, y)
-#        X.extend(x)
-#        Y.extend(y)
-#    return np.array(X), np.array(Y)
-#
-#tok, data = prepare()
-#V = len(tok.word_counts) + 1
-#X, Y = make_skipgrams(data, V)
-#X_train, Y_train = X, Y # NOTE: no test split
-#
-#wordvec_size = 64
-#
-#def train_skipgram():
-#        raw_in = Input(shape=(2,), name='raw_in', dtype='int32')
-#        raw_x = Lambda(lambda x: x[:,0], input_shape=(2,), output_shape=(1,))(raw_in)
-#        raw_other = Lambda(lambda x: x[:,1], input_shape=(2,), output_shape=(1,))(raw_in)
-#
-#        embedding = Embedding(output_dim=wordvec_size, input_dim=V)
-#        x = embedding(raw_x)
-#        other = embedding(raw_other)
-#        diff = merge([x, other], mode=lambda t: t[0] - t[1], output_shape=(wordvec_size,))
-#        sg_loss = Dense(1, activation='sigmoid', name='skip_gram')(diff)
-#
-#        # Compile and fit
-#        model = Model(input=[raw_in], output=[sg_loss])
-#        model.compile(optimizer='adagrad',
-#                      loss={'skip_gram': 'binary_crossentropy'},
-#                      loss_weights={'skip_gram': 1.0},
-#                      metrics=['accuracy'])
-#
-#        early_stopping = EarlyStopping(monitor='val_loss', patience=2)
-#        model.fit({'raw_in': X_train},
-#                  {'skip_gram': Y_train},
-#                  nb_epoch=30, batch_size=32,
-#                  validation_split=0.1,
-#                  callbacks=[early_stopping])
-#
-#        open('model-sg.json', 'wb').write(model.to_json())
-#        model.save_weights('model-sg_weights.h5', overwrite=True)
-##train_skipgram()
-#
-##model = load('model-sg')
-## model.compile(optimizer='rmsprop',
-##         loss={'skip_gram': 'categorical_crossentropy'},
-##         loss_weights={'skip_gram': 1.0},
-##         metrics=['accuracy'])
-#
-
 map(keras.add_command, [
     train_lstm,
     sample_lstm
