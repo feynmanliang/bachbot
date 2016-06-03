@@ -1,4 +1,6 @@
 import click
+import copy
+import cPickle
 import glob
 import json
 import numpy as np
@@ -11,7 +13,7 @@ from keras.preprocessing.text import Tokenizer
 from music21 import *
 
 from constants import *
-from torch_rnn import read_utf8
+from torch_rnn import read_utf8, write_monophonic_part
 from concatenate_corpus import concatenate_corpus
 
 @click.group()
@@ -64,8 +66,11 @@ def _vectorize_window(sentences, next_chars, maxlen, V):
 
 @click.command()
 @click.option('--maxlen', type=int, default=40, help='Length of context used for inputs')
+@click.option('--output-json', default=SCRATCH_DIR + '/model-lstm.json', type=click.File('wb'))
+@click.option('--output-h5', default=SCRATCH_DIR + '/model-lstm_weights.h5', type=click.Path())
+@click.option('--output-tok', default=SCRATCH_DIR + '/model-lstm_tok.pickle', type=click.File('wb'))
 @click.pass_context
-def train_lstm(ctx, maxlen):
+def train_lstm(ctx, maxlen, output_json, output_h5, output_tok):
     """build the model: 2 stacked LSTM."""
     tok, X, y = prepare(maxlen)
     V = tok.nb_words
@@ -86,64 +91,72 @@ def train_lstm(ctx, maxlen):
     tensorboard = TensorBoard(log_dir='./logs', histogram_freq=1, write_graph=True)
 
     model.fit(X, y,
-	    nb_epoch=30, batch_size=32,
-	    validation_split=0.1,
-	    callbacks=[early_stopping, tensorboard])
+            nb_epoch=30, batch_size=32,
+            validation_split=0.1,
+            callbacks=[early_stopping, tensorboard])
 
-    open('model-lstm.json', 'wb').write(model.to_json())
-    model.save_weights('model-lstm_weights.h5', overwrite=True)
+    output_json.write(model.to_json())
+    model.save_weights(output_h5, overwrite=True)
+    cPickle.dump(tok, output_tok)
 
     return model
 
 @click.command()
-@click.argument('model_json', type=click.File('rb'))
-@click.argument('model_h5', type=click.FilePath(exists=True))
-@click.option('temperature', type=float, default=1.0, help='Sampling temperature')
-def sample_lstm(model_json, model_h5):
+@click.option('--model_json', default=SCRATCH_DIR + '/model-lstm.json', type=click.File('rb'))
+@click.option('--model_h5', default=SCRATCH_DIR + '/model-lstm_weights.h5', type=click.Path(exists=True))
+@click.option('--model_tok', default=SCRATCH_DIR + '/model-lstm_tok.pickle', type=click.File('rb'))
+@click.option('--out_prefix', default=OUT_DIR + '/sample', type=str)
+def sample_lstm(model_json, model_h5, model_tok, out_prefix):
     """Samples a trained LSTM and outputs to stdout."""
+    # TODO: Make this an argument/option
+    start_sentence = ['C,1.0', 'C,1.0', 'F,0.5', 'E,0.5', 'D,1.0', 'C,0.5', 'B,0.5']
+
+    tok = cPickle.load(model_tok)
+    V = tok.nb_words
     model = model_from_json(model_json.read())
     model.load_weights(model_h5)
     model.compile(optimizer='rmsprop',
             loss='categorical_crossentropy',
             metrics=['accuracy'])
     model.summary()
+    maxlen = model.layers[0].input_shape[1]
 
     # helper function to sample an index from a probability array
-    a = np.log(a) / temperature
-    a = np.exp(a) / np.sum(np.exp(a))
-    return np.argmax(np.random.multinomial(1, a, 1))
+    def sample(a, temperature=1.0):
+        a = np.log(a) / temperature
+        a = np.exp(a) / np.sum(np.exp(a))
+        return np.argmax(np.random.multinomial(1, a, 1))
 
-    for iteration in range(1, 60):
+    index_words = {v:k for k,v in tok.word_index.items()}
+    for iteration in range(1, 5):
         print()
         print('-' * 50)
         print('Iteration', iteration)
 
-        start_sentence = sentences[np.random.randint(0,len(sentences))]
-        for diversity in [0.2, 0.5, 1.0, 1.2]:
+        for temperature in [0.8, 1.3, 1.8]:
             print()
-            print('----- diversity:', diversity)
+            print('----- temperature:', temperature)
 
-            generated = list()
-            sentence = start_sentence
-            generated += sentence
-            print('----- Generating with seed: "' + str(sentence) + '"')
+            generated = copy.copy(start_sentence)
+            sentence = map(tok.word_index.get, start_sentence[-maxlen:])
+            print('----- Generating with seed: "' + str(start_sentence) + '"')
 
-            for i in range(400):
-                x = np.zeros((1, maxlen, tok.nb_words))
-                print sentence
-                for t, char in enumerate(sentence):
-                    x[0, t, char] = 1.
+            for i in range(100):
+                x = np.zeros((1,maxlen,V))
+                x[0,:,:] = tok.texts_to_matrix([sentence[maxlen:]])
 
                 preds = model.predict(x, verbose=0)[0]
-                next_index = sample(preds, diversity)
-                generated += next_index
+                next_index = sample(preds, temperature)
+                next_word = index_words[next_index]
+                generated.append(next_word)
 
+                print(next_word)
                 sentence = sentence[1:] + next_index
+            print(generated)
 
-            print dir(tok)
-            sys.stdout.write(tok.index_to_sequence(generated))
-            sys.stdout.flush()
-            print()
+            out_fp = '{0}-{1}-{2}.xml'.format(out_prefix, temperature, iteration)
+            write_monophonic_part(generated, out_fp)
+
 #def make_skipgrams(data, V):
 #    X, Y = list(), list()
 #    for d in data:

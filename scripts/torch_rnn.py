@@ -1,5 +1,9 @@
 import click
+import codecs
+import json
 import subprocess
+
+from music21 import note, stream
 
 from constants import *
 
@@ -41,35 +45,17 @@ def sample(checkpoint, temperature):
 @click.argument('json-file', type=click.File('rb'))
 def postprocess_utf(utf8_file, json_file):
     """Post-process UTF encoded LSTM output of (pitch,duration) tuples back into music21."""
-    import json
-    from music21 import note, stream
     utf_to_txt = json.load(json_file)
 
     files = read_utf8(utf8_file, utf_to_txt)
 
-    melodies = []
-    for f in files:
-        melody = stream.Stream()
-        for note_txt in f:
-            pitch, dur = note_txt.split(',')
-            if pitch == u'REST':
-                n = note.Rest()
-            else:
-                n = note.Note(pitch)
-            n.duration.quarterLength = float(dur)
-            melody.append(n)
-        melodies.append(melody)
-
-    for i,m in enumerate(melodies):
-        out_dir = SCRATCH_DIR + '/out'
-        if not os.path.exists(out_dir):
-            print('Creating directory {0}'.format(out_dir))
-            os.makedirs(out_dir)
-        print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
-        m.write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+    for i, notes_txt in enumerate(files):
+        out_fp = OUT_DIR + '/out-{0}.xml'.format(i)
+        write_monophonic_part(notes_txt, out_fp)
 
 def read_utf8(utf8_file, utf_to_txt):
-    import codecs
+    """Parses a UTF8 encoded concatenated corpus using `utf_to_txt` and returns a collection of ASCII text
+    representations of notes."""
     files = []
     curr_file = []
     utf8_file = codecs.open(utf8_file, "r", "utf-8")
@@ -83,14 +69,30 @@ def read_utf8(utf8_file, utf_to_txt):
             curr_file.append(utf_to_txt[symb])
     return files
 
+def write_monophonic_part(notes_txt, out_fp):
+    """Writes a single part `score` List of ASCII text notes to a musicXML file."""
+    melody = stream.Stream()
+    for note_txt in notes_txt:
+        pitch, dur = note_txt.split(',')
+        if pitch == u'REST':
+            n = note.Rest()
+        else:
+            n = note.Note(pitch)
+        n.duration.quarterLength = float(dur)
+        melody.append(n)
+
+    out_dir = os.path.dirname(out_fp)
+    if not os.path.exists(out_dir):
+        print('Creating directory {0}'.format(out_dir))
+        os.makedirs(out_dir)
+    print('Writing {0}'.format(out_fp))
+    melody.write('musicxml', out_fp)
+
 @click.command()
 @click.argument('utf8-file', type=click.Path(exists=True))
 @click.argument('json-file', type=click.File('rb'))
 def postprocess_utf_constant_timestep(utf8_file, json_file):
     """Post-process UTF encoded LSTM output of constant-timestep frames back into music21."""
-    import json
-    import codecs
-    from music21 import note, stream
     utf_to_txt = json.load(json_file)
 
     files = []
@@ -105,7 +107,7 @@ def postprocess_utf_constant_timestep(utf8_file, json_file):
         else:
             curr_file.append(utf_to_txt[symb])
 
-    melodies = []
+    out_dir = SCRATCH_DIR + '/out'
     for f in files:
         melody = stream.Stream()
         curr_note = None
@@ -125,13 +127,10 @@ def postprocess_utf_constant_timestep(utf8_file, json_file):
                 curr_dur = 1
             else:
                 curr_dur += 1
-        melodies.append(melody)
 
-    for i,m in enumerate(melodies):
-        out_dir = SCRATCH_DIR + '/out'
         if not os.path.exists(out_dir):
             print('Creating directory {0}'.format(out_dir))
             os.makedirs(out_dir)
         print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
-        m.write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+        melody.write('musicxml', out_dir + '/out-{0}.xml'.format(i))
 

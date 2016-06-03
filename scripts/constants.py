@@ -4,6 +4,7 @@ TORCH_RNN_DIR = os.path.expanduser('~/torch-rnn') # NOTE: point this as necessar
 
 BACHBOT_DIR = os.path.abspath(os.path.join(os.path.realpath(__file__), '..', '..'))
 SCRATCH_DIR = BACHBOT_DIR + '/scratch'
+OUT_DIR = BACHBOT_DIR + '/out'
 
 START_DELIM = unichr(1111)
 END_DELIM = unichr(1115)
