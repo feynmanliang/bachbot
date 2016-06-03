@@ -1,3 +1,16 @@
+# 6-3
+
+Many papers use pitch classes (i.e. mod 12), removing octave information...
+
+# 6-2
+
+Things to try:
+* Segment phrases based on fermatas
+* Encode (pitch, duration, **chord**) like (Lichtenwalter 2009)
+
+Spent rest of day setting up `keras` and `tensorflow`; seems to be easier
+to use for building new models...
+
 # 5-30
 
 ## Hyperparam opt over constant-timestep input monophonic models

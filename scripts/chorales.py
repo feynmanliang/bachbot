@@ -131,6 +131,8 @@ def _process_scores_with(fn):
     # construct vocab <=> UTF8 mapping
     pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
     utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
+    utf_to_txt[START_DELIM] = 'START'
+    utf_to_txt[END_DELIM] = 'END'
 
     # save outputs
     with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:

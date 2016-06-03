@@ -42,21 +42,10 @@ def sample(checkpoint, temperature):
 def postprocess_utf(utf8_file, json_file):
     """Post-process UTF encoded LSTM output of (pitch,duration) tuples back into music21."""
     import json
-    import codecs
     from music21 import note, stream
     utf_to_txt = json.load(json_file)
 
-    files = []
-    curr_file = []
-    utf8_file = codecs.open(utf8_file, "r", "utf-8")
-    for symb in filter(lambda x: x != u'\n', utf8_file.read()):
-        if symb == START_DELIM:
-            curr_file = []
-        elif symb == END_DELIM:
-            files.append(curr_file)
-            curr_file = []
-        else:
-            curr_file.append(utf_to_txt[symb])
+    files = read_utf8(utf8_file, utf_to_txt)
 
     melodies = []
     for f in files:
@@ -78,6 +67,21 @@ def postprocess_utf(utf8_file, json_file):
             os.makedirs(out_dir)
         print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
         m.write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+
+def read_utf8(utf8_file, utf_to_txt):
+    import codecs
+    files = []
+    curr_file = []
+    utf8_file = codecs.open(utf8_file, "r", "utf-8")
+    for symb in filter(lambda x: x != u'\n', utf8_file.read()):
+        if symb == START_DELIM:
+            curr_file = []
+        elif symb == END_DELIM:
+            files.append(curr_file)
+            curr_file = []
+        else:
+            curr_file.append(utf_to_txt[symb])
+    return files
 
 @click.command()
 @click.argument('utf8-file', type=click.Path(exists=True))
