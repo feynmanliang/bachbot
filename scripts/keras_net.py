@@ -174,7 +174,7 @@ def train_discrim(ctx):
 
     model = Model(input=[score_in], output=[output])
     model.compile(optimizer='rmsprop',
-            loss='categorical_crossentropy',
+            loss='binary_crossentropy',
             metrics=['accuracy'])
     early_stopping = EarlyStopping(monitor='val_loss', patience=5)
     tensorboard = TensorBoard(log_dir='./logs', histogram_freq=1, write_graph=True)
@@ -190,8 +190,6 @@ def train_discrim(ctx):
 
 @click.pass_context
 def prepare_discrim(ctx):
-    from keras.utils.np_utils import to_categorical
-
     if len(glob.glob(SCRATCH_DIR + '/*soprano-mono.utf')) == 0:
         ctx.invoke(prepare_mono_all, use_pitch_classes=False)
     data = dict()
@@ -226,7 +224,7 @@ def prepare_discrim(ctx):
             i += 1
     # shuffle training data
     idxs = np.random.permutation(len(X))
-    return tok, X[idxs], to_categorical(y[idxs])
+    return tok, X[idxs], y[idxs]
 
 map(keras.add_command, [
     train_lstm,
