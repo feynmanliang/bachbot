@@ -15,12 +15,15 @@ def chorales():
     pass
 
 @click.command()
-@click.option('--output', default=SCRATCH_DIR + '/satb.pickle', type=click.File('wb'))
-def prepare_bwv_part(output):
+@click.option('--subset', default=False)
+def prepare_satb(subset):
     """Pickle object keyed on bwv then part (Soprano, Alto, Tenor, Bass)."""
 
     dataset = defaultdict(dict)
-    for sc in corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream'):
+    it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
+    if subset:
+        it = [next(it) for _ in range(5)]
+    for sc in it:
         satb = _get_satb(sc)
         bwv_id = sc.metadata.title
         if satb:
@@ -28,7 +31,7 @@ def prepare_bwv_part(output):
             dataset[bwv_id] = satb
         else:
             print 'Skipping ' + bwv_id + ', error extracting parts'
-    cPickle.dump(dataset, output)
+    return dataset
 
 
 
@@ -243,5 +246,5 @@ map(chorales.add_command, [
     prepare_mono_all,
     prepare_durations,
     prepare_mono_all_constant_t,
-    prepare_bwv_part
+    prepare_satb
 ])
