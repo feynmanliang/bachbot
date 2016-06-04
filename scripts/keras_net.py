@@ -7,8 +7,10 @@ import numpy as np
 
 from keras.callbacks import EarlyStopping, TensorBoard
 from keras.layers import Activation, Input, Embedding, LSTM, Dense, merge, Lambda, BatchNormalization, Dropout
+from keras.layers.wrappers import TimeDistributed
 from keras.models import Sequential, Model, model_from_json
 from keras.preprocessing.text import Tokenizer
+from keras.utils.np_utils import to_categorical
 
 from music21 import *
 
@@ -230,25 +232,27 @@ def prepare_discrim(ctx):
 @click.command()
 @click.pass_context
 def biaxial(ctx):
+    note_embedding_size=32
     part_context_size = 32
     all_voices_context_size = 1
+
     dataset = ctx.invoke(prepare_standard, subset=True)
     vocab_size, Xy = _prepare_biaxial(dataset,
             use_cache=False,
             part_context_size=part_context_size,
             all_voices_context_size=all_voices_context_size)
 
-
-    # indices are score, time, part, feature => value
+    Xy = Xy[:10]
     X = Xy[:,:-1,]
-    y = Xy[:,1:,:,0] # NOTE: fragile indexing, assumes 0 is note
-    # indices are score, time, part => next_note
+    y = Xy[:,1:,:,0].astype(np.uint16) # NOTE: fragile indexing, assumes 0 is note
+    # X indices are score, time, part, feature => value
+    # y indices are score, time, part => next_note
 
-    # +1 because of masking in `Embedding` uses '0' symbol
+    # +1 because `Embedding`'s `mask_zeros` uses '0' as special symbol to denote padding for handling varying-lengths
     in_note = X[:,:,:,0].astype(np.uint16) + 1
     in_art = X[:,:,:,1].astype(np.uint16) + 1
     in_pc = X[:,:,:,2].astype(np.uint16) + 1
-    #in_freq = X[:,:,:,3].astype(np.float32) # NOTE: assumes no frequencies exactly 0
+    in_freq = X[:,:,:,3].astype(np.float32) # NOTE: assumes no frequencies exactly 0
     in_beat = X[:,:,:,4].astype(np.uint16) + 1
     in_part_context_pc = X[:,:,:,5:5+part_context_size].astype(np.uint16) + 1
     in_all_voices_context_notes = X[:,:,:,5+part_context_size:-4*all_voices_context_size].astype(np.uint16) + 1
@@ -260,10 +264,10 @@ def biaxial(ctx):
     note_embedding = Embedding(output_dim=64, input_dim=int(2+vocab_size), input_length=X.shape[1], mask_zero=True)
     note_embedding_out = map(note_embedding, note_inputs)
 
-    lstm0 = LSTM(32, return_sequences=True)
+    lstm0 = LSTM(note_embedding_size, return_sequences=True)
     lstm_out0 = map(lstm0, note_embedding_out)
 
-    softmax_weights = Dense(vocab_size)
+    softmax_weights = TimeDistributed(Dense(vocab_size))
     softmax_out0 = map(
             lambda x: Activation('softmax', name='next_note{}'.format(x[0]))(x[1]),
             enumerate(map(softmax_weights, lstm_out0)))
@@ -276,7 +280,7 @@ def biaxial(ctx):
 
     model.fit(
             {'note{}'.format(i):in_note[:,:,i] for i in range(3) },
-            {'next_note{}'.format(i):y[:,:,i] for i in range(3) },
+            {'next_note{}'.format(i):to_categorical(y[:,:,i], nb_classes=vocab_size) for i in range(3) },
             batch_size=32, nb_epoch=2)
 
 
@@ -317,6 +321,7 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
 
         d = 5 + part_context_size + 4*2*all_voices_context_size # NOTE: change if # features increase
         X_all = np.zeros((len(dataset), max_num_frames, 4, d))
+        # TODO: make indexing less fragile by using namedtuple, DataTable, pandas, etc
         for score_idx, score in enumerate(dataset):
             num_frames = int(frames_per_crotchet * score.duration.quarterLength)
             data = np.zeros((num_frames, 4, d))
@@ -354,7 +359,7 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
                             f = nr.frequency
                             pc = nr.pitchClass
                         else:
-                            f = -0.442 # to make sure it's not '0' and masked by `Embedding`
+                            f = -0.442 # NOTE(hacky): to make sure it's not '0' and masked by `Embedding`
                             pc = 0
 
                         new_notes = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=True, includeElementsThatEndAtStart=False)
@@ -365,31 +370,6 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
                             part_context_idx,
                             np.reshape(all_voices_context_idx, -1)
                             ))
-
-            # full_d = len(unique_notes) + 1 + 12 + 1 + 4 + len(unique_notes) * part_context_size + 4*(len(unique_notes)+1)*all_voices_context_size
-            # X = np.zeros((num_frames-1, 4, full_d))
-            # y = np.zeros((num_frames-1, 4, len(unique_notes)), dtype=np.bool)
-            # for n in range(num_frames-1):
-            #     for part in range(3):
-            #         # OHE encode categorical features, binary +/- 1 encode beats
-            #         note_idx, articulated, pc, f, beat = data[n, part_idx, :5]
-            #         part_context_idx = data[n, part_idx,5:5+part_context_size]
-            #         all_voices_context_idx = data[n, part_idx,5+part_context_size:]
-            #         X[n, part, :] = np.hstack((
-            #             _ohe(int(note_idx), len(unique_notes)),
-            #             np.array([articulated]),
-            #             _ohe(int(pc), 12), # 12 pitch classes
-            #             np.array([f]),
-            #             (2*np.array([int(x) for x in list('{0:04b}'.format(int(beat)))]) - 1),
-            #             np.hstack(map(lambda idx: _ohe(int(idx), len(unique_notes)), part_context_idx)),
-            #             np.hstack(map(lambda idx: _ohe(int(idx), len(unique_notes)), all_voices_context_idx[:4*all_voices_context_size])),
-            #             all_voices_context_idx[4*all_voices_context_size:]
-            #             ))
-            #         y[n, part, :] = data[n+1, part_idx, 0] # NOTE: fragile indexing
-            # X.dump(fp_X)
-            # y.dump(fp_y)
-            # return X, y
-
             X_all[score_idx,:len(data),] = data
 
         return len(unique_notes), X_all
