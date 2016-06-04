@@ -159,8 +159,46 @@ def sample_lstm(model_json, model_h5, model_tok, start_txt, out_prefix):
             out_fp = '{0}-{1}-{2}.xml'.format(out_prefix, temperature, iteration)
             write_monophonic_part(generated, out_fp)
 
+@click.command()
+@click.pass_context
+def train_discrim(ctx):
+    """Trains a major/minor discriminative task on top of different representations."""
+    import codecs
+
+    if len(glob.glob(SCRATCH_DIR + '/*soprano-mono.utf')) == 0:
+        ctx.invoke(prepare_mono_all, use_pitch_classes=True)
+    dataset = dict()
+    for key in ['major','minor']:
+	fp = SCRATCH_DIR + '/concat_corpus-{0}.txt'.format(key)
+	if not os.path.exists(fp):
+	    ctx.invoke(concatenate_corpus,
+		    files=glob.glob(SCRATCH_DIR + '/*{0}-soprano-mono.utf'.format(key)),
+		    output=open(fp, 'wb'))
+
+	print codecs.open(fp, 'r', 'utf8')
+
+	dataset[key] = read_utf8(
+		fp,
+		json.loads(open(SCRATCH_DIR + '/utf_to_txt.json', 'rb').read()))
+    V = len({ c for key in dataset
+            for score in dataset[key]
+            for c in score })
+
+    tok = Tokenizer(nb_words=V, filters='', char_level=True)
+    tok.fit_on_texts([score for score in dataset[key] for key in dataset])
+    data = tok.texts_to_sequences([score for score in dataset[key] for key in dataset])
+
+    print data[0]
+
+
+
+# get the symbolic outputs of each "key" layer (we gave them unique names).
+    layer_dict = dict([(layer.name, layer) for layer in model.layers])
+    pass
+
 map(keras.add_command, [
     train_lstm,
-    sample_lstm
+    sample_lstm,
+    train_discrim
 ])
 

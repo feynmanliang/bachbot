@@ -1,3 +1,10 @@
+# 6-4
+
+"Modelling, Visualising and Summarising Documents with a Single Convolutional Neural Network", Denil et al 2014
+ * Music is also sequence built up of individual measures, phrases, parts, etc, amenable to time-invariant convolution
+ * Try building a convolutional representation for music then put discriminative classifiers on top
+    * e.g. Bach vs XYZ, Major vs Minor Key
+
 # 6-3
 
 Many papers use pitch classes (i.e. mod 12), removing octave information...
