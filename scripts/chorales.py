@@ -1,7 +1,9 @@
 import click
+import cPickle
 import json
 import multiprocess as mp
 
+from collections import defaultdict
 from music21 import analysis, converter, corpus, meter
 from music21.note import Note
 
@@ -11,6 +13,24 @@ from constants import *
 def chorales():
     """Constructs various corpuses using BWV Bach chorales."""
     pass
+
+@click.command()
+@click.option('--output', default=SCRATCH_DIR + '/satb.pickle', type=click.File('wb'))
+def prepare_bwv_part(output):
+    """Pickle object keyed on bwv then part (Soprano, Alto, Tenor, Bass)."""
+
+    dataset = defaultdict(dict)
+    for sc in corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream'):
+        satb = _get_satb(sc)
+        bwv_id = sc.metadata.title
+        if satb:
+            print 'Processing ' + bwv_id
+            dataset[bwv_id] = satb
+        else:
+            print 'Skipping ' + bwv_id + ', error extracting parts'
+    cPickle.dump(dataset, output)
+
+
 
 @click.command()
 def prepare_mono_all_constant_t():
@@ -142,27 +162,50 @@ def _process_scores_with(fn):
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
 
+def _get_satb(bwv_score):
+    """Extracts soprano, alto, tenor, and bass parts from a score"""
+    parts = [
+            _get_soprano_part(bwv_score),
+            _get_alto_part(bwv_score),
+            _get_tenor_part(bwv_score),
+            _get_bass_part(bwv_score)
+            ]
+    if all(parts):
+        return dict(zip(['S', 'A', 'T', 'B'], parts))
+
 def _get_soprano_part(bwv_score):
     """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
-    soprano_part_ids = set([
+    part_ids = {
             'Soprano',
             'S.',
             'Soprano 1', # TODO: soprano1 or soprano2
-            'Soprano\rOboe 1\rViolin1'])
-    bwv_to_soprano_id = { # NOTE: these appear to all be score.parts[0]
-            '277': 'spine_6',
-            '281': 'spine_3',
-            '366': 'spine_8'
-            }
-    bwv_id = bwv_score.metadata.title
-    if bwv_id in bwv_to_soprano_id:
-        return bwv_score.parts[bwv_to_soprano_id[bwv_id]]
+            'Soprano\rOboe 1\rViolin1'}
+    return _get_part(bwv_score, part_ids)
+
+def _get_alto_part(bwv_score):
+    """Extracts alto line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
+    part_ids = {
+            'Alto',
+            'A.'}
+    return _get_part(bwv_score, part_ids)
+
+def _get_tenor_part(bwv_score):
+    """Extracts tenor line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
+    part_ids = { 'Tenor', 'T.'}
+    return _get_part(bwv_score, part_ids)
+
+def _get_bass_part(bwv_score):
+    """Extracts bass line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
+    part_ids = { 'Bass', 'B.'}
+    return _get_part(bwv_score, part_ids)
+
+def _get_part(bwv_score, part_ids):
+    """Tries to extract part matching names in `part_ids`."""
+    is_match = map(lambda part: part.id in part_ids, bwv_score.parts)
+    if sum(is_match) == 1:
+        return bwv_score.parts[is_match.index(True)]
     else:
-        is_soprano_part = map(lambda part: part.id in soprano_part_ids, bwv_score.parts)
-        assert sum(is_soprano_part) == 1, \
-                'Could not find a unique soprano part id from: {0}'.format(
-                        map(lambda part: part.id, bwv_score.parts))
-        return bwv_score.parts[is_soprano_part.index(True)]
+        return None
 
 
 def _standardize_key(score):
@@ -199,5 +242,6 @@ def _encode_note_duration_tuples(part):
 map(chorales.add_command, [
     prepare_mono_all,
     prepare_durations,
-    prepare_mono_all_constant_t
+    prepare_mono_all_constant_t,
+    prepare_bwv_part
 ])
