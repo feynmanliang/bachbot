@@ -13,8 +13,7 @@ from keras.preprocessing.text import Tokenizer
 from music21 import *
 
 from constants import *
-from torch_rnn import read_utf8, write_monophonic_part
-from concatenate_corpus import concatenate_corpus
+from corpus_utils import concatenate_corpus, read_utf8, write_monophonic_part
 
 @click.group()
 def keras():
@@ -25,7 +24,7 @@ def keras():
 def prepare(ctx, maxlen):
     """Prepares Soprano 4/4 Major key pitch classes corpus."""
     if len(glob.glob(SCRATCH_DIR + '/*soprano-mono.utf')) == 0:
-        ctx.invoke(prepare_mono_all, use_pitch_classes=True)
+        ctx.invoke(prepare_mono_all, use_pitch_classes=False)
     if not os.path.exists(SCRATCH_DIR + '/concat_corpus.txt'):
         ctx.invoke(concatenate_corpus,
                 files=glob.glob(SCRATCH_DIR + '/*soprano-mono.utf'),
@@ -162,39 +161,59 @@ def sample_lstm(model_json, model_h5, model_tok, start_txt, out_prefix):
 @click.command()
 @click.pass_context
 def train_discrim(ctx):
-    """Trains a major/minor discriminative task on top of different representations."""
-    import codecs
+    from keras.layers import Input, Embedding, LSTM, Dense, merge
+    from keras.models import Model
 
+    tok, X, y = prepare_discrim()
+
+    score_in = Input(shape=(X.shape[1],), dtype='int32', name='score_in')
+    x = Embedding(output_dim=64, input_dim=tok.nb_words, input_length=X.shape[1])(score_in)
+    lstm_out = LSTM(32)(x)
+    x = Dense(64, activation='relu')(lstm_out)
+    output = Dense(1, activation='sigmoid', name='output')(x)
+
+    model = Model(input=[score_in], output=[output])
+    model.compile(optimizer='rmsprop', loss='binary_crossentropy')
+    model.fit([X], [y], nb_epoch=50, batch_size=32)
+
+
+@click.pass_context
+def prepare_discrim(ctx):
     if len(glob.glob(SCRATCH_DIR + '/*soprano-mono.utf')) == 0:
-        ctx.invoke(prepare_mono_all, use_pitch_classes=True)
-    dataset = dict()
-    for key in ['major','minor']:
-	fp = SCRATCH_DIR + '/concat_corpus-{0}.txt'.format(key)
-	if not os.path.exists(fp):
-	    ctx.invoke(concatenate_corpus,
-		    files=glob.glob(SCRATCH_DIR + '/*{0}-soprano-mono.utf'.format(key)),
-		    output=open(fp, 'wb'))
+        ctx.invoke(prepare_mono_all, use_pitch_classes=False)
+    data = dict()
+    for mode in ['major','minor']:
+        fp = SCRATCH_DIR + '/concat_corpus-{0}.txt'.format(mode)
+        if not os.path.exists(fp):
+            ctx.invoke(concatenate_corpus,
+                    files=glob.glob(SCRATCH_DIR + '/*{0}-soprano-mono.utf'.format(mode)),
+                    output=open(fp, 'wb'))
 
-	print codecs.open(fp, 'r', 'utf8')
+        data[mode] = read_utf8(
+                fp,
+                json.loads(open(SCRATCH_DIR + '/utf_to_txt.json', 'rb').read()))
 
-	dataset[key] = read_utf8(
-		fp,
-		json.loads(open(SCRATCH_DIR + '/utf_to_txt.json', 'rb').read()))
-    V = len({ c for key in dataset
-            for score in dataset[key]
-            for c in score })
+    # lazy view of all scores in single collection
+    all_data = lambda: [score for mode in data for score in data[mode]]
+    N = len(all_data())
 
+    # tokenize
+    V = len(reduce(lambda x,y: x|y, map(set, all_data())))
     tok = Tokenizer(nb_words=V, filters='', char_level=True)
-    tok.fit_on_texts([score for score in dataset[key] for key in dataset])
-    data = tok.texts_to_sequences([score for score in dataset[key] for key in dataset])
+    tok.fit_on_texts(all_data())
 
-    print data[0]
-
-
-
-# get the symbolic outputs of each "key" layer (we gave them unique names).
-    layer_dict = dict([(layer.name, layer) for layer in model.layers])
-    pass
+    seq_length = max(map(len, all_data())) # NOTE: implicit zero pad all sequences to fixed length
+    X = np.zeros((N, seq_length), dtype=np.uint16)
+    y = np.zeros((N,), dtype=np.bool)
+    i = 0
+    for mode in data:
+        for tokenized_score in tok.texts_to_sequences(data[mode]):
+            X[i,:len(tokenized_score)] = tokenized_score
+            y[i] = mode == 'major'
+            i += 1
+    # shuffle training data
+    idxs = np.random.permutation(len(X))
+    return tok, X[idxs], y[idxs]
 
 map(keras.add_command, [
     train_lstm,

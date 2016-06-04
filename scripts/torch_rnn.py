@@ -6,6 +6,7 @@ import subprocess
 from music21 import note, stream
 
 from constants import *
+from corpus_utils import read_utf8, write_monophonic_part
 
 @click.command()
 @click.option('-i', '--infile', type=click.File('rb'), default=SCRATCH_DIR + '/concat_corpus.txt')
@@ -52,41 +53,6 @@ def postprocess_utf(utf8_file, json_file):
     for i, notes_txt in enumerate(files):
         out_fp = OUT_DIR + '/out-{0}.xml'.format(i)
         write_monophonic_part(notes_txt, out_fp)
-
-def read_utf8(utf8_file, utf_to_txt):
-    """Parses a UTF8 encoded concatenated corpus using `utf_to_txt` and returns a collection of ASCII text
-    representations of notes."""
-    files = []
-    curr_file = []
-    utf8_file = codecs.open(utf8_file, "r", "utf-8")
-    for symb in filter(lambda x: x != u'\n', utf8_file.read()):
-        if symb == START_DELIM:
-            curr_file = []
-        elif symb == END_DELIM:
-            files.append(curr_file)
-            curr_file = []
-        else:
-            curr_file.append(utf_to_txt[symb])
-    return files
-
-def write_monophonic_part(notes_txt, out_fp):
-    """Writes a single part `score` List of ASCII text notes to a musicXML file."""
-    melody = stream.Stream()
-    for note_txt in notes_txt:
-        pitch, dur = note_txt.split(',')
-        if pitch == u'REST':
-            n = note.Rest()
-        else:
-            n = note.Note(pitch)
-        n.duration.quarterLength = float(dur)
-        melody.append(n)
-
-    out_dir = os.path.dirname(out_fp)
-    if not os.path.exists(out_dir):
-        print('Creating directory {0}'.format(out_dir))
-        os.makedirs(out_dir)
-    print('Writing {0}'.format(out_fp))
-    melody.write('musicxml', out_fp)
 
 @click.command()
 @click.argument('utf8-file', type=click.Path(exists=True))

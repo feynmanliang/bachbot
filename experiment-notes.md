@@ -5,6 +5,10 @@
  * Try building a convolutional representation for music then put discriminative classifiers on top
     * e.g. Bach vs XYZ, Major vs Minor Key
 
+Pitch Classes
+ * Don't really matter... 0.96 accuracy on pitch classes vs 0.95 without
+ * Future experiments should include octaves since significantly improves generated output
+
 # 6-3
 
 Many papers use pitch classes (i.e. mod 12), removing octave information...
