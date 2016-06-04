@@ -230,44 +230,49 @@ def prepare_discrim(ctx):
 @click.command()
 @click.pass_context
 def biaxial(ctx):
-    if False:
-        dataset = ctx.invoke(prepare_standard, subset=False)
-        X, y = _prepare_biaxial(dataset, use_cache=False, part_context_size=32, all_voices_context_size=1)
-    X, y = _prepare_biaxial(None, use_cache=True, part_context_size=32, all_voices_context_size=1)
+    part_context_size = 32
+    all_voices_context_size = 1
+    dataset = ctx.invoke(prepare_standard, subset=True)
+    vocab_size, Xy = _prepare_biaxial(dataset,
+            use_cache=False,
+            part_context_size=part_context_size,
+            all_voices_context_size=all_voices_context_size)
 
-    print 'X: {}\n y: {}'.format(X.shape, y.shape)
 
-    _shapes = (X.shape[0], X.shape[2])
-    parts_input = [
-            Input(shape=_shapes, name='part0'),
-            Input(shape=_shapes, name='part1'),
-            Input(shape=_shapes, name='part2'),
-            Input(shape=_shapes, name='part3')
-            ]
+    # indices are score, time, part, feature => value
+    X = Xy[:,:-1,]
+    y = Xy[:,1:,:,0] # NOTE: fragile indexing, assumes 0 is note
+    # indices are score, time, part => next_note
 
-    time_lstm = LSTM(32, return_sequences=False) # TODO: return_sequences: how does it work?
-    lstm_out0 = map(time_lstm, parts_input)
+    # +1 because of masking in `Embedding` uses '0' symbol
+    in_note = X[:,:,:,0].astype(np.uint16) + 1
+    in_art = X[:,:,:,1].astype(np.uint16) + 1
+    in_pc = X[:,:,:,2].astype(np.uint16) + 1
+    #in_freq = X[:,:,:,3].astype(np.float32) # NOTE: assumes no frequencies exactly 0
+    in_beat = X[:,:,:,4].astype(np.uint16) + 1
+    in_part_context_pc = X[:,:,:,5:5+part_context_size].astype(np.uint16) + 1
+    in_all_voices_context_notes = X[:,:,:,5+part_context_size:-4*all_voices_context_size].astype(np.uint16) + 1
+    in_all_voices_context_art = X[:,:,:,-4*all_voices_context_size].astype(np.uint16) + 1
 
-    softmax_weights = Dense(y.shape[2])
-    softmax_out0 = map(
-            lambda x: Activation('softmax', name='next_note{}'.format(x[0]))(x[1]),
-            enumerate(map(softmax_weights, lstm_out0)))
+    print vocab_size
+    input_note = Input(shape=in_note.shape[1:])
+    note_embedding = Embedding(output_dim=64, input_dim=int(2+vocab_size), input_length=in_note.shape[1], mask_zero=True)
+    x = note_embedding(input_note)
 
-    model = Model(input=parts_input, output=softmax_out0)
+    #lstm0 = LSTM(32, return_sequences=False)(x)
+    #softmax_weights = Dense(vocab_size)
+    #softmax_out0 = map(
+            # lambda x: Activation('softmax', name='next_note{}'.format(x[0]))(x[1]),
+            # enumerate(map(softmax_weights, lstm_out0)))
 
-    model.compile(optimizer='rmsprop',
-            loss='categorical_crossentropy',
-            metrics=['accuracy'])
-    model.fit(
-            { 'part0': X[:,0,:],
-                'part1': X[:,1,:],
-                'part2': X[:,2,:],
-                'part3': X[:,3,:] },
-            { 'next_note0': y[:,0],
-                'next_note1': y[:,1],
-                'next_note2': y[:,2],
-                'next_note3': y[:,3],},
-            batch_size=32, nb_epoch=2)
+    #model = Model(input=input_note, output=softmax_out0)
+
+    #model.compile(optimizer='rmsprop',
+    #        loss='categorical_crossentropy',
+    #        metrics=['accuracy'])
+    #model.fit(
+    #        in_note, y,
+    #        batch_size=32, nb_epoch=2)
 
 
 def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_context_size=2):
@@ -289,24 +294,26 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
         # Each score is a 4 by T grid, X[i][j] is a vector with part_id, note, pitch, pitch_class, beat, etc
         unique_notes = set(['REST'])
         min_ql = 1
+        longest_score_ql = 0
         for score in dataset:
             for part in score.parts:
                 min_ql = min(min_ql, min(map(lambda note: note.duration.quarterLength, part.flat.notesAndRests)))
+                longest_score_ql = max(longest_score_ql, part.duration.quarterLength)
                 unique_notes = unique_notes | set(map(lambda x: x.nameWithOctave, part.flat.getElementsByClass('Note')))
 
         # choose time step so no loss in duration information
         #frames_per_crotchet = FRAMES_PER_CROTCHET
         frames_per_crotchet = int(1 / min_ql)
+        max_num_frames = frames_per_crotchet * longest_score_ql
 
         # encode into feature matrix
         part_id_to_idx = {id:idx for idx,id in enumerate(['Soprano', 'Alto', 'Tenor', 'Bass'])}
         note_name_to_idx = {name:idx for idx,name in enumerate(unique_notes)}
 
-
-        # TODO: save X, y for all scores
-        for score in dataset:
+        d = 5 + part_context_size + 4*2*all_voices_context_size # NOTE: change if # features increase
+        X_all = np.zeros((len(dataset), max_num_frames, 4, d))
+        for score_idx, score in enumerate(dataset):
             num_frames = int(frames_per_crotchet * score.duration.quarterLength)
-            d = 5 + part_context_size + 4*2*all_voices_context_size # NOTE: change if # features increase
             data = np.zeros((num_frames, 4, d))
 
             for n in range(num_frames):
@@ -325,7 +332,7 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
 
                 for part in score.parts:
                     part_idx = part_id_to_idx[part.id]
-                    part_pc_context_idx = np.pad(
+                    part_context_idx = np.pad(
                             data[max(0,(n-part_context_size)):n, part_idx, 2], # NOTE: fragile way to get pitch class, will change if columns in `data` changes
                             (max(part_context_size  - n, 0),0),
                             mode='constant')
@@ -342,7 +349,7 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
                             f = nr.frequency
                             pc = nr.pitchClass
                         else:
-                            f = 0
+                            f = -0.442 # to make sure it's not '0' and masked by `Embedding`
                             pc = 0
 
                         new_notes = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=True, includeElementsThatEndAtStart=False)
@@ -350,34 +357,37 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
 
                         data[n, part_idx] = np.hstack((
                             np.array([note_idx, articulated, pc, f, beat]),
-                            part_pc_context_idx,
+                            part_context_idx,
                             np.reshape(all_voices_context_idx, -1)
                             ))
 
-            full_d = len(unique_notes) + 1 + 12 + 1 + 4 + len(unique_notes) * part_context_size + 4*(len(unique_notes)+1)*all_voices_context_size
-            X = np.zeros((num_frames-1, 4, full_d))
-            y = np.zeros((num_frames-1, 4, len(unique_notes)), dtype=np.bool)
-            # TODO: targets (y)?
-            for n in range(num_frames-1):
-                for part in range(3):
-                    # OHE encode categorical features, binary +/- 1 encode beats
-                    note_idx, articulated, pc, f, beat = data[n, part_idx, :5]
-                    part_pc_context_idx = data[n, part_idx,5:5+part_context_size]
-                    all_voices_context_idx = data[n, part_idx,5+part_context_size:]
-                    X[n, part, :] = np.hstack((
-                        _ohe(int(note_idx), len(unique_notes)),
-                        np.array([articulated]),
-                        _ohe(int(pc), 12), # 12 pitch classes
-                        np.array([f]),
-                        (2*np.array([int(x) for x in list('{0:04b}'.format(int(beat)))]) - 1),
-                        np.hstack(map(lambda idx: _ohe(int(idx), len(unique_notes)), part_pc_context_idx)),
-                        np.hstack(map(lambda idx: _ohe(int(idx), len(unique_notes)), all_voices_context_idx[:4*all_voices_context_size])),
-                        all_voices_context_idx[4*all_voices_context_size:]
-                        ))
-                    y[n, part, :] = data[n+1, part_idx, 0] # NOTE: fragile indexing
-            X.dump(fp_X)
-            y.dump(fp_y)
-            return X, y
+            # full_d = len(unique_notes) + 1 + 12 + 1 + 4 + len(unique_notes) * part_context_size + 4*(len(unique_notes)+1)*all_voices_context_size
+            # X = np.zeros((num_frames-1, 4, full_d))
+            # y = np.zeros((num_frames-1, 4, len(unique_notes)), dtype=np.bool)
+            # for n in range(num_frames-1):
+            #     for part in range(3):
+            #         # OHE encode categorical features, binary +/- 1 encode beats
+            #         note_idx, articulated, pc, f, beat = data[n, part_idx, :5]
+            #         part_context_idx = data[n, part_idx,5:5+part_context_size]
+            #         all_voices_context_idx = data[n, part_idx,5+part_context_size:]
+            #         X[n, part, :] = np.hstack((
+            #             _ohe(int(note_idx), len(unique_notes)),
+            #             np.array([articulated]),
+            #             _ohe(int(pc), 12), # 12 pitch classes
+            #             np.array([f]),
+            #             (2*np.array([int(x) for x in list('{0:04b}'.format(int(beat)))]) - 1),
+            #             np.hstack(map(lambda idx: _ohe(int(idx), len(unique_notes)), part_context_idx)),
+            #             np.hstack(map(lambda idx: _ohe(int(idx), len(unique_notes)), all_voices_context_idx[:4*all_voices_context_size])),
+            #             all_voices_context_idx[4*all_voices_context_size:]
+            #             ))
+            #         y[n, part, :] = data[n+1, part_idx, 0] # NOTE: fragile indexing
+            # X.dump(fp_X)
+            # y.dump(fp_y)
+            # return X, y
+
+            X_all[score_idx,:len(data),] = data
+
+        return len(unique_notes), X_all
 
 def _ohe(index, size):
     x = np.zeros((size,))
