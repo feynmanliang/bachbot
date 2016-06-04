@@ -254,25 +254,30 @@ def biaxial(ctx):
     in_all_voices_context_notes = X[:,:,:,5+part_context_size:-4*all_voices_context_size].astype(np.uint16) + 1
     in_all_voices_context_art = X[:,:,:,-4*all_voices_context_size].astype(np.uint16) + 1
 
-    print vocab_size
-    input_note = Input(shape=in_note.shape[1:])
-    note_embedding = Embedding(output_dim=64, input_dim=int(2+vocab_size), input_length=in_note.shape[1], mask_zero=True)
-    x = note_embedding(input_note)
+    note_inputs = [
+            Input(shape=(X.shape[1],), dtype='int32', name='note{}'.format(i))
+            for i in range(3)]
+    note_embedding = Embedding(output_dim=64, input_dim=int(2+vocab_size), input_length=X.shape[1], mask_zero=True)
+    note_embedding_out = map(note_embedding, note_inputs)
 
-    #lstm0 = LSTM(32, return_sequences=False)(x)
-    #softmax_weights = Dense(vocab_size)
-    #softmax_out0 = map(
-            # lambda x: Activation('softmax', name='next_note{}'.format(x[0]))(x[1]),
-            # enumerate(map(softmax_weights, lstm_out0)))
+    lstm0 = LSTM(32, return_sequences=True)
+    lstm_out0 = map(lstm0, note_embedding_out)
 
-    #model = Model(input=input_note, output=softmax_out0)
+    softmax_weights = Dense(vocab_size)
+    softmax_out0 = map(
+            lambda x: Activation('softmax', name='next_note{}'.format(x[0]))(x[1]),
+            enumerate(map(softmax_weights, lstm_out0)))
 
-    #model.compile(optimizer='rmsprop',
-    #        loss='categorical_crossentropy',
-    #        metrics=['accuracy'])
-    #model.fit(
-    #        in_note, y,
-    #        batch_size=32, nb_epoch=2)
+    model = Model(input=note_inputs, output=softmax_out0)
+
+    model.compile(optimizer='rmsprop',
+            loss='categorical_crossentropy',
+            metrics=['accuracy'])
+
+    model.fit(
+            {'note{}'.format(i):in_note[:,:,i] for i in range(3) },
+            {'next_note{}'.format(i):y[:,:,i] for i in range(3) },
+            batch_size=32, nb_epoch=2)
 
 
 def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_context_size=2):
