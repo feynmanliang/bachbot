@@ -173,8 +173,19 @@ def train_discrim(ctx):
     output = Dense(1, activation='sigmoid', name='output')(x)
 
     model = Model(input=[score_in], output=[output])
-    model.compile(optimizer='rmsprop', loss='binary_crossentropy')
-    model.fit([X], [y], nb_epoch=50, batch_size=32)
+    model.compile(optimizer='rmsprop',
+            loss='categorical_crossentropy',
+            metrics=['accuracy'])
+    early_stopping = EarlyStopping(monitor='val_loss', patience=5)
+    tensorboard = TensorBoard(log_dir='./logs', histogram_freq=1, write_graph=True)
+    model.fit(X, y,
+            nb_epoch=30, batch_size=32,
+            validation_split=0.1,
+            callbacks=[early_stopping, tensorboard])
+
+    open('model.json','wb').write(model.to_json())
+    model.save_weights('model.h5', overwrite=True)
+    cPickle.dump(tok, 'tok.pickle')
 
 
 @click.pass_context
