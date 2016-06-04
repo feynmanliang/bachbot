@@ -3,7 +3,6 @@ import cPickle
 import json
 import multiprocess as mp
 
-from collections import defaultdict
 from music21 import analysis, converter, corpus, meter
 from music21.note import Note
 
@@ -16,19 +15,18 @@ def chorales():
 
 @click.command()
 @click.option('--subset', default=False)
-def prepare_satb(subset):
-    """Pickle object keyed on bwv then part (Soprano, Alto, Tenor, Bass)."""
-
-    dataset = defaultdict(dict)
+def prepare_standard(subset):
+    """Prepare scores by standardizing names and transposing to Cmaj/Amin"""
+    dataset = list()
     it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
     if subset:
         it = [next(it) for _ in range(5)]
     for sc in it:
-        satb = _get_satb(sc)
         bwv_id = sc.metadata.title
-        if satb:
+        sc = _standardize_part_ids(sc)
+        if sc:
             print 'Processing ' + bwv_id
-            dataset[bwv_id] = satb
+            dataset.append(sc)
         else:
             print 'Skipping ' + bwv_id + ', error extracting parts'
     return dataset
@@ -47,7 +45,7 @@ def prepare_mono_all_constant_t():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
                 note_duration_pairs = list(_encode_note_duration_tuples(part))
@@ -82,7 +80,7 @@ def prepare_mono_all(soprano_only, use_pitch_classes):
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
             parts = []
             if soprano_only:
@@ -110,7 +108,7 @@ def prepare_durations():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
                 note_duration_pairs = list(map(lambda note: note.quarterLength, part))
@@ -165,42 +163,25 @@ def _process_scores_with(fn):
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
 
-def _get_satb(bwv_score):
-    """Extracts soprano, alto, tenor, and bass parts from a score"""
-    parts = [
-            _get_soprano_part(bwv_score),
-            _get_alto_part(bwv_score),
-            _get_tenor_part(bwv_score),
-            _get_bass_part(bwv_score)
-            ]
-    if all(parts):
-        return dict(zip(['S', 'A', 'T', 'B'], parts))
-
-def _get_soprano_part(bwv_score):
+def _standardize_part_ids(bwv_score):
     """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
-    part_ids = {
+    ids = dict()
+    ids['Soprano'] = {
             'Soprano',
             'S.',
             'Soprano 1', # TODO: soprano1 or soprano2
             'Soprano\rOboe 1\rViolin1'}
-    return _get_part(bwv_score, part_ids)
-
-def _get_alto_part(bwv_score):
-    """Extracts alto line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
-    part_ids = {
-            'Alto',
-            'A.'}
-    return _get_part(bwv_score, part_ids)
-
-def _get_tenor_part(bwv_score):
-    """Extracts tenor line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
-    part_ids = { 'Tenor', 'T.'}
-    return _get_part(bwv_score, part_ids)
-
-def _get_bass_part(bwv_score):
-    """Extracts bass line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
-    part_ids = { 'Bass', 'B.'}
-    return _get_part(bwv_score, part_ids)
+    ids['Alto'] = { 'Alto', 'A.'}
+    ids['Tenor'] = { 'Tenor', 'T.'}
+    ids['Bass'] = { 'Bass', 'B.'}
+    id_to_name = {id:name for name in ids for id in ids[name] }
+    all_ids = set(id_to_name.keys())
+    if all(map(lambda part: part.id in all_ids, bwv_score.parts)):
+        for part in bwv_score.parts:
+            part.id = id_to_name[part.id]
+        return bwv_score
+    else:
+        return None
 
 def _get_part(bwv_score, part_ids):
     """Tries to extract part matching names in `part_ids`."""
@@ -211,7 +192,7 @@ def _get_part(bwv_score, part_ids):
         return None
 
 
-def _standardize_key(score):
+def standardize_key(score):
     """Converts into the key of C major or A minor.
 
     Adapted from https://gist.github.com/aldous-rey/68c6c43450517aa47474
@@ -246,5 +227,5 @@ map(chorales.add_command, [
     prepare_mono_all,
     prepare_durations,
     prepare_mono_all_constant_t,
-    prepare_satb
+    prepare_standard
 ])
