@@ -245,7 +245,7 @@ def biaxial(ctx):
     use_cache = False
 
     if not use_cache:
-        dataset = ctx.invoke(prepare_standard, subset=True)
+        dataset = ctx.invoke(prepare_standard, subset=False)
         vocab_size, Xy = _prepare_biaxial(dataset,
                 use_cache=False,
                 part_context_size=part_context_size,
@@ -348,7 +348,8 @@ def biaxial(ctx):
         part_context_embed,
         all_context_notes_embed,
         all_context_art_input
-        ], mode='concat', concat_axis=3)
+        ], mode='concat', concat_axis=3,
+        name='time_lstm_input')
     time_lstm0 = LSTM(time_lstm_size, return_sequences=True)
     time_lstm0_out = TimeDistributed(time_lstm0)( time_lstm_input ) # distribute across parts (axis 1)
 
