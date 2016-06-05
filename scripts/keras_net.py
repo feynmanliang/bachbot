@@ -238,7 +238,7 @@ def biaxial(ctx):
 
     # Params for model
     note_embedding_size = 16
-    pc_embedding_size = 16
+    pc_embedding_size = 4
     beat_embedding_size = 4
     time_lstm_size = 16
     part_lstm_size = 8
@@ -273,33 +273,71 @@ def biaxial(ctx):
     in_beat = X[:,:,:,4].astype(np.uint16)
     in_part_context_pc = X[:,:,:,5:5+part_context_size].astype(np.uint16)
     in_all_voices_context_notes = X[:,:,:,5+part_context_size:-4*all_voices_context_size].astype(np.uint16)
-    in_all_voices_context_art = X[:,:,:,-4*all_voices_context_size].astype(np.bool)
+    in_all_voices_context_art = X[:,:,:,-4*all_voices_context_size:].astype(np.bool)
 
-    note_embedding = Embedding(output_dim=note_embedding_size, input_dim=2+vocab_size, input_length=X.shape[2], mask_zero=True)
-    note_input = Input(shape=X.shape[1:3], dtype='int32', name='note')
-    note_embed = TimeDistributed(note_embedding)( note_input ) # distribute across parts (axis 1)
+    note_embedding = Embedding(
+            output_dim=note_embedding_size,
+            input_dim=2+vocab_size,
+            input_length=X.shape[2],
+            mask_zero=True)
+    note_input = Input(
+            shape=X.shape[1:3],
+            dtype='int32',
+            name='note')
+    note_embed = TimeDistributed(note_embedding, name='note_embed')( note_input ) # distribute across parts (axis 1)
 
-    pc_embedding = Embedding(output_dim=pc_embedding_size, input_dim=2+12, input_length=X.shape[2], mask_zero=True)
-    pc_input = Input(shape=X.shape[1:3], dtype='int32', name='pitch_class')
-    pc_embed = TimeDistributed(pc_embedding)( pc_input ) # distribute across parts (axis 1)
+    pc_embedding = Embedding(
+            output_dim=pc_embedding_size,
+            input_dim=2+12,
+            input_length=X.shape[2],
+            mask_zero=True)
+    pc_input = Input(
+            shape=X.shape[1:3],
+            dtype='int32',
+            name='pitch_class')
+    pc_embed = TimeDistributed(pc_embedding, name='pc_embed')( pc_input ) # distribute across parts (axis 1)
 
-    art_input = Input(shape=X.shape[1:3], dtype='float32', name='articulated') # NOTE: upcast to float32
-    freq_input = Input(shape=X.shape[1:3], dtype='float32', name='frequency')
+    art_input = Input(
+            shape=X.shape[1:3],
+            dtype='float32', # NOTE: upcast to float32
+            name='articulated')
+    freq_input = Input(
+            shape=X.shape[1:3],
+            dtype='float32',
+            name='frequency')
 
-    beat_embedding = Embedding(output_dim=beat_embedding_size, input_dim=2+8, input_length=X.shape[2], mask_zero=True)
-    beat_input = Input(shape=X.shape[1:3], dtype='int32', name='beat') # NOTE: upcast to float32
-    beat_embed = TimeDistributed(beat_embedding)( beat_input )
+    beat_embedding = Embedding(
+            output_dim=beat_embedding_size,
+            input_dim=2+8,
+            input_length=X.shape[2],
+            mask_zero=True)
+    beat_input = Input(
+            shape=X.shape[1:3],
+            dtype='int32',
+            name='beat')
+    beat_embed = TimeDistributed(beat_embedding, name='beat_embed')( beat_input )
 
-    part_context_input = Input(shape=X.shape[1:3] + (part_context_size,), dtype='int32', name='part_context')
-    part_context_embed = TimeDistributed(TimeDistributed(Flatten()))(
+    part_context_input = Input(
+            shape=X.shape[1:3] + (part_context_size,),
+            dtype='int32',
+            name='part_context')
+    part_context_embed = TimeDistributed(TimeDistributed(Flatten()), name='part_context_embed')(
             Permute((1,3,2,4))( # permute axes: 0 = sample, 1 = part, 2 = time, 3 = context, 4 = embedded feature
                 TimeDistributed(TimeDistributed(pc_embedding))( # distribute across parts and context_size
                     Permute((1,3,2))(part_context_input))))
 
-    print part_context_embed
-
-    #all_context_notes_input = Input(shape=X.shape[1:3], dtype='int32', name='all_context_notes') # NOTE: upcast to float32
-    #all_context_notes_art_input = Input(shape=X.shape[1:3], dtype='bool', name='all_context_articulated') # NOTE: upcast to float32
+    all_context_notes_input = Input(
+            shape=X.shape[1:3] + (4*all_voices_context_size,),
+            dtype='int32',
+            name='all_context_notes')
+    all_context_notes_embed = TimeDistributed(TimeDistributed(Flatten()), name='all_context_notes_embed')(
+            Permute((1,3,2,4))( # permute axes: 0 = sample, 1 = part, 2 = time, 3 = context, 4 = embedded feature
+                TimeDistributed(TimeDistributed(note_embedding))( # distribute across parts and context_size
+                    Permute((1,3,2))(part_context_input))))
+    all_context_art_input = Input(
+            shape=X.shape[1:3] + (4*all_voices_context_size,),
+            dtype='float32', # NOTE: upcast to float32
+            name='all_context_articulated')
 
     time_lstm_input = merge([
         note_embed,
@@ -307,7 +345,9 @@ def biaxial(ctx):
         Reshape(X.shape[1:3] + (1,))(art_input), # expand singleton axis so dimensions match
         Reshape(X.shape[1:3] + (1,))(freq_input),
         beat_embed,
-        part_context_embed
+        part_context_embed,
+        all_context_notes_embed,
+        all_context_art_input
         ], mode='concat', concat_axis=3)
     time_lstm0 = LSTM(time_lstm_size, return_sequences=True)
     time_lstm0_out = TimeDistributed(time_lstm0)( time_lstm_input ) # distribute across parts (axis 1)
@@ -325,7 +365,15 @@ def biaxial(ctx):
             range(X.shape[1]))
 
     model = Model(
-            input=[ note_input, pc_input, art_input, freq_input, beat_input, part_context_input],
+            input=[
+                note_input,
+                pc_input,
+                art_input,
+                freq_input,
+                beat_input,
+                part_context_input,
+                all_context_notes_input,
+                all_context_art_input],
             output=softmax_out0)
 
     model.compile(optimizer='rmsprop',
@@ -341,7 +389,9 @@ def biaxial(ctx):
             'pitch_class': in_pc,
             'frequency': in_freq,
             'beat': in_beat,
-            'part_context': in_part_context_pc },
+            'part_context': in_part_context_pc,
+            'all_context_notes': in_all_voices_context_notes,
+            'all_context_articulated': in_all_voices_context_art },
         {'next_note{}'.format(i):y[:,i,:,:] for i in range(4) },
         batch_size=2, nb_epoch=25)
 
