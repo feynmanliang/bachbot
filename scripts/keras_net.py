@@ -232,8 +232,9 @@ def prepare_discrim(ctx):
 @click.command()
 @click.pass_context
 def biaxial(ctx):
-    note_embedding_size=32
-    part_context_size = 32
+    note_embedding_size = 1
+    note_lstm_size = 1
+    part_context_size = 1
     all_voices_context_size = 1
 
     dataset = ctx.invoke(prepare_standard, subset=True)
@@ -242,10 +243,14 @@ def biaxial(ctx):
             part_context_size=part_context_size,
             all_voices_context_size=all_voices_context_size)
 
-    Xy = Xy[:10]
+    Xy = Xy[:10,:10]
     X = Xy[:,:-1,]
-    y = Xy[:,1:,:,0].astype(np.uint16) # NOTE: fragile indexing, assumes 0 is note
-    # X indices are score, time, part, feature => value
+    # TODO: y should account for articulations
+    y = np.zeros(X.shape[0:3] + (vocab_size,))
+    for i in range(y.shape[0]):
+        for j in range(y.shape[1]):
+            y[i,j,:,:] = to_categorical(Xy[i,j,:,0].astype(np.uint16), nb_classes=vocab_size)
+    # X indices are seore, time, part, feature => value
     # y indices are score, time, part => next_note
 
     # +1 because `Embedding`'s `mask_zeros` uses '0' as special symbol to denote padding for handling varying-lengths
@@ -260,12 +265,17 @@ def biaxial(ctx):
 
     note_inputs = [
             Input(shape=(X.shape[1],), dtype='int32', name='note{}'.format(i))
-            for i in range(3)]
-    note_embedding = Embedding(output_dim=64, input_dim=int(2+vocab_size), input_length=X.shape[1], mask_zero=True)
+            for i in range(4)]
+    note_embedding = Embedding(output_dim=note_embedding_size, input_dim=int(2+vocab_size), input_length=X.shape[1], mask_zero=True)
     note_embedding_out = map(note_embedding, note_inputs)
 
-    lstm0 = LSTM(note_embedding_size, return_sequences=True)
-    lstm_out0 = map(lstm0, note_embedding_out)
+    lstm_input = map(
+            lambda note_embeddings: merge([note_embeddings], mode='concat'),
+            note_embedding_out)
+
+    lstm0 = LSTM(note_lstm_size, return_sequences=True)
+
+    lstm_out0 = map(lstm0, lstm_input)
 
     softmax_weights = TimeDistributed(Dense(vocab_size))
     softmax_out0 = map(
@@ -279,9 +289,9 @@ def biaxial(ctx):
             metrics=['accuracy'])
 
     model.fit(
-            {'note{}'.format(i):in_note[:,:,i] for i in range(3) },
-            {'next_note{}'.format(i):to_categorical(y[:,:,i], nb_classes=vocab_size) for i in range(3) },
-            batch_size=32, nb_epoch=2)
+            {'note{}'.format(i):in_note[:,:,i] for i in range(4) },
+            {'next_note{}'.format(i):y[:,:,i,:] for i in range(4) },
+            batch_size=32, nb_epoch=25)
 
 
 def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_context_size=2):
