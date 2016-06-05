@@ -1,3 +1,10 @@
+# 6-5
+Keras notes
+
+ * To do a convolutional/time distribed operation, `TimeDistributed` assumes the 1st axis
+   (excluding sample axis 0) is the time dimension. This means that `Permute` should be
+   used to satisfy this assumption
+
 # 6-4
 
 "Modelling, Visualising and Summarising Documents with a Single Convolutional Neural Network", Denil et al 2014
