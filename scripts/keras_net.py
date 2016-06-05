@@ -242,15 +242,16 @@ def biaxial(ctx):
     beat_embedding_size = 4
     time_lstm_size = 16
     part_lstm_size = 8
-    use_cache = False
+    use_cache = True
+    batch_size=2
 
     if not use_cache:
-        dataset = ctx.invoke(prepare_standard, subset=False)
+        dataset = ctx.invoke(prepare_standard, subset=True)
         vocab_size, Xy = _prepare_biaxial(dataset,
                 use_cache=False,
                 part_context_size=part_context_size,
                 all_voices_context_size=all_voices_context_size)
-        vocab_size += 1 # 0 for ''padding'' empty slots in `Embedding`
+        vocab_size += 1 # +1 for '0'
     else:
         vocab_size, Xy = _prepare_biaxial(None, use_cache=True)
 
@@ -258,13 +259,14 @@ def biaxial(ctx):
 
     X = Xy[:,:,:-1,]
     # TODO: y should account for articulations
-    # convert `y` to categorical OHE
     y = np.zeros(X.shape[0:3] + (vocab_size,))
     for i in range(y.shape[0]):
         for j in range(y.shape[1]):
             y[i,:,j,:] = to_categorical(Xy[i,:,j,0].astype(np.uint16), nb_classes=(vocab_size))
     # X indices are seore, part, time, feature => value
     # y indices are score, part, time, next_note => played?
+    seqlen = X.shape[2]
+    print seqlen
 
     in_note = X[:,:,:,0].astype(np.uint16)
     in_art = X[:,:,:,1].astype(np.bool)
@@ -358,11 +360,15 @@ def biaxial(ctx):
             Permute((2,1,3))( # permute time to axis 1, parts to axis 2
                 time_lstm0_out))
 
-    softmax_weights = Dense(vocab_size)
-    softmax_out0 = map(lambda i: Activation('softmax', name='next_note'+str(i))(
-        TimeDistributed(softmax_weights)( # distribute across time
-            Lambda(lambda x: x[:,:,i,:])( # extract part
-                part_lstm0_out))),
+    softmax = Dense(vocab_size, activation='softmax')
+    softmax_activations = TimeDistributed(TimeDistributed(softmax))( # distribute across time (1) and parts(2)
+        part_lstm0_out)
+    softmax_out0 = map(lambda i:
+            Lambda(
+                lambda x: x[:,:,i,:],
+                output_shape=(seqlen, vocab_size),
+                name='next_note{}'.format(i))( # extract part (now axis 2)
+                    softmax_activations),
             range(X.shape[1]))
 
     model = Model(
@@ -393,8 +399,8 @@ def biaxial(ctx):
             'part_context': in_part_context_pc,
             'all_context_notes': in_all_voices_context_notes,
             'all_context_articulated': in_all_voices_context_art },
-        {'next_note{}'.format(i):y[:,i,:,:] for i in range(4) },
-        batch_size=2, nb_epoch=25)
+        {'next_note{}'.format(i):(y[:,i,:]) for i in range(4) },
+        batch_size=batch_size, nb_epoch=25)
 
 
 def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_context_size=2):
@@ -431,7 +437,7 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
 
         # encode into feature matrix
         part_id_to_idx = {id:idx for idx,id in enumerate(['Soprano', 'Alto', 'Tenor', 'Bass'])}
-        note_name_to_idx = {name:(idx+1) for idx,name in enumerate(unique_notes)} # we +1 because `Embedding`'s `mask_zeros` uses '0' as special symbol to denote padding for handling varying-lengths
+        note_name_to_idx = {name:idx for idx,name in enumerate(unique_notes)}
 
         d = 5 + part_context_size + 4*2*all_voices_context_size # NOTE: change if # features increase
         X_all = np.zeros((len(dataset), 4, max_num_frames, d))
@@ -475,14 +481,15 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
                         else:
                             note_name = nr.nameWithOctave
 
-                        note_idx = note_name_to_idx[note_name]
-                        beat = int(2*nr.getOffsetBySite(measure))+1 # we +1 because `Embedding`'s `mask_zeros` uses '0' as special symbol to denote padding for handling varying-lengths
+                        # we +1 because '0' is used as 'mask' in `Embedding` for note, pc, and beat
+                        note_idx = note_name_to_idx[note_name] + 1
                         if nr.isNote:
                             f = nr.pitch.frequency
-                            pc = nr.pitch.pitchClass
+                            pc = nr.pitch.pitchClass + 1
                         else:
-                            f = -0.442 # NOTE(hacky): to make sure it's not '0' and masked by `Embedding`
-                            pc = 0
+                            f = 0
+                            pc = 1
+                        beat = int(2*nr.getOffsetBySite(measure)) + 1
 
                         new_notes = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=True, includeElementsThatEndAtStart=False)
                         articulated = nr in new_notes
