@@ -242,12 +242,12 @@ def biaxial(ctx):
     beat_embedding_size = 4
     time_lstm_size = 16
     part_lstm_size = 8
-    use_cache = True
+    use_cache = False
     batch_size=2
 
     if not use_cache:
         # NOTE: BE CAREFUL ABOUT USING SUBSET, it will overwrite and require another regen
-        dataset = ctx.invoke(prepare_standard, subset=False)
+        dataset = ctx.invoke(prepare_standard, subset=True)
         vocab_size, Xy = _prepare_biaxial(dataset,
                 use_cache=False,
                 part_context_size=part_context_size,
@@ -257,25 +257,17 @@ def biaxial(ctx):
         vocab_size, Xy = _prepare_biaxial(None, use_cache=True)
 
     print 'vocab_size: {}\n Xy.shape: {}'.format(vocab_size, Xy.shape)
+    print Xy.shape
 
-    X = Xy[:,:,:-1,]
+    X = Xy[:,:,:-1]
     # TODO: y should account for articulations
     y = np.zeros(X.shape[0:3] + (vocab_size,))
     for i in range(y.shape[0]):
         for j in range(y.shape[1]):
-            y[i,:,j,:] = to_categorical(Xy[i,:,j,0].astype(np.uint16), nb_classes=(vocab_size))
+            y[i,:,j,:] = to_categorical(Xy[i,:,j]['note'], nb_classes=(vocab_size))
     # X indices are seore, part, time, feature => value
     # y indices are score, part, time, next_note => played?
     seqlen = X.shape[2]
-
-    in_note = X[:,:,:,0].astype(np.uint16)
-    in_art = X[:,:,:,1].astype(np.bool)
-    in_pc = X[:,:,:,2].astype(np.uint16)
-    in_freq = X[:,:,:,3].astype(np.float32) # NOTE: assumes no frequencies exactly 0
-    in_beat = X[:,:,:,4].astype(np.uint16)
-    in_part_context_pc = X[:,:,:,5:5+part_context_size].astype(np.uint16)
-    in_all_voices_context_notes = X[:,:,:,5+part_context_size:-4*all_voices_context_size].astype(np.uint16)
-    in_all_voices_context_art = X[:,:,:,-4*all_voices_context_size:].astype(np.bool)
 
     note_embedding = Embedding(
             output_dim=note_embedding_size,
@@ -296,17 +288,17 @@ def biaxial(ctx):
     pc_input = Input(
             shape=X.shape[1:3],
             dtype='int32',
-            name='pitch_class')
+            name='pc')
     pc_embed = TimeDistributed(pc_embedding, name='pc_embed')( pc_input ) # distribute across parts (axis 1)
 
     art_input = Input(
             shape=X.shape[1:3],
             dtype='float32', # NOTE: upcast to float32
-            name='articulated')
+            name='art')
     freq_input = Input(
             shape=X.shape[1:3],
             dtype='float32',
-            name='frequency')
+            name='freq')
 
     beat_embedding = Embedding(
             output_dim=beat_embedding_size,
@@ -322,7 +314,7 @@ def biaxial(ctx):
     part_context_input = Input(
             shape=X.shape[1:3] + (part_context_size,),
             dtype='int32',
-            name='part_context')
+            name='part_context_pc')
     part_context_embed = TimeDistributed(TimeDistributed(Flatten()), name='part_context_embed')(
             Permute((1,3,2,4))( # permute axes: 0 = sample, 1 = part, 2 = time, 3 = context, 4 = embedded feature
                 TimeDistributed(TimeDistributed(pc_embedding))( # distribute across parts and context_size
@@ -331,7 +323,7 @@ def biaxial(ctx):
     all_context_notes_input = Input(
             shape=X.shape[1:3] + (4*all_voices_context_size,),
             dtype='int32',
-            name='all_context_notes')
+            name='all_context_note')
     all_context_notes_embed = TimeDistributed(TimeDistributed(Flatten()), name='all_context_notes_embed')(
             Permute((1,3,2,4))( # permute axes: 0 = sample, 1 = part, 2 = time, 3 = context, 4 = embedded feature
                 TimeDistributed(TimeDistributed(note_embedding))( # distribute across parts and context_size
@@ -339,7 +331,7 @@ def biaxial(ctx):
     all_context_art_input = Input(
             shape=X.shape[1:3] + (4*all_voices_context_size,),
             dtype='float32', # NOTE: upcast to float32
-            name='all_context_articulated')
+            name='all_context_art')
 
     time_lstm_input = merge([
         note_embed,
@@ -391,14 +383,16 @@ def biaxial(ctx):
     model.summary()
 
     model.fit(
-        { 'note': in_note,
-            'articulated': in_art,
-            'pitch_class': in_pc,
-            'frequency': in_freq,
-            'beat': in_beat,
-            'part_context': in_part_context_pc,
-            'all_context_notes': in_all_voices_context_notes,
-            'all_context_articulated': in_all_voices_context_art },
+            {k: X[:,:,:][k] for k in [
+                'note',
+                'art',
+                'pc',
+                'freq',
+                'beat',
+                'part_context_pc',
+                'all_context_note',
+                'all_context_art'
+                ]},
         {'next_note{}'.format(i):(y[:,i,:]) for i in range(4) },
         batch_size=batch_size, nb_epoch=25)
 
@@ -439,32 +433,37 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
         part_id_to_idx = {id:idx for idx,id in enumerate(['Soprano', 'Alto', 'Tenor', 'Bass'])}
         note_name_to_idx = {name:idx for idx,name in enumerate(unique_notes)}
 
-        d = 5 + part_context_size + 4*2*all_voices_context_size # NOTE: change if # features increase
-        X_all = np.zeros((len(dataset), 4, max_num_frames, d))
-        # TODO: make indexing less fragile by using namedtuple, DataTable, pandas, etc
+        score_format = [
+                ('note', 'uint16'),
+                ('art', 'bool'),
+                ('pc', 'uint16'),
+                ('freq', 'float32'),
+                ('beat', 'uint16'),
+                ('part_context_pc', '{}uint16'.format(part_context_size)),
+                ('all_context_note', '{}uint16'.format(4*all_voices_context_size)),
+                ('all_context_art', '{}bool'.format(4*all_voices_context_size)) ]
+        X_all = np.zeros((len(dataset), 4, max_num_frames), dtype=score_format)
         for score_idx, score in enumerate(dataset):
             print 'Featurizing {} out of {}'.format(score_idx+1, len(dataset))
             num_frames = int(frames_per_crotchet * score.duration.quarterLength)
-            data = np.zeros((4, num_frames, d))
+            data = np.zeros((4, num_frames), dtype=score_format)
 
             for n in range(num_frames):
                 t_ql = float(n) / frames_per_crotchet
 
-                all_voices_context_idx = np.zeros((2*4,all_voices_context_size)) # 4 voices, 2 events (played,articulated)
-                # NOTE: fragile (0,1) indexing to retrieve previous note and articulation
-                all_voices_context_idx[:4,:] = np.pad(
-                        data[:, max(0,(n-all_voices_context_size)):n, 0],
+                data[:,n]['all_context_note'] = np.pad(
+                        data[:, max(0,(n-all_voices_context_size)):n]['note'],
                         ((0,0), (max(all_voices_context_size - n, 0), 0)),
                         mode='constant')
-                all_voices_context_idx[4:,:] = np.pad(
-                        data[:, max(0,(n-all_voices_context_size)):n, 1],
+                data[:,n]['all_context_art'] = np.pad(
+                        data[:, max(0,(n-all_voices_context_size)):n]['art'],
                         ((0,0), (max(all_voices_context_size - n, 0), 0)),
                         mode='constant')
 
                 for part in score.parts:
                     part_idx = part_id_to_idx[part.id]
-                    part_context_idx = np.pad(
-                            data[part_idx, max(0,(n-part_context_size)):n, 2], # NOTE: fragile way to get pitch class, will change if columns in `data` changes
+                    data[:,n]['part_context_pc'] = np.pad(
+                            data[part_idx, max(0,(n-part_context_size)):n]['pc'],
                             (max(part_context_size  - n, 0),0),
                             mode='constant')
                     measure = (part\
@@ -482,23 +481,17 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
                             note_name = nr.nameWithOctave
 
                         # we +1 because '0' is used as 'mask' in `Embedding` for note, pc, and beat
-                        note_idx = note_name_to_idx[note_name] + 1
+                        data[:,n]['note'] = note_name_to_idx[note_name] + 1
                         if nr.isNote:
-                            f = nr.pitch.frequency
-                            pc = nr.pitch.pitchClass + 1
+                            data[:,n]['freq'] = nr.pitch.frequency
+                            data[:,n]['pc'] = nr.pitch.pitchClass + 1
                         else:
-                            f = 0
-                            pc = 1
-                        beat = int(2*nr.getOffsetBySite(measure)) + 1
+                            data[:,n]['freq'] = 0
+                            data[:,n]['pc'] = 1
+                        data[:,n]['beat'] = int(2*nr.getOffsetBySite(measure)) + 1
 
                         new_notes = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=True, includeElementsThatEndAtStart=False)
-                        articulated = nr in new_notes
-
-                        data[part_idx, n] = np.hstack((
-                            np.array([note_idx, articulated, pc, f, beat]),
-                            part_context_idx,
-                            np.reshape(all_voices_context_idx, -1)
-                            ))
+                        data[:,n]['art'] = nr in new_notes
             X_all[score_idx,:,:data.shape[1],] = data
 
         np.save(fp, X_all)
