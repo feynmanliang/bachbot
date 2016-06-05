@@ -5,6 +5,8 @@ Keras notes
    (excluding sample axis 0) is the time dimension. This means that `Permute` should be
    used to satisfy this assumption
 
+ * For some reason my sharing of embedding matrices is only supported by the tensorflow backend...
+
 # 6-4
 
 "Modelling, Visualising and Summarising Documents with a Single Convolutional Neural Network", Denil et al 2014

@@ -246,7 +246,8 @@ def biaxial(ctx):
     batch_size=2
 
     if not use_cache:
-        dataset = ctx.invoke(prepare_standard, subset=True)
+        # NOTE: BE CAREFUL ABOUT USING SUBSET, it will overwrite and require another regen
+        dataset = ctx.invoke(prepare_standard, subset=False)
         vocab_size, Xy = _prepare_biaxial(dataset,
                 use_cache=False,
                 part_context_size=part_context_size,
@@ -266,7 +267,6 @@ def biaxial(ctx):
     # X indices are seore, part, time, feature => value
     # y indices are score, part, time, next_note => played?
     seqlen = X.shape[2]
-    print seqlen
 
     in_note = X[:,:,:,0].astype(np.uint16)
     in_art = X[:,:,:,1].astype(np.bool)
