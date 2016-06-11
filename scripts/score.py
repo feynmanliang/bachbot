@@ -23,12 +23,16 @@ def pca_metric(input_path):
         _compute_PCs(out_fp)
     PCs = np.fromfiile(out_fp)
     print PCs
+    # TODO: find centroid of Bach cluster
+    # TODO: compute and return neuclidian distance of PC projectio nof input_path file to Bach centroid
+
 
 def _compute_PCs(out_fp):
     """Computes pitch class per measure principal components."""
     bachBundle = corpus.search('bwv')
     bachBundle = bachBundle.search('4/4')
 
+    # NOTE: we should refactor this into a separate helper function: music21 Stream -> Pitch class histogram
     index =0
     data = {}
     for n in range(len(bachBundle)):
