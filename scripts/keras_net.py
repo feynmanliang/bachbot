@@ -5,7 +5,7 @@ import glob
 import json
 import numpy as np
 
-from keras.callbacks import EarlyStopping, TensorBoard
+from keras.callbacks import EarlyStopping, TensorBoard, ProgbarLogger, ModelCheckpoint
 from keras.layers import *
 from keras.layers.wrappers import TimeDistributed
 from keras.models import Sequential, Model, model_from_json
@@ -243,18 +243,18 @@ def biaxial(ctx):
     time_lstm_size = 16
     part_lstm_size = 8
     use_cache = False
-    batch_size=2
+    batch_size = 1
 
-    if not use_cache:
-        # NOTE: BE CAREFUL ABOUT USING SUBSET, it will overwrite and require another regen
-        dataset = ctx.invoke(prepare_standard, subset=True)
-        vocab_size, Xy = _prepare_biaxial(dataset,
-                use_cache=False,
+    fp = SCRATCH_DIR + '/biaxial_Xy.npy'
+    if use_cache and os.path.exists(fp):
+       Xy = np.load(fp)
+    else:
+        dataset = ctx.invoke(prepare_standard, subset=False)
+        Xy = _prepare_biaxial(dataset,
                 part_context_size=part_context_size,
                 all_voices_context_size=all_voices_context_size)
-        vocab_size += 1 # +1 for '0'
-    else:
-        vocab_size, Xy = _prepare_biaxial(None, use_cache=True)
+        np.save(fp, Xy)
+    vocab_size = len(set(Xy[:,:,:]['note'].ravel().tolist()))
 
     print 'vocab_size: {}\n Xy.shape: {}'.format(vocab_size, Xy.shape)
     print Xy.shape
@@ -394,10 +394,14 @@ def biaxial(ctx):
                 'all_context_art'
                 ]},
         {'next_note{}'.format(i):(y[:,i,:]) for i in range(4) },
-        batch_size=batch_size, nb_epoch=25)
+        batch_size=batch_size, nb_epoch=25,
+        validation_split=0.1,
+        callbacks = [ ProgbarLogger(),
+            ModelCheckpoint(SCRATCH_DIR + '/weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
+            TensorBoard(log_dir='./logs', histogram_freq=0.1) ])
 
 
-def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_context_size=2):
+def _prepare_biaxial(dataset, part_context_size=1, all_voices_context_size=2):
     """Prepares dataset following http://www.creativeai.net/posts/uvhEChAfmPKnG8swP.
 
     We include features for:
@@ -408,94 +412,87 @@ def _prepare_biaxial(dataset, use_cache=True, part_context_size=1, all_voices_co
         * context of previous pitch classes for each part
         * context of previous notes/articulated? for all voices
     """
-    fp = SCRATCH_DIR + '/biaxial_Xy.npy'
-    if use_cache and os.path.exists(fp):
-       Xy = np.load(fp)
-       unique_notes = Xy[:,:,:,0] # NOTE: fragile indexing of note
-       return len(set(unique_notes.flatten().tolist())), Xy
-    else:
-        # Each score is a 4 by T grid, X[i][j] is a vector with part_id, note, pitch, pitch_class, beat, etc
-        unique_notes = set(['REST'])
-        min_ql = 1
-        longest_score_ql = 0
-        for score in dataset:
+    # Each score is a 4 by T grid, X[i][j] is a vector with part_id, note, pitch, pitch_class, beat, etc
+    unique_notes = set(['REST'])
+    min_ql = 1
+    longest_score_ql = 0
+    for score in dataset:
+        for part in score.parts:
+            min_ql = min(min_ql, min(map(lambda note: note.duration.quarterLength, part.flat.notesAndRests)))
+            longest_score_ql = max(longest_score_ql, part.duration.quarterLength)
+            unique_notes = unique_notes | set(map(lambda x: x.nameWithOctave, part.flat.getElementsByClass('Note')))
+
+    # choose time step so no loss in duration information
+    #frames_per_crotchet = FRAMES_PER_CROTCHET
+    frames_per_crotchet = int(1 / min_ql)
+    max_num_frames = frames_per_crotchet * longest_score_ql
+
+    # encode into feature matrix
+    part_id_to_idx = {id:idx for idx,id in enumerate(['Soprano', 'Alto', 'Tenor', 'Bass'])}
+    note_name_to_idx = {name:idx for idx,name in enumerate(unique_notes)}
+
+    score_format = [
+            ('note', 'uint16'),
+            ('art', 'bool'),
+            ('pc', 'uint16'),
+            ('freq', 'float32'),
+            ('beat', 'uint16'),
+            ('part_context_pc', '{}uint16'.format(part_context_size)),
+            ('all_context_note', '{}uint16'.format(4*all_voices_context_size)),
+            ('all_context_art', '{}bool'.format(4*all_voices_context_size)) ]
+    X_all = np.zeros((len(dataset), 4, max_num_frames), dtype=score_format)
+    for score_idx, score in enumerate(dataset):
+        print 'Featurizing {} out of {}'.format(score_idx+1, len(dataset))
+        num_frames = int(frames_per_crotchet * score.duration.quarterLength)
+        data = np.zeros((4, num_frames), dtype=score_format)
+
+        for n in range(num_frames):
+            t_ql = float(n) / frames_per_crotchet
+
+            data[:,n]['all_context_note'] = np.pad(
+                    data[:, max(0,(n-all_voices_context_size)):n]['note'],
+                    ((0,0), (max(all_voices_context_size - n, 0), 0)),
+                    mode='constant')
+            data[:,n]['all_context_art'] = np.pad(
+                    data[:, max(0,(n-all_voices_context_size)):n]['art'],
+                    ((0,0), (max(all_voices_context_size - n, 0), 0)),
+                    mode='constant')
+
             for part in score.parts:
-                min_ql = min(min_ql, min(map(lambda note: note.duration.quarterLength, part.flat.notesAndRests)))
-                longest_score_ql = max(longest_score_ql, part.duration.quarterLength)
-                unique_notes = unique_notes | set(map(lambda x: x.nameWithOctave, part.flat.getElementsByClass('Note')))
-
-        # choose time step so no loss in duration information
-        #frames_per_crotchet = FRAMES_PER_CROTCHET
-        frames_per_crotchet = int(1 / min_ql)
-        max_num_frames = frames_per_crotchet * longest_score_ql
-
-        # encode into feature matrix
-        part_id_to_idx = {id:idx for idx,id in enumerate(['Soprano', 'Alto', 'Tenor', 'Bass'])}
-        note_name_to_idx = {name:idx for idx,name in enumerate(unique_notes)}
-
-        score_format = [
-                ('note', 'uint16'),
-                ('art', 'bool'),
-                ('pc', 'uint16'),
-                ('freq', 'float32'),
-                ('beat', 'uint16'),
-                ('part_context_pc', '{}uint16'.format(part_context_size)),
-                ('all_context_note', '{}uint16'.format(4*all_voices_context_size)),
-                ('all_context_art', '{}bool'.format(4*all_voices_context_size)) ]
-        X_all = np.zeros((len(dataset), 4, max_num_frames), dtype=score_format)
-        for score_idx, score in enumerate(dataset):
-            print 'Featurizing {} out of {}'.format(score_idx+1, len(dataset))
-            num_frames = int(frames_per_crotchet * score.duration.quarterLength)
-            data = np.zeros((4, num_frames), dtype=score_format)
-
-            for n in range(num_frames):
-                t_ql = float(n) / frames_per_crotchet
-
-                data[:,n]['all_context_note'] = np.pad(
-                        data[:, max(0,(n-all_voices_context_size)):n]['note'],
-                        ((0,0), (max(all_voices_context_size - n, 0), 0)),
+                part_idx = part_id_to_idx[part.id]
+                data[:,n]['part_context_pc'] = np.pad(
+                        data[part_idx, max(0,(n-part_context_size)):n]['pc'],
+                        (max(part_context_size  - n, 0),0),
                         mode='constant')
-                data[:,n]['all_context_art'] = np.pad(
-                        data[:, max(0,(n-all_voices_context_size)):n]['art'],
-                        ((0,0), (max(all_voices_context_size - n, 0), 0)),
-                        mode='constant')
+                measure = (part\
+                    .getElementsByClass('Measure')\
+                    .getElementsByOffset(t_ql, mustBeginInSpan=False, includeElementsThatEndAtStart=False))[0]
+                nr = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=False, includeElementsThatEndAtStart=False)
+                if nr:
+                    assert len(nr) == 1
+                    nr = nr[0]
+                    if nr.isRest:
+                        note_name = 'REST'
+                    elif nr.isChord:
+                        note_name = nr.findRoot().nameWithOctave
+                    else:
+                        note_name = nr.nameWithOctave
 
-                for part in score.parts:
-                    part_idx = part_id_to_idx[part.id]
-                    data[:,n]['part_context_pc'] = np.pad(
-                            data[part_idx, max(0,(n-part_context_size)):n]['pc'],
-                            (max(part_context_size  - n, 0),0),
-                            mode='constant')
-                    measure = (part\
-                        .getElementsByClass('Measure')\
-                        .getElementsByOffset(t_ql, mustBeginInSpan=False, includeElementsThatEndAtStart=False))[0]
-                    nr = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=False, includeElementsThatEndAtStart=False)
-                    if nr:
-                        assert len(nr) == 1
-                        nr = nr[0]
-                        if nr.isRest:
-                            note_name = 'REST'
-                        elif nr.isChord:
-                            note_name = nr.findRoot().nameWithOctave
-                        else:
-                            note_name = nr.nameWithOctave
+                    # we +1 because '0' is used as 'mask' in `Embedding` for note, pc, and beat
+                    data[:,n]['note'] = note_name_to_idx[note_name] + 1
+                    if nr.isNote:
+                        data[:,n]['freq'] = nr.pitch.frequency
+                        data[:,n]['pc'] = nr.pitch.pitchClass + 1
+                    else:
+                        data[:,n]['freq'] = 0
+                        data[:,n]['pc'] = 1
+                    data[:,n]['beat'] = int(2*nr.getOffsetBySite(measure)) + 1
 
-                        # we +1 because '0' is used as 'mask' in `Embedding` for note, pc, and beat
-                        data[:,n]['note'] = note_name_to_idx[note_name] + 1
-                        if nr.isNote:
-                            data[:,n]['freq'] = nr.pitch.frequency
-                            data[:,n]['pc'] = nr.pitch.pitchClass + 1
-                        else:
-                            data[:,n]['freq'] = 0
-                            data[:,n]['pc'] = 1
-                        data[:,n]['beat'] = int(2*nr.getOffsetBySite(measure)) + 1
+                    new_notes = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=True, includeElementsThatEndAtStart=False)
+                    data[:,n]['art'] = nr in new_notes
+        X_all[score_idx,:,:data.shape[1],] = data
 
-                        new_notes = measure.notesAndRests.getElementsByOffset(t_ql % 4, mustBeginInSpan=True, includeElementsThatEndAtStart=False)
-                        data[:,n]['art'] = nr in new_notes
-            X_all[score_idx,:,:data.shape[1],] = data
-
-        np.save(fp, X_all)
-        return len(unique_notes), X_all
+    return X_all
 
 def _ohe(index, size):
     x = np.zeros((size,))
