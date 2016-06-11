@@ -5,6 +5,7 @@ from music21 import environment
 from chorales import chorales
 from corpus_utils import concatenate_corpus
 from keras_net import keras
+from score import score
 from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_constant_timestep
 
 @click.group()
@@ -23,5 +24,6 @@ map(cli.add_command, [
     sample,
     postprocess_utf,
     postprocess_utf_constant_timestep,
-    keras
+    keras,
+    score
 ])
