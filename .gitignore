@@ -1,6 +1,8 @@
 .ipynb_checkpoints/
 venv/
 scratch/
+logs/
+out/
 *.pyc
 *.egg-info/
 tags

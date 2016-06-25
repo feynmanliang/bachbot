@@ -1,7 +1,10 @@
 import click
+import cPickle
 import json
+import multiprocess as mp
 
 from music21 import analysis, converter, corpus, meter
+from music21.note import Note
 
 from constants import *
 
@@ -11,7 +14,59 @@ def chorales():
     pass
 
 @click.command()
-def prepare_mono_all():
+@click.option('--subset', default=False)
+def prepare_standard(subset):
+    """Prepare scores by standardizing names and transposing to Cmaj/Amin"""
+    dataset = list()
+    it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
+    if subset:
+        it = [next(it) for _ in range(5)]
+    for sc in it:
+        bwv_id = sc.metadata.title
+        sc = _standardize_part_ids(sc)
+        if sc:
+            print 'Processing ' + bwv_id
+            dataset.append(sc)
+        else:
+            print 'Skipping ' + bwv_id + ', error extracting parts'
+    return dataset
+
+
+
+@click.command()
+def prepare_mono_all_constant_t():
+    """Prepares all monophonic parts, constant timestep between samplesi.
+
+        * Start notes are prefixed with a special `NOTE_START_SYM`
+        * Each quarter note is expanded to `FRAMES_PER_CROTCHET` frames
+    """
+    def _fn(score):
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            bwv_id = score.metadata.title
+            print('Processing BWV {0}'.format(bwv_id))
+
+            score = standardize_key(score)
+            key = score.analyze('key')
+            for part in score.parts:
+                note_duration_pairs = list(_encode_note_duration_tuples(part))
+
+                assert all(map(lambda x: x >= 1.0, set([FRAMES_PER_CROTCHET * dur for _,dur in note_duration_pairs]))),\
+                        "Could not quantize constant timesteps"
+
+                pairs_text = []
+                for note,dur in note_duration_pairs:
+                    pairs_text.append(NOTE_START_SYM + note)
+                    for _ in range(1,int(FRAMES_PER_CROTCHET*dur)):
+                        pairs_text.append(note)
+                yield ('{0}-{1}-{2}-mono-all'.format(bwv_id, key.mode, part.id), pairs_text)
+    _process_scores_with(_fn)
+
+@click.command()
+@click.option('--soprano-only',
+        type=bool, default=False, help='Only extract Soprano parts')
+@click.option('--use-pitch-classes',
+        type=bool, default=False, help='Use pitch equivalence classes, discarding octave information')
+def prepare_mono_all(soprano_only, use_pitch_classes):
     """Prepares a corpus containing all monophonic parts, with major/minor labels.
 
         * Only 4/4 time signatures are considered
@@ -25,34 +80,24 @@ def prepare_mono_all():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
+            parts = []
+            if soprano_only:
+                parts.append(_get_soprano_part(score))
+            else:
+                parts = score.parts
             for part in score.parts:
-                note_duration_pairs = list(_encode_note_duration_tuples(part))
+                note_duration_pairs = _encode_note_duration_tuples(part)
+                if use_pitch_classes:
+                    note_duration_pairs = map(
+                            lambda x: x if (x[0] == u'REST') else (Note(x[0]).name, x[1]),
+                            note_duration_pairs)
                 pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
-                yield ('{0}-{1}-{2}-mono-all'.format(bwv_id, key.mode, part.id), pairs_text)
-    _process_scores_with(_fn)
-
-@click.command()
-def prepare_soprano():
-    """Prepares a corpus containing all soprano parts.
-
-        * Only 4/4 time signatures are considered
-        * The key is transposed to Cmaj/Amin
-        * Only the soprano part is extracted
-        * A (Pitch,Duration) sequence is returned
-        * The files output have names `{bwv_id}-soprano`
-    """
-    def _fn(score):
-        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            bwv_id = score.metadata.title
-            print('Processing BWV {0}'.format(bwv_id))
-
-            score = _standardize_key(score)
-            soprano_part = _get_soprano_part(score)
-            note_duration_pairs = list(_encode_note_duration_tuples(soprano_part))
-            pairs_text = map(lambda entry: '{0},{1}'.format(*entry), note_duration_pairs)
-            yield ('{0}-soprano'.format(bwv_id), pairs_text)
+                if soprano_only:
+                    yield ('{0}-{1}-soprano-mono'.format(bwv_id, key.mode, part.id), pairs_text)
+                else:
+                    yield ('{0}-{1}-{2}-mono'.format(bwv_id, key.mode, part.id), pairs_text)
     _process_scores_with(_fn)
 
 @click.command()
@@ -63,7 +108,7 @@ def prepare_durations():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
                 note_duration_pairs = list(map(lambda note: note.quarterLength, part))
@@ -85,14 +130,16 @@ def _process_scores_with(fn):
 
     Existing files are overwritten because the vocabulary can change between runs.
     """
-    # used for UTF8 encoding later
+    # used for encoding/decoding tokens to UTF8 symbols
     plain_text_data = []
     vocabulary = set() # remember all unique (note,duration) tuples seen
 
-    for score in corpus.chorales.Iterator(
+    p = mp.Pool(processes=mp.cpu_count())
+    processed_scores = p.map(lambda score: list(fn(score)), corpus.chorales.Iterator(
             numberingSystem='bwv',
-            returnType='stream'):
-        for fname, pairs_text in fn(score):
+            returnType='stream'))
+    for processed_score in processed_scores:
+        for fname, pairs_text in processed_score:
             if pairs_text:
                 plain_text_data.append((fname, pairs_text))
                 vocabulary.update(set(pairs_text))
@@ -100,6 +147,8 @@ def _process_scores_with(fn):
     # construct vocab <=> UTF8 mapping
     pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
     utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
+    utf_to_txt[START_DELIM] = 'START'
+    utf_to_txt[END_DELIM] = 'END'
 
     # save outputs
     with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
@@ -114,30 +163,36 @@ def _process_scores_with(fn):
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
 
-def _get_soprano_part(bwv_score):
+def _standardize_part_ids(bwv_score):
     """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
-    soprano_part_ids = set([
+    ids = dict()
+    ids['Soprano'] = {
             'Soprano',
             'S.',
             'Soprano 1', # TODO: soprano1 or soprano2
-            'Soprano\rOboe 1\rViolin1'])
-    bwv_to_soprano_id = { # NOTE: these appear to all be score.parts[0]
-            '277': 'spine_6',
-            '281': 'spine_3',
-            '366': 'spine_8'
-            }
-    bwv_id = bwv_score.metadata.title
-    if bwv_id in bwv_to_soprano_id:
-        return bwv_score.parts[bwv_to_soprano_id[bwv_id]]
+            'Soprano\rOboe 1\rViolin1'}
+    ids['Alto'] = { 'Alto', 'A.'}
+    ids['Tenor'] = { 'Tenor', 'T.'}
+    ids['Bass'] = { 'Bass', 'B.'}
+    id_to_name = {id:name for name in ids for id in ids[name] }
+    all_ids = set(id_to_name.keys())
+    if all(map(lambda part: part.id in all_ids, bwv_score.parts)):
+        for part in bwv_score.parts:
+            part.id = id_to_name[part.id]
+        return bwv_score
     else:
-        is_soprano_part = map(lambda part: part.id in soprano_part_ids, bwv_score.parts)
-        assert sum(is_soprano_part) == 1, \
-                'Could not find a unique soprano part id from: {0}'.format(
-                        map(lambda part: part.id, bwv_score.parts))
-        return bwv_score.parts[is_soprano_part.index(True)]
+        return None
+
+def _get_part(bwv_score, part_ids):
+    """Tries to extract part matching names in `part_ids`."""
+    is_match = map(lambda part: part.id in part_ids, bwv_score.parts)
+    if sum(is_match) == 1:
+        return bwv_score.parts[is_match.index(True)]
+    else:
+        return None
 
 
-def _standardize_key(score):
+def standardize_key(score):
     """Converts into the key of C major or A minor.
 
     Adapted from https://gist.github.com/aldous-rey/68c6c43450517aa47474
@@ -169,7 +224,8 @@ def _encode_note_duration_tuples(part):
             yield ('REST',nr.quarterLength)
 
 map(chorales.add_command, [
-    prepare_soprano,
     prepare_mono_all,
-    prepare_durations
+    prepare_durations,
+    prepare_mono_all_constant_t,
+    prepare_standard
 ])

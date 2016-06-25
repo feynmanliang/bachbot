@@ -1,6 +1,85 @@
-# 5-30
-Used `Spearmint` to do hyperparam optimization over major soprano monophonic LSTM models
+# 6-5
+Keras notes
 
+ * To do a convolutional/time distribed operation, `TimeDistributed` assumes the 1st axis
+   (excluding sample axis 0) is the time dimension. This means that `Permute` should be
+   used to satisfy this assumption
+
+ * For some reason my sharing of embedding matrices is only supported by the tensorflow backend...
+
+# 6-4
+
+"Modelling, Visualising and Summarising Documents with a Single Convolutional Neural Network", Denil et al 2014
+ * Music is also sequence built up of individual measures, phrases, parts, etc, amenable to time-invariant convolution
+ * Try building a convolutional representation for music then put discriminative classifiers on top
+    * e.g. Bach vs XYZ, Major vs Minor Key
+
+Pitch Classes
+ * Don't really matter... 0.96 accuracy on pitch classes vs 0.95 without
+ * Future experiments should include octaves since significantly improves generated output
+
+# 6-3
+
+Many papers use pitch classes (i.e. mod 12), removing octave information...
+
+# 6-2
+
+Things to try:
+* Segment phrases based on fermatas
+* Encode (pitch, duration, **chord**) like (Lichtenwalter 2009)
+
+Spent rest of day setting up `keras` and `tensorflow`; seems to be easier
+to use for building new models...
+
+# 5-30
+
+## Hyperparam opt over constant-timestep input monophonic models
+
+Previous inputs had a new input per `(pitch|REST,duration)`, these experiments
+expand this into `(pitch|REST)` tokens outputted at constant duration intervals.
+
+```
+Best result:
+{u'num_layers': 1.0,
+ u'rnn_size': 512.03541493830664,
+ u'seq_length': 16.002948219489955,
+ u'val_loss': 0.15576986968517303,
+ u'wordvec_size': 6.0277702732883034}
+```
+
+|   seq_length |   rnn_size |   val_loss |   wordvec_size |   num_layers |
+|-------------:|-----------:|-----------:|---------------:|-------------:|
+|     16.0029  |  512.035   |   0.15577  |        6.02777 |      1       |
+|     16.0029  |  471.29    |   0.175634 |       60.1177  |      1       |
+|     16.0029  |  512.035   |   0.194531 |        1       |      1       |
+|     11.3981  |  512.035   |   0.216492 |      128.825   |      1       |
+|     11.1927  |  122.295   |   0.222993 |      128.825   |      2.13249 |
+|     16.0029  |  512.035   |   0.241461 |      128.825   |      1       |
+|      6.25468 |  460.95    |   0.247955 |      128.596   |      2.88079 |
+|      6.92759 |   72.8999  |   0.272705 |      128.825   |      8.00018 |
+|      4.00037 |   22.6282  |   0.306297 |       11.3501  |      2.82846 |
+|     14.4828  |   13.1409  |   0.522982 |        1       |      1       |
+|      1.00973 |  391.191   |   0.527153 |       59.2535  |      6.22639 |
+|     15.3933  |    1       |   0.934034 |      128.825   |      1       |
+|     15.9987  |    1       |   0.998908 |      128.825   |      1       |
+|      1.8637  |    1.47925 |   1.16437  |       94.7932  |      5.22018 |
+|      1       |    1       |   1.30671  |        1       |      1       |
+|     16.0029  |    1       |   1.37111  |        1.35772 |      7.85394 |
+|      1.85749 |  312.957   |   1.43217  |       27.7185  |      1.2719  |
+|      1.15772 |  512.035   |   2.05152  |      128.825   |      3.09914 |
+|      3.79838 |  512.035   |   3.99939  |        3.2196  |      8.00018 |
+|      4.28328 |    1.08049 |   9.4367   |      128.825   |      7.73301 |
+|      1.89024 |    1.44436 |  13.1816   |       12.317   |      8.00018 |
+
+## Hyperparam optimization over note-based monophonic modeling
+
+* Used `Spearmint` to do hyperparam optimization over major soprano monophonic
+  LSTM models
+* Best result `val_loss=1.13967` with `seq_length=6.94253`,
+ `rnn_size=29.5404`, `wordvec_size=126.366`, `num_layers=1.00082`, all floored.
+   * Sampling with `temp=0.8` yielded believable melody lines
+
+All `Spearmint` results:
 |   val_loss |   seq_length |   rnn_size |   wordvec_size |   num_layers |
 |:-----------|-------------:|-----------:|---------------:|-------------:|
 |    1.81279 |      1       |    1       |        1       |      1       |
