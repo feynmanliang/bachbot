@@ -1,3 +1,20 @@
+6-24
+====
+
+Research Ideas:
+
+* Neural Turing Machines
+* Interpolating between two LSTM states
+
+Research Tool Feedback:
+
+* Side by side, up to 5
+* Put all questions on the same page
+* Music Background solicitation before page
+* Amount of time spent on metric
+
+* Buy domain name (10 quid), AWS billing limit (20 quid)
+
 05-19 Group Meeting
 ===================
 
