@@ -14,7 +14,6 @@ from keras.utils.np_utils import to_categorical
 
 from music21 import *
 
-from chorales import prepare_standard
 from constants import *
 from corpus_utils import concatenate_corpus, read_utf8, write_monophonic_part
 
@@ -249,7 +248,7 @@ def biaxial(ctx):
     if use_cache and os.path.exists(fp):
        Xy = np.load(fp)
     else:
-        dataset = ctx.invoke(prepare_standard, subset=False)
+        dataset = prepare_standard(subset=False)
         Xy = _prepare_biaxial(dataset,
                 part_context_size=part_context_size,
                 all_voices_context_size=all_voices_context_size)
