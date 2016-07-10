@@ -7,6 +7,7 @@ from corpus_utils import concatenate_corpus
 from keras_net import keras
 from score import score
 from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_constant_timestep
+from decode import decode
 
 @click.group()
 def cli():
@@ -25,5 +26,6 @@ map(cli.add_command, [
     postprocess_utf,
     postprocess_utf_constant_timestep,
     keras,
-    score
+    score,
+    decode,
 ])

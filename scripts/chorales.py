@@ -112,9 +112,20 @@ def prepare_durations():
                 yield ('{0}-{1}-{2}-duration'.format(bwv_id, key.mode, part.id), text)
     _process_scores_with(_fn)
 
-@click.command()
+#@click.command() # TODO: uncomment
 def prepare_poly():
-    """Prepares a corpus of all four parts."""
+    """
+    Prepares a corpus of all four parts.
+
+    Each score is transformed into a sequence of tuples with a constant
+    timestep of (1/`FRAMES_PER_CROTCHET`) crotchets between consecutive chords.
+
+    Each encoded chord has the following format:
+        Notes : List[(
+            Midi: Int,
+            Tied : Bool (true if note is continuation of previous note)
+        )]
+    """
     dataset = list()
     it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
     it = [next(it) for _ in range(5)] # TODO: remove, use _process_scores_with
@@ -124,16 +135,28 @@ def prepare_poly():
         if sc:
             print 'Processing ' + bwv_id
             sc = _standardize_key(sc) # transpose to Cmaj/Amin
+            encoded_score = []
+
             chords = sc.chordify().flat.notesAndRests # aggregate voices, remove markup
             #chords.show()
             for chord in chords:
-                print (
-                        any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions)),
-                        chord.quarterLength,
-                        map(
-                            lambda note: (note.nameWithOctave, note.tie is None or note.tie.type == 'start'),
-                            chord)
-                        )
+                # expand chord s.t. constant timestep between frames
+
+                # TODO: use to segment phrases?
+                #has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
+
+                # add ties with previous chord if present
+                encoded_score.append(map(
+                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
+                    chord))
+
+                # repeat pitches to expand chord into multiple frames
+                # all repeated frames when expanding a chord should be tied
+                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
+                    lambda note: (note.pitch.midi, True),
+                    chord)])
+
+            return encoded_score # TODO: process all scores
         else:
             print 'Skipping ' + bwv_id + ', error extracting parts'
     return dataset
@@ -255,5 +278,5 @@ map(chorales.add_command, [
     prepare_mono_all,
     prepare_durations,
     prepare_mono_all_constant_t,
-    prepare_poly
+    #prepare_poly # TODO: uncomment
 ])
