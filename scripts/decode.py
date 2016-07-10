@@ -13,7 +13,7 @@ def decode():
     "Decode encoded data format into musicXML for displaying and playback."
     pass
 
-#@click.command()
+@click.command()
 def decode_chord_constant_t(sc_enc):
     "Decodes encoding made by chorales.prepare_poly."
     timestep = Duration(1. / FRAMES_PER_CROTCHET)
@@ -39,5 +39,5 @@ def decode_chord_constant_t(sc_enc):
 
 
 map(decode.add_command, [
-    #decode_chord_constant_t
+    decode_chord_constant_t
 ])
