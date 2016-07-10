@@ -2,10 +2,10 @@
 
 input=concat_corpus
 
-seq_length=16
-wordvec_size=6
-num_layers=1
-rnn_size=512
+seq_length=64
+wordvec_size=64
+num_layers=2
+rnn_size=128
 dropout=0
 batchnorm=1
 lr=2e-3
