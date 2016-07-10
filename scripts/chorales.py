@@ -117,15 +117,23 @@ def prepare_poly():
     """Prepares a corpus of all four parts."""
     dataset = list()
     it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
-    it = [next(it) for _ in range(1)] # TODO: remove, use _process_scores_with
-    for sc in it:
+    it = [next(it) for _ in range(5)] # TODO: remove, use _process_scores_with
+    for sc in it[1:2]:
         bwv_id = sc.metadata.title
         sc = _standardize_part_ids(sc)
-        sc = _standardize_key(sc)
         if sc:
             print 'Processing ' + bwv_id
-            for part in sc.parts: # TODO: use all parts
-                print list(_encode_note_duration_tuples(part))
+            sc = _standardize_key(sc) # transpose to Cmaj/Amin
+            chords = sc.chordify().flat.notesAndRests # aggregate voices, remove markup
+            #chords.show()
+            for chord in chords:
+                print (
+                        any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions)),
+                        chord.quarterLength,
+                        map(
+                            lambda note: (note.nameWithOctave, note.tie is None or note.tie.type == 'start'),
+                            chord)
+                        )
         else:
             print 'Skipping ' + bwv_id + ', error extracting parts'
     return dataset
@@ -233,7 +241,7 @@ def _standardize_key(score):
 
 def _encode_note_duration_tuples(part):
     """
-    Generator yielding notes/rests and durations (in quarter notes) for a part.
+    Generator yielding notes/rests and durations (in crotchets) for a part.
 
     Notes are encoded with their MIDI value and rests are encoded as -1.
     """
