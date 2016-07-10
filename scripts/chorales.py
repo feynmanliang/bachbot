@@ -169,9 +169,11 @@ def prepare_poly():
     utf_to_txt[END_DELIM] = 'END'
 
     p = mp.Pool(processes=mp.cpu_count())
-    processed_scores = p.map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
+    processed_scores = map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream'))
+
+#     processed_scores = map(lambda score: list(_fn(corpus.parse(score))), corpus.getComposer('mozart','xml'))
 
     for processed_score in processed_scores:
         for fname, encoded_score in processed_score:
