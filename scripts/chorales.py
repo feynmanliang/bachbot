@@ -136,18 +136,22 @@ def prepare_poly():
 
             encoded_score = []
             for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-                # expand chord s.t. constant timestep between frames
+                # expand chord/rest s.t. constant timestep between frames
 
-                # add ties with previous chord if present
-                encoded_score.append(map(
-                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                    chord))
+                # TODO: handle rest
+                if chord.isRest:
+                    encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+                else:
+                    # add ties with previous chord if present
+                    encoded_score.append(map(
+                        lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
+                        chord))
 
-                # repeat pitches to expand chord into multiple frames
-                # all repeated frames when expanding a chord should be tied
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
-                    lambda note: (note.pitch.midi, True),
-                    chord)])
+                    # repeat pitches to expand chord into multiple frames
+                    # all repeated frames when expanding a chord should be tied
+                    encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
+                        lambda note: (note.pitch.midi, True),
+                        chord)])
 
             yield ('{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
 
@@ -165,9 +169,9 @@ def prepare_poly():
     utf_to_txt[END_DELIM] = 'END'
 
     p = mp.Pool(processes=mp.cpu_count())
-    it = corpus.chorales.Iterator( numberingSystem='bwv', returnType='stream')
-    scores = [next(it) for _ in range(1)]
-    processed_scores = p.map(lambda score: list(_fn(score)), scores)
+    processed_scores = p.map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
+        numberingSystem='bwv',
+        returnType='stream'))
 
     for processed_score in processed_scores:
         for fname, encoded_score in processed_score:

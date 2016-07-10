@@ -43,6 +43,7 @@ def to_musicxml(sc_enc):
     for chord_notes in sc_enc:
         notes = []
         for note_tuple in chord_notes:
+            # TODO: handle rests
             note = Note()
             note.midi = note_tuple[0]
             if note_tuple[1]: # current note is tied
@@ -57,8 +58,6 @@ def to_musicxml(sc_enc):
         prev_chord = { note.pitch.midi : note for note in notes }
         musicxml_score.append(Chord(notes=notes, duration=timestep))
     return musicxml_score
-
-
 
 map(decode.add_command, [
     decode_chord_constant_t_utf
