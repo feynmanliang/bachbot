@@ -13,8 +13,6 @@ def chorales():
     """Constructs various corpuses using BWV Bach chorales."""
     pass
 
-@click.command()
-@click.option('--subset', default=False)
 def prepare_standard(subset):
     """Prepare scores by standardizing names and transposing to Cmaj/Amin"""
     dataset = list()
@@ -31,11 +29,9 @@ def prepare_standard(subset):
             print 'Skipping ' + bwv_id + ', error extracting parts'
     return dataset
 
-
-
 @click.command()
 def prepare_mono_all_constant_t():
-    """Prepares all monophonic parts, constant timestep between samplesi.
+    """Prepares all monophonic parts, constant timestep between samples.
 
         * Start notes are prefixed with a special `NOTE_START_SYM`
         * Each quarter note is expanded to `FRAMES_PER_CROTCHET` frames
@@ -45,7 +41,7 @@ def prepare_mono_all_constant_t():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = standardize_key(score)
+            score = _standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
                 note_duration_pairs = list(_encode_note_duration_tuples(part))
@@ -80,7 +76,7 @@ def prepare_mono_all(soprano_only, use_pitch_classes):
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = standardize_key(score)
+            score = _standardize_key(score)
             key = score.analyze('key')
             parts = []
             if soprano_only:
@@ -108,13 +104,33 @@ def prepare_durations():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = standardize_key(score)
+            score = _standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
-                note_duration_pairs = list(map(lambda note: note.quarterLength, part))
-                pairs_text = map(lambda entry: '{0}'.format(entry), note_duration_pairs)
-                yield ('{0}-{1}-{2}-duration'.format(bwv_id, key.mode, part.id), pairs_text)
+                durations = list(map(lambda note: note.quarterLength, part))
+                text = map(lambda entry: '{0}'.format(entry), durations)
+                yield ('{0}-{1}-{2}-duration'.format(bwv_id, key.mode, part.id), text)
     _process_scores_with(_fn)
+
+@click.command()
+def prepare_poly():
+    """Prepares a corpus of all four parts."""
+    dataset = list()
+    it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
+    it = [next(it) for _ in range(1)] # TODO: remove, use _process_scores_with
+    for sc in it:
+        bwv_id = sc.metadata.title
+        sc = _standardize_part_ids(sc)
+        sc = _standardize_key(sc)
+        if sc:
+            print 'Processing ' + bwv_id
+            for part in sc.parts: # TODO: use all parts
+                print list(_encode_note_duration_tuples(part))
+        else:
+            print 'Skipping ' + bwv_id + ', error extracting parts'
+    return dataset
+
+
 
 def _process_scores_with(fn):
     """Extracts data from all BWV scores using `fn`.
@@ -164,12 +180,12 @@ def _process_scores_with(fn):
             fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
 
 def _standardize_part_ids(bwv_score):
-    """Extracts soprano line from `corpus.chorales.Iterator(numberingSystem='bwv')` elements."""
+    "Standardizes the `id`s of `parts` (Soprano, Alto, etc) from `corpus.chorales.Iterator(numberingSystem='bwv')`"
     ids = dict()
     ids['Soprano'] = {
             'Soprano',
             'S.',
-            'Soprano 1', # TODO: soprano1 or soprano2
+            'Soprano 1', # NOTE: soprano1 or soprano2?
             'Soprano\rOboe 1\rViolin1'}
     ids['Alto'] = { 'Alto', 'A.'}
     ids['Tenor'] = { 'Tenor', 'T.'}
@@ -192,7 +208,7 @@ def _get_part(bwv_score, part_ids):
         return None
 
 
-def standardize_key(score):
+def _standardize_key(score):
     """Converts into the key of C major or A minor.
 
     Adapted from https://gist.github.com/aldous-rey/68c6c43450517aa47474
@@ -227,5 +243,5 @@ map(chorales.add_command, [
     prepare_mono_all,
     prepare_durations,
     prepare_mono_all_constant_t,
-    prepare_standard
+    prepare_poly
 ])
