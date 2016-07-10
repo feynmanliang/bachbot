@@ -21,19 +21,29 @@ def decode():
 @click.argument('utf8-file', type=click.Path(exists=True))
 def decode_chord_constant_t_utf(json_file, utf8_file):
     "Decodes plain text encoding made by `chorales.prepare_poly` into python tuples."
+    out_dir = SCRATCH_DIR + '/out'
+
     utf_to_txt = json.load(json_file)
     utf8_file = codecs.open(utf8_file, "r", "utf-8")
 
-    sc_enc = []
+    curr_file = []
     curr_chord_notes = []
+    i = 0
     for txt in map(utf_to_txt.get, filter(lambda x: x != u'\n', utf8_file.read())):
-        if txt == CHORD_BOUNDARY_DELIM:
-            sc_enc.append(curr_chord_notes)
+        if txt == 'START':
+            curr_file = []
+        elif txt == 'END':
+            if not os.path.exists(out_dir):
+                print('Creating directory {0}'.format(out_dir))
+                os.makedirs(out_dir)
+            print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
+            to_musicxml(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+            i += 1
+        elif txt == CHORD_BOUNDARY_DELIM:
+            curr_file.append(curr_chord_notes)
             curr_chord_notes = []
         else:
             curr_chord_notes.append(eval(txt))
-
-    to_musicxml(sc_enc).write(fp='out/out.xml')
 
 def to_musicxml(sc_enc):
     "Converts Chord tuples (see chorales.prepare_poly) to musicXML"
