@@ -112,7 +112,7 @@ def prepare_durations():
                 yield ('{0}-{1}-{2}-duration'.format(bwv_id, key.mode, part.id), text)
     _process_scores_with(_fn)
 
-#@click.command() # TODO: uncomment
+@click.command()
 def prepare_poly():
     """
     Prepares a corpus of all four parts.
@@ -126,24 +126,17 @@ def prepare_poly():
             Tied : Bool (true if note is continuation of previous note)
         )]
     """
-    dataset = list()
-    it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
-    it = [next(it) for _ in range(5)] # TODO: remove, use _process_scores_with
-    for sc in it[1:2]:
-        bwv_id = sc.metadata.title
-        sc = _standardize_part_ids(sc)
-        if sc:
-            print 'Processing ' + bwv_id
-            sc = _standardize_key(sc) # transpose to Cmaj/Amin
+    def _fn(score):
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            bwv_id = score.metadata.title
+            print('Processing BWV {0}'.format(bwv_id))
+
+            score = _standardize_key(score)
+            key = score.analyze('key')
+
             encoded_score = []
-
-            chords = sc.chordify().flat.notesAndRests # aggregate voices, remove markup
-            #chords.show()
-            for chord in chords:
+            for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
                 # expand chord s.t. constant timestep between frames
-
-                # TODO: use to segment phrases?
-                #has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
 
                 # add ties with previous chord if present
                 encoded_score.append(map(
@@ -156,12 +149,47 @@ def prepare_poly():
                     lambda note: (note.pitch.midi, True),
                     chord)])
 
-            return encoded_score # TODO: process all scores
-        else:
-            print 'Skipping ' + bwv_id + ', error extracting parts'
-    return dataset
+            yield ('{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
 
+    plain_text_data = []
 
+    # construct vocab <=> UTF8 mapping
+    vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
+    vocabulary.add(CHORD_BOUNDARY_DELIM)
+
+    pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
+    utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
+
+    # score start/end delimiters are added during concatenation
+    utf_to_txt[START_DELIM] = 'START'
+    utf_to_txt[END_DELIM] = 'END'
+
+    p = mp.Pool(processes=mp.cpu_count())
+    it = corpus.chorales.Iterator( numberingSystem='bwv', returnType='stream')
+    scores = [next(it) for _ in range(1)]
+    processed_scores = p.map(lambda score: list(_fn(score)), scores)
+
+    for processed_score in processed_scores:
+        for fname, encoded_score in processed_score:
+            encoded_score_plaintext = []
+            for i,chord in enumerate(encoded_score):
+                if i > 0: encoded_score_plaintext.append(CHORD_BOUNDARY_DELIM) # chord boundary delimiter
+                for note in chord:
+                    encoded_score_plaintext.append(str(note))
+            plain_text_data.append((fname, encoded_score_plaintext))
+
+    # save outputs
+    with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
+        print 'Writing ' + SCRATCH_DIR + '/utf_to_txt.json'
+        json.dump(utf_to_txt, fd)
+
+    for fname, plain_text in plain_text_data:
+        out_path = SCRATCH_DIR + '/{0}'.format(fname)
+        print 'Writing {0}'.format(out_path)
+        with open(out_path + '.txt', 'w') as fd:
+            fd.write('\n'.join(plain_text))
+        with open(out_path + '.utf', 'w') as fd:
+            fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
 
 def _process_scores_with(fn):
     """Extracts data from all BWV scores using `fn`.
@@ -278,5 +306,5 @@ map(chorales.add_command, [
     prepare_mono_all,
     prepare_durations,
     prepare_mono_all_constant_t,
-    #prepare_poly # TODO: uncomment
+    prepare_poly
 ])

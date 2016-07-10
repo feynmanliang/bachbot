@@ -9,6 +9,8 @@ OUT_DIR = BACHBOT_DIR + '/out'
 START_DELIM = unichr(1111)
 END_DELIM = unichr(1115)
 
+CHORD_BOUNDARY_DELIM = '|||'
+
 NOTE_START_SYM = '@'
 
 # quarterLength's in JCB chorales:
