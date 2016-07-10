@@ -232,12 +232,16 @@ def _standardize_key(score):
 
 
 def _encode_note_duration_tuples(part):
-    """Generator yielding the notes/rests and durations for a single part."""
+    """
+    Generator yielding notes/rests and durations (in quarter notes) for a part.
+
+    Notes are encoded with their MIDI value and rests are encoded as -1.
+    """
     for nr in part.flat.notesAndRests:
         if nr.isNote:
-            yield (nr.nameWithOctave, nr.quarterLength)
+            yield (nr.midi, nr.quarterLength)
         else:
-            yield ('REST',nr.quarterLength)
+            yield (-1, nr.quarterLength)
 
 map(chorales.add_command, [
     prepare_mono_all,
