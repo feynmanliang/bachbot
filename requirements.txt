@@ -1,6 +1,6 @@
 alabaster==0.7.8
 Babel==2.3.4
--e git+git@github.com:feynmanliang/bachbot@f141a9c999c70e63616f29a24e19d11b7e125e0e#egg=bachbot&subdirectory=scripts
+-e git+git@github.com:feynmanliang/bachbot@47a1a90b5b61bec56622fa6f7ac576870da7b82b#egg=bachbot&subdirectory=scripts
 backports-abc==0.4
 backports.shutil-get-terminal-size==1.0.0
 backports.ssl-match-hostname==3.5.0.1
@@ -16,6 +16,7 @@ entrypoints==0.2.2
 functools32==3.2.3.post2
 futures==3.0.5
 h5py==2.5.0
+hmmlearn==0.2.0
 imagesize==0.7.1
 ipykernel==4.3.1
 ipyparallel==5.0.1

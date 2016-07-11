@@ -8,6 +8,7 @@ from keras_net import keras
 from score import score
 from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_constant_timestep
 from decode import decode
+from baseline import baseline
 
 @click.group()
 def cli():
@@ -28,4 +29,5 @@ map(cli.add_command, [
     keras,
     score,
     decode,
+    baseline,
 ])

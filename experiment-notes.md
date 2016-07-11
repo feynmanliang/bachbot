@@ -1,3 +1,21 @@
+# 7-11
+
+## Things to try
+ * Baselines
+     * HMM
+     * RTRBM
+     * RNN-RBM
+     * N-gram language model: might be hard to sample, but could be used to score outputs
+ * Interpolating between two sound bytes
+     * Run forward and backward LSTMs, combine hidden states, emit from those states
+     * Multiple ways to combine hidden states:
+	 * Concatenate at each time step and use. Might be bad because further away states are neglected.
+         * NMT by Jointly Learning to Align and Translate: Attention mechanism taking weighted combination of all
+	   hidden states to be interpolated over.
+ * t-SNE of learned neural embedding, do similar chords map similarly
+ * Plot activations of hidden state over time
+     * How does it know a chord has at most 4 notes? (I'm expecting to see a "chord-end" memory cell)
+
 # 6-5
 Keras notes
 
