@@ -16,6 +16,27 @@ CUDA-7.5
 docker pull fliang/bachbot:CUDA-7.5
 ```
 
+## Getting Started
+
+Set up environment
+```
+source scripts/activate
+```
+
+Prepare polyphonic Bach chorale corpus and train `torch-rnn` LSTM.
+```
+bachbot chorales prepare_poly && \
+	bachbot concatenate_corpus scratch/*.utf && \
+	bachbot make_h5 && \
+	bachbot train
+```
+
+Sample the trained LSTM and decode output to musicXML.
+```
+bachbot sample <path_to_checkpoint> -t <temperature> && \
+	bachbot decode decode_chord_constant_t_utf scratch/utf_to_txt.json scratch/sampled_<temperature>.utf
+```
+
 ## Workflow
 
 * `source ./scripts/activate.zsh` to set up the working environment
