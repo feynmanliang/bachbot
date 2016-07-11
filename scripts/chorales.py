@@ -21,7 +21,7 @@ def prepare_standard(subset):
         it = [next(it) for _ in range(5)]
     for sc in it:
         bwv_id = sc.metadata.title
-        sc = _standardize_part_ids(sc)
+        sc = standardize_part_ids(sc)
         if sc:
             print 'Processing ' + bwv_id
             dataset.append(sc)
@@ -41,7 +41,7 @@ def prepare_mono_all_constant_t():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
                 note_duration_pairs = list(_encode_note_duration_tuples(part))
@@ -76,7 +76,7 @@ def prepare_mono_all(soprano_only, use_pitch_classes):
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
             parts = []
             if soprano_only:
@@ -104,7 +104,7 @@ def prepare_durations():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
             for part in score.parts:
                 durations = list(map(lambda note: note.quarterLength, part))
@@ -131,7 +131,7 @@ def prepare_poly():
             bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
-            score = _standardize_key(score)
+            score = standardize_key(score)
             key = score.analyze('key')
 
             encoded_score = []
@@ -153,7 +153,7 @@ def prepare_poly():
                         lambda note: (note.pitch.midi, True),
                         chord)])
 
-            yield ('{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
+            yield ('beethoven-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
 
     plain_text_data = []
 
@@ -169,11 +169,11 @@ def prepare_poly():
     utf_to_txt[END_DELIM] = 'END'
 
     p = mp.Pool(processes=mp.cpu_count())
-    processed_scores = map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
-        numberingSystem='bwv',
-        returnType='stream'))
+    # processed_scores = map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
+    #     numberingSystem='bwv',
+    #     returnType='stream'))
 
-#     processed_scores = map(lambda score: list(_fn(corpus.parse(score))), corpus.getComposer('mozart','xml'))
+    processed_scores = map(lambda score: list(_fn(corpus.parse(score))), corpus.getComposer('beethoven','xml'))
 
     for processed_score in processed_scores:
         for fname, encoded_score in processed_score:
@@ -244,7 +244,7 @@ def _process_scores_with(fn):
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, pairs_text)))
 
-def _standardize_part_ids(bwv_score):
+def standardize_part_ids(bwv_score):
     "Standardizes the `id`s of `parts` (Soprano, Alto, etc) from `corpus.chorales.Iterator(numberingSystem='bwv')`"
     ids = dict()
     ids['Soprano'] = {
@@ -273,7 +273,7 @@ def _get_part(bwv_score, part_ids):
         return None
 
 
-def _standardize_key(score):
+def standardize_key(score):
     """Converts into the key of C major or A minor.
 
     Adapted from https://gist.github.com/aldous-rey/68c6c43450517aa47474

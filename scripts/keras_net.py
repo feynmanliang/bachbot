@@ -493,11 +493,6 @@ def _prepare_biaxial(dataset, part_context_size=1, all_voices_context_size=2):
 
     return X_all
 
-def _ohe(index, size):
-    x = np.zeros((size,))
-    x[index] = 1
-    return x
-
 map(keras.add_command, [
     train_lstm,
     sample_lstm,
