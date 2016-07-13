@@ -2,7 +2,7 @@ import click
 
 from music21 import environment
 
-from dataset_utils import dataset_utils
+from datasets import datasets
 from corpus_utils import concatenate_corpus
 from keras_net import keras
 from score import score
@@ -20,7 +20,7 @@ def cli():
 
 # instantiate the CLI
 map(cli.add_command, [
-    data,
+    datasets,
     concatenate_corpus,
     make_h5,
     train,

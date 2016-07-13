@@ -18,19 +18,31 @@ def interpolation():
     """Interface for interpolation experiments."""
     pass
 
+np.random.seed(42)
+
+max_length = 100
+embedding_dim = 128
+hidden_size = 64
+batch_size = 32
+nb_epoch = 50
+
+
 @click.command()
 def train():
-    np.random.seed(42)
+    X, y, vocab_size = prepare_data()
+    model = build_model(vocab_size)
 
-    max_length = 100
-    embedding_dim = 128
-    hidden_size = 64
-    batch_size = 32
-    nb_epoch = 50
+    model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch,
+            validation_split=0.1,
+            callbacks = [ ProgbarLogger(),
+                ModelCheckpoint(SCRATCH_DIR + '/weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
+                TensorBoard(log_dir='./logs', histogram_freq=0.1) ])
 
+def prepare_data():
     text = filter(lambda x: x != u'\n', codecs.open(SCRATCH_DIR + '/concat_corpus.txt', "r", "utf-8").read())
     chars = sorted(list(set(text)))
-    print('total chars:', len(chars))
+    vocab_size = len(chars)
+    print('vocab size: {}'.format(vocab_size))
     char_indices = dict((c, i) for i, c in enumerate(chars))
     indices_char = dict((i, c) for i, c in enumerate(chars))
 
@@ -62,35 +74,40 @@ def train():
     print('X shape:', X.shape)
     print('y shape:', y.shape)
 
+    return X, y, vocab_size
+
+def build_model(vocab_size):
     print('Build model...')
     sequence = Input(shape=(max_length,), dtype='int32')
-    embedded = Embedding(len(chars), embedding_dim, input_length=max_length)(sequence)
+    embedded = Embedding(vocab_size, embedding_dim, input_length=max_length)(sequence)
 
     forwards = LSTM(hidden_size)(embedded)
     backwards = LSTM(hidden_size, go_backwards=True)(embedded)
 
     merged = merge([forwards, backwards], mode='concat', concat_axis=-1)
     after_dp = Dropout(0.2)(merged)
-    output = Dense(len(chars), activation='softmax')(after_dp)
-
+    output = Dense(vocab_size, activation='softmax')(after_dp)
     model = Model(input=sequence, output=output)
-
     model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
 
     print "model.summary()"
     model.summary()
+    return model
 
-    model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch,
-            validation_split=0.1,
-            callbacks = [ ProgbarLogger(),
-                ModelCheckpoint(SCRATCH_DIR + '/weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
-                TensorBoard(log_dir='./logs', histogram_freq=0.1) ])
+@click.command()
+def sample():
+    X, y, vocab_size = prepare_data()
+    model = build_model(vocab_size)
+    model.load_weights('scratch/weights.00-0.86.hdf5')
 
-    def sample(a, temperature=1.0):
+    print model.evaluate(X, y)
+
+    def _sample(a, temperature=1.0):
         # helper function to sample an index from a probability array
         a = np.log(a) / temperature
         a = np.exp(a) / np.sum(np.exp(a))
         return np.argmax(np.random.multinomial(1, a, 1))
+
 
     # generate samples
     # TODO: use START_DELIM as seed
@@ -122,6 +139,7 @@ def train():
     #     print()
 
 map(interpolation.add_command, [
-    train
+    train,
+    sample
 ])
 

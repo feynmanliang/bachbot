@@ -1,7 +1,10 @@
 import click
-import cPickle
-import json
+
+import json, cPickle
 import multiprocess as mp
+import requests, zipfile
+
+import os, glob
 
 from music21 import analysis, converter, corpus, meter
 from music21.note import Note
@@ -9,7 +12,7 @@ from music21.note import Note
 from constants import *
 
 @click.group()
-def dataset_utils():
+def datasets():
     """Constructs various datasets."""
     pass
 
@@ -154,6 +157,26 @@ def standardize_key(score):
         ks.transpose(halfSteps, inPlace=True)
     return tScore
 
-map(dataset_utils.add_command, [
-    prepare_chorales_poly
+@click.command()
+def prepare_nottingham():
+    "Downloads and prepares the nottingham ABC database in chord tuple format."
+    fp = SCRATCH_DIR + '/nottingham_database.zip'
+    if not os.path.exists(fp):
+        print 'Downloading to: ' + fp
+        r = requests.get('http://ifdo.ca/~seymour/nottingham/nottingham_database.zip')
+        open(fp, 'wb').write(r.content)
+
+    with zipfile.ZipFile(fp, 'r') as fd:
+        fd.extractall(SCRATCH_DIR)
+
+    for abc_file in glob.glob(SCRATCH_DIR + "/nottingham_database/*.abc")[:2]:
+        print abc_file
+        s = converter.parse(abc_file)
+        s.show('text')
+
+
+
+map(datasets.add_command, [
+    prepare_chorales_poly,
+    prepare_nottingham
 ])
