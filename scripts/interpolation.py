@@ -22,12 +22,12 @@ def interpolation():
 
 np.random.seed(42)
 
-max_length = 100
+batch_size = 32
+max_length = 64
 embedding_dim = 128
 hidden_size = 64
-batch_size = 32
 nb_epoch = 50
-N_samples = 10000
+N_samples = 5000
 
 @click.command()
 def train():
@@ -85,11 +85,14 @@ def build_model(vocab_size):
     sequence = Input(shape=(max_length,), dtype='int32')
     embedded = Embedding(vocab_size, embedding_dim, input_length=max_length)(sequence)
 
-    forwards = LSTM(hidden_size)(embedded)
-    backwards = LSTM(hidden_size, go_backwards=True)(embedded)
+    forwards = LSTM(hidden_size, return_sequences=True)(embedded)
+    after_dp1 = Dropout(0.2)(forwards)
+    forwards2 = LSTM(hidden_size)(after_dp1)
+    #backwards = LSTM(hidden_size, go_backwards=True)(embedded)
+    after_dp = Dropout(0.2)(forwards2)
 
-    merged = merge([forwards, backwards], mode='concat', concat_axis=-1)
-    after_dp = Dropout(0.2)(merged)
+    #merged = merge([forwards, backwards], mode='concat', concat_axis=-1)
+    #after_dp = Dropout(0.2)(merged)
     output = Dense(vocab_size, activation='softmax')(after_dp)
     model = Model(input=sequence, output=output)
     model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
@@ -102,7 +105,7 @@ def build_model(vocab_size):
 def sample():
     _, _, vocab_size, char_indices, indices_char = prepare_data()
     model = build_model(vocab_size)
-    model.load_weights('scratch/weights.41-1.54.hdf5')
+    model.load_weights('scratch/weights.01-1.35.hdf5')
 
     def _sample(a, temperature=1.0):
         # helper function to sample an index from a probability array
@@ -117,10 +120,9 @@ def sample():
         print()
         print('----- temperature:', temperature)
 
-        generated = ''
         sentence = PADDING*(max_length-1) + START_DELIM
-        generated += sentence
         print('----- Generating with seed: "' + sentence + '"')
+        fd.write(START_DELIM)
 
         # TODO: outfile option
         with open('out', 'wb') as fd:
@@ -134,9 +136,8 @@ def sample():
                 next_index = _sample(preds, temperature)
                 next_char = indices_char[next_index]
 
-                generated += next_char
+                fd.write(next_char)
                 sentence = sentence[1:] + next_char
-            fd.write(generated)
 
 map(interpolation.add_command, [
     train,

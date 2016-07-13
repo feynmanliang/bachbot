@@ -44,6 +44,8 @@ def decode_utf(json_file, utf8_file):
             curr_chord_notes = []
         else:
             curr_chord_notes.append(eval(txt))
+    print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
+    to_musicxml(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
 
 def to_musicxml(sc_enc):
     "Converts Chord tuples (see chorales.prepare_poly) to musicXML"
