@@ -3,6 +3,7 @@ from music21 import *
 import codecs
 import numpy as np
 
+from keras.callbacks import EarlyStopping, TensorBoard, ProgbarLogger, ModelCheckpoint
 from keras.preprocessing import sequence
 from keras.models import Model
 from keras.layers import Dense, Dropout, Embedding, LSTM, Input, merge
@@ -22,15 +23,12 @@ def train():
     np.random.seed(42)
 
     max_length = 100
-
     embedding_dim = 128
     hidden_size = 64
-
     batch_size = 32
-    epochs = 50
+    nb_epoch = 50
 
-    # TODO: use everything
-    text = filter(lambda x: x != u'\n', codecs.open(SCRATCH_DIR + '/concat_corpus.txt', "r", "utf-8").read())[:1000]
+    text = filter(lambda x: x != u'\n', codecs.open(SCRATCH_DIR + '/concat_corpus.txt', "r", "utf-8").read())
     chars = sorted(list(set(text)))
     print('total chars:', len(chars))
     char_indices = dict((c, i) for i, c in enumerate(chars))
@@ -51,8 +49,10 @@ def train():
         else: # slide context fowards
             curr_context = curr_context[1:] + [char]
 
+    # TODO: should we pad with zeros to allow for initializing context < max_length?
+    # NOTE: torch-rnn doesn't apepar to do so...
 
-    # zero pad X, vectorize y
+    # vectorize
     X = np.zeros((len(contexts), max_length), dtype=np.int32)
     y = np.zeros((len(contexts), len(chars)), dtype=np.bool)
     for i, context in enumerate(contexts):
@@ -77,47 +77,49 @@ def train():
 
     model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
 
+    print "model.summary()"
+    model.summary()
+
+    model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch,
+            validation_split=0.1,
+            callbacks = [ ProgbarLogger(),
+                ModelCheckpoint(SCRATCH_DIR + '/weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
+                TensorBoard(log_dir='./logs', histogram_freq=0.1) ])
+
     def sample(a, temperature=1.0):
         # helper function to sample an index from a probability array
         a = np.log(a) / temperature
         a = np.exp(a) / np.sum(np.exp(a))
         return np.argmax(np.random.multinomial(1, a, 1))
 
-    # train the model, output generated text after each iteration
-    for iteration in range(1, epochs):
-        print()
-        print('-' * 50)
-        print('Iteration', iteration)
-        model.fit(X, y, batch_size=batch_size, nb_epoch=1)
+    # generate samples
+    # TODO: use START_DELIM as seed
+    # start_index = random.randint(0, len(text) - maxlen - 1)
+    # for temperature in [0.2, 0.5, 1.0, 1.2]:
+    #     print()
+    #     print('----- temperature:', temperature)
 
-        start_index = random.randint(0, len(text) - maxlen - 1)
+    #     generated = ''
+    #     sentence = text[start_index: start_index + maxlen]
+    #     generated += sentence
+    #     print('----- Generating with seed: "' + sentence + '"')
+    #     sys.stdout.write(generated)
 
-        for temperature in [0.2, 0.5, 1.0, 1.2]:
-            print()
-            print('----- temperature:', temperature)
+    #     for i in range(400):
+    #         x = np.zeros((1, maxlen, len(chars)))
+    #         for t, char in enumerate(sentence):
+    #             x[0, t, char_indices[char]] = 1.
 
-            generated = ''
-            sentence = text[start_index: start_index + maxlen]
-            generated += sentence
-            print('----- Generating with seed: "' + sentence + '"')
-            sys.stdout.write(generated)
+    #         preds = model.predict(x, verbose=0)[0]
+    #         next_index = sample(preds, temperature)
+    #         next_char = indices_char[next_index]
 
-            for i in range(400):
-                x = np.zeros((1, maxlen, len(chars)))
-                for t, char in enumerate(sentence):
-                    x[0, t, char_indices[char]] = 1.
+    #         generated += next_char
+    #         sentence = sentence[1:] + next_char
 
-                preds = model.predict(x, verbose=0)[0]
-                next_index = sample(preds, temperature)
-                next_char = indices_char[next_index]
-
-                generated += next_char
-                sentence = sentence[1:] + next_char
-
-                sys.stdout.write(next_char)
-                sys.stdout.flush()
-            print()
-
+    #         sys.stdout.write(next_char)
+    #         sys.stdout.flush()
+    #     print()
 
 map(interpolation.add_command, [
     train
