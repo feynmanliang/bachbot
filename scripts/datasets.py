@@ -18,6 +18,26 @@ def datasets():
 
 def prepare_standard(subset):
     """Prepare scores by standardizing names and transposing to Cmaj/Amin"""
+    def standardize_part_ids(bwv_score):
+        "Standardizes the `id`s of `parts` (Soprano, Alto, etc) from `corpus.chorales.Iterator(numberingSystem='bwv')`"
+        ids = dict()
+        ids['Soprano'] = {
+                'Soprano',
+                'S.',
+                'Soprano 1', # NOTE: soprano1 or soprano2?
+                'Soprano\rOboe 1\rViolin1'}
+        ids['Alto'] = { 'Alto', 'A.'}
+        ids['Tenor'] = { 'Tenor', 'T.'}
+        ids['Bass'] = { 'Bass', 'B.'}
+        id_to_name = {id:name for name in ids for id in ids[name] }
+        all_ids = set(id_to_name.keys())
+        if all(map(lambda part: part.id in all_ids, bwv_score.parts)):
+            for part in bwv_score.parts:
+                part.id = id_to_name[part.id]
+            return bwv_score
+        else:
+            return None
+
     dataset = list()
     it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
     if subset:
@@ -54,24 +74,7 @@ def prepare_chorales_poly():
             score = standardize_key(score)
             key = score.analyze('key')
 
-            encoded_score = []
-            for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-                # expand chord/rest s.t. constant timestep between frames
-
-                # TODO: handle rest
-                if chord.isRest:
-                    encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-                else:
-                    # add ties with previous chord if present
-                    encoded_score.append(map(
-                        lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                        chord))
-
-                    # repeat pitches to expand chord into multiple frames
-                    # all repeated frames when expanding a chord should be tied
-                    encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
-                        lambda note: (note.pitch.midi, True),
-                        chord)])
+            encoded_score = encode_score(score)
 
             yield ('beethoven-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
 
@@ -115,25 +118,32 @@ def prepare_chorales_poly():
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
 
-def standardize_part_ids(bwv_score):
-    "Standardizes the `id`s of `parts` (Soprano, Alto, etc) from `corpus.chorales.Iterator(numberingSystem='bwv')`"
-    ids = dict()
-    ids['Soprano'] = {
-            'Soprano',
-            'S.',
-            'Soprano 1', # NOTE: soprano1 or soprano2?
-            'Soprano\rOboe 1\rViolin1'}
-    ids['Alto'] = { 'Alto', 'A.'}
-    ids['Tenor'] = { 'Tenor', 'T.'}
-    ids['Bass'] = { 'Bass', 'B.'}
-    id_to_name = {id:name for name in ids for id in ids[name] }
-    all_ids = set(id_to_name.keys())
-    if all(map(lambda part: part.id in all_ids, bwv_score.parts)):
-        for part in bwv_score.parts:
-            part.id = id_to_name[part.id]
-        return bwv_score
-    else:
-        return None
+
+def encode_score(score):
+    """
+    Encodes a music21 score into a List of chords, where each chord is a list of (Note :: Integer, Tie :: Bool) pairs.
+
+    Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
+    """
+    encoded_score = []
+    for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
+        # expand chord/rest s.t. constant timestep between frames
+
+        # TODO: handle rest
+        if chord.isRest:
+            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+        else:
+            # add ties with previous chord if present
+            encoded_score.append(map(
+                lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
+                chord))
+
+            # repeat pitches to expand chord into multiple frames
+            # all repeated frames when expanding a chord should be tied
+            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
+                lambda note: (note.pitch.midi, True),
+                chord)])
+    return encoded_score
 
 def standardize_key(score):
     """Converts into the key of C major or A minor.
@@ -172,9 +182,7 @@ def prepare_nottingham():
     for abc_file in glob.glob(SCRATCH_DIR + "/nottingham_database/*.abc")[:2]:
         print abc_file
         s = converter.parse(abc_file)
-        s.show('text')
-
-
+        print encode_score(s)
 
 map(datasets.add_command, [
     prepare_chorales_poly,

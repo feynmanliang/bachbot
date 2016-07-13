@@ -3,6 +3,8 @@ from music21 import *
 import codecs
 import numpy as np
 
+from progress.bar import Bar
+
 from keras.callbacks import EarlyStopping, TensorBoard, ProgbarLogger, ModelCheckpoint
 from keras.preprocessing import sequence
 from keras.models import Model
@@ -25,11 +27,11 @@ embedding_dim = 128
 hidden_size = 64
 batch_size = 32
 nb_epoch = 50
-
+N_samples = 10000
 
 @click.command()
 def train():
-    X, y, vocab_size = prepare_data()
+    X, y, vocab_size, _, _ = prepare_data()
     model = build_model(vocab_size)
 
     model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch,
@@ -40,7 +42,7 @@ def train():
 
 def prepare_data():
     text = filter(lambda x: x != u'\n', codecs.open(SCRATCH_DIR + '/concat_corpus.txt', "r", "utf-8").read())
-    chars = sorted(list(set(text)))
+    chars = sorted(list(set(text)) + [PADDING])
     vocab_size = len(chars)
     print('vocab size: {}'.format(vocab_size))
     char_indices = dict((c, i) for i, c in enumerate(chars))
@@ -56,7 +58,9 @@ def prepare_data():
             next_chars.append(char)
         if char == END_DELIM: # clear context if END_DELIM
             curr_context = []
-        elif len(curr_context) < max_length: # keep adding to context if < max_length
+        elif len(curr_context) < max_length: # add padded version, keep adding to context if < max_length
+            contexts.append([PADDING] * (max_length - len(curr_context)) + curr_context)
+            next_chars.append(char)
             curr_context.append(char)
         else: # slide context fowards
             curr_context = curr_context[1:] + [char]
@@ -74,7 +78,7 @@ def prepare_data():
     print('X shape:', X.shape)
     print('y shape:', y.shape)
 
-    return X, y, vocab_size
+    return X, y, vocab_size, char_indices, indices_char
 
 def build_model(vocab_size):
     print('Build model...')
@@ -96,11 +100,9 @@ def build_model(vocab_size):
 
 @click.command()
 def sample():
-    X, y, vocab_size = prepare_data()
+    _, _, vocab_size, char_indices, indices_char = prepare_data()
     model = build_model(vocab_size)
-    model.load_weights('scratch/weights.00-0.86.hdf5')
-
-    print model.evaluate(X, y)
+    model.load_weights('scratch/weights.41-1.54.hdf5')
 
     def _sample(a, temperature=1.0):
         # helper function to sample an index from a probability array
@@ -108,35 +110,33 @@ def sample():
         a = np.exp(a) / np.sum(np.exp(a))
         return np.argmax(np.random.multinomial(1, a, 1))
 
-
     # generate samples
     # TODO: use START_DELIM as seed
-    # start_index = random.randint(0, len(text) - maxlen - 1)
-    # for temperature in [0.2, 0.5, 1.0, 1.2]:
-    #     print()
-    #     print('----- temperature:', temperature)
+    for temperature in [1.0]:
+    #for temperature in [0.2, 0.5, 1.0, 1.2]:
+        print()
+        print('----- temperature:', temperature)
 
-    #     generated = ''
-    #     sentence = text[start_index: start_index + maxlen]
-    #     generated += sentence
-    #     print('----- Generating with seed: "' + sentence + '"')
-    #     sys.stdout.write(generated)
+        generated = ''
+        sentence = PADDING*(max_length-1) + START_DELIM
+        generated += sentence
+        print('----- Generating with seed: "' + sentence + '"')
 
-    #     for i in range(400):
-    #         x = np.zeros((1, maxlen, len(chars)))
-    #         for t, char in enumerate(sentence):
-    #             x[0, t, char_indices[char]] = 1.
+        # TODO: outfile option
+        with open('out', 'wb') as fd:
+            for i in Bar('Sampling').iter(range(N_samples)):
+                # vectorize sentence context
+                x = np.zeros((1, max_length))
+                for t, char in enumerate(sentence):
+                    x[0, t] = char_indices[char]
 
-    #         preds = model.predict(x, verbose=0)[0]
-    #         next_index = sample(preds, temperature)
-    #         next_char = indices_char[next_index]
+                preds = model.predict(x, verbose=0)[0]
+                next_index = _sample(preds, temperature)
+                next_char = indices_char[next_index]
 
-    #         generated += next_char
-    #         sentence = sentence[1:] + next_char
-
-    #         sys.stdout.write(next_char)
-    #         sys.stdout.flush()
-    #     print()
+                generated += next_char
+                sentence = sentence[1:] + next_char
+            fd.write(generated)
 
 map(interpolation.add_command, [
     train,

@@ -7,6 +7,7 @@ SCRATCH_DIR = BACHBOT_DIR + '/scratch'
 OUT_DIR = BACHBOT_DIR + '/out'
 
 START_DELIM = unichr(1111)
+PADDING = unichr(1100)
 END_DELIM = unichr(1115)
 
 CHORD_BOUNDARY_DELIM = '|||'
