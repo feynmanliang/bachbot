@@ -19,8 +19,8 @@ def decode():
 @click.command()
 @click.argument('json-file', type=click.File('rb'))
 @click.argument('utf8-file', type=click.Path(exists=True))
-def decode_chord_constant_t_utf(json_file, utf8_file):
-    "Decodes plain text encoding made by `chorales.prepare_poly` into python tuples."
+def decode_utf(json_file, utf8_file):
+    "Decodes UTF string encoded score into musicXML output."
     out_dir = SCRATCH_DIR + '/out'
 
     utf_to_txt = json.load(json_file)
@@ -44,6 +44,8 @@ def decode_chord_constant_t_utf(json_file, utf8_file):
             curr_chord_notes = []
         else:
             curr_chord_notes.append(eval(txt))
+    print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
+    to_musicxml(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
 
 def to_musicxml(sc_enc):
     "Converts Chord tuples (see chorales.prepare_poly) to musicXML"
@@ -70,5 +72,5 @@ def to_musicxml(sc_enc):
     return musicxml_score
 
 map(decode.add_command, [
-    decode_chord_constant_t_utf
+    decode_utf
 ])

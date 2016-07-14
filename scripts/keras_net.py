@@ -382,7 +382,7 @@ def biaxial(ctx):
     model.summary()
 
     model.fit(
-            {k: X[:,:,:][k] for k in [
+            { k: X[:,:,:][k] for k in [
                 'note',
                 'art',
                 'pc',
@@ -391,13 +391,13 @@ def biaxial(ctx):
                 'part_context_pc',
                 'all_context_note',
                 'all_context_art'
-                ]},
-        {'next_note{}'.format(i):(y[:,i,:]) for i in range(4) },
-        batch_size=batch_size, nb_epoch=25,
-        validation_split=0.1,
-        callbacks = [ ProgbarLogger(),
-            ModelCheckpoint(SCRATCH_DIR + '/weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
-            TensorBoard(log_dir='./logs', histogram_freq=0.1) ])
+                ] },
+            { 'next_note{}'.format(i) : (y[:,i,:]) for i in range(4) },
+            batch_size=batch_size, nb_epoch=25,
+            validation_split=0.1,
+            callbacks = [ ProgbarLogger(),
+                ModelCheckpoint(SCRATCH_DIR + '/weights.{epoch:02d}-{val_loss:.2f}.hdf5'),
+                TensorBoard(log_dir='./logs', histogram_freq=0.1) ])
 
 
 def _prepare_biaxial(dataset, part_context_size=1, all_voices_context_size=2):
@@ -492,11 +492,6 @@ def _prepare_biaxial(dataset, part_context_size=1, all_voices_context_size=2):
         X_all[score_idx,:,:data.shape[1],] = data
 
     return X_all
-
-def _ohe(index, size):
-    x = np.zeros((size,))
-    x[index] = 1
-    return x
 
 map(keras.add_command, [
     train_lstm,
