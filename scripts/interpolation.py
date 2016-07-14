@@ -105,7 +105,7 @@ def build_model(vocab_size):
 def sample():
     _, _, vocab_size, char_indices, indices_char = prepare_data()
     model = build_model(vocab_size)
-    model.load_weights('scratch/weights.01-1.35.hdf5')
+    model.load_weights('scratch/weights.00-0.85.hdf5')
 
     def _sample(a, temperature=1.0):
         # helper function to sample an index from a probability array
@@ -122,10 +122,10 @@ def sample():
 
         sentence = PADDING*(max_length-1) + START_DELIM
         print('----- Generating with seed: "' + sentence + '"')
-        fd.write(START_DELIM)
 
         # TODO: outfile option
         with open('out', 'wb') as fd:
+            fd.write(START_DELIM)
             for i in Bar('Sampling').iter(range(N_samples)):
                 # vectorize sentence context
                 x = np.zeros((1, max_length))

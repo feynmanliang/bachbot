@@ -10,6 +10,7 @@ from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_c
 from decode import decode
 from baseline import baseline
 from interpolation import interpolation
+from chainer_model import chainer_model
 
 @click.group()
 def cli():
@@ -32,4 +33,5 @@ map(cli.add_command, [
     decode,
     baseline,
     interpolation,
+    chainer_model
 ])

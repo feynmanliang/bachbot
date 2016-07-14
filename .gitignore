@@ -6,3 +6,5 @@ out/
 *.pyc
 *.egg-info/
 tags
+out
+result/
