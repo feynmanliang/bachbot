@@ -69,12 +69,11 @@ class ParallelSequentialIterator(chainer.dataset.Iterator):
         """
         This iterator returns a list representing a mini batch.
 
-        Each item
-        indicates a different position in the original sequence. Each item is
-        represented by a pair of two word IDs. The first word is at the
-        "current" position, while the second word at the next position.
-        At each iteration, the iteration count is incremented, which pushes
-        forward the "current" position.
+        Each item indicates a different position in the original sequence. Each
+        item is represented by a pair of two word IDs. The first word is at the
+        "current" position, while the second word at the next position. At each
+        iteration, the iteration count is incremented, which pushes forward the
+        "current" position.
         """
         length = len(self.dataset)
         if not self.repeat and self.iteration * self.batch_size >= length:
@@ -139,6 +138,70 @@ class BPTTUpdater(training.StandardUpdater):
         loss.unchain_backward()  # Truncate the graph
         optimizer.update()  # Update the parameters
 
+class BPTTParallelUpdater(training.ParallelUpdater):
+    "Custom updater for truncated BackProp Through Time (BPTT)."
+    def __init__(self, train_iter, optimizer, bprop_len, devices):
+        super(BPTTParallelUpdater, self).__init__(
+            train_iter, optimizer, devices=devices)
+        self.bprop_len = bprop_len
+
+    # The core part of the update routine can be customized by overriding.
+    def update_core(self):
+        # When we pass one iterator and optimizer to StandardUpdater.__init__,
+        # they are automatically named 'main'.
+        optimizer = self.get_optimizer('main')
+        model_main = optimizer.target
+        models_others = {k: v for k, v in self._models.items()
+                if v is not model_main}
+
+        for model in six.itervalues(self._models):
+            model.zerograds()
+
+        # Progress the dataset iterator for bprop_len words at each iteration.
+        train_iter = self.get_iterator('main')
+        losses = { model_key: 0 for model_key in self._models }
+        for i in range(self.bprop_len):
+            # Get the next batch (a list of tuples of two word IDs)
+            batch = train_iter.__next__()
+
+            # Split the batch to sub-batches.
+            n = len(self._models)
+            in_arrays_list = {}
+            for j, key in enumerate(six.iterkeys(self._models)):
+                # Concatenate the word IDs to matrices and send them to the devices
+                # self.converter does this job
+                # (it is chainer.dataset.concat_examples by default)
+                in_arrays_list[key] = self.converter(
+                    batch[j::n], self._devices[key])
+
+            for model_key, model in six.iteritems(self._models):
+                with cuda.get_device(self._devices[model_key]):
+                    in_arrays = in_arrays_list[model_key]
+                    loss_func = self.loss_func or model
+
+                    if isinstance(in_arrays, tuple):
+                        in_vars = tuple(chainer.Variable(x) for x in in_arrays)
+                        losses[model_key] += loss_func(*in_vars)
+                    elif isinstance(in_arrays[0], dict):
+                        in_vars = {key: chainer.Variable(x)
+                                for key, x in six.iteritems(in_arrays)}
+                        losses[model_key] += loss_func(**in_vars)
+                    else:
+                        in_vars = chainer.Variable(in_arrays)
+                        losses[model_key] += loss_func(in_vars)
+
+        for _, loss in six.iteritems(losses):
+            loss.backward() # Parallel backprop
+            loss.unchain_backward()  # Truncate the graph
+
+        for model in six.itervalues(models_others): # Accumulate gradients across GPUs
+            model_main.addgrads(model)
+
+        optimizer.update()  # Update the parameters on main GPU
+
+        for model in six.itervalues(models_others): # Updates model on other GPUs
+            model.copyparams(model_main)
+
 def compute_perplexity(result):
     "Routine to rewrite the result dictionary of LogReport to add perplexity values."
     result['perplexity'] = np.exp(result['main/loss'])
@@ -154,8 +217,8 @@ def compute_perplexity(result):
 @click.option('--bproplen', '-l', type=int, default=35,
         help='Number of words in each mini batch '
         '(= length of truncated BPTT)')
-@click.option('--iteration', '-i', type=int, default=1000,
-        help='Number of training iterations')
+@click.option('--epoch', '-e', type=int, default=20,
+        help='Number of training epochs')
 @click.option('--gpu', '-g', type=int, default=-1,
         help='GPU ID (negative value indicates CPU)')
 @click.option('--gradclip', '-c', type=float, default=5,
@@ -168,7 +231,7 @@ def compute_perplexity(result):
         help='Use tiny datasets for quick tests')
 @click.option('--unit', '-u', type=int, default=650,
         help='Number of LSTM units in each layer')
-def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, quicktest, unit):
+def train(corpus, batchsize, bproplen, epoch, gpu, gradclip, out, resume, quicktest, unit):
     # Load data
     words = corpus.readlines()
     if quicktest:
@@ -196,13 +259,16 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
         model.to_gpu()
 
     # Set up an optimizer
-    optimizer = chainer.optimizers.SGD(lr=1.0)
+    optimizer = chainer.optimizers.RMSpropGraves(lr=0.0001, alpha=0.95, momentum=0.9, eps=0.0001)
     optimizer.setup(model)
     optimizer.add_hook(chainer.optimizer.GradientClipping(gradclip))
 
     # Set up a trainer
-    updater = BPTTUpdater(train_iter, optimizer, bproplen, gpu)
-    trainer = training.Trainer(updater, (iteration, 'iteration'), out=out)
+    #updater = BPTTUpdater(train_iter, optimizer, bproplen, gpu)
+    devices = { 'main': 0, 'second': 2 } # TODO: make argument
+    updater = BPTTParallelUpdater(train_iter, optimizer, bproplen, devices=devices)
+    #trainer = training.Trainer(updater, (epoch, 'epoch'), out=out)
+    trainer = training.Trainer(updater, (1000, 'iteration'), out=out)
 
     eval_model = model.copy()  # Model with shared params and distinct states
     eval_rnn = eval_model.predictor
@@ -212,17 +278,19 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
         # Reset the RNN state at the beginning of each evaluation
         eval_hook=lambda _: eval_rnn.reset_state()))
 
-    interval = 10 if quicktest else 500
+    interval = 2 if quicktest else 10
     trainer.extend(extensions.LogReport(postprocess=compute_perplexity,
                                         trigger=(interval, 'iteration')))
     trainer.extend(extensions.PrintReport(
         ['epoch', 'iteration', 'perplexity', 'val_perplexity']
     ), trigger=(interval, 'iteration'))
     trainer.extend(extensions.ProgressBar(
-        update_interval=1 if quicktest else 200))
-    trainer.extend(extensions.snapshot())
+        update_interval=1))
+    trainer.extend(extensions.snapshot(),
+            trigger=(interval, 'iteration'))
     trainer.extend(extensions.snapshot_object(
-        model, 'model_iter_{.updater.iteration}'))
+        model, 'model_iter_{.updater.iteration}'),
+        trigger=(interval, 'iteration'))
     if resume:
         chainer.serializers.load_npz(resume, trainer)
 
@@ -237,7 +305,9 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
     print('test perplexity:', np.exp(float(result['main/loss'])))
 
 @click.command()
-@click.option('--model-path', '-m', type=str, required=True,
+@click.option('--corpus', type=click.File('rb'),
+        help='Training corpus. Each line should contain one unicode symbol.')
+@click.option('--modelpath', '-m', type=str, required=True,
                     help='model data, saved by train_ptb.py')
 @click.option('--primetext', '-p', type=str, required=True,
                     default='',
@@ -254,13 +324,13 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
         help='Use tiny datasets for quick tests')
 @click.option('--gpu', type=int, default=-1,
                     help='GPU ID (negative value indicates CPU)')
-def sample(model_path, primetext, seed, unit, sample, length, quicktest, gpu):
+def sample(corpus, modelpath, primetext, seed, unit, sample, length, quicktest, gpu):
     np.random.seed(seed)
 
     xp = cuda.cupy if gpu >= 0 else np
 
     # Load shakespeare
-    words = ''.join(open('/home/fl350/torch-rnn/data/tiny-shakespeare.txt')).split()
+    words = corpus.readlines()
     if quicktest:
         words = words[:1000]
     idx_to_word = dict(enumerate(sorted(set(words))))
@@ -274,7 +344,7 @@ def sample(model_path, primetext, seed, unit, sample, length, quicktest, gpu):
     lm = RNNForLM(n_vocab, n_units, train=False)
     model = L.Classifier(lm)
 
-    serializers.load_npz(model_path, model)
+    serializers.load_npz(modelpath, model)
 
     if gpu >= 0:
         cuda.get_device(gpu).use()
