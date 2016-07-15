@@ -76,7 +76,7 @@ def prepare_chorales_poly():
 
             encoded_score = encode_score(score)
 
-            yield ('beethoven-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
+            yield ('BWV-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
 
     plain_text_data = []
 
@@ -91,8 +91,8 @@ def prepare_chorales_poly():
     utf_to_txt[START_DELIM] = 'START'
     utf_to_txt[END_DELIM] = 'END'
 
-    p = mp.Pool(processes=mp.cpu_count())
-    processed_scores = p.map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
+    #p = mp.Pool(processes=mp.cpu_count())
+    processed_scores = map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream'))
 

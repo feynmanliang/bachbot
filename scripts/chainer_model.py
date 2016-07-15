@@ -9,9 +9,12 @@ import chainer.functions as F
 import chainer.links as L
 from chainer.training import extensions
 
+import codecs
 import re
 import six
 import sys
+
+from constants import *
 
 @click.group()
 def chainer_model():
@@ -19,11 +22,13 @@ def chainer_model():
     pass
 
 class RNNForLM(Chain):
-    def __init__(self, n_vocab, n_units, train=True):
+    def __init__(self, n_vocab, n_embed, n_units, train=True):
         super(RNNForLM, self).__init__(
-            embed=L.EmbedID(n_vocab, n_units),
-            l1=L.LSTM(n_units, n_units),
+            embed=L.EmbedID(n_vocab, n_embed),
+            l1=L.LSTM(n_embed, n_units),
+            bn1=L.BatchNormalization(n_units),
             l2=L.LSTM(n_units, n_units),
+            bn2=L.BatchNormalization(n_units),
             out=L.Linear(n_units, n_vocab),
         )
         for param in self.params():
@@ -36,9 +41,9 @@ class RNNForLM(Chain):
 
     def __call__(self, x):
         x = self.embed(x)
-        h1 = self.l1(F.dropout(x, train=self.train))
-        h2 = self.l2(F.dropout(h1, train=self.train))
-        y = self.out(F.dropout(h2, train=self.train))
+        h1 = self.bn1(self.l1(x))
+        h2 = self.bn2(self.l2(h1))
+        y = self.out(h2)
         return y
 
 class ParallelSequentialIterator(chainer.dataset.Iterator):
@@ -199,7 +204,7 @@ class BPTTParallelUpdater(training.ParallelUpdater):
 
         optimizer.update()  # Update the parameters on main GPU
 
-        for model in six.itervalues(models_others): # Updates model on other GPUs
+        for model in six.itervalues(models_others): # Broadcast updated model to GPUs
             model.copyparams(model_main)
 
 def compute_perplexity(result):
@@ -212,14 +217,14 @@ def compute_perplexity(result):
 @click.command()
 @click.option('--corpus', type=click.File('rb'),
         help='Training corpus. Each line should contain one unicode symbol.')
-@click.option('--batchsize', '-b', type=int, default=20,
+@click.option('--batchsize', '-b', type=int, default=600,
         help='Number of examples in each mini batch')
-@click.option('--bproplen', '-l', type=int, default=35,
+@click.option('--bproplen', '-l', type=int, default=128,
         help='Number of words in each mini batch '
         '(= length of truncated BPTT)')
-@click.option('--epoch', '-e', type=int, default=20,
-        help='Number of training epochs')
-@click.option('--gpu', '-g', type=int, default=-1,
+@click.option('--iteration', '-i', type=int, default=1000,
+        help='Number of training iterations')
+@click.option('--gpu', '-g', type=int, default=0,
         help='GPU ID (negative value indicates CPU)')
 @click.option('--gradclip', '-c', type=float, default=5,
         help='Gradient norm threshold to clip')
@@ -229,11 +234,13 @@ def compute_perplexity(result):
         help='Resume the training from snapshot')
 @click.option('--quicktest', type=bool, default=False,
         help='Use tiny datasets for quick tests')
-@click.option('--unit', '-u', type=int, default=650,
-        help='Number of LSTM units in each layer')
-def train(corpus, batchsize, bproplen, epoch, gpu, gradclip, out, resume, quicktest, unit):
+@click.option('--embed', '-e', type=int, default=128,
+                    help='dimension of note vector embeddings')
+@click.option('--unit', '-u', type=int, default=128,
+                    help='number of units')
+def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, quicktest, embed, unit):
     # Load data
-    words = corpus.readlines()
+    words = filter(lambda x: x != u'\n', codecs.open(SCRATCH_DIR + '/concat_corpus.txt', "r", "utf-8").read())
     if quicktest:
         words = words[:1000]
     idx_to_word = dict(enumerate(sorted(set(words))))
@@ -241,53 +248,52 @@ def train(corpus, batchsize, bproplen, epoch, gpu, gradclip, out, resume, quickt
     n_vocab = len(word_to_idx)
     print('#vocab =', n_vocab)
 
-    train = np.array(map(word_to_idx.get, words[:int(0.8*len(words))]), dtype=np.int32)
-    val = np.array(map(word_to_idx.get, words[int(0.8*len(words)):int(0.9*len(words))]), dtype=np.int32)
-    test = np.array(map(word_to_idx.get, words[int(0.9*len(words)):]), dtype=np.int32)
+    train = np.array(map(word_to_idx.get, words), dtype=np.int32)
+    # train = np.array(map(word_to_idx.get, words[:int(0.8*len(words))]), dtype=np.int32)
+    # val = np.array(map(word_to_idx.get, words[int(0.8*len(words)):int(0.9*len(words))]), dtype=np.int32)
+    # test = np.array(map(word_to_idx.get, words[int(0.9*len(words)):]), dtype=np.int32)
 
     train_iter = ParallelSequentialIterator(train, batchsize)
-    val_iter = ParallelSequentialIterator(val, 1, repeat=False)
-    test_iter = ParallelSequentialIterator(test, 1, repeat=False)
+    # val_iter = ParallelSequentialIterator(val, 1, repeat=False)
+    # test_iter = ParallelSequentialIterator(test, 1, repeat=False)
 
     # Prepare an RNNLM model
-    rnn = RNNForLM(n_vocab, unit)
+    rnn = RNNForLM(n_vocab, embed, unit)
     model = L.Classifier(rnn)
     model.compute_accuracy = False  # we only want the perplexity
-    if gpu >= 0:
-        print('Copying model to GPU')
-        chainer.cuda.get_device(gpu).use()  # make the GPU current
-        model.to_gpu()
 
     # Set up an optimizer
-    optimizer = chainer.optimizers.RMSpropGraves(lr=0.0001, alpha=0.95, momentum=0.9, eps=0.0001)
+    optimizer = chainer.optimizers.RMSprop(lr=2e-3)
     optimizer.setup(model)
     optimizer.add_hook(chainer.optimizer.GradientClipping(gradclip))
 
     # Set up a trainer
     #updater = BPTTUpdater(train_iter, optimizer, bproplen, gpu)
-    devices = { 'main': 0, 'second': 2 } # TODO: make argument
+    devices = { 'main': 0, 'GTX660': 1, 'second': 2 } # TODO: make argument
     updater = BPTTParallelUpdater(train_iter, optimizer, bproplen, devices=devices)
-    #trainer = training.Trainer(updater, (epoch, 'epoch'), out=out)
-    trainer = training.Trainer(updater, (1000, 'iteration'), out=out)
-
-    eval_model = model.copy()  # Model with shared params and distinct states
-    eval_rnn = eval_model.predictor
-    eval_rnn.train = False
-    trainer.extend(extensions.Evaluator(
-        val_iter, eval_model, device=gpu,
-        # Reset the RNN state at the beginning of each evaluation
-        eval_hook=lambda _: eval_rnn.reset_state()))
+    trainer = training.Trainer(updater, (iteration, 'iteration'), out=out)
 
     interval = 2 if quicktest else 10
-    trainer.extend(extensions.LogReport(postprocess=compute_perplexity,
-                                        trigger=(interval, 'iteration')))
+    # with cuda.get_device(gpu):
+    #     eval_model = model.copy()  # Model with shared params and distinct states
+    #     eval_model.to_gpu()
+    # eval_rnn = eval_model.predictor
+    # eval_rnn.train = False
+    # trainer.extend(extensions.Evaluator(
+    #     val_iter, eval_model, device=gpu,
+    #     # Reset the RNN state at the beginning of each evaluation
+    #     eval_hook=lambda _: eval_rnn.reset_state()
+    # ), trigger=(interval, 'iteration'))
+
+    trainer.extend(extensions.LogReport(
+        postprocess=compute_perplexity,
+        trigger=(interval, 'iteration')))
     trainer.extend(extensions.PrintReport(
         ['epoch', 'iteration', 'perplexity', 'val_perplexity']
     ), trigger=(interval, 'iteration'))
-    trainer.extend(extensions.ProgressBar(
-        update_interval=1))
+    trainer.extend(extensions.ProgressBar(update_interval=1))
     trainer.extend(extensions.snapshot(),
-            trigger=(interval, 'iteration'))
+        trigger=(interval, 'iteration'))
     trainer.extend(extensions.snapshot_object(
         model, 'model_iter_{.updater.iteration}'),
         trigger=(interval, 'iteration'))
@@ -298,11 +304,11 @@ def train(corpus, batchsize, bproplen, epoch, gpu, gradclip, out, resume, quickt
     trainer.run()
 
     # Evaluate the final model
-    print('test')
-    eval_rnn.reset_state()
-    evaluator = extensions.Evaluator(test_iter, eval_model, device=gpu)
-    result = evaluator()
-    print('test perplexity:', np.exp(float(result['main/loss'])))
+    # print('test')
+    # eval_rnn.reset_state()
+    # evaluator = extensions.Evaluator(test_iter, eval_model, device=gpu)
+    # result = evaluator()
+    # print('test perplexity:', np.exp(float(result['main/loss'])))
 
 @click.command()
 @click.option('--corpus', type=click.File('rb'),
@@ -312,9 +318,11 @@ def train(corpus, batchsize, bproplen, epoch, gpu, gradclip, out, resume, quickt
 @click.option('--primetext', '-p', type=str, required=True,
                     default='',
                     help='base text data, used for text generation')
-@click.option('--seed', '-s', type=int, default=123,
+@click.option('--seed', '-s', type=int, default=42,
                     help='random seeds for text generation')
-@click.option('--unit', '-u', type=int, default=650,
+@click.option('--embed', '-e', type=int, default=128,
+                    help='dimension of note vector embeddings')
+@click.option('--unit', '-u', type=int, default=128,
                     help='number of units')
 @click.option('--sample', type=int, default=1,
                     help='negative value indicates NOT use random choice')
@@ -322,26 +330,27 @@ def train(corpus, batchsize, bproplen, epoch, gpu, gradclip, out, resume, quickt
                     help='length of the generated text')
 @click.option('--quicktest', type=bool, default=False,
         help='Use tiny datasets for quick tests')
-@click.option('--gpu', type=int, default=-1,
+@click.option('--gpu', type=int, default=0,
                     help='GPU ID (negative value indicates CPU)')
-def sample(corpus, modelpath, primetext, seed, unit, sample, length, quicktest, gpu):
+@click.option('--temperature', type=float, default=1.0,
+                    help='Temperature of sampling softmax')
+def sample(corpus, modelpath, primetext, seed, embed, unit, sample, length, quicktest, gpu, temperature):
     np.random.seed(seed)
 
     xp = cuda.cupy if gpu >= 0 else np
 
-    # Load shakespeare
-    words = corpus.readlines()
+    # Load data
+    words = filter(lambda x: x != u'\n', codecs.open(SCRATCH_DIR + '/concat_corpus.txt', "r", "utf-8").read())
     if quicktest:
         words = words[:1000]
     idx_to_word = dict(enumerate(sorted(set(words))))
     word_to_idx = { v:k for k,v in idx_to_word.items() }
     n_vocab = len(word_to_idx)
-    print('#vocab =', n_vocab)
 
-    # should be same as n_units , described in train_ptb.py
     n_units = unit
+    n_embed = embed
 
-    lm = RNNForLM(n_vocab, n_units, train=False)
+    lm = RNNForLM(n_vocab, n_embed, n_units, train=False)
     model = L.Classifier(lm)
 
     serializers.load_npz(modelpath, model)
@@ -363,10 +372,10 @@ def sample(corpus, modelpath, primetext, seed, unit, sample, length, quicktest, 
         exit()
 
     prob = F.softmax(model.predictor(prev_word))
-    sys.stdout.write(primetext + ' ')
+    sys.stdout.write(primetext)
 
     for i in six.moves.range(length):
-        prob = F.softmax(model.predictor(prev_word))
+        prob = F.softmax(temperature * model.predictor(prev_word))
         if sample > 0:
             probability = cuda.to_cpu(prob.data)[0].astype(np.float64)
             probability /= np.sum(probability)
@@ -374,10 +383,7 @@ def sample(corpus, modelpath, primetext, seed, unit, sample, length, quicktest, 
         else:
             index = np.argmax(cuda.to_cpu(prob.data))
 
-        if idx_to_word[index] == '<eos>':
-            sys.stdout.write('.')
-        else:
-            sys.stdout.write(idx_to_word[index] + ' ')
+        sys.stdout.write(idx_to_word[index] + '\n')
 
         prev_word = chainer.Variable(xp.array([index], dtype=xp.int32))
 
