@@ -130,7 +130,10 @@ def to_musicxml_fermata(sc_enc):
                         prev_note.tie = Tie('continue')
             notes.append(note)
         prev_chord = { note.pitch.midi : note for note in notes }
-        musicxml_score.append(Chord(notes=notes, duration=timestep))
+        chord = Chord(notes=notes, duration=timestep)
+        if has_fermata:
+            chord.expressions.append(expressions.Fermata())
+        musicxml_score.append(chord)
     return musicxml_score
 
 map(decode.add_command, [
