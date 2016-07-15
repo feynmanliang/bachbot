@@ -180,7 +180,7 @@ def prepare_chorales_poly_fermata():
     it = corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream')
-    #scores = [next(it) for _ in range(3)]
+    #scores = [next(it) for _ in range(20)]
     scores = it
     processed_scores = map(lambda score: list(_fn(score)), scores)
 
@@ -189,11 +189,12 @@ def prepare_chorales_poly_fermata():
             encoded_score_plaintext = []
             for i,chord_pair in enumerate(encoded_score):
                 if i > 0: encoded_score_plaintext.append(CHORD_BOUNDARY_DELIM) # chord boundary delimiter
-                is_fermata, chord = chord_pair
-                if  is_fermata:
-                    encoded_score_plaintext.append(FERMATA_SYM)
-                for note in chord:
-                    encoded_score_plaintext.append(str(note))
+                if len(chord_pair) > 0:
+                    is_fermata, chord = chord_pair
+                    if is_fermata:
+                        encoded_score_plaintext.append(FERMATA_SYM)
+                    for note in chord:
+                        encoded_score_plaintext.append(str(note))
             plain_text_data.append((fname, encoded_score_plaintext))
 
     # save outputs

@@ -7,6 +7,7 @@ from music21.note import Note
 from music21.tie import Tie
 from music21.duration import Duration
 from music21.chord import Chord
+from music21 import expressions
 
 import codecs
 import json
@@ -93,7 +94,7 @@ def decode_utf_fermata(json_file, utf8_file):
                 print('Creating directory {0}'.format(out_dir))
                 os.makedirs(out_dir)
             print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
-            to_musicxml(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+            to_musicxml_fermata(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
             i += 1
         elif txt == CHORD_BOUNDARY_DELIM:
             curr_file.append((curr_chord_fermata, curr_chord_notes))
@@ -104,7 +105,7 @@ def decode_utf_fermata(json_file, utf8_file):
         else:
             curr_chord_notes.append(eval(txt))
     print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
-    to_musicxml(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+    to_musicxml_fermata(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
 
 def to_musicxml_fermata(sc_enc):
     "Converts Chord tuples (see chorales.prepare_poly) to musicXML"

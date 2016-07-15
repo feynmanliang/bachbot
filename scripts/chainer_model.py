@@ -334,7 +334,7 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
     model.compute_accuracy = False  # we only want the perplexity
 
     # Set up an optimizer
-    optimizer = chainer.optimizers.RMSprop()
+    optimizer = chainer.optimizers.RMSpropGraves()
     optimizer.setup(model)
     optimizer.add_hook(chainer.optimizer.GradientClipping(gradclip))
 
