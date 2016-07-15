@@ -41,9 +41,9 @@ class RNNForLM(Chain):
         self.l2.reset_state()
 
     def __call__(self, x):
-        x = self.embed(x)
-        h1 = self.bn1(self.l1(x))
-        h2 = self.bn2(self.l2(h1))
+        xe = self.embed(x)
+        h1 = self.bn1(self.l1(xe), test=not self.train)
+        h2 = self.bn2(self.l2(h1), test=not self.train)
         y = self.out(h2)
         return y
 
@@ -110,6 +110,63 @@ class ParallelSequentialIterator(chainer.dataset.Iterator):
         self.iteration = serializer('iteration', self.iteration)
         self.epoch = serializer('epoch', self.epoch)
 
+class ParallelSlidingIterator(chainer.dataset.Iterator):
+    """
+    Dataset iterator to create sliding windows at different offsets.
+
+    The preceeding `index:index+seq_length-1` words are used to predict
+    the next word at `index+seq_length`.
+    """
+
+    def __init__(self, dataset, batch_size, seq_length, repeat=True):
+        self.dataset = dataset
+        self.batch_size = batch_size
+        self.seq_length = seq_length
+        self.epoch = 0 # incremented if every word is visited at least once since prior increment
+        self.is_new_epoch = False # True if the epoch is incremented at the last iteration.
+        self.repeat = repeat
+        length = len(dataset)
+
+        # Offsets maintain the position of each sequence in the minibatch.
+        self.offsets = [i * length // batch_size for i in range(batch_size)]
+
+        # NOTE: this is not a count of parameter updates. It is just a count of
+        # calls of ``__next__``.
+        self.iteration = 0
+
+    def __next__(self):
+        length = len(self.dataset)
+        if not self.repeat and self.iteration * self.batch_size + self.seq_length >= length:
+            raise StopIteration
+        curr_contexts = self.get_current_contexts()
+        next_words = self.get_next_words()
+        self.iteration += 1
+
+        epoch = self.iteration * self.batch_size // length
+        self.is_new_epoch = self.epoch < epoch
+        if self.is_new_epoch:
+            self.epoch = epoch
+
+        return list(zip(curr_contexts, next_words))
+
+    @property
+    def epoch_detail(self):
+        return self.iteration * self.batch_size / len(self.dataset)
+
+    def get_current_contexts(self):
+        for offset in self.offsets:
+            start_idx = (offset + self.iteration) % len(self.dataset)
+            end_idx = start_idx + self.seq_length % len(self.dataset)
+            yield self.dataset[start_idx:end_idx]
+
+    def get_next_words(self):
+        for offset in self.offsets:
+            yield self.dataset[(offset + self.iteration + self.seq_length) % len(self.dataset)]
+
+    def serialize(self, serializer):
+        self.iteration = serializer('iteration', self.iteration)
+        self.epoch = serializer('epoch', self.epoch)
+
 
 class BPTTUpdater(training.StandardUpdater):
     "Custom updater for truncated BackProp Through Time (BPTT)."
@@ -130,6 +187,8 @@ class BPTTUpdater(training.StandardUpdater):
         for i in range(self.bprop_len):
             # Get the next batch (a list of tuples of two word IDs)
             batch = train_iter.__next__()
+            if train_iter.is_new_epoch: # reset LSTM state in between epochs
+                optimizer.target.predictor.reset_state()
 
             # Concatenate the word IDs to matrices and send them to the device
             # self.converter does this job
@@ -169,6 +228,9 @@ class BPTTParallelUpdater(training.ParallelUpdater):
         for i in range(self.bprop_len):
             # Get the next batch (a list of tuples of two word IDs)
             batch = train_iter.__next__()
+            if train_iter.is_new_epoch: # reset LSTM state in between epochs
+                for model in six.itervalues(self._models):
+                    model.predictor.reset_state()
 
             # Split the batch to sub-batches.
             n = len(self._models)
@@ -225,9 +287,9 @@ def log_runtime(start_time):
 @click.command()
 @click.option('--corpus', type=click.File('rb'),
         help='Training corpus. Each line should contain one unicode symbol.')
-@click.option('--batchsize', '-b', type=int, default=600,
+@click.option('--batchsize', '-b', type=int, default=50,
         help='Number of examples in each mini batch')
-@click.option('--bproplen', '-l', type=int, default=128,
+@click.option('--bproplen', '-l', type=int, default=64,
         help='Number of words in each mini batch '
         '(= length of truncated BPTT)')
 @click.option('--iteration', '-i', type=int, default=1000,
@@ -242,7 +304,7 @@ def log_runtime(start_time):
         help='Resume the training from snapshot')
 @click.option('--quicktest', type=bool, default=False,
         help='Use tiny datasets for quick tests')
-@click.option('--embed', '-e', type=int, default=128,
+@click.option('--embed', '-e', type=int, default=64,
                     help='dimension of note vector embeddings')
 @click.option('--unit', '-u', type=int, default=128,
                     help='number of units')
@@ -262,6 +324,7 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
     # test = np.array(map(word_to_idx.get, words[int(0.9*len(words)):]), dtype=np.int32)
 
     train_iter = ParallelSequentialIterator(train, batchsize)
+    #train_iter = ParallelSlidingIterator(train, batchsize, bproplen)
     # val_iter = ParallelSequentialIterator(val, 1, repeat=False)
     # test_iter = ParallelSequentialIterator(test, 1, repeat=False)
 
@@ -271,7 +334,7 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
     model.compute_accuracy = False  # we only want the perplexity
 
     # Set up an optimizer
-    optimizer = chainer.optimizers.RMSprop(lr=2e-3)
+    optimizer = chainer.optimizers.RMSprop()
     optimizer.setup(model)
     optimizer.add_hook(chainer.optimizer.GradientClipping(gradclip))
 
@@ -280,8 +343,8 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
     with cuda.get_device(gpu):
         model.to_gpu()
 
-    #devices = { 'main': 0, 'GTX660': 1, 'second': 2 } # TODO: make argument
-    #updater = BPTTParallelUpdater(train_iter, optimizer, bproplen, devices=devices)
+    # devices = { 'main': 0, 'GTX660': 1, 'second': 2 } # TODO: make argument
+    # updater = BPTTParallelUpdater(train_iter, optimizer, bproplen, devices=devices)
 
     trainer = training.Trainer(updater, (iteration, 'iteration'), out=out)
 
@@ -333,7 +396,7 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
                     help='base text data, used for text generation')
 @click.option('--seed', '-s', type=int, default=42,
                     help='random seeds for text generation')
-@click.option('--embed', '-e', type=int, default=128,
+@click.option('--embed', '-e', type=int, default=64,
                     help='dimension of note vector embeddings')
 @click.option('--unit', '-u', type=int, default=128,
                     help='number of units')
@@ -365,7 +428,6 @@ def sample(corpus, modelpath, primetext, seed, embed, unit, sample, length, quic
 
     lm = RNNForLM(n_vocab, n_embed, n_units, train=False)
     model = L.Classifier(lm)
-
     serializers.load_npz(modelpath, model)
 
     if gpu >= 0:
@@ -384,11 +446,10 @@ def sample(corpus, modelpath, primetext, seed, embed, unit, sample, length, quic
         print('ERROR: Unfortunately ' + primetext + ' is unknown.')
         exit()
 
-    prob = F.softmax(model.predictor(prev_word))
-    sys.stdout.write(primetext)
+    sys.stdout.write(primetext + '\n')
 
     for i in six.moves.range(length):
-        prob = F.softmax(temperature * model.predictor(prev_word))
+        prob = F.softmax(model.predictor(prev_word) / temperature)
         if sample > 0:
             probability = cuda.to_cpu(prob.data)[0].astype(np.float64)
             probability /= np.sum(probability)
