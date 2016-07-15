@@ -13,6 +13,7 @@ import codecs
 import re
 import six
 import sys
+import datetime
 
 from constants import *
 
@@ -212,7 +213,14 @@ def compute_perplexity(result):
     result['perplexity'] = np.exp(result['main/loss'])
     if 'validation/main/loss' in result:
         result['val_perplexity'] = np.exp(result['validation/main/loss'])
+    return result
 
+def log_runtime(start_time):
+    "Curried function to log runtimes."
+    def _fn(result):
+        result['runtime'] = (datetime.datetime.now() - start_time).total_seconds()
+        return result
+    return _fn
 
 @click.command()
 @click.option('--corpus', type=click.File('rb'),
@@ -268,9 +276,13 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
     optimizer.add_hook(chainer.optimizer.GradientClipping(gradclip))
 
     # Set up a trainer
-    #updater = BPTTUpdater(train_iter, optimizer, bproplen, gpu)
-    devices = { 'main': 0, 'GTX660': 1, 'second': 2 } # TODO: make argument
-    updater = BPTTParallelUpdater(train_iter, optimizer, bproplen, devices=devices)
+    updater = BPTTUpdater(train_iter, optimizer, bproplen, gpu)
+    with cuda.get_device(gpu):
+        model.to_gpu()
+
+    #devices = { 'main': 0, 'GTX660': 1, 'second': 2 } # TODO: make argument
+    #updater = BPTTParallelUpdater(train_iter, optimizer, bproplen, devices=devices)
+
     trainer = training.Trainer(updater, (iteration, 'iteration'), out=out)
 
     interval = 2 if quicktest else 10
@@ -285,11 +297,12 @@ def train(corpus, batchsize, bproplen, iteration, gpu, gradclip, out, resume, qu
     #     eval_hook=lambda _: eval_rnn.reset_state()
     # ), trigger=(interval, 'iteration'))
 
+    start_time = datetime.datetime.now()
     trainer.extend(extensions.LogReport(
-        postprocess=compute_perplexity,
+        postprocess=lambda result: log_runtime(start_time)(compute_perplexity(result)),
         trigger=(interval, 'iteration')))
     trainer.extend(extensions.PrintReport(
-        ['epoch', 'iteration', 'perplexity', 'val_perplexity']
+        ['epoch', 'iteration', 'runtime', 'main/loss', 'perplexity', 'val_perplexity']
     ), trigger=(interval, 'iteration'))
     trainer.extend(extensions.ProgressBar(update_interval=1))
     trainer.extend(extensions.snapshot(),
