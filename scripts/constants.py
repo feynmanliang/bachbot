@@ -14,6 +14,7 @@ CHORD_BOUNDARY_DELIM = '|||'
 
 NOTE_START_SYM = '@'
 
+REST_SYM = 'REST'
 FERMATA_SYM = '(.)'
 
 # quarterLength's in JCB chorales:
