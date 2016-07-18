@@ -14,7 +14,7 @@ th sample.lua \
   -temperature $TEMP \
   -start_text $START_DELIM \
   -sample 1 -length 15000 \
-  -gpu -1 \
+  -gpu 0 \
   > $out_path
 
 print "Saved to $out_path"
