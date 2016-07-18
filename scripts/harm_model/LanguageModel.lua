@@ -185,7 +185,7 @@ function LM:sample(kwargs)
     scores = w.new(1, 1, self.vocab_size):fill(1)
     first_t = 1
   end
-  
+
   local _, next_char = nil, nil
   for t = first_t, T do
     if sample == 0 then
