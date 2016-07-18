@@ -55,6 +55,9 @@ for label, x, y in zip(data['input'], pca_embed[:, 0], pca_embed[:, 1]):
         textcoords = 'offset points', ha = 'right', va = 'bottom',
         bbox = dict(boxstyle = 'round', fc = 'grey', alpha = 0.25),)
         #arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+plt.xlabel('PC 1')
+plt.ylabel('PC 2')
+plt.grid()
 plt.savefig('PCA-notes.png')
 plt.show()
 
@@ -76,5 +79,8 @@ for label, x, y in zip(data['input'], tsne_embed[:, 0], tsne_embed[:, 1]):
         textcoords = 'offset points', ha = 'right', va = 'bottom',
         bbox = dict(boxstyle = 'round', fc = 'grey', alpha = 0.25),)
         #arrowprops = dict(arrowstyle = '->', connectionstyle = 'arc3,rad=0'))
+plt.xlabel('tSNE dim 1')
+plt.ylabel('tSNE dim 2')
+plt.grid()
 plt.savefig('tSNE-notes.png')
 plt.show()
