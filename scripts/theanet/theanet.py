@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import climate
+import codecs
 import h5py
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,14 +21,14 @@ VAL_FRACTION = 0.9
 # path = '/home/fl350/torch-rnn/data/tiny-shakespeare.txt'
 path = SCRATCH_DIR + '/concat_corpus.txt'
 
-with open(path) as handle:
-    file_data = handle.read().lower()
+with codecs.open(path, 'r', 'utf-8') as handle:
+    file_data = handle.read().lower()[:3000]
     text = theanets.recurrent.Text(file_data[:int(VAL_FRACTION*len(file_data))])
     text_val = theanets.recurrent.Text(file_data[int(VAL_FRACTION*len(file_data)):])
 
 text_val.alpha = text.alpha
 
-seed = text.encode(text.text[3])
+seed = text.encode(text.text[0])
 for i, layer in enumerate((
         dict(form='rnn', activation='relu'),
         dict(form='gru', activation='sigmoid'),
@@ -38,19 +39,21 @@ for i, layer in enumerate((
     )):
     losses_t = []
     losses_v = []
-    layer.update(size=100)
+    layer.update(size=130)
     net = theanets.recurrent.Classifier([
-        1 + len(text.alpha), layer, 1000, 1 + len(text.alpha)])
-    for tm_t, tm_v in net.itertrain(text.classifier_batches(30, 16),
-                               text_val.classifier_batches(30, 16),
-                               min_improvement=0.000001,
-                               validate_every=1,
-                               patience=30,
-                               algo='rmsprop',
-                               learning_rate=2e-3):
+        1 + len(text.alpha), 64, layer, 1 + len(text.alpha)])
+    for tm_t, tm_v in net.itertrain(
+            text.classifier_batches(50, 64), # dimensions: minibatch, time
+            text_val.classifier_batches(50, 64),
+            algo='rmsprop',
+            min_improvement=0.99,
+            max_gradient_norm=5,
+            validate_every=1,
+            patience=5,
+            learning_rate=0.01):
         if np.isnan(tm_t['loss']):
             break
-        print('{}|{} ({:.1f}%)'.format(
+        print(u'{}|{} ({:.1f}%)'.format(
             text.decode(seed),
             text.decode(net.predict_sequence(seed, 10)),
             100 * tm_v['acc']))
@@ -78,5 +81,5 @@ plt.gca().set_xlabel('Training Epoch')
 plt.gca().grid(True)
 
 plt.legend()
-plt.savefig('plot.png')
 plt.show()
+plt.savefig('plot.png')
