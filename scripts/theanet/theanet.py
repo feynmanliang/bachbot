@@ -22,8 +22,8 @@ TRAIN_FRACTION = 0.9
 # path = '/home/fl350/torch-rnn/data/tiny-shakespeare.txt'
 path = SCRATCH_DIR + '/concat_corpus.txt'
 
-with codecs.open(path, 'r', 'utf-8') as handle:
-    file_data = handle.read().lower()
+with open(path, 'r') as handle:
+    file_data = unicode(handle.read(), 'utf8')
     text = theanets.recurrent.Text(file_data[:int(TRAIN_FRACTION*len(file_data))])
     text_val = theanets.recurrent.Text(file_data[int(TRAIN_FRACTION*len(file_data)):])
 
@@ -56,8 +56,8 @@ for i, layer in enumerate((
             patience=30,
             learning_rate=0.01):
         train_iter += 1
-        if np.isnan(tm_t['loss']):
-            break
+        if np.isnan(tm_t['loss']): # end of epoch for clockwork
+            continue
         print(u'{}|{} ({:.1f}%)'.format(
             text.decode(seed),
             text.decode(net.predict_sequence(seed, 10)),
@@ -73,12 +73,14 @@ for i, layer in enumerate((
 pickle.dump(losses_t, open(SCRATCH_DIR + '/theanets_cv/losses_t.pkl', 'wb'))
 pickle.dump(losses_v, open(SCRATCH_DIR + '/theanets_cv/losses_v.pkl', 'wb'))
 
-for form in losses_t:
+for i, form in enumerate(losses_t.keys()):
+    if form in ['scrn']:
+        continue
     plt.subplot(2,1,1)
-    plt.plot(losses_t[form], label=layer['form'], alpha=0.7, color=COLORS[i])
+    plt.plot(losses_t[form], label=form, alpha=0.7, color=COLORS[i])
 
     plt.subplot(2,1,2)
-    plt.plot(losses_v[form], label=layer['form'], alpha=0.7, color=COLORS[i])
+    plt.plot(losses_v[form], label=form, alpha=0.7, color=COLORS[i])
 
 for subplot in range(1,3):
     plt.subplot(2,1,subplot)
