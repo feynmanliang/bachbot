@@ -7,6 +7,9 @@ from __future__ import print_function
 
 import glob
 import os
+
+from constants import *
+
 import sys
 
 import numpy
@@ -279,14 +282,14 @@ class RnnRbm:
 
 def test_rnnrbm(batch_size=100, num_epochs=200):
     model = RnnRbm()
-    re = os.path.join(os.path.split(os.path.dirname(__file__))[0],
-                      'data', 'Nottingham', 'train', '*.mid')
-    model.train(glob.glob(re),
-                batch_size=batch_size, num_epochs=num_epochs)
+    #re = os.path.join('/home', 'fl350', 'data', 'Nottingham', 'train', '*.mid')
+    #re = os.path.join('/home', 'fl350', 'data', 'chorales_fermata', '*.mid')
+    re = os.path.join('/home', 'fl350', 'data', 'JSB Chorales', 'train', '*.mid')
+    model.train(glob.glob(re), batch_size=batch_size, num_epochs=num_epochs)
     return model
 
 if __name__ == '__main__':
     model = test_rnnrbm()
-    model.generate('sample1.mid')
-    model.generate('sample2.mid')
+    model.generate('sample1-bach.mid')
+    model.generate('sample2-bach.mid')
     pylab.show()

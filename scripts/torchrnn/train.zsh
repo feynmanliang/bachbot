@@ -15,35 +15,36 @@ cd ~/torch-rnn
 
 SCRATCH_DIR=~/bachbot/scratch
 
-for seq_length in 32 64 128; do
-    for wordvec_size in 32 64 128; do
-        for rnn_size in 64 128 256; do
-            for num_layers in 1 2 3; do
-                fname="seq_length=${seq_length},\
-                wordvec=${wordvec_size},\
-                num_layers=${num_layers},\
-                rnn_size=${rnn_size},\
-                dropout=${dropout},\
-                batchnorm=${batchnorm},\
-                lr=${lr}"
-                print $fname
-                th train.lua \
-                    -input_h5 ${SCRATCH_DIR}/${input}.h5 \
-                    -input_json ${SCRATCH_DIR}/${input}.json \
-                    -seq_length $seq_length\
-                    -wordvec_size $wordvec_size \
-                    -rnn_size $rnn_size \
-                    -num_layers $num_layers \
-                    -dropout $dropout \
-                    -batchnorm $batchnorm \
-                    -learning_rate $lr \
-                    -checkpoint_name checkpoints/$fname/checkpoint \
-                    -print_every 50 \
-                    -checkpoint_every 1000 \
-                    -max_epochs 50\
-                    -gpu_backend cuda \
-                    | tee ~/bachbot/logs/$fname.log
-
+for seq_length in 128; do
+    for wordvec_size in 64; do
+        for rnn_size in 128; do
+            for num_layers in 2; do
+                for dropout in 0.2 0.5 0.7; do
+                    fname="seq_length=${seq_length},\
+                        wordvec=${wordvec_size},\
+                        num_layers=${num_layers},\
+                        rnn_size=${rnn_size},\
+                        dropout=${dropout},\
+                        batchnorm=${batchnorm},\
+                        lr=${lr}"
+                    print $fname
+                    th train.lua \
+                        -input_h5 ${SCRATCH_DIR}/${input}.h5 \
+                        -input_json ${SCRATCH_DIR}/${input}.json \
+                        -seq_length $seq_length\
+                        -wordvec_size $wordvec_size \
+                        -rnn_size $rnn_size \
+                        -num_layers $num_layers \
+                        -dropout $dropout \
+                        -batchnorm $batchnorm \
+                        -learning_rate $lr \
+                        -checkpoint_name checkpoints/$fname/checkpoint \
+                        -print_every 50 \
+                        -checkpoint_every 1000 \
+                        -max_epochs 50\
+                        -gpu_backend cuda \
+                        | tee ~/data/torch_logs/$fname.log
+                done
             done
         done
     done
