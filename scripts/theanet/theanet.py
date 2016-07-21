@@ -19,7 +19,7 @@ COLORS = ['#d62728', '#1f77b4', '#2ca02c', '#9467bd', '#ff7f0e',
 
 TRAIN_FRACTION = 0.9
 
-# path = '/home/fl350/torch-rnn/data/tiny-shakespeare.txt'
+#path = '/home/fl350/torch-rnn/data/tiny-shakespeare.txt'
 path = SCRATCH_DIR + '/concat_corpus.txt'
 
 with open(path, 'r') as handle:
@@ -34,12 +34,12 @@ losses_v = collections.defaultdict(list)
 
 seed = text.encode(text.text[0])
 for i, layer in enumerate((
-        dict(form='rnn', activation='relu'),
+        dict(form='rnn', activation='sigmoid'),
         dict(form='gru', activation='sigmoid'),
         dict(form='scrn', activation='linear'),
         dict(form='lstm'),
         dict(form='mrnn', activation='sigmoid', factors=len(text.alpha)),
-        dict(form='clockwork', activation='relu', periods=(1, 2, 4, 8, 16)),
+        dict(form='clockwork', activation='sigmoid', periods=(1, 2, 4, 8, 16)),
     )):
     form = layer['form']
     layer.update(size=130)
@@ -56,8 +56,8 @@ for i, layer in enumerate((
             patience=30,
             learning_rate=0.01):
         train_iter += 1
-        if np.isnan(tm_t['loss']): # end of epoch for clockwork
-            continue
+        if np.isnan(tm_t['loss']):
+            break
         print(u'{}|{} ({:.1f}%)'.format(
             text.decode(seed),
             text.decode(net.predict_sequence(seed, 10)),
