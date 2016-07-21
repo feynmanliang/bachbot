@@ -15,11 +15,11 @@ cd ~/torch-rnn
 
 SCRATCH_DIR=~/bachbot/scratch
 
-for seq_length in 128; do
-    for wordvec_size in 64; do
-        for rnn_size in 128; do
-            for num_layers in 2; do
-                for dropout in 0.2 0.5 0.7; do
+for seq_length in 128 256; do
+    for wordvec_size in 32 64; do
+        for rnn_size in 128 256; do
+            for num_layers in 1 2 3; do
+                for dropout in 0.1 0.2 0.3; do
                     fname="seq_length=${seq_length},\
                         wordvec=${wordvec_size},\
                         num_layers=${num_layers},\
