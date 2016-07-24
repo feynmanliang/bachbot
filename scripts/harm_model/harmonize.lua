@@ -5,7 +5,7 @@ require 'HarmModel'
 
 
 local cmd = torch.CmdLine()
-cmd:option('-checkpoint', 'cv/checkpoint_200.t7')
+cmd:option('-checkpoint', 'cv/checkpoint_1200.t7')
 cmd:option('-input', '../../scratch/harm/BWV-10.7-minor.utf')
 cmd:option('-gpu', 0)
 cmd:option('-gpu_backend', 'cuda')

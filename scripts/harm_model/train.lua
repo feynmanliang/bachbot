@@ -14,16 +14,16 @@ local cmd = torch.CmdLine()
 cmd:option('-input_h5', '../../scratch/concat_corpus.h5')
 cmd:option('-input_json', '../../scratch/concat_corpus.json')
 cmd:option('-batch_size', 50)
-cmd:option('-seq_length', 64)
+cmd:option('-seq_length', 128)
 
 -- Model options
 cmd:option('-init_from', '')
 cmd:option('-reset_iterations', 1)
 cmd:option('-model_type', 'lstm')
-cmd:option('-wordvec_size', 64)
-cmd:option('-rnn_size', 128)
-cmd:option('-num_layers', 2)
-cmd:option('-dropout', 0)
+cmd:option('-wordvec_size', 32)
+cmd:option('-rnn_size', 256)
+cmd:option('-num_layers', 3)
+cmd:option('-dropout', 0.3)
 cmd:option('-batchnorm', 1)
 
 -- Optimization options
