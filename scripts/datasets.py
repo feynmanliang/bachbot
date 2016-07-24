@@ -17,8 +17,7 @@ def datasets():
 @click.command()
 @click.option('--keep-fermatas', type=bool, default=True)
 @click.option('--subset', type=bool, default=True)
-@click.option('--parts_to_mask', nargs="-1", help='Parts (Soprano, Alto, Tenor, Bass) to mask',
-        default=('Alto','Tenor','Bass'))
+@click.option('--parts_to_mask', '-m', multiple=True, type=str, default=('Alto','Tenor','Bass'))
 def prepare(keep_fermatas, subset, parts_to_mask=[]):
     """
     Prepares polyphonic scores using a chord tuple representation.
@@ -51,7 +50,7 @@ def prepare(keep_fermatas, subset, parts_to_mask=[]):
         if not parts_to_mask:
             fname = 'BWV-{0}-{1}'.format(bwv_id, key.mode)
         else:
-            fname = 'BWV-{0}-{1}-mask-{2}'.format(bwv_id, key.mode, '-'.join(mask_part))
+            fname = 'BWV-{0}-{1}-mask-{2}'.format(bwv_id, key.mode, '-'.join(parts_to_mask))
         if keep_fermatas:
             fname += '-fermatas'
 
