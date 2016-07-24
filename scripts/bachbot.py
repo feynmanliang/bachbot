@@ -6,7 +6,6 @@ from datasets import datasets
 from score import score
 from torch_rnn import make_h5, train, sample
 from decode import decode
-from baseline import baseline
 from analysis import analysis
 
 @click.group()
@@ -24,6 +23,5 @@ map(cli.add_command, [
     sample,
     score,
     decode,
-    baseline,
     analysis
 ])
