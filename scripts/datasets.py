@@ -243,7 +243,7 @@ def standardize_key(score):
 @click.command()
 def prepare_harm():
     """
-    Prepares harmonization corpus.
+    Prepares harmonization data.
     """
     def _fn(score):
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
@@ -349,26 +349,8 @@ def standardize_part_ids(bwv_score):
         return None
 
 
-@click.command()
-def prepare_nottingham():
-    "Downloads and prepares the nottingham ABC database in chord tuple format."
-    fp = SCRATCH_DIR + '/nottingham_database.zip'
-    if not os.path.exists(fp):
-        print 'Downloading to: ' + fp
-        r = requests.get('http://ifdo.ca/~seymour/nottingham/nottingham_database.zip')
-        open(fp, 'wb').write(r.content)
-
-    with zipfile.ZipFile(fp, 'r') as fd:
-        fd.extractall(SCRATCH_DIR)
-
-    for abc_file in glob.glob(SCRATCH_DIR + "/nottingham_database/*.abc")[:2]:
-        print abc_file
-        s = converter.parse(abc_file)
-        print encode_score(s)
-
 map(datasets.add_command, [
     prepare_chorales_poly,
     prepare_chorales_poly_fermata,
     prepare_harm,
-    prepare_nottingham,
 ])
