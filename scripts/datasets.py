@@ -17,7 +17,7 @@ def datasets():
 @click.command()
 @click.option('--keep-fermatas', type=bool, default=True)
 @click.option('--subset', type=bool, default=True)
-@click.option('--parts_to_mask', '-m', multiple=True, type=str, default=('Alto','Tenor','Bass'))
+@click.option('--parts_to_mask', '-m', multiple=True, type=str)
 def prepare(keep_fermatas, subset, parts_to_mask=[]):
     """
     Prepares polyphonic scores using a chord tuple representation.
@@ -42,15 +42,13 @@ def prepare(keep_fermatas, subset, parts_to_mask=[]):
         bwv_id = score.metadata.title
         print('Processing BWV {0}'.format(bwv_id))
 
-        key = score.analyze('key')
+        #key = score.analyze('key')
         encoded_score = encode_score(score, keep_fermatas=keep_fermatas, parts_to_mask=parts_to_mask)
         encoded_score_txt = to_text(encoded_score)
 
-        fname = None
-        if not parts_to_mask:
-            fname = 'BWV-{0}-{1}'.format(bwv_id, key.mode)
-        else:
-            fname = 'BWV-{0}-{1}-mask-{2}'.format(bwv_id, key.mode, '-'.join(parts_to_mask))
+        fname = 'BWV-{0}'.format(bwv_id)
+        if parts_to_mask:
+            fname += 'mask-{0}'.format('-'.join(parts_to_mask))
         if keep_fermatas:
             fname += '-fermatas'
 
