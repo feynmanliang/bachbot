@@ -17,7 +17,7 @@ NOTE_START_SYM = '@'
 REST_SYM = 'REST'
 FERMATA_SYM = '(.)'
 
-BLANK_MASK = '__'
+BLANK_MASK = unichr(1120)
 
 # quarterLength's in JCB chorales:
 # [0.5, 1.0, 2.0, 3.0, 4.0, 6.0, 0.25, 8.0, 12.0, 0.125, 0.75, 1.5]

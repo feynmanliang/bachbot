@@ -58,6 +58,33 @@ def prepare_chorales_poly():
 
             yield ('BWV-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
 
+    def encode_score(score):
+        """
+        Encodes a music21 score into a List of chords, where each chord is a list of (Note :: Integer, Tie :: Bool) pairs.
+
+        Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
+        """
+        encoded_score = []
+        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
+            # expand chord/rest s.t. constant timestep between frames
+
+            # TODO: handle rest
+            if chord.isRest:
+                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+            else:
+                # add ties with previous chord if present
+                encoded_score.append(map(
+                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
+                    chord))
+
+                # repeat pitches to expand chord into multiple frames
+                # all repeated frames when expanding a chord should be tied
+                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
+                    lambda note: (note.pitch.midi, True),
+                    chord)])
+        return encoded_score
+
+
     plain_text_data = []
 
     # construct vocab <=> UTF8 mapping
@@ -98,32 +125,6 @@ def prepare_chorales_poly():
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
 
-    def encode_score(score):
-        """
-        Encodes a music21 score into a List of chords, where each chord is a list of (Note :: Integer, Tie :: Bool) pairs.
-
-        Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
-        """
-        encoded_score = []
-        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-            # expand chord/rest s.t. constant timestep between frames
-
-            # TODO: handle rest
-            if chord.isRest:
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-            else:
-                # add ties with previous chord if present
-                encoded_score.append(map(
-                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                    chord))
-
-                # repeat pitches to expand chord into multiple frames
-                # all repeated frames when expanding a chord should be tied
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
-                    lambda note: (note.pitch.midi, True),
-                    chord)])
-        return encoded_score
-
 @click.command()
 def prepare_chorales_poly_fermata():
     """
@@ -140,6 +141,35 @@ def prepare_chorales_poly_fermata():
             encoded_score = encode_score(score)
 
             yield ('BWV-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
+
+    def encode_score(score):
+        """
+        Encodes a music21 score into a List of chords, where each chord is a (Fermata :: Bool, List[(Note :: Integer, Tie :: Bool)])
+
+        Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
+        """
+        encoded_score = []
+        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
+            # expand chord/rest s.t. constant timestep between frames
+
+            # TODO: handle rest
+            if chord.isRest:
+                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+            else:
+                has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
+
+                # add ties with previous chord if present
+                encoded_score.append((has_fermata, map(
+                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
+                    chord)))
+
+                # repeat pitches to expand chord into multiple frames
+                # all repeated frames when expanding a chord should be tied
+                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
+                    (has_fermata,
+                        map(lambda note: (note.pitch.midi, True), chord))
+                ])
+        return encoded_score
 
     plain_text_data = []
 
@@ -188,35 +218,6 @@ def prepare_chorales_poly_fermata():
             fd.write('\n'.join(plain_text))
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
-
-    def encode_score(score):
-        """
-        Encodes a music21 score into a List of chords, where each chord is a (Fermata :: Bool, List[(Note :: Integer, Tie :: Bool)])
-
-        Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
-        """
-        encoded_score = []
-        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-            # expand chord/rest s.t. constant timestep between frames
-
-            # TODO: handle rest
-            if chord.isRest:
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-            else:
-                has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
-
-                # add ties with previous chord if present
-                encoded_score.append((has_fermata, map(
-                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                    chord)))
-
-                # repeat pitches to expand chord into multiple frames
-                # all repeated frames when expanding a chord should be tied
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
-                    (has_fermata,
-                        map(lambda note: (note.pitch.midi, True), chord))
-                ])
-        return encoded_score
 
 def standardize_key(score):
     """Converts into the key of C major or A minor.
@@ -257,6 +258,29 @@ def prepare_harm():
 
             yield ('BWV-{0}-{1}'.format(bwv_id, key.mode), encoded_score)
 
+    def encode_score(score):
+        encoded_score = []
+        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
+            # expand chord/rest s.t. constant timestep between frames
+
+            has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
+            if chord.isRest:
+                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+            else:
+
+                # add ties with previous chord if present
+                encoded_score.append((has_fermata, map(
+                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
+                    chord)))
+
+                # repeat pitches to expand chord into multiple frames
+                # all repeated frames when expanding a chord should be tied
+                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
+                    (has_fermata,
+                        map(lambda note: (note.pitch.midi, True), chord))
+                ])
+        return encoded_score
+
     plain_text_data = []
 
     # construct vocab <=> UTF8 mapping
@@ -304,29 +328,6 @@ def prepare_harm():
             fd.write('\n'.join(plain_text))
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
-
-    def encode_score(score):
-        encoded_score = []
-        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-            # expand chord/rest s.t. constant timestep between frames
-
-            has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
-            if chord.isRest:
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-            else:
-
-                # add ties with previous chord if present
-                encoded_score.append((has_fermata, map(
-                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                    chord)))
-
-                # repeat pitches to expand chord into multiple frames
-                # all repeated frames when expanding a chord should be tied
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
-                    (has_fermata,
-                        map(lambda note: (note.pitch.midi, True), chord))
-                ])
-        return encoded_score
 
 def standardize_part_ids(bwv_score):
     "Standardizes the `id`s of `parts` (Soprano, Alto, etc) from `corpus.chorales.Iterator(numberingSystem='bwv')`"
