@@ -62,6 +62,19 @@ def prepare(keep_fermatas, subset, parts_to_mask=[]):
             fd.write('\n'.join(map(txt_to_utf.get, encoded_score_txt)))
 
 @click.command()
+@click.argument('files', nargs=-1, required=True)
+@click.option('-o', '--output', type=click.File('wb'), default=SCRATCH_DIR + '/concat_corpus.txt')
+def concatenate_corpus(files, output):
+    """Concatenates individual files together into single corpus.
+
+    Try `bachbot concatenate_corpus scratch/*.utf`.
+    """
+    print 'Writing concatenated corpus to {0}'.format(output.name)
+    for fp in files:
+        with open(fp, 'rb') as fd:
+            output.write(''.join(filter(lambda x: x != '\n', fd.read())))
+
+@click.command()
 @click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
 @click.argument('in-file', type=click.File('rb'))
 @click.argument('out-file', type=click.File('wb'))
@@ -204,4 +217,5 @@ def to_text(encoded_score):
 map(datasets.add_command, [
     prepare,
     encode_text,
+    concatenate_corpus,
 ])

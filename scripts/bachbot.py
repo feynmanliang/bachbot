@@ -3,7 +3,6 @@ import click
 from music21 import environment
 
 from datasets import datasets
-from corpus_utils import concatenate_corpus
 from score import score
 from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_constant_timestep
 from decode import decode
@@ -20,7 +19,6 @@ def cli():
 # instantiate the CLI
 map(cli.add_command, [
     datasets,
-    concatenate_corpus,
     make_h5,
     train,
     sample,
