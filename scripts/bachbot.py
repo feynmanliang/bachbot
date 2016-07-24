@@ -4,12 +4,10 @@ from music21 import environment
 
 from datasets import datasets
 from corpus_utils import concatenate_corpus
-from keras_net import keras
 from score import score
 from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_constant_timestep
 from decode import decode
 from baseline import baseline
-from interpolation import interpolation
 from analysis import analysis
 
 @click.group()
@@ -28,10 +26,8 @@ map(cli.add_command, [
     sample,
     postprocess_utf,
     postprocess_utf_constant_timestep,
-    keras,
     score,
     decode,
     baseline,
-    interpolation,
     analysis
 ])
