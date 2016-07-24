@@ -34,8 +34,8 @@ cmd:option('-lr_decay_every', 5)
 cmd:option('-lr_decay_factor', 0.5)
 
 -- Output options
-cmd:option('-print_every', 1)
-cmd:option('-checkpoint_every', 1000)
+cmd:option('-print_every', 50)
+cmd:option('-checkpoint_every', 100)
 cmd:option('-checkpoint_name', 'cv/checkpoint')
 
 -- Benchmark options
@@ -93,7 +93,7 @@ if opt.init_from ~= '' then
     start_i = checkpoint.i
   end
 else
-  model = nn.LanguageModel(opt_clone):type(dtype)
+  model = nn.HarmModel(opt_clone):type(dtype)
 end
 local params, grad_params = model:getParameters()
 local crit = nn.CrossEntropyCriterion():type(dtype)

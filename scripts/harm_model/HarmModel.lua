@@ -8,10 +8,10 @@ local utils = require 'util.utils'
 local utf8 = require 'lua-utf8'
 
 
-local LM, parent = torch.class('nn.LanguageModel', 'nn.Module')
+local HM, parent = torch.class('nn.HarmModel', 'nn.Module')
 
 
-function LM:__init(kwargs)
+function HM:__init(kwargs)
   self.idx_to_token = utils.get_kwarg(kwargs, 'idx_to_token')
   self.token_to_idx = {}
   self.vocab_size = 0
@@ -77,7 +77,7 @@ function LM:__init(kwargs)
 end
 
 
-function LM:updateOutput(input)
+function HM:updateOutput(input)
   local N, T = input:size(1), input:size(2)
   self.view1:resetSize(N * T, -1)
   self.view2:resetSize(N, T, -1)
@@ -93,36 +93,36 @@ function LM:updateOutput(input)
 end
 
 
-function LM:backward(input, gradOutput, scale)
+function HM:backward(input, gradOutput, scale)
   return self.net:backward(input, gradOutput, scale)
 end
 
 
-function LM:parameters()
+function HM:parameters()
   return self.net:parameters()
 end
 
 
-function LM:training()
+function HM:training()
   self.net:training()
   parent.training(self)
 end
 
 
-function LM:evaluate()
+function HM:evaluate()
   self.net:evaluate()
   parent.evaluate(self)
 end
 
 
-function LM:resetStates()
+function HM:resetStates()
   for i, rnn in ipairs(self.rnns) do
     rnn:resetStates()
   end
 end
 
 
-function LM:encode_string(s)
+function HM:encode_string(s)
   local encoded = torch.LongTensor(utf8.len(s))
   for i = 1, utf8.len(s) do
     local token = utf8.sub(s, i, i)
@@ -134,7 +134,7 @@ function LM:encode_string(s)
 end
 
 
-function LM:decode_string(encoded)
+function HM:decode_string(encoded)
   assert(torch.isTensor(encoded) and encoded:dim() == 1)
   local s = ''
   for i = 1, encoded:size(1) do
@@ -157,7 +157,7 @@ Inputs:
 Returns:
 - sampled: (1, max_length) array of integers, where the first part is init.
 --]]
-function LM:sample(kwargs)
+function HM:sample(kwargs)
   local T = utils.get_kwarg(kwargs, 'length', 100)
   local start_text = utils.get_kwarg(kwargs, 'start_text', '')
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
@@ -210,61 +210,50 @@ Use the language model to fill in missing symbols given the other symbols.
 Note that this will reset the states of the underlying RNNs.
 
 Inputs:
-- input: input file with missing tokens denoted by `blank_mask`
-- blank_mask: unique token denoting missing symbols to be filled in by model
+- input: input string with missing tokens denoted by `blank_mask`
+- blank_mask: unique UTF8 character denoting missing symbols to be filled in by model
 
 Returns:
 - filled: (1, len(input)) array of integers, where the `blank_mask` tokens have been predicted
           by the language model.
 --]]
-function LM:harmonize(kwargs)
+function HM:harmonize(kwargs)
   local input = utils.get_kwarg(kwargs, 'input', '')
-  local T = len(input)
+  local blank_mask = utils.get_kwarg(kwargs, 'blank_mask', '')
+  local T = #input
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
-  local sample = utils.get_kwarg(kwargs, 'sample', 1)
-  local temperature = utils.get_kwarg(kwargs, 'temperature', 1)
 
-  local sampled = torch.LongTensor(1, T)
+  local filled = torch.LongTensor(1, T)
   self:resetStates()
 
   local scores, first_t
-  if #start_text > 0 then
-    if verbose > 0 then
-      print('Seeding with: "' .. start_text .. '"')
-    end
-    local x = self:encode_string(start_text):view(1, -1)
-    local T0 = x:size(2)
-    sampled[{{}, {1, T0}}]:copy(x)
-    scores = self:forward(x)[{{}, {T0, T0}}]
-    first_t = T0 + 1
-  else
-    if verbose > 0 then
-      print('Seeding with uniform probabilities')
-    end
-    local w = self.net:get(1).weight
-    scores = w.new(1, 1, self.vocab_size):fill(1)
-    first_t = 1
+  if verbose > 0 then
+    print('Harmonizing input text: "' .. input .. '"')
   end
+  local x = self:encode_string(input):view(1, -1)
+  local T0 = x:size(2)
+  filled[{{}, {1, T0}}]:copy(x)
+  scores = self:forward(x)[{{}, {T0, T0}}]
+  first_t = T0 + 1
 
-  local _, next_char = nil, nil
-  for t = first_t, T do
-    if sample == 0 then
+  local _, next_char, next_idx = nil, nil, nil
+  for t = 1, T do
+    next_char = input:sub(t,t)
+    if next_char == blank_mask then
       _, next_char = scores:max(3)
       next_char = next_char[{{}, {}, 1}]
-    else
-       local probs = torch.div(scores, temperature):double():exp():squeeze()
-       probs:div(torch.sum(probs))
-       next_char = torch.multinomial(probs, 1):view(1, 1)
     end
-    sampled[{{}, {t, t}}]:copy(next_char)
-    scores = self:forward(next_char)
+
+    next_idx = self:encode_string(next_char)
+    filled[{{}, {t, t}}]:copy(next_idx)
+    scores = self:forward(next_idx)
   end
 
   self:resetStates()
-  return self:decode_string(sampled[1])
+  return self:decode_string(filled[1])
 end
 
 
-function LM:clearState()
+function HM:clearState()
   self.net:clearState()
 end
