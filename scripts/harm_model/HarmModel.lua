@@ -222,9 +222,11 @@ function HM:harmonize(kwargs)
   local input = io.open(utils.get_kwarg(kwargs, 'input', '')):read()
   local blank_mask = utils.get_kwarg(kwargs, 'blank_mask', u"%1130")
   local utf_to_txt = cjson.decode(io.open(utils.get_kwarg(kwargs, 'utf_to_txt', '../../scratch/utf_to_txt.json')):read())
-  local T = utf8.len(input)
+  local sample = utils.get_kwarg(kwargs, 'sample', 0)
+  local temperature = utils.get_kwarg(kwargs, 'temperature', 1)
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
 
+  local T = utf8.len(input)
   local txt_to_utf = reverseTable(utf_to_txt)
 
   local filled = torch.LongTensor(1, T)
@@ -237,9 +239,8 @@ function HM:harmonize(kwargs)
 
   -- token indices to ignore when sampling for masked out tokens
   local ignore_tokens = { 'START', 'END', '(.)', '|||' }
-  local ignore_idxs = torch.zeros(#ignore_tokens)
+  local ignore_idxs = torch.zeros(#ignore_tokens):long()
   for i = 1, #ignore_tokens do
-    --print(txt_to_utf[ignore_tokens[i]])
     ignore_idxs[i] = self:encode_string(txt_to_utf[ignore_tokens[i]])[1]
   end
 
@@ -256,11 +257,18 @@ function HM:harmonize(kwargs)
     next_char = utf8.sub(input, t, t)
     if next_char == blank_mask then
       note_scores = scores:clone()
-      note_scores[{{}, {}, ignore_idxs}] = 0 -- zero out scores for special symbols
-      _, next_idx = note_scores:max(3)
-      next_idx = next_idx[{{}, {}, 1}]
+      note_scores:indexFill(3, ignore_idxs, 0) -- zero out scores for special symbols
+
+      if sample == 0 then
+        _, next_idx = note_scores:max(3)
+        next_idx = next_idx[{{}, {}, 1}]
+      else
+        local probs = torch.div(scores, temperature):double():exp():squeeze()
+        probs:div(torch.sum(probs))
+        next_idx = torch.multinomial(probs, 1):view(1, 1)
+      end
     else
-      next_idx = self:encode_string(next_char):view(1, -1)
+      next_idx = self:encode_string(next_char):view(1, 1)
     end
 
     filled[{{}, {t, t}}]:copy(next_idx)

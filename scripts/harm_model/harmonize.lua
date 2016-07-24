@@ -3,10 +3,15 @@ require 'nn'
 
 require 'HarmModel'
 
+local utf8 = require 'lua-utf8';
+local u = utf8.escape
 
 local cmd = torch.CmdLine()
 cmd:option('-checkpoint', 'cv/checkpoint_1200.t7')
+cmd:option('-blank_mask', u"%1130")
 cmd:option('-input', '../../scratch/harm/BWV-10.7-minor.utf')
+cmd:option('-sample', 0)
+cmd:option('-temperature', 1)
 cmd:option('-gpu', 0)
 cmd:option('-gpu_backend', 'cuda')
 cmd:option('-verbose', 0)
