@@ -16,22 +16,6 @@ def datasets():
     """Constructs various datasets."""
     pass
 
-def prepare_standard(subset):
-    """Prepare scores by standardizing names and transposing to Cmaj/Amin"""
-    dataset = list()
-    it = corpus.chorales.Iterator(numberingSystem='bwv', returnType='stream')
-    if subset:
-        it = [next(it) for _ in range(5)]
-    for sc in it:
-        bwv_id = sc.metadata.title
-        sc = standardize_part_ids(sc)
-        if sc:
-            print 'Processing ' + bwv_id
-            dataset.append(sc)
-        else:
-            print 'Skipping ' + bwv_id + ', error extracting parts'
-    return dataset
-
 @click.command()
 def prepare_chorales_poly():
     """
