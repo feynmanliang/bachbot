@@ -174,10 +174,6 @@ def prepare_chorales_poly_fermata():
     plain_text_data = []
 
     # construct vocab <=> UTF8 mapping
-    vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
-    vocabulary.add(CHORD_BOUNDARY_DELIM)
-    vocabulary.add(FERMATA_SYM)
-
     pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
     utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
 
@@ -241,8 +237,8 @@ def standardize_key(score):
         ks.transpose(halfSteps, inPlace=True)
     return tScore
 
-@click.command()
-def prepare_harm():
+#@click.command()
+def prepare_harm(parts_to_mask):
     """
     Prepares harmonization data.
     """
@@ -252,57 +248,52 @@ def prepare_harm():
             print('Processing BWV {0}'.format(bwv_id))
 
             score = standardize_key(score)
+            score = extract_SATB(score)
             key = score.analyze('key')
 
-            encoded_score = encode_score(score)
+            encoded_score = encode_score(score, parts_to_mask)
 
             yield ('BWV-{0}-{1}'.format(bwv_id, key.mode), encoded_score)
 
-    def encode_score(score):
+    def encode_score(score, parts_to_mask):
         encoded_score = []
-        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
+        for chord in score.chordify(addPartIdAsGroup=True).flat.notesAndRests: # aggregate voices, remove markup
             # expand chord/rest s.t. constant timestep between frames
-
             has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
             if chord.isRest:
                 encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
             else:
-
                 # add ties with previous chord if present
-                encoded_score.append((has_fermata, map(
-                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                    chord)))
+                encoded_chord = []
+                for note in chord: # TODO: sort ascending on both training and eval
+                    if note.pitch.groups[0] in parts_to_mask:
+                        encoded_chord.append(BLANK_MASK_TXT)
+                    else:
+                        has_tie = note.tie is not None and note.tie.type != 'start'
+                        encoded_chord.append((note.pitch.midi, has_tie))
+                encoded_score.append((has_fermata, encoded_chord))
 
                 # repeat pitches to expand chord into multiple frames
                 # all repeated frames when expanding a chord should be tied
                 encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
                     (has_fermata,
-                        map(lambda note: (note.pitch.midi, True), chord))
+                        map(lambda note: BLANK_MASK_TXT if note == BLANK_MASK_TXT else (note[0], True), encoded_chord))
                 ])
         return encoded_score
 
-    plain_text_data = []
+    utf_to_txt = json.load(open(SCRATCH_DIR + '/utf_to_txt.json', 'rb'))
+    txt_to_utf = { v:k for k,v in utf_to_txt.items() }
+    txt_to_utf[BLANK_MASK_TXT] = BLANK_MASK_UTF
 
-    # construct vocab <=> UTF8 mapping
-    vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
-    vocabulary.add(CHORD_BOUNDARY_DELIM)
-    vocabulary.add(FERMATA_SYM)
-
-    pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
-    utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
-
-    # score start/end delimiters are added during concatenation
-    utf_to_txt[START_DELIM] = 'START'
-    utf_to_txt[END_DELIM] = 'END'
-
-    #p = mp.Pool(processes=mp.cpu_count())
     it = corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream')
-    #scores = [next(it) for _ in range(20)]
-    scores = it
+    scores = [next(it) for _ in range(1)]
+    #scores = it
+
     processed_scores = map(lambda score: list(_fn(score)), scores)
 
+    plain_text_data = []
     for processed_score in processed_scores:
         for fname, encoded_score in processed_score:
             encoded_score_plaintext = []
@@ -316,18 +307,37 @@ def prepare_harm():
                         encoded_score_plaintext.append(str(note))
             plain_text_data.append((fname, encoded_score_plaintext))
 
-    # save outputs
-    with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
-        print 'Writing ' + SCRATCH_DIR + '/utf_to_txt.json'
-        json.dump(utf_to_txt, fd)
-
     for fname, plain_text in plain_text_data:
-        out_path = SCRATCH_DIR + '/{0}'.format(fname)
+        out_path = SCRATCH_DIR + '/harm/{0}'.format(fname)
         print 'Writing {0}'.format(out_path)
         with open(out_path + '.txt', 'w') as fd:
             fd.write('\n'.join(plain_text))
         with open(out_path + '.utf', 'w') as fd:
-            fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
+            fd.write(''.join(map(txt_to_utf.get, plain_text)))
+
+def extract_SATB(score):
+    """
+    Extracts the soprano, alto, tenor, and bass parts from a piece (renaming parts in the process).
+
+    This method mutates its arguments.
+    """
+    ids = dict()
+    ids['Soprano'] = {
+            'Soprano',
+            'S.',
+            'Soprano 1', # NOTE: soprano1 or soprano2?
+            'Soprano\rOboe 1\rViolin1'}
+    ids['Alto'] = { 'Alto', 'A.'}
+    ids['Tenor'] = { 'Tenor', 'T.'}
+    ids['Bass'] = { 'Bass', 'B.'}
+    id_to_name = {id:name for name in ids for id in ids[name] }
+    for part in score.parts:
+        if part.id in id_to_name:
+            part.id = id_to_name[part.id]
+        else:
+            score.remove(part)
+    return score
+
 
 def standardize_part_ids(bwv_score):
     "Standardizes the `id`s of `parts` (Soprano, Alto, etc) from `corpus.chorales.Iterator(numberingSystem='bwv')`"
@@ -353,5 +363,5 @@ def standardize_part_ids(bwv_score):
 map(datasets.add_command, [
     prepare_chorales_poly,
     prepare_chorales_poly_fermata,
-    prepare_harm,
+    #prepare_harm,
 ])
