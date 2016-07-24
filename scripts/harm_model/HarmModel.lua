@@ -185,7 +185,67 @@ function LM:sample(kwargs)
     scores = w.new(1, 1, self.vocab_size):fill(1)
     first_t = 1
   end
-  
+
+  local _, next_char = nil, nil
+  for t = first_t, T do
+    if sample == 0 then
+      _, next_char = scores:max(3)
+      next_char = next_char[{{}, {}, 1}]
+    else
+       local probs = torch.div(scores, temperature):double():exp():squeeze()
+       probs:div(torch.sum(probs))
+       next_char = torch.multinomial(probs, 1):view(1, 1)
+    end
+    sampled[{{}, {t, t}}]:copy(next_char)
+    scores = self:forward(next_char)
+  end
+
+  self:resetStates()
+  return self:decode_string(sampled[1])
+end
+
+
+--[[
+Use the language model to fill in missing symbols given the other symbols.
+Note that this will reset the states of the underlying RNNs.
+
+Inputs:
+- input: input file with missing tokens denoted by `blank_mask`
+- blank_mask: unique token denoting missing symbols to be filled in by model
+
+Returns:
+- filled: (1, len(input)) array of integers, where the `blank_mask` tokens have been predicted
+          by the language model.
+--]]
+function LM:harmonize(kwargs)
+  local input = utils.get_kwarg(kwargs, 'input', '')
+  local T = len(input)
+  local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
+  local sample = utils.get_kwarg(kwargs, 'sample', 1)
+  local temperature = utils.get_kwarg(kwargs, 'temperature', 1)
+
+  local sampled = torch.LongTensor(1, T)
+  self:resetStates()
+
+  local scores, first_t
+  if #start_text > 0 then
+    if verbose > 0 then
+      print('Seeding with: "' .. start_text .. '"')
+    end
+    local x = self:encode_string(start_text):view(1, -1)
+    local T0 = x:size(2)
+    sampled[{{}, {1, T0}}]:copy(x)
+    scores = self:forward(x)[{{}, {T0, T0}}]
+    first_t = T0 + 1
+  else
+    if verbose > 0 then
+      print('Seeding with uniform probabilities')
+    end
+    local w = self.net:get(1).weight
+    scores = w.new(1, 1, self.vocab_size):fill(1)
+    first_t = 1
+  end
+
   local _, next_char = nil, nil
   for t = first_t, T do
     if sample == 0 then
