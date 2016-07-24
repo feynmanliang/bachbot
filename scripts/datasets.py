@@ -237,8 +237,9 @@ def standardize_key(score):
         ks.transpose(halfSteps, inPlace=True)
     return tScore
 
-#@click.command()
-def prepare_harm(parts_to_mask):
+@click.command()
+@click.option('--mask-part', '-m', multiple=True, help='Parts (Soprano, Alto, Tenor, Bass) to mask')
+def prepare_harm(mask_part):
     """
     Prepares harmonization data.
     """
@@ -251,9 +252,9 @@ def prepare_harm(parts_to_mask):
             score = extract_SATB(score)
             key = score.analyze('key')
 
-            encoded_score = encode_score(score, parts_to_mask)
+            encoded_score = encode_score(score, mask_part)
 
-            yield ('BWV-{0}-{1}'.format(bwv_id, key.mode), encoded_score)
+            yield ('BWV-{0}-{1}-mask-'.format(bwv_id, key.mode, str(mask_part)), encoded_score)
 
     def encode_score(score, parts_to_mask):
         encoded_score = []
@@ -288,7 +289,7 @@ def prepare_harm(parts_to_mask):
     it = corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream')
-    scores = [next(it) for _ in range(1)]
+    scores = [next(it) for _ in range(5)]
     #scores = it
 
     processed_scores = map(lambda score: list(_fn(score)), scores)
@@ -364,5 +365,5 @@ def standardize_part_ids(bwv_score):
 map(datasets.add_command, [
     prepare_chorales_poly,
     prepare_chorales_poly_fermata,
-    #prepare_harm,
+    prepare_harm,
 ])
