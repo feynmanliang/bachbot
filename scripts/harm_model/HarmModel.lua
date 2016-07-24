@@ -161,7 +161,7 @@ function HM:sample(kwargs)
   local T = utils.get_kwarg(kwargs, 'length', 100)
   local start_text = utils.get_kwarg(kwargs, 'start_text', '')
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
-  local sample = utils.get_kwarg(kwargs, 'sample', 1)
+  local sample = utils.get_kwarg(kwargs, 'sample', 0)
   local temperature = utils.get_kwarg(kwargs, 'temperature', 1)
 
   local sampled = torch.LongTensor(1, T)

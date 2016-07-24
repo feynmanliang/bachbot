@@ -86,7 +86,8 @@ def decode_utf_fermata(json_file, utf8_file):
     curr_chord_fermata = False
     curr_chord_notes = []
     i = 0
-    for txt in map(utf_to_txt.get, filter(lambda x: x != u'\n', utf8_file.read())):
+    for utf_token in filter(lambda x: x != u'\n', utf8_file.read()):
+        txt = utf_to_txt.get(utf_token)
         if txt == 'START':
             curr_file = []
             curr_chord_notes = []
@@ -105,6 +106,8 @@ def decode_utf_fermata(json_file, utf8_file):
             curr_chord_notes = []
         elif txt == FERMATA_SYM:
             curr_chord_fermata = True
+        elif txt == None:
+            print(u'Skipping token: {}'.format(utf_token))
         else:
             curr_chord_notes.append(eval(txt))
     print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
