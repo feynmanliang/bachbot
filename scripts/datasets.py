@@ -245,7 +245,8 @@ def prepare_harm(mask_part):
     """
     def _fn(score):
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            bwv_id = score.metadata.title
+            #bwv_id = score.metadata.title
+            bwv_id = 'test'
             print('Processing BWV {0}'.format(bwv_id))
 
             score = standardize_key(score)
@@ -258,6 +259,8 @@ def prepare_harm(mask_part):
 
     def encode_score(score, parts_to_mask):
         encoded_score = []
+        score.show('text')
+        score.chordify().show('text')
         for chord in score.chordify(addPartIdAsGroup=True).flat.notesAndRests: # aggregate voices, remove markup
             # expand chord/rest s.t. constant timestep between frames
             has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
@@ -290,7 +293,6 @@ def prepare_harm(mask_part):
         numberingSystem='bwv',
         returnType='stream')
     scores = [next(it) for _ in range(5)]
-    #scores = it
 
     processed_scores = map(lambda score: list(_fn(score)), scores)
 
