@@ -6,10 +6,10 @@ require 'HarmModel'
 
 local cmd = torch.CmdLine()
 cmd:option('-checkpoint', 'cv/checkpoint_200.t7')
-cmd:option('-input', '')
+cmd:option('-input', '../../scratch/harm/BWV-10.7-minor.utf')
 cmd:option('-gpu', 0)
 cmd:option('-gpu_backend', 'cuda')
-cmd:option('-verbose', 1)
+cmd:option('-verbose', 0)
 local opt = cmd:parse(arg)
 
 

@@ -313,7 +313,8 @@ def prepare_harm(parts_to_mask):
         with open(out_path + '.txt', 'w') as fd:
             fd.write('\n'.join(plain_text))
         with open(out_path + '.utf', 'w') as fd:
-            fd.write(''.join(map(txt_to_utf.get, plain_text)))
+            # NOTE: START_DELIM added here instead of concat_corpus
+            fd.write(START_DELIM + ''.join(map(txt_to_utf.get, plain_text)) + END_DELIM)
 
 def extract_SATB(score):
     """

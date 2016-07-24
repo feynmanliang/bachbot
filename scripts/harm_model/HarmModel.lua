@@ -218,9 +218,10 @@ Returns:
           by the language model.
 --]]
 function HM:harmonize(kwargs)
-  local input = utils.get_kwarg(kwargs, 'input', '')
-  local blank_mask = utils.get_kwarg(kwargs, 'blank_mask', '')
-  local T = #input
+  local u = utf8.escape
+  local input = io.open(utils.get_kwarg(kwargs, 'input', '')):read()
+  local blank_mask = utils.get_kwarg(kwargs, 'blank_mask', u"%1130")
+  local T = utf8.len(input)
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
 
   local filled = torch.LongTensor(1, T)
@@ -230,21 +231,17 @@ function HM:harmonize(kwargs)
   if verbose > 0 then
     print('Harmonizing input text: "' .. input .. '"')
   end
-  local x = self:encode_string(input):view(1, -1)
-  local T0 = x:size(2)
-  filled[{{}, {1, T0}}]:copy(x)
-  scores = self:forward(x)[{{}, {T0, T0}}]
-  first_t = T0 + 1
 
   local _, next_char, next_idx = nil, nil, nil
   for t = 1, T do
-    next_char = input:sub(t,t)
+    next_char = utf8.sub(input, t, t)
     if next_char == blank_mask then
-      _, next_char = scores:max(3)
-      next_char = next_char[{{}, {}, 1}]
+      _, next_idx = scores:max(3)
+      next_idx = next_idx[{{}, {}, 1}]
+    else
+      next_idx = self:encode_string(next_char):view(1, -1)
     end
 
-    next_idx = self:encode_string(next_char)
     filled[{{}, {t, t}}]:copy(next_idx)
     scores = self:forward(next_idx)
   end
