@@ -67,7 +67,6 @@ def prepare_poly():
                     chord)])
         return encoded_score
 
-
     plain_text_data = []
 
     # construct vocab <=> UTF8 mapping
@@ -87,11 +86,7 @@ def prepare_poly():
 
     for processed_score in processed_scores:
         for fname, encoded_score in processed_score:
-            encoded_score_plaintext = []
-            for i,chord in enumerate(encoded_score):
-                if i > 0: encoded_score_plaintext.append(CHORD_BOUNDARY_DELIM) # chord boundary delimiter
-                for note in chord:
-                    encoded_score_plaintext.append(str(note))
+            encoded_score_plaintext = to_text(encoded_score)
             plain_text_data.append((fname, encoded_score_plaintext))
 
     # save outputs
@@ -172,15 +167,7 @@ def prepare_poly_fermata():
 
     for processed_score in processed_scores:
         for fname, encoded_score in processed_score:
-            encoded_score_plaintext = []
-            for i,chord_pair in enumerate(encoded_score):
-                if i > 0: encoded_score_plaintext.append(CHORD_BOUNDARY_DELIM) # chord boundary delimiter
-                if len(chord_pair) > 0:
-                    is_fermata, chord = chord_pair
-                    if is_fermata:
-                        encoded_score_plaintext.append(FERMATA_SYM)
-                    for note in chord:
-                        encoded_score_plaintext.append(str(note))
+            encoded_score_plaintext = to_text(encoded_score)
             plain_text_data.append((fname, encoded_score_plaintext))
 
     # save outputs
@@ -196,28 +183,6 @@ def prepare_poly_fermata():
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
 
-def standardize_key(score):
-    """Converts into the key of C major or A minor.
-
-    Adapted from https://gist.github.com/aldous-rey/68c6c43450517aa47474
-    """
-    # major conversions
-    majors = dict([("A-", 4),("A", 3),("B-", 2),("B", 1),("C", 0),("C#",-1),("D-", -1),("D", -2),("E-", -3),("E", -4),("F", -5),("F#",6),("G-", 6),("G", 5)])
-    minors = dict([("A-", 1),("A", 0),("B-", -1),("B", -2),("C", -3),("C#",-4),("D-", -4),("D", -5),("E-", 6),("E", 5),("F", 4),("F#",3),("G-", 3),("G", 2)])
-
-    # transpose score
-    key = score.analyze('key')
-    if key.mode == "major":
-        halfSteps = majors[key.tonic.name]
-    elif key.mode == "minor":
-        halfSteps = minors[key.tonic.name]
-    tScore = score.transpose(halfSteps)
-
-    # transpose key signature
-    for ks in tScore.flat.getKeySignatures():
-        ks.transpose(halfSteps, inPlace=True)
-    return tScore
-
 @click.command()
 @click.option('--mask-part', '-m', multiple=True, help='Parts (Soprano, Alto, Tenor, Bass) to mask')
 def prepare_harm(mask_part):
@@ -226,8 +191,7 @@ def prepare_harm(mask_part):
     """
     def _fn(score):
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            #bwv_id = score.metadata.title
-            bwv_id = 'test'
+            bwv_id = score.metadata.title
             print('Processing BWV {0}'.format(bwv_id))
 
             score = standardize_key(score)
@@ -240,8 +204,6 @@ def prepare_harm(mask_part):
 
     def encode_score(score, parts_to_mask):
         encoded_score = []
-        score.show('text')
-        score.chordify().show('text')
         for chord in score.chordify(addPartIdAsGroup=True).flat.notesAndRests: # aggregate voices, remove markup
             # expand chord/rest s.t. constant timestep between frames
             has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
@@ -280,15 +242,7 @@ def prepare_harm(mask_part):
     plain_text_data = []
     for processed_score in processed_scores:
         for fname, encoded_score in processed_score:
-            encoded_score_plaintext = []
-            for i,chord_pair in enumerate(encoded_score):
-                if i > 0: encoded_score_plaintext.append(CHORD_BOUNDARY_DELIM) # chord boundary delimiter
-                if len(chord_pair) > 0:
-                    is_fermata, chord = chord_pair
-                    if is_fermata:
-                        encoded_score_plaintext.append(FERMATA_SYM)
-                    for note in chord:
-                        encoded_score_plaintext.append(str(note))
+            encoded_score_plaintext = to_text(encoded_score)
             plain_text_data.append((fname, encoded_score_plaintext))
 
     for fname, plain_text in plain_text_data:
@@ -300,9 +254,51 @@ def prepare_harm(mask_part):
             # NOTE: START_DELIM added here instead of concat_corpus
             fd.write(START_DELIM + ''.join(map(txt_to_utf.get, plain_text)) + END_DELIM)
 
+@click.command()
+@click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
+@click.argument('in-file', type=click.File('rb'))
+@click.argument('out-file', type=click.File('wb'))
+def encode_text(utf_to_txt_json, in_file, out_file):
+    utf_to_txt = json.load(utf_to_txt_json)
+    txt_to_utf = { v:k for k,v in utf_to_txt.items() }
+    out_file.write(_encode_text(txt_to_utf, in_file))
+
+def _encode_text(txt_to_utf, txt_fd):
+    """
+    Converts a text-encoded score into UTF encoding (appending start/end delimiters).
+
+    Throws `KeyError` when out-of-vocabulary token is encountered
+    """
+    return START_DELIM +\
+            ''.join(map(lambda txt: txt_to_utf[txt.strip()], txt_fd)) +\
+            END_DELIM
+
+def standardize_key(score):
+    """Converts into the key of C major or A minor.
+
+    Adapted from https://gist.github.com/aldous-rey/68c6c43450517aa47474
+    """
+    # major conversions
+    majors = dict([("A-", 4),("A", 3),("B-", 2),("B", 1),("C", 0),("C#",-1),("D-", -1),("D", -2),("E-", -3),("E", -4),("F", -5),("F#",6),("G-", 6),("G", 5)])
+    minors = dict([("A-", 1),("A", 0),("B-", -1),("B", -2),("C", -3),("C#",-4),("D-", -4),("D", -5),("E-", 6),("E", 5),("F", 4),("F#",3),("G-", 3),("G", 2)])
+
+    # transpose score
+    key = score.analyze('key')
+    if key.mode == "major":
+        halfSteps = majors[key.tonic.name]
+    elif key.mode == "minor":
+        halfSteps = minors[key.tonic.name]
+    tScore = score.transpose(halfSteps)
+
+    # transpose key signature
+    for ks in tScore.flat.getKeySignatures():
+        ks.transpose(halfSteps, inPlace=True)
+    return tScore
+
 def extract_SATB(score):
     """
-    Extracts the soprano, alto, tenor, and bass parts from a piece (renaming parts in the process).
+    Extracts the Soprano, Alto, Tenor, and Bass parts from a piece. The returned score is guaranteed
+    to have parts with names 'Soprano', 'Alto', 'Tenor', and 'Bass'.
 
     This method mutates its arguments.
     """
@@ -323,30 +319,23 @@ def extract_SATB(score):
             score.remove(part)
     return score
 
-
-def standardize_part_ids(bwv_score):
-    "Standardizes the `id`s of `parts` (Soprano, Alto, etc) from `corpus.chorales.Iterator(numberingSystem='bwv')`"
-    ids = dict()
-    ids['Soprano'] = {
-            'Soprano',
-            'S.',
-            'Soprano 1', # NOTE: soprano1 or soprano2?
-            'Soprano\rOboe 1\rViolin1'}
-    ids['Alto'] = { 'Alto', 'A.'}
-    ids['Tenor'] = { 'Tenor', 'T.'}
-    ids['Bass'] = { 'Bass', 'B.'}
-    id_to_name = {id:name for name in ids for id in ids[name] }
-    all_ids = set(id_to_name.keys())
-    if all(map(lambda part: part.id in all_ids, bwv_score.parts)):
-        for part in bwv_score.parts:
-            part.id = id_to_name[part.id]
-        return bwv_score
-    else:
-        return None
-
+def to_text(encoded_score):
+    "Converts a Python encoded score into plain-text."
+    encoded_score_plaintext = []
+    for i,chord_pair in enumerate(encoded_score):
+        if i > 0:
+            encoded_score_plaintext.append(CHORD_BOUNDARY_DELIM) # chord boundary delimiter
+        if len(chord_pair) > 0:
+            is_fermata, chord = chord_pair
+            if is_fermata:
+                encoded_score_plaintext.append(FERMATA_SYM)
+            for note in chord:
+                encoded_score_plaintext.append(str(note))
+    return encoded_score_plaintext
 
 map(datasets.add_command, [
     prepare_poly,
     prepare_poly_fermata,
     prepare_harm,
+    encode_text,
 ])
