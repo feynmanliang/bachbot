@@ -16,7 +16,9 @@ def datasets():
     pass
 
 @click.command()
-def prepare_poly():
+@click.option('--ignore-fermatas', type=bool, default=False)
+@click.option('--subset', type=bool, default=True)
+def prepare_poly(ignore_fermatas, subset):
     """
     Prepares polyphonic scores using a chord tuple representation.
 
@@ -29,159 +31,71 @@ def prepare_poly():
             Tied : Bool (true if note is continuation of previous note)
         )]
     """
-    def _fn(score):
-        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            bwv_id = score.metadata.title
-            print('Processing BWV {0}'.format(bwv_id))
-
-            score = standardize_key(score)
-            key = score.analyze('key')
-
-            encoded_score = encode_score(score)
-
-            yield ('BWV-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
-
-    def encode_score(score):
-        """
-        Encodes a music21 score into a List of chords, where each chord is a list of (Note :: Integer, Tie :: Bool) pairs.
-
-        Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
-        """
-        encoded_score = []
-        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-            # expand chord/rest s.t. constant timestep between frames
-
-            # TODO: handle rest
-            if chord.isRest:
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-            else:
-                # add ties with previous chord if present
-                encoded_score.append(map(
-                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                    chord))
-
-                # repeat pitches to expand chord into multiple frames
-                # all repeated frames when expanding a chord should be tied
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [map(
-                    lambda note: (note.pitch.midi, True),
-                    chord)])
-        return encoded_score
-
-    plain_text_data = []
-
-    # construct vocab <=> UTF8 mapping
-    vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
-    vocabulary.add(CHORD_BOUNDARY_DELIM)
-
-    pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
-    utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
-
-    # score start/end delimiters are added during concatenation
-    utf_to_txt[START_DELIM] = 'START'
-    utf_to_txt[END_DELIM] = 'END'
-
-    processed_scores = map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
-        numberingSystem='bwv',
-        returnType='stream'))
-
-    for processed_score in processed_scores:
-        for fname, encoded_score in processed_score:
-            encoded_score_plaintext = to_text(encoded_score)
-            plain_text_data.append((fname, encoded_score_plaintext))
-
-    # save outputs
-    with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
-        print 'Writing ' + SCRATCH_DIR + '/utf_to_txt.json'
-        json.dump(utf_to_txt, fd)
-
-    for fname, plain_text in plain_text_data:
-        out_path = SCRATCH_DIR + '/{0}'.format(fname)
-        print 'Writing {0}'.format(out_path)
-        with open(out_path + '.txt', 'w') as fd:
-            fd.write('\n'.join(plain_text))
-        with open(out_path + '.utf', 'w') as fd:
-            fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
-
-@click.command()
-def prepare_poly_fermata():
-    """
-    Prepares polyphonic scores using a chord tuple representation, accounts for fermatas.
-    """
-    def _fn(score):
-        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            bwv_id = score.metadata.title
-            print('Processing BWV {0}'.format(bwv_id))
-
-            score = standardize_key(score)
-            key = score.analyze('key')
-
-            encoded_score = encode_score(score)
-
-            yield ('BWV-{0}-{1}-chord-constant-t'.format(bwv_id, key.mode), encoded_score)
-
-    def encode_score(score):
-        """
-        Encodes a music21 score into a List of chords, where each chord is a (Fermata :: Bool, List[(Note :: Integer, Tie :: Bool)])
-
-        Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
-        """
-        encoded_score = []
-        for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-            # expand chord/rest s.t. constant timestep between frames
-
-            # TODO: handle rest
-            if chord.isRest:
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-            else:
-                has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
-
-                # add ties with previous chord if present
-                encoded_score.append((has_fermata, map(
-                    lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                    chord)))
-
-                # repeat pitches to expand chord into multiple frames
-                # all repeated frames when expanding a chord should be tied
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
-                    (has_fermata,
-                        map(lambda note: (note.pitch.midi, True), chord))
-                ])
-        return encoded_score
-
-    plain_text_data = []
-
-    # construct vocab <=> UTF8 mapping
-    pairs_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
-    utf_to_txt = {utf:txt for txt,utf in pairs_to_utf.items()}
-
-    # score start/end delimiters are added during concatenation
-    utf_to_txt[START_DELIM] = 'START'
-    utf_to_txt[END_DELIM] = 'END'
+    txt_to_utf, utf_to_txt = build_vocabulary()
 
     it = corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream')
-    #scores = [next(it) for _ in range(20)]
-    scores = it
-    processed_scores = map(lambda score: list(_fn(score)), scores)
+    if subset:
+        it = [next(it) for _ in range(5)]
 
-    for processed_score in processed_scores:
-        for fname, encoded_score in processed_score:
-            encoded_score_plaintext = to_text(encoded_score)
-            plain_text_data.append((fname, encoded_score_plaintext))
+    for score in it:
+        if score.getTimeSignatures()[0].ratioString != '4/4': # only consider 4/4
+            continue
 
-    # save outputs
-    with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
-        print 'Writing ' + SCRATCH_DIR + '/utf_to_txt.json'
-        json.dump(utf_to_txt, fd)
+        bwv_id = score.metadata.title
+        print('Processing BWV {0}'.format(bwv_id))
 
-    for fname, plain_text in plain_text_data:
+        score = standardize_key(score)
+        key = score.analyze('key')
+        encoded_score = encode_score(score, ignore_fermatas=ignore_fermatas)
+
+        fname = 'BWV-{0}-{1}'.format(bwv_id, key.mode)
+        if not ignore_fermatas:
+            fname += '-fermatas'
+
+        encoded_score_txt = to_text(encoded_score)
+
         out_path = SCRATCH_DIR + '/{0}'.format(fname)
         print 'Writing {0}'.format(out_path)
         with open(out_path + '.txt', 'w') as fd:
-            fd.write('\n'.join(plain_text))
+            fd.write('\n'.join(encoded_score_txt))
         with open(out_path + '.utf', 'w') as fd:
-            fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
+            fd.write('\n'.join(map(txt_to_utf.get, encoded_score_txt)))
+
+def encode_score(score, ignore_fermatas=False):
+    """
+    Encodes a music21 score into a List of chords, where each chord is represented with
+    a (Fermata :: Bool, List[(Note :: Integer, Tie :: Bool)]).
+
+    If `ignore_fermatas` is True, all `has_fermata`s will be False.
+
+    Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
+    """
+    encoded_score = []
+    for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
+        # expand chord/rest s.t. constant timestep between frames
+
+        # TODO: handle rest
+        if chord.isRest:
+            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+        else:
+            has_fermata = False
+            if not ignore_fermatas:
+                has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
+
+            # add ties with previous chord if present
+            encoded_score.append((has_fermata, map(
+                lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
+                chord)))
+
+            # repeat pitches to expand chord into multiple frames
+            # all repeated frames when expanding a chord should be tied
+            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
+                (has_fermata,
+                    map(lambda note: (note.pitch.midi, True), chord))
+            ])
+    return encoded_score
 
 @click.command()
 @click.option('--mask-part', '-m', multiple=True, help='Parts (Soprano, Alto, Tenor, Bass) to mask')
@@ -251,8 +165,7 @@ def prepare_harm(mask_part):
         with open(out_path + '.txt', 'w') as fd:
             fd.write('\n'.join(plain_text))
         with open(out_path + '.utf', 'w') as fd:
-            # NOTE: START_DELIM added here instead of concat_corpus
-            fd.write(START_DELIM + ''.join(map(txt_to_utf.get, plain_text)) + END_DELIM)
+            fd.write(_encode_text(txt_to_utf, encoded_score_plaintext))
 
 @click.command()
 @click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
@@ -263,14 +176,14 @@ def encode_text(utf_to_txt_json, in_file, out_file):
     txt_to_utf = { v:k for k,v in utf_to_txt.items() }
     out_file.write(_encode_text(txt_to_utf, in_file))
 
-def _encode_text(txt_to_utf, txt_fd):
+def _encode_text(txt_to_utf, score_txt):
     """
     Converts a text-encoded score into UTF encoding (appending start/end delimiters).
 
     Throws `KeyError` when out-of-vocabulary token is encountered
     """
     return START_DELIM +\
-            ''.join(map(lambda txt: txt_to_utf[txt.strip()], txt_fd)) +\
+            ''.join(map(lambda txt: txt_to_utf[txt.strip()], score_txt)) +\
             END_DELIM
 
 def standardize_key(score):
@@ -319,6 +232,19 @@ def extract_SATB(score):
             score.remove(part)
     return score
 
+def build_vocabulary():
+    vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
+    vocabulary.update(set([CHORD_BOUNDARY_DELIM, FERMATA_SYM]))
+    txt_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
+    txt_to_utf['START'] = START_DELIM
+    txt_to_utf['END'] = END_DELIM
+    utf_to_txt = {utf:txt for txt,utf in txt_to_utf.items()}
+    # save vocabulary
+    with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
+        print 'Writing vocabulary to ' + SCRATCH_DIR + '/utf_to_txt.json'
+        json.dump(utf_to_txt, fd)
+    return txt_to_utf, utf_to_txt
+
 def to_text(encoded_score):
     "Converts a Python encoded score into plain-text."
     encoded_score_plaintext = []
@@ -335,7 +261,6 @@ def to_text(encoded_score):
 
 map(datasets.add_command, [
     prepare_poly,
-    prepare_poly_fermata,
     prepare_harm,
     encode_text,
 ])

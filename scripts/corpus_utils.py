@@ -14,7 +14,7 @@ def concatenate_corpus(files, output):
     print 'Writing concatenated corpus to {0}'.format(output.name)
     for fp in files:
         with open(fp, 'rb') as fd:
-            output.write(START_DELIM + ''.join(filter(lambda x: x != '\n', fd.read())) +  END_DELIM)
+            output.write(''.join(filter(lambda x: x != '\n', fd.read())))
 
 def read_utf8(utf8_file, utf_to_txt):
     """Parses a UTF8 encoded concatenated corpus using `utf_to_txt` and returns a collection of ASCII text
