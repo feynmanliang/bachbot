@@ -2,7 +2,6 @@ import click
 
 import json, cPickle
 import requests, zipfile
-
 import os, glob
 
 from music21 import analysis, converter, corpus, meter
@@ -16,9 +15,11 @@ def datasets():
     pass
 
 @click.command()
-@click.option('--ignore-fermatas', type=bool, default=False)
+@click.option('--keep-fermatas', type=bool, default=True)
 @click.option('--subset', type=bool, default=True)
-def prepare_poly(ignore_fermatas, subset):
+@click.option('--parts_to_mask', nargs="-1", help='Parts (Soprano, Alto, Tenor, Bass) to mask',
+        default=('Alto','Tenor','Bass'))
+def prepare(keep_fermatas, subset, parts_to_mask=[]):
     """
     Prepares polyphonic scores using a chord tuple representation.
 
@@ -32,29 +33,27 @@ def prepare_poly(ignore_fermatas, subset):
         )]
     """
     txt_to_utf, utf_to_txt = build_vocabulary()
+    txt_to_utf[BLANK_MASK_TXT] = BLANK_MASK_UTF # don't add to `utf_to_txt` because samples should never contain BLANK_MASK
 
-    it = corpus.chorales.Iterator(
-        numberingSystem='bwv',
-        returnType='stream')
+    it = iter_standardized_chorales()
     if subset:
         it = [next(it) for _ in range(5)]
 
     for score in it:
-        if score.getTimeSignatures()[0].ratioString != '4/4': # only consider 4/4
-            continue
-
         bwv_id = score.metadata.title
         print('Processing BWV {0}'.format(bwv_id))
 
-        score = standardize_key(score)
         key = score.analyze('key')
-        encoded_score = encode_score(score, ignore_fermatas=ignore_fermatas)
-
-        fname = 'BWV-{0}-{1}'.format(bwv_id, key.mode)
-        if not ignore_fermatas:
-            fname += '-fermatas'
-
+        encoded_score = encode_score(score, keep_fermatas=keep_fermatas, parts_to_mask=parts_to_mask)
         encoded_score_txt = to_text(encoded_score)
+
+        fname = None
+        if not parts_to_mask:
+            fname = 'BWV-{0}-{1}'.format(bwv_id, key.mode)
+        else:
+            fname = 'BWV-{0}-{1}-mask-{2}'.format(bwv_id, key.mode, '-'.join(mask_part))
+        if keep_fermatas:
+            fname += '-fermatas'
 
         out_path = SCRATCH_DIR + '/{0}'.format(fname)
         print 'Writing {0}'.format(out_path)
@@ -62,110 +61,6 @@ def prepare_poly(ignore_fermatas, subset):
             fd.write('\n'.join(encoded_score_txt))
         with open(out_path + '.utf', 'w') as fd:
             fd.write('\n'.join(map(txt_to_utf.get, encoded_score_txt)))
-
-def encode_score(score, ignore_fermatas=False):
-    """
-    Encodes a music21 score into a List of chords, where each chord is represented with
-    a (Fermata :: Bool, List[(Note :: Integer, Tie :: Bool)]).
-
-    If `ignore_fermatas` is True, all `has_fermata`s will be False.
-
-    Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
-    """
-    encoded_score = []
-    for chord in score.chordify().flat.notesAndRests: # aggregate voices, remove markup
-        # expand chord/rest s.t. constant timestep between frames
-
-        # TODO: handle rest
-        if chord.isRest:
-            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-        else:
-            has_fermata = False
-            if not ignore_fermatas:
-                has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
-
-            # add ties with previous chord if present
-            encoded_score.append((has_fermata, map(
-                lambda note: (note.pitch.midi, note.tie is not None and note.tie.type != 'start'),
-                chord)))
-
-            # repeat pitches to expand chord into multiple frames
-            # all repeated frames when expanding a chord should be tied
-            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
-                (has_fermata,
-                    map(lambda note: (note.pitch.midi, True), chord))
-            ])
-    return encoded_score
-
-@click.command()
-@click.option('--mask-part', '-m', multiple=True, help='Parts (Soprano, Alto, Tenor, Bass) to mask')
-def prepare_harm(mask_part):
-    """
-    Prepares harmonization data.
-    """
-    def _fn(score):
-        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
-            bwv_id = score.metadata.title
-            print('Processing BWV {0}'.format(bwv_id))
-
-            score = standardize_key(score)
-            score = extract_SATB(score)
-            key = score.analyze('key')
-
-            encoded_score = encode_score(score, mask_part)
-
-            yield ('BWV-{0}-{1}-mask-{2}'.format(bwv_id, key.mode, '-'.join(mask_part)), encoded_score)
-
-    def encode_score(score, parts_to_mask):
-        encoded_score = []
-        for chord in score.chordify(addPartIdAsGroup=True).flat.notesAndRests: # aggregate voices, remove markup
-            # expand chord/rest s.t. constant timestep between frames
-            has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
-            if chord.isRest:
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
-            else:
-                # add ties with previous chord if present
-                encoded_chord = []
-                for note in chord: # TODO: sort ascending on both training and eval
-                    if note.pitch.groups[0] in parts_to_mask:
-                        encoded_chord.append(BLANK_MASK_TXT)
-                    else:
-                        has_tie = note.tie is not None and note.tie.type != 'start'
-                        encoded_chord.append((note.pitch.midi, has_tie))
-                encoded_score.append((has_fermata, encoded_chord))
-
-                # repeat pitches to expand chord into multiple frames
-                # all repeated frames when expanding a chord should be tied
-                encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
-                    (has_fermata,
-                        map(lambda note: BLANK_MASK_TXT if note == BLANK_MASK_TXT else (note[0], True), encoded_chord))
-                ])
-        return encoded_score
-
-    utf_to_txt = json.load(open(SCRATCH_DIR + '/utf_to_txt.json', 'rb'))
-    txt_to_utf = { v:k for k,v in utf_to_txt.items() }
-    txt_to_utf[BLANK_MASK_TXT] = BLANK_MASK_UTF
-
-    it = corpus.chorales.Iterator(
-        numberingSystem='bwv',
-        returnType='stream')
-    scores = [next(it) for _ in range(5)]
-
-    processed_scores = map(lambda score: list(_fn(score)), scores)
-
-    plain_text_data = []
-    for processed_score in processed_scores:
-        for fname, encoded_score in processed_score:
-            encoded_score_plaintext = to_text(encoded_score)
-            plain_text_data.append((fname, encoded_score_plaintext))
-
-    for fname, plain_text in plain_text_data:
-        out_path = SCRATCH_DIR + '/harm/{0}'.format(fname)
-        print 'Writing {0}'.format(out_path)
-        with open(out_path + '.txt', 'w') as fd:
-            fd.write('\n'.join(plain_text))
-        with open(out_path + '.utf', 'w') as fd:
-            fd.write(_encode_text(txt_to_utf, encoded_score_plaintext))
 
 @click.command()
 @click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
@@ -245,6 +140,54 @@ def build_vocabulary():
         json.dump(utf_to_txt, fd)
     return txt_to_utf, utf_to_txt
 
+def iter_standardized_chorales():
+    "Iterator over 4/4 Bach chorales standardized to Cmaj/Amin with SATB parts extracted."
+    for score in corpus.chorales.Iterator(
+            numberingSystem='bwv',
+            returnType='stream'):
+        if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
+            yield extract_SATB(standardize_key(score))
+
+def encode_score(score, keep_fermatas=True, parts_to_mask=[]):
+    """
+    Encodes a music21 score into a List of chords, where each chord is represented with
+    a (Fermata :: Bool, List[(Note :: Integer, Tie :: Bool)]).
+
+    If `keep_fermatas` is True, all `has_fermata`s will be False.
+
+    All tokens from parts in `parts_to_mask` will have output tokens `BLANK_MASK_TXT`.
+
+    Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
+    """
+    encoded_score = []
+    for chord in score.chordify(addPartIdAsGroup=True).flat.notesAndRests: # aggregate parts, remove markup
+        # expand chord/rest s.t. constant timestep between frames
+        if chord.isRest:
+            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+        else:
+            has_fermata = (keep_fermatas) and any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
+
+            encoded_chord = []
+            # sorts Soprano, Bass, Alto, Tenor
+            c = chord.sortAscending()
+            sorted_notes = [c[-1], c[0]] + c[1:-1]
+            for note in sorted_notes:
+                if parts_to_mask and note.pitch.groups[0] in parts_to_mask:
+                    encoded_chord.append(BLANK_MASK_TXT)
+                else:
+                    has_tie = note.tie is not None and note.tie.type != 'start'
+                    encoded_chord.append((note.pitch.midi, has_tie))
+            encoded_score.append((has_fermata, encoded_chord))
+
+            # repeat pitches to expand chord into multiple frames
+            # all repeated frames when expanding a chord should be tied
+            encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
+                (has_fermata,
+                    map(lambda note: BLANK_MASK_TXT if note == BLANK_MASK_TXT else (note[0], True), encoded_chord))
+            ])
+    return encoded_score
+
+
 def to_text(encoded_score):
     "Converts a Python encoded score into plain-text."
     encoded_score_plaintext = []
@@ -260,7 +203,6 @@ def to_text(encoded_score):
     return encoded_score_plaintext
 
 map(datasets.add_command, [
-    prepare_poly,
-    prepare_harm,
+    prepare,
     encode_text,
 ])
