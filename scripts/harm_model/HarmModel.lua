@@ -6,7 +6,7 @@ require 'LSTM'
 
 local utils = require 'util.utils'
 local utf8 = require 'lua-utf8'
-
+local cjson = require 'cjson'
 
 local HM, parent = torch.class('nn.HarmModel', 'nn.Module')
 
@@ -221,22 +221,43 @@ function HM:harmonize(kwargs)
   local u = utf8.escape
   local input = io.open(utils.get_kwarg(kwargs, 'input', '')):read()
   local blank_mask = utils.get_kwarg(kwargs, 'blank_mask', u"%1130")
+  local utf_to_txt = cjson.decode(io.open(utils.get_kwarg(kwargs, 'utf_to_txt', '../../scratch/utf_to_txt.json')):read())
   local T = utf8.len(input)
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
+
+  local txt_to_utf = reverseTable(utf_to_txt)
 
   local filled = torch.LongTensor(1, T)
   self:resetStates()
 
-  local scores, first_t
+  local scores, note_scores
   if verbose > 0 then
     print('Harmonizing input text: "' .. input .. '"')
   end
 
+  -- token indices to ignore when sampling for masked out tokens
+  local ignore_tokens = { 'START', 'END', '(.)', '|||' }
+  local ignore_idxs = torch.zeros(#ignore_tokens)
+  for i = 1, #ignore_tokens do
+    --print(txt_to_utf[ignore_tokens[i]])
+    ignore_idxs[i] = self:encode_string(txt_to_utf[ignore_tokens[i]])[1]
+  end
+
   local _, next_char, next_idx = nil, nil, nil
-  for t = 1, T do
+
+  -- copy first character (should be START) to initialize scores
+  next_char = utf8.sub(input, 1, 1)
+  next_idx = self:encode_string(next_char):view(1, -1)
+  filled[{{}, {1, 1}}]:copy(next_idx)
+  scores = self:forward(next_idx)
+
+  -- process/infer remaining blank slots
+  for t = 2, T do
     next_char = utf8.sub(input, t, t)
     if next_char == blank_mask then
-      _, next_idx = scores:max(3)
+      note_scores = scores:clone()
+      note_scores[{{}, {}, ignore_idxs}] = 0 -- zero out scores for special symbols
+      _, next_idx = note_scores:max(3)
       next_idx = next_idx[{{}, {}, 1}]
     else
       next_idx = self:encode_string(next_char):view(1, -1)
@@ -250,6 +271,14 @@ function HM:harmonize(kwargs)
   return self:decode_string(filled[1])
 end
 
+-- reverses a table
+function reverseTable(t)
+  local reversedTable = {}
+  for k, v in pairs(t) do
+    reversedTable[v] = k
+  end
+  return reversedTable
+end
 
 function HM:clearState()
   self.net:clearState()

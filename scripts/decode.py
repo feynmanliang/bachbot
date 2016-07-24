@@ -90,12 +90,15 @@ def decode_utf_fermata(json_file, utf8_file):
         print txt
         if txt == 'START':
             curr_file = []
+            curr_chord_notes = []
         elif txt == 'END':
             if not os.path.exists(out_dir):
                 print('Creating directory {0}'.format(out_dir))
                 os.makedirs(out_dir)
             print('Writing {0}'.format(out_dir + '/out-{0}.xml'.format(i)))
             to_musicxml_fermata(curr_file).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+            curr_file = []
+            curr_chord_notes = []
             i += 1
         elif txt == CHORD_BOUNDARY_DELIM:
             curr_file.append((curr_chord_fermata, curr_chord_notes))
