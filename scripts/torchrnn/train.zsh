@@ -40,8 +40,8 @@ for seq_length in 128 256; do
                         -learning_rate $lr \
                         -checkpoint_name checkpoints/$fname/checkpoint \
                         -print_every 50 \
-                        -checkpoint_every 1000 \
-                        -max_epochs 50\
+                        -checkpoint_every 100 \
+                        -max_epochs 100 \
                         -gpu_backend cuda \
                         | tee ~/data/torch_logs/$fname.log
                 done
