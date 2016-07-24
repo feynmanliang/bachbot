@@ -1,7 +1,6 @@
 import click
 
 import json, cPickle
-import multiprocess as mp
 import requests, zipfile
 
 import os, glob
@@ -17,7 +16,7 @@ def datasets():
     pass
 
 @click.command()
-def prepare_chorales_poly():
+def prepare_poly():
     """
     Prepares polyphonic scores using a chord tuple representation.
 
@@ -82,7 +81,6 @@ def prepare_chorales_poly():
     utf_to_txt[START_DELIM] = 'START'
     utf_to_txt[END_DELIM] = 'END'
 
-    #p = mp.Pool(processes=mp.cpu_count())
     processed_scores = map(lambda score: list(_fn(score)), corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream'))
@@ -110,7 +108,7 @@ def prepare_chorales_poly():
             fd.write('\n'.join(map(pairs_to_utf.get, plain_text)))
 
 @click.command()
-def prepare_chorales_poly_fermata():
+def prepare_poly_fermata():
     """
     Prepares polyphonic scores using a chord tuple representation, accounts for fermatas.
     """
@@ -165,7 +163,6 @@ def prepare_chorales_poly_fermata():
     utf_to_txt[START_DELIM] = 'START'
     utf_to_txt[END_DELIM] = 'END'
 
-    #p = mp.Pool(processes=mp.cpu_count())
     it = corpus.chorales.Iterator(
         numberingSystem='bwv',
         returnType='stream')
@@ -349,7 +346,7 @@ def standardize_part_ids(bwv_score):
 
 
 map(datasets.add_command, [
-    prepare_chorales_poly,
-    prepare_chorales_poly_fermata,
+    prepare_poly,
+    prepare_poly_fermata,
     prepare_harm,
 ])
