@@ -87,7 +87,6 @@ def decode_utf_fermata(json_file, utf8_file):
     curr_chord_notes = []
     i = 0
     for txt in map(utf_to_txt.get, filter(lambda x: x != u'\n', utf8_file.read())):
-        print txt
         if txt == 'START':
             curr_file = []
             curr_chord_notes = []
