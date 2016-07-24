@@ -254,7 +254,7 @@ def prepare_harm(mask_part):
 
             encoded_score = encode_score(score, mask_part)
 
-            yield ('BWV-{0}-{1}-mask-'.format(bwv_id, key.mode, str(mask_part)), encoded_score)
+            yield ('BWV-{0}-{1}-mask-{2}'.format(bwv_id, key.mode, '-'.join(mask_part)), encoded_score)
 
     def encode_score(score, parts_to_mask):
         encoded_score = []
