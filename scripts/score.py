@@ -11,7 +11,7 @@ from constants import *
 
 @click.group()
 def score():
-    """Interface for scoring MusicXML outputs."""
+    """Tools for scoring MusicXML outputs."""
     pass
 
 @click.command()

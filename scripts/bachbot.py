@@ -4,7 +4,7 @@ from music21 import environment
 
 from datasets import datasets
 from score import score
-from torch_rnn import make_h5, train, sample, postprocess_utf, postprocess_utf_constant_timestep
+from torch_rnn import make_h5, train, sample
 from decode import decode
 from baseline import baseline
 from analysis import analysis
@@ -22,8 +22,6 @@ map(cli.add_command, [
     make_h5,
     train,
     sample,
-    postprocess_utf,
-    postprocess_utf_constant_timestep,
     score,
     decode,
     baseline,
