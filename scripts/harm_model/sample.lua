@@ -1,7 +1,7 @@
 require 'torch'
 require 'nn'
 
-require 'LanguageModel'
+require 'HarmModel'
 
 
 local cmd = torch.CmdLine()

@@ -8,7 +8,7 @@ out_path=~/bachbot/scratch/sampled_$TEMP.utf
 
 print temperature=$TEMP,start_text=$START_DELIM
 
-cd ~/torch-rnn/
+cd ~/bachbot/scripts/harm_model/
 th sample.lua \
   -checkpoint $CHECKPOINT \
   -temperature $TEMP \

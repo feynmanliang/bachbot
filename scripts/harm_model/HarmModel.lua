@@ -127,7 +127,7 @@ function HM:encode_string(s)
   for i = 1, utf8.len(s) do
     local token = utf8.sub(s, i, i)
     local idx = self.token_to_idx[token]
-    assert(idx ~= nil, 'Got invalid idx')
+    assert(idx ~= nil, 'Got invalid token ' .. token)
     encoded[i] = idx
   end
   return encoded
@@ -219,7 +219,9 @@ Returns:
 --]]
 function HM:harmonize(kwargs)
   local u = utf8.escape
-  local input = io.open(utils.get_kwarg(kwargs, 'input', '')):read()
+  local f = io.open(utils.get_kwarg(kwargs, 'input', ''), 'rb')
+  local input = f:read('*all')
+  f:close()
   local blank_mask = utils.get_kwarg(kwargs, 'blank_mask', u"%1130")
   local utf_to_txt = cjson.decode(io.open(utils.get_kwarg(kwargs, 'utf_to_txt', '../../scratch/utf_to_txt.json')):read())
   local sample = utils.get_kwarg(kwargs, 'sample', 0)
