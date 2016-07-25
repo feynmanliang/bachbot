@@ -18,8 +18,8 @@ SCRATCH_DIR=~/bachbot/scratch
 for seq_length in 128; do
     for wordvec_size in 32; do
         for rnn_size in 256; do
-            for num_layers in 3; do
-                for dropout in  0.4 0.5; do
+            for num_layers in 4; do
+                for dropout in 0.3; do
                     fname="seq_length=${seq_length},\
                         wordvec=${wordvec_size},\
                         num_layers=${num_layers},\
@@ -43,6 +43,7 @@ for seq_length in 128; do
                         -checkpoint_every 100 \
                         -max_epochs 50 \
                         -gpu_backend cuda \
+                        -gpu 0 \
                         | tee ~/data/torch_logs/$fname.log
                 done
             done

@@ -57,7 +57,7 @@ def prepare(keep_fermatas, subset, parts_to_mask=[]):
         with open(out_path + '.txt', 'w') as fd:
             fd.write('\n'.join(encoded_score_txt))
         with open(out_path + '.utf', 'w') as fd:
-            fd.write('\n'.join(map(txt_to_utf.get, encoded_score_txt)))
+            fd.write(''.join(map(txt_to_utf.get, encoded_score_txt)))
 
 @click.command()
 @click.argument('files', nargs=-1, required=True)
