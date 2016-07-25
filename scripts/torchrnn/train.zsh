@@ -11,22 +11,22 @@ batchnorm=1
 lr=2e-3
 
 # train model
-cd ~/torch-rnn
+cd ~/bachbot/scripts/harm_model
 
 SCRATCH_DIR=~/bachbot/scratch
 
 for seq_length in 128; do
     for wordvec_size in 32; do
         for rnn_size in 256; do
-            for num_layers in 4; do
+            for num_layers in 3; do
                 for dropout in 0.3; do
                     fname="seq_length=${seq_length},\
-                        wordvec=${wordvec_size},\
-                        num_layers=${num_layers},\
-                        rnn_size=${rnn_size},\
-                        dropout=${dropout},\
-                        batchnorm=${batchnorm},\
-                        lr=${lr}"
+wordvec=${wordvec_size},\
+num_layers=${num_layers},\
+rnn_size=${rnn_size},\
+dropout=${dropout},\
+batchnorm=${batchnorm},\
+lr=${lr}"
                     print $fname
                     th train.lua \
                         -input_h5 ${SCRATCH_DIR}/${input}.h5 \
@@ -38,7 +38,7 @@ for seq_length in 128; do
                         -dropout $dropout \
                         -batchnorm $batchnorm \
                         -learning_rate $lr \
-                        -checkpoint_name checkpoints/$fname/checkpoint \
+                        -checkpoint_name ${SCRATCH_DIR}/checkpoints/$fname/checkpoint \
                         -print_every 50 \
                         -checkpoint_every 100 \
                         -max_epochs 50 \
