@@ -20,7 +20,7 @@ SCRATCH_DIR=~/bachbot/scratch
 for seq_length in 16; do
     for wordvec_size in 16; do
         for rnn_size in 128; do
-            for num_layers in 1; do
+            for num_layers in 2; do
                 for dropout in 0.3; do
                     fname="seq_length=${seq_length},\
 wordvec=${wordvec_size},\
@@ -41,7 +41,7 @@ lr=${lr}"
                         -batchnorm $batchnorm \
                         -learning_rate $lr \
                         -checkpoint_name $checkpoint_dir/$fname/checkpoint \
-                        -batch_size 10 \
+                        -batch_size 50 \
                         -print_every 50 \
                         -checkpoint_every 100 \
                         -max_epochs 100 \
