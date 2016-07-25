@@ -6,3 +6,4 @@ for masked in '-m Soprano' '-m Alto' '-m Tenor' '-m Bass' '-m Alto -m Tenor' '-m
     --keep-fermatas True \
     $masked
 done
+

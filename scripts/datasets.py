@@ -48,9 +48,13 @@ def prepare(keep_fermatas, subset, parts_to_mask=[]):
 
         fname = 'BWV-{0}'.format(bwv_id)
         if parts_to_mask:
-            fname += 'mask-{0}'.format('-'.join(parts_to_mask))
+            fname += '-mask-{0}'.format('-'.join(parts_to_mask))
+        else:
+            fname += '-nomask'
         if keep_fermatas:
             fname += '-fermatas'
+        else:
+            fname += '-nofermatas'
 
         out_path = SCRATCH_DIR + '/{0}'.format(fname)
         print 'Writing {0}'.format(out_path)
