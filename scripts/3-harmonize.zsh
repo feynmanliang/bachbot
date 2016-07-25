@@ -14,7 +14,7 @@ for utf_file in ${SCRATCH_DIR}/*mask*.utf; do
     rm $fp
   fi
   th harmonize.lua \
-    -checkpoint ${SCRATCH_DIR}/checkpoints/seq_length=128,wordvec=32,num_layers=3,rnn_size=256,dropout=0.3,batchnorm=1,lr=2e-3/checkpoint_5300.t7 \
+    -checkpoint ${SCRATCH_DIR}/checkpoints/seq_length=128,wordvec=32,num_layers=3,rnn_size=256,dropout=0.3,batchnorm=1,lr=2e-3/checkpoint_5250.t7 \
     -input $utf_file \
     > $fp
 done

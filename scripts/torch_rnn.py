@@ -27,9 +27,15 @@ def make_h5(infile, outdir):
     ]), shell=True)
 
 @click.command()
-def train():
+@click.option('-i', '--input_h5', type=click.Path(exists=True), default=SCRATCH_DIR + '/concat_corpus.h5')
+@click.option('-c', '--checkpoint_dir', type=click.Path(), default='scratch/checkpoints')
+def train(input_h5, checkpoint_dir):
     """Trains torch-rnn model. Alias to bachbot/scripts/torchrnn/train.zsh."""
-    subprocess.call(BACHBOT_DIR + '/scripts/torchrnn/train.zsh')
+    subprocess.call(' '.join([
+        BACHBOT_DIR + '/scripts/torchrnn/train.zsh',
+        input_h5,
+        checkpoint_dir
+    ]), shell=True)
 
 @click.command()
 @click.argument('checkpoint', type=click.Path(exists=True), required=True)

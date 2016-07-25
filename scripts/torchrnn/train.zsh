@@ -1,12 +1,14 @@
 #!/usr/bin/env zsh
 
-input=concat_corpus
+#input=concat_corpus_mono
+input=$1
+checkpoint_dir=$2
 
-seq_length=64
-wordvec_size=64
-num_layers=2
-rnn_size=128
-dropout=0
+seq_length=128
+wordvec_size=32
+num_layers=3
+rnn_size=256
+dropout=0.3
 batchnorm=1
 lr=2e-3
 
@@ -15,10 +17,10 @@ cd ~/bachbot/scripts/harm_model
 
 SCRATCH_DIR=~/bachbot/scratch
 
-for seq_length in 128; do
-    for wordvec_size in 32; do
-        for rnn_size in 256; do
-            for num_layers in 3; do
+for seq_length in 16; do
+    for wordvec_size in 16; do
+        for rnn_size in 128; do
+            for num_layers in 1; do
                 for dropout in 0.3; do
                     fname="seq_length=${seq_length},\
 wordvec=${wordvec_size},\
@@ -29,8 +31,8 @@ batchnorm=${batchnorm},\
 lr=${lr}"
                     print $fname
                     th train.lua \
-                        -input_h5 ${SCRATCH_DIR}/${input}.h5 \
-                        -input_json ${SCRATCH_DIR}/${input}.json \
+                        -input_h5 $input \
+                        -input_json ${input:r}.json \
                         -seq_length $seq_length\
                         -wordvec_size $wordvec_size \
                         -rnn_size $rnn_size \
@@ -38,13 +40,14 @@ lr=${lr}"
                         -dropout $dropout \
                         -batchnorm $batchnorm \
                         -learning_rate $lr \
-                        -checkpoint_name ${SCRATCH_DIR}/checkpoints/$fname/checkpoint \
+                        -checkpoint_name $checkpoint_dir/$fname/checkpoint \
+                        -batch_size 10 \
                         -print_every 50 \
                         -checkpoint_every 100 \
-                        -max_epochs 50 \
+                        -max_epochs 100 \
                         -gpu_backend cuda \
                         -gpu 0 \
-                        | tee ~/data/torch_logs/$fname.log
+                        | tee ~/bachbot/logs/$fname.log
                 done
             done
         done

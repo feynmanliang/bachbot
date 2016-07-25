@@ -16,9 +16,10 @@ def datasets():
 
 @click.command()
 @click.option('--keep-fermatas', type=bool, default=True)
-@click.option('--subset', type=bool, default=True)
+@click.option('--subset', type=bool, default=False)
+@click.option('--mono', type=bool, default=False, help='Extract only monophonic Soprano part')
 @click.option('--parts_to_mask', '-m', multiple=True, type=str)
-def prepare(keep_fermatas, subset, parts_to_mask=[]):
+def prepare(keep_fermatas, subset, mono, parts_to_mask=[]):
     """
     Prepares polyphonic scores using a chord tuple representation.
 
@@ -42,11 +43,19 @@ def prepare(keep_fermatas, subset, parts_to_mask=[]):
         bwv_id = score.metadata.title
         print('Processing BWV {0}'.format(bwv_id))
 
-        #key = score.analyze('key')
+        # remove all except 'Soprano' part if --mono
+        if mono:
+            for part in score.parts:
+                if part.id != 'Soprano':
+                    score.remove(part)
+
+        #key = score.analyze('key') # TODO: filter to only majors for task?
         encoded_score = encode_score(score, keep_fermatas=keep_fermatas, parts_to_mask=parts_to_mask)
         encoded_score_txt = to_text(encoded_score)
 
         fname = 'BWV-{0}'.format(bwv_id)
+        if mono:
+            fname += '-mono'
         if parts_to_mask:
             fname += '-mask-{0}'.format('-'.join(parts_to_mask))
         else:
@@ -174,11 +183,11 @@ def encode_score(score, keep_fermatas=True, parts_to_mask=[]):
     Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
     """
     encoded_score = []
-    if parts_to_mask:
-        score = score.chordify(addPartIdAsGroup=True).flat.notesAndRests
-    else:
-        score = score.chordify().flat.notesAndRests
-    for chord in score: # aggregate parts, remove markup
+    for chord in (score
+            .quantize((FRAMES_PER_CROTCHET,))
+            .chordify(addPartIdAsGroup=bool(parts_to_mask))
+            .flat
+            .notesAndRests): # aggregate parts, remove markup
         # expand chord/rest s.t. constant timestep between frames
         if chord.isRest:
             encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
@@ -223,6 +232,5 @@ def to_text(encoded_score):
 
 map(datasets.add_command, [
     prepare,
-    encode_text,
     concatenate_corpus,
 ])

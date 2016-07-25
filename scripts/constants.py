@@ -15,9 +15,5 @@ END_DELIM = unichr(1115)
 BLANK_MASK_TXT = '??'
 BLANK_MASK_UTF = unichr(1130)
 
-# quarterLength's in JCB chorales:
-# [0.5, 1.0, 2.0, 3.0, 4.0, 6.0, 0.25, 8.0, 12.0, 0.125, 0.75, 1.5]
-# Multiplying by 8 turns all durations into integers
-# 4 => quantize to 16th notes
-# TODO: quantize to 8th notes i.e. set to 2
-FRAMES_PER_CROTCHET = 4
+#FRAMES_PER_CROTCHET = 4 # min resolution: 16th notes
+FRAMES_PER_CROTCHET = 2 # min resolution: 8th notes
