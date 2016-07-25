@@ -70,7 +70,7 @@ def prepare(keep_fermatas, subset, mono, parts_to_mask=[]):
         with open(out_path + '.txt', 'w') as fd:
             fd.write('\n'.join(encoded_score_txt))
         with open(out_path + '.utf', 'w') as fd:
-            fd.write(_encode_text(txt_to_utf, encoded_score_txt))
+            fd.write(to_utf(txt_to_utf, encoded_score_txt))
 
 @click.command()
 @click.argument('files', nargs=-1, required=True)
@@ -92,17 +92,7 @@ def concatenate_corpus(files, output):
 def encode_text(utf_to_txt_json, in_file, out_file):
     utf_to_txt = json.load(utf_to_txt_json)
     txt_to_utf = { v:k for k,v in utf_to_txt.items() }
-    out_file.write(_encode_text(txt_to_utf, in_file))
-
-def _encode_text(txt_to_utf, score_txt):
-    """
-    Converts a text-encoded score into UTF encoding (appending start/end delimiters).
-
-    Throws `KeyError` when out-of-vocabulary token is encountered
-    """
-    return START_DELIM +\
-            ''.join(map(lambda txt: txt_to_utf[txt.strip()], score_txt)) +\
-            END_DELIM
+    out_file.write(to_utf(txt_to_utf, in_file))
 
 def standardize_key(score):
     """Converts into the key of C major or A minor.
@@ -151,16 +141,21 @@ def extract_SATB(score):
     return score
 
 def build_vocabulary():
-    vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
-    vocabulary.update(set([CHORD_BOUNDARY_DELIM, FERMATA_SYM]))
-    txt_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
-    txt_to_utf['START'] = START_DELIM
-    txt_to_utf['END'] = END_DELIM
-    utf_to_txt = {utf:txt for txt,utf in txt_to_utf.items()}
-    # save vocabulary
-    with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
-        print 'Writing vocabulary to ' + SCRATCH_DIR + '/utf_to_txt.json'
-        json.dump(utf_to_txt, fd)
+    if os.path.exists(SCRATCH_DIR + '/utf_to_txt.json'):
+        with open(SCRATCH_DIR + '/utf_to_txt.json', 'r') as f:
+            utf_to_txt = json.load(f)
+            txt_to_utf = {v:k for k,v in utf_to_txt.items()}
+    else:
+        vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
+        vocabulary.update(set([CHORD_BOUNDARY_DELIM, FERMATA_SYM]))
+        txt_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
+        txt_to_utf['START'] = START_DELIM
+        txt_to_utf['END'] = END_DELIM
+        utf_to_txt = {utf:txt for txt,utf in txt_to_utf.items()}
+        # save vocabulary
+        with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
+            print 'Writing vocabulary to ' + SCRATCH_DIR + '/utf_to_txt.json'
+            json.dump(utf_to_txt, fd)
     return txt_to_utf, utf_to_txt
 
 def iter_standardized_chorales():
@@ -170,6 +165,31 @@ def iter_standardized_chorales():
             returnType='stream'):
         if score.getTimeSignatures()[0].ratioString == '4/4': # only consider 4/4
             yield extract_SATB(standardize_key(score))
+
+@click.command()
+@click.argument('in_path', type=click.Path(exists=True))
+@click.argument('outfile', type=click.File('w'))
+def prepare_harm_input(in_path, outfile):
+    "Prepares and encodes a musicXML file containing a monophonic melody line as a Soprano voice to harmonize."
+    txt_to_utf, utf_to_txt = build_vocabulary()
+    txt_to_utf[BLANK_MASK_TXT] = BLANK_MASK_UTF # don't add to `utf_to_txt` because samples should never contain BLANK_MASK
+
+    sc = converter.parseFile(in_path)
+    encoded_score = []
+    for note in sc.flat.notesAndRests:
+        if note.isRest:
+            encoded_score.extend((int(note.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
+        else:
+            has_fermata = any(map(lambda e: e.isClassOrSubclass(('Fermata',)), note.expressions))
+            has_tie = note.tie is not None and note.tie.type != 'start'
+            encoded_chord = [(note.pitch.midi, has_tie)] + ([BLANK_MASK_TXT for _ in range(3)])
+            encoded_score.append((has_fermata, encoded_chord))
+            encoded_score.extend((int(note.quarterLength * FRAMES_PER_CROTCHET) - 1) * [
+                (has_fermata,
+                    map(lambda note: BLANK_MASK_TXT if note == BLANK_MASK_TXT else (note[0], True), encoded_chord))
+            ])
+    outfile.write(to_utf(txt_to_utf, to_text(encoded_score)))
+
 
 def encode_score(score, keep_fermatas=True, parts_to_mask=[]):
     """
@@ -215,6 +235,15 @@ def encode_score(score, keep_fermatas=True, parts_to_mask=[]):
             ])
     return encoded_score
 
+def to_utf(txt_to_utf, score_txt):
+    """
+    Converts a text-encoded score into UTF encoding (appending start/end delimiters).
+
+    Throws `KeyError` when out-of-vocabulary token is encountered
+    """
+    return START_DELIM +\
+            ''.join(map(lambda txt: txt_to_utf[txt.strip()], score_txt)) +\
+            END_DELIM
 
 def to_text(encoded_score):
     "Converts a Python encoded score into plain-text."
@@ -232,5 +261,7 @@ def to_text(encoded_score):
 
 map(datasets.add_command, [
     prepare,
+    prepare_harm_input,
+    encode_text,
     concatenate_corpus,
 ])
