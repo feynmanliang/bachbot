@@ -174,7 +174,11 @@ def encode_score(score, keep_fermatas=True, parts_to_mask=[]):
     Time is discretized such that each crotchet occupies `FRAMES_PER_CROTCHET` frames.
     """
     encoded_score = []
-    for chord in score.chordify(addPartIdAsGroup=True).flat.notesAndRests: # aggregate parts, remove markup
+    if parts_to_mask:
+        score = score.chordify(addPartIdAsGroup=True).flat.notesAndRests
+    else:
+        score = score.chordify().flat.notesAndRests
+    for chord in score: # aggregate parts, remove markup
         # expand chord/rest s.t. constant timestep between frames
         if chord.isRest:
             encoded_score.extend((int(chord.quarterLength * FRAMES_PER_CROTCHET)) * [[]])
@@ -182,10 +186,11 @@ def encode_score(score, keep_fermatas=True, parts_to_mask=[]):
             has_fermata = (keep_fermatas) and any(map(lambda e: e.isClassOrSubclass(('Fermata',)), chord.expressions))
 
             encoded_chord = []
-            # sorts Soprano, Bass, Alto, Tenor
-            c = chord.sortAscending()
-            sorted_notes = [c[-1], c[0]] + c[1:-1]
-            for note in sorted_notes:
+            # TODO: sorts Soprano, Bass, Alto, Tenor without breaking ties
+            # c = chord.sortAscending()
+            # sorted_notes = [c[-1], c[0]] + c[1:-1]
+            # for note in sorted_notes:
+            for note in chord:
                 if parts_to_mask and note.pitch.groups[0] in parts_to_mask:
                     encoded_chord.append(BLANK_MASK_TXT)
                 else:

@@ -34,11 +34,12 @@ def decode_utf(utf_to_txt_json, utf8_file, out_dir):
     utf_scores = utf_data.split(START_DELIM)[1:] # [1:] ignores first START_DELIM
 
     for i,utf_score in enumerate(utf_scores):
-        print('Writing {0}'.format(out_dir + '/out-{0}.{txt,xml}'.format(i)))
+        print('Writing {0}'.format(out_dir + '/out-{0}'.format(i)))
         score = decode_utf_single(utf_to_txt, utf_score)
-        with open(out_dir + '/out-{0}.txt'.format(i), 'w') as fd:
-            fd.write('\n'.join(to_text(score)))
-        to_musicxml(score).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+        if score:
+            with open(out_dir + '/out-{0}.txt'.format(i), 'w') as fd:
+                fd.write('\n'.join(to_text(score)))
+            to_musicxml(score).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
 
 def decode_utf_single(utf_to_txt, utf_score):
     "Reads a single UTF encoded file into a Python representation."

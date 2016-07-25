@@ -14,13 +14,14 @@ for utf_file in ${SCRATCH_DIR}/*mask*.utf; do
     rm $fp
   fi
   th harmonize.lua \
-    -checkpoint ${SCRATCH_DIR}/checkpoints/seq_length=128,wordvec=32,num_layers=3,rnn_size=256,dropout=0.3,batchnorm=1,lr=2e-3/checkpoint_2750.t7 \
-    -input $utf_file 
-    #> $fp
+    -checkpoint ${SCRATCH_DIR}/checkpoints/seq_length=128,wordvec=32,num_layers=3,rnn_size=256,dropout=0.3,batchnorm=1,lr=2e-3/checkpoint_5300.t7 \
+    -input $utf_file \
+    > $fp
 done
 
+# TODO: handle output path
 # for utf_file in ${SCRATCH_DIR}/harm_out/*.utf; do
-#   echo bachbot decode decode_utf \
-#     ${SCRATCH_DIR}/utf_to_txt.json \
+#   bachbot decode decode_utf \
+#     --utf-to-txt-json ${SCRATCH_DIR}/utf_to_txt.json \
 #     $utf_file
 # done
