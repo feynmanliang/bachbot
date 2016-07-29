@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-cd ~/torch-rnn
+cd ~/bachbot/scripts/harm_model/
 
 mkdir -p $2
 

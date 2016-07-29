@@ -4,6 +4,8 @@ require 'nn'
 require 'VanillaRNN'
 require 'LSTM'
 
+require 'hdf5'
+
 local utils = require 'util.utils'
 local utf8 = require 'lua-utf8'
 local cjson = require 'cjson'
@@ -293,3 +295,55 @@ end
 function HM:clearState()
   self.net:clearState()
 end
+
+--[[
+Embeds a variable-length string by consuming the string and returning the memory cell.
+
+Inputs:
+- init: String of length T0
+
+Returns:
+- embedding: (1, #init) array of floats representing the memory cell.
+--]]
+function HM:embed_note(kwargs)
+  local embed_text_file = utils.get_kwarg(kwargs, 'embed_text_file', '')
+  local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
+  local out_dir = utils.get_kwarg(kwargs, 'out_dir', '~/data')
+
+  self:resetStates()
+
+  local embed_text = assert(io.open(embed_text_file, "r")):read(1000)
+
+  if verbose > 0 then
+    print('Seeding with: "' .. embed_text .. '"')
+  end
+  local x = self:encode_string(embed_text):view(1, -1)
+  local T0 = x:size(2)
+  _ = self:forward(x)[{{}, {T0, T0}}]
+
+  print('Writing input to ' .. out_dir .. '/input.h5')
+  local myFile = hdf5.open(out_dir .. '/input.h5', 'w')
+  myFile:write(out_dir .. '/input.h5', x)
+  myFile:close()
+
+  for i=1,#self.net.modules do
+    local layer = self.net.modules[i]
+    local out_path = out_dir .. '/outputs-' .. i .. '.h5'
+    print('Writing layer outputs ' .. out_path .. ' with size: ' .. tostring(layer.output:double():size()))
+    myFile = hdf5.open(out_path, 'w')
+    myFile:write(out_path, layer.output:double():squeeze())
+    myFile:close()
+    if layer.cell ~= null then
+      out_path = out_dir .. '/cell-' .. i .. '.h5'
+      print('Writing cell ' .. out_path .. ' with size: ' .. tostring(layer.cell:double():size()))
+      myFile = hdf5.open(out_path, 'w')
+      myFile:write(out_path, layer.cell:double():squeeze())
+      myFile:close()
+    end
+  end
+  print(self.net.modules)
+
+  self:resetStates()
+  return self
+end
+
