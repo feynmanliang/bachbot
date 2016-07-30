@@ -306,18 +306,18 @@ Returns:
 - embedding: (1, #init) array of floats representing the memory cell.
 --]]
 function HM:embed_note(kwargs)
-  local embed_text_file = utils.get_kwarg(kwargs, 'embed_text_file', '')
+  local embed_utf_file = utils.get_kwarg(kwargs, 'embed_utf_file', '')
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
   local out_dir = utils.get_kwarg(kwargs, 'out_dir', '~/data')
 
   self:resetStates()
 
-  local embed_text = assert(io.open(embed_text_file, "r")):read(1000)
+  local embed_utf = assert(io.open(embed_utf_file, "r")):read()
 
   if verbose > 0 then
-    print('Seeding with: "' .. embed_text .. '"')
+    print('Seeding with: "' .. embed_utf .. '"')
   end
-  local x = self:encode_string(embed_text):view(1, -1)
+  local x = self:encode_string(embed_utf):view(1, -1)
   local T0 = x:size(2)
   _ = self:forward(x)[{{}, {T0, T0}}]
 

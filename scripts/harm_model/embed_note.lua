@@ -7,7 +7,7 @@ require 'HarmModel'
 local cmd = torch.CmdLine()
 cmd:option('-checkpoint', 'cv/checkpoint_4000.t7')
 cmd:option('-length', 2000)
-cmd:option('-embed_text_file', '')
+cmd:option('-embed_utf_file', '')
 cmd:option('-out_dir', '~/data')
 cmd:option('-gpu', 0)
 cmd:option('-gpu_backend', 'cuda')
