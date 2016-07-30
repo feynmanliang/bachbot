@@ -22,15 +22,14 @@ def decode():
 @click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
 @click.argument('utf8-file', type=click.Path(exists=True))
 @click.argument('out-dir', type=click.Path(exists=True), default=SCRATCH_DIR + '/out')
-def decode_utf(utf_to_txt_json, utf8_file, out_dir):
+def sampled_stream(utf_to_txt_json, utf8_file, out_dir):
     """
-    Decodes all scores in a single UTF file to text and musicXML.
+    Decodes all scores in a single sampled UTF stream to text and musicXML.
 
     This method splits on START_DELIM and outputs one text and musicXML encoded file for each score.
     """
     utf_to_txt = json.load(utf_to_txt_json)
     utf_data = filter(lambda x: x != u'\n', codecs.open(utf8_file, "r", "utf-8").read())
-
     utf_scores = utf_data.split(START_DELIM)[1:] # [1:] ignores first START_DELIM
 
     for i,utf_score in enumerate(utf_scores):
@@ -40,6 +39,23 @@ def decode_utf(utf_to_txt_json, utf8_file, out_dir):
             with open(out_dir + '/out-{0}.txt'.format(i), 'w') as fd:
                 fd.write('\n'.join(to_text(score)))
             to_musicxml(score).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+
+@click.command()
+@click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
+@click.argument('utf8-file', type=click.Path(exists=True))
+@click.argument('out-file', type=click.File('wb'), default=SCRATCH_DIR + '/out/decode.xml')
+def single(utf_to_txt_json, utf8_file, out_file):
+    """
+    Decodes a single UTF8 output file
+    """
+    utf_to_txt = json.load(utf_to_txt_json)
+    utf_data = filter(lambda x: x != u'\n', codecs.open(utf8_file, "r", "utf-8").read())
+    utf_scores = utf_data.split(START_DELIM)[1:] # [1:] ignores first START_DELIM
+
+    score = decode_utf_single(utf_to_txt, utf_scores[0])
+    print('Writing {0}'.format(out_file.name))
+    if score:
+        to_musicxml(score).write('musicxml', out_file.name)
 
 def decode_utf_single(utf_to_txt, utf_score):
     "Reads a single UTF encoded file into a Python representation."
@@ -95,5 +111,6 @@ def to_musicxml(sc_enc):
     return musicxml_score
 
 map(decode.add_command, [
-    decode_utf,
+    sampled_stream,
+    single,
 ])
