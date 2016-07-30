@@ -17,10 +17,10 @@ cd ~/bachbot/scripts/harm_model
 
 SCRATCH_DIR=~/bachbot/scratch
 
-for seq_length in 16; do
-    for wordvec_size in 16; do
-        for rnn_size in 128; do
-            for num_layers in 2; do
+for seq_length in 128; do
+    for wordvec_size in 32; do
+        for num_layers in 3; do
+            for rnn_size in 256; do
                 for dropout in 0.3; do
                     fname="seq_length=${seq_length},\
 wordvec=${wordvec_size},\
