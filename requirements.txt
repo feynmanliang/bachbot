@@ -1,6 +1,6 @@
 alabaster==0.7.8
 Babel==2.3.4
--e git+git@github.com:feynmanliang/bachbot@6f26ab8ed07bee4c64ffb678a4509e9f7cb52457#egg=bachbot&subdirectory=scripts
+-e git+git@github.com:feynmanliang/bachbot@c15daa0c63ed0b49c3666c0efe87fe8f912f916a#egg=bachbot&subdirectory=scripts
 backports-abc==0.4
 backports.shutil-get-terminal-size==1.0.0
 backports.ssl-match-hostname==3.5.0.1
@@ -28,6 +28,7 @@ ipython-genutils==0.1.0
 ipywidgets==5.1.5
 Jinja2==2.8
 jsonschema==2.5.1
+Jug==1.2.2
 jupyter-client==4.2.2
 jupyter-core==4.1.0
 lxml==3.6.0
@@ -62,6 +63,7 @@ pyzmq==15.2.0
 qtconsole==4.2.1
 readline==6.2.4.1
 recordtype==1.1
+redis==2.10.5
 requests==2.10.0
 scikit-learn==0.17.1
 scipy==0.17.1

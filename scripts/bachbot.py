@@ -23,5 +23,5 @@ map(cli.add_command, [
     sample,
     score,
     decode,
-    analysis
+    analysis,
 ])
