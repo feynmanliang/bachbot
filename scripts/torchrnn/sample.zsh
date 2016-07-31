@@ -13,7 +13,7 @@ th sample.lua \
   -checkpoint $CHECKPOINT \
   -temperature $TEMP \
   -start_text $START_DELIM \
-  -sample 1 -length 150000 \
+  -sample 1 -length 45000 \
   -gpu 0 \
   > $out_path
 

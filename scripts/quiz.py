@@ -17,7 +17,7 @@ import numpy as np
 np.random.seed(42)
 
 
-num_questions = 13
+num_questions = 3 * 4 * 2
 HARM_OUT_DIR = SCRATCH_DIR + '/harm_out'
 QUESTIONS_DIR = SCRATCH_DIR + '/quiz'
 
@@ -53,19 +53,18 @@ np.random.shuffle(orig_fps)
 single_part_masks = ['Soprano', 'Alto', 'Tenor', 'Bass']
 multi_part_masks = ['Alto-Tenor', 'Alto-Tenor-Bass']
 
-# question_groups = defaultdict(list)
-# for i, orig_fp in enumerate(orig_fps[:num_questions]):
-#     root_fp = (os.path.dirname(orig_fp) + '/' + '-'.join(os.path.basename(orig_fp).split('-')[:2]))
-#     if i % (1+len(multi_part_masks)) == len(multi_part_masks):
-#         masked_parts = single_part_masks[int(i / (1+len(multi_part_masks))) % len(single_part_masks)]
-#     else:
-#         masked_parts = multi_part_masks[i % (1+len(multi_part_masks))]
-#     gen_fp = root_fp + '-mask-{}-fermatas.xml'.format(masked_parts)
-#     question_groups[masked_parts].append(Task(make_question, orig_fp, gen_fp, QUESTIONS_DIR))
+question_groups = defaultdict(list)
+for i, orig_fp in enumerate(orig_fps[:num_questions]):
+    root_fp = (os.path.dirname(orig_fp) + '/' + '-'.join(os.path.basename(orig_fp).split('-')[:2]))
+    if i % (1+len(multi_part_masks)) == len(multi_part_masks):
+        masked_parts = single_part_masks[int(i / (1+len(multi_part_masks))) % len(single_part_masks)]
+    else:
+        masked_parts = multi_part_masks[i % (1+len(multi_part_masks))]
+    gen_fp = root_fp + '-mask-{}-fermatas.xml'.format(masked_parts)
+    question_groups[masked_parts].append(Task(make_question, orig_fp, gen_fp, QUESTIONS_DIR))
 
 # Prepare all compare against generative samples
 for orig_fp, gen_fp in zip(orig_fps[num_questions:], glob.glob(SCRATCH_DIR + '/out/out-*.xml')):
-    print orig_fp, gen_fp
-    #question_groups['AllParts'].append(Task(make_question, orig_fp, gen_fp, QUESTIONS_DIR))
+    question_groups['AllParts'].append(Task(make_question, orig_fp, gen_fp, QUESTIONS_DIR))
 
 
