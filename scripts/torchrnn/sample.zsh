@@ -6,14 +6,14 @@ START_DELIM=$3
 
 out_path=~/bachbot/scratch/sampled_$TEMP.utf
 
-print temperature=$TEMP,start_text=$START_DELIM
+#print temperature=$TEMP,start_text=$START_DELIM
 
 cd ~/bachbot/scripts/harm_model/
 th sample.lua \
   -checkpoint $CHECKPOINT \
   -temperature $TEMP \
   -start_text $START_DELIM \
-  -sample 1 -length 15000 \
+  -sample 1 -length 150000 \
   -gpu 0 \
   > $out_path
 

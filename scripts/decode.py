@@ -20,9 +20,11 @@ def decode():
 
 @click.command()
 @click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
+@click.option('--min-length', type=int, default=100, help='Minimum length of samples in frames')
+@click.option('--max-length', type=int, default=400, help='Maximum length of samples in frames')
 @click.argument('utf8-file', type=click.Path(exists=True))
 @click.argument('out-dir', type=click.Path(exists=True), default=SCRATCH_DIR + '/out')
-def sampled_stream(utf_to_txt_json, utf8_file, out_dir):
+def sampled_stream(utf_to_txt_json, utf8_file, out_dir, min_length, max_length):
     """
     Decodes all scores in a single sampled UTF stream to text and musicXML.
 
@@ -32,13 +34,15 @@ def sampled_stream(utf_to_txt_json, utf8_file, out_dir):
     utf_data = filter(lambda x: x != u'\n', codecs.open(utf8_file, "r", "utf-8").read())
     utf_scores = utf_data.split(START_DELIM)[1:] # [1:] ignores first START_DELIM
 
-    for i,utf_score in enumerate(utf_scores):
-        print('Writing {0}'.format(out_dir + '/out-{0}'.format(i)))
+    i = 0
+    for utf_score in utf_scores:
         score = decode_utf_single(utf_to_txt, utf_score)
-        if score:
+        if score and len(score) >= min_length and len(score) <= max_length:
+            print('Writing {0}'.format(out_dir + '/out-{0}'.format(i)))
             with open(out_dir + '/out-{0}.txt'.format(i), 'w') as fd:
                 fd.write('\n'.join(to_text(score)))
             to_musicxml(score).write('musicxml', out_dir + '/out-{0}.xml'.format(i))
+            i += 1
 
 @click.command()
 @click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')

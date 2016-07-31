@@ -150,7 +150,7 @@ end
 
 --[[
 Sample from the language model. Note that this will reset the states of the
-underlying RNNs.
+underlying RNNs. Stops when `stop_char` is encountered.
 
 Inputs:
 - init: String of length T0
@@ -160,6 +160,9 @@ Returns:
 - sampled: (1, max_length) array of integers, where the first part is init.
 --]]
 function HM:sample(kwargs)
+  local u = utf8.escape
+  local stop_char = self:encode_string(u'%1115'):view(1, -1)[1] -- see scripts/constants.py
+
   local T = utils.get_kwarg(kwargs, 'length', 100)
   local start_text = utils.get_kwarg(kwargs, 'start_text', '')
   local verbose = utils.get_kwarg(kwargs, 'verbose', 0)
@@ -199,6 +202,9 @@ function HM:sample(kwargs)
        next_char = torch.multinomial(probs, 1):view(1, 1)
     end
     sampled[{{}, {t, t}}]:copy(next_char)
+    -- if next_char == stop_char then
+    --   break
+    -- end
     scores = self:forward(next_char)
   end
 

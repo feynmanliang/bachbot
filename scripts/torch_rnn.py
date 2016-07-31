@@ -40,8 +40,13 @@ def train(input_h5, checkpoint_dir):
 @click.command()
 @click.argument('checkpoint', type=click.Path(exists=True), required=True)
 @click.option('-t', '--temperature', type=float, default=0.9)
-def sample(checkpoint, temperature):
+@click.option('-s', '--start-text-file', type=click.Path(exists=True), help='Primer UTF file')
+def sample(checkpoint, temperature, start_text_file):
     """Samples torch-rnn model. Calls bachbot/scripts/torchrnn/sample.zsh."""
+    if not start_text_file:
+        start_text = START_DELIM
+    else:
+        start_text = codecs.open(start_text_file, 'r', 'utf8').read()[:320]
     subprocess.call(
-            BACHBOT_DIR + '/scripts/torchrnn/sample.zsh {0} {1} {2}'.format(checkpoint, temperature, START_DELIM),
+            BACHBOT_DIR + '/scripts/torchrnn/sample.zsh {0} {1} {2}'.format(checkpoint, temperature, start_text),
             shell=True)
