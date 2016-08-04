@@ -12,7 +12,7 @@ FERMATA_SYM = '(.)'
 START_DELIM = unichr(1111)
 END_DELIM = unichr(1115)
 
-BLANK_MASK_TXT = '??'
+BLANK_MASK_TXT = '??' # for masking out tokens in harmonizations
 BLANK_MASK_UTF = unichr(1130)
 
 FRAMES_PER_CROTCHET = 4 # min resolution: 16th notes
