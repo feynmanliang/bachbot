@@ -4,7 +4,7 @@ from constants import *
 from datasets import to_text
 
 from music21.stream import Stream
-from music21.note import Note
+from music21.note import Note, Rest
 from music21.tie import Tie
 from music21.duration import Duration
 from music21.chord import Chord
@@ -92,26 +92,30 @@ def to_musicxml(sc_enc):
     prev_chord = dict() # midi->(note instance from previous chord), used to determine tie type (start, continue, stop)
     for has_fermata, chord_notes in sc_enc:
         notes = []
-        for note_tuple in chord_notes:
-            # TODO: handle rests
-            note = Note()
+        if len(chord_notes) == 0: # no notes => rest for this frame
+            r = Rest()
+            r.duration = timestep
+            musicxml_score.append(r)
+        else:
+            for note_tuple in chord_notes:
+                note = Note()
+                if has_fermata:
+                    note.expressions.append(expressions.Fermata())
+                note.midi = note_tuple[0]
+                if note_tuple[1]: # current note is tied
+                    note.tie = Tie('stop')
+                    if prev_chord and note.pitch.midi in prev_chord:
+                        prev_note = prev_chord[note.pitch.midi]
+                        if prev_note.tie is None:
+                            prev_note.tie = Tie('start')
+                        else:
+                            prev_note.tie = Tie('continue')
+                notes.append(note)
+            prev_chord = { note.pitch.midi : note for note in notes }
+            chord = Chord(notes=notes, duration=timestep)
             if has_fermata:
-                note.expressions.append(expressions.Fermata())
-            note.midi = note_tuple[0]
-            if note_tuple[1]: # current note is tied
-                note.tie = Tie('stop')
-                if prev_chord and note.pitch.midi in prev_chord:
-                    prev_note = prev_chord[note.pitch.midi]
-                    if prev_note.tie is None:
-                        prev_note.tie = Tie('start')
-                    else:
-                        prev_note.tie = Tie('continue')
-            notes.append(note)
-        prev_chord = { note.pitch.midi : note for note in notes }
-        chord = Chord(notes=notes, duration=timestep)
-        if has_fermata:
-            chord.expressions.append(expressions.Fermata())
-        musicxml_score.append(chord)
+                chord.expressions.append(expressions.Fermata())
+            musicxml_score.append(chord)
     return musicxml_score
 
 map(decode.add_command, [
