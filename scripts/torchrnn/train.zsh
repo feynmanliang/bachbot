@@ -30,7 +30,7 @@ dropout=${dropout},\
 batchnorm=${batchnorm},\
 lr=${lr}"
                     print $fname
-                    th train.lua \
+                    time th train.lua \
                         -input_h5 $input \
                         -input_json ${input:r}.json \
                         -seq_length $seq_length\
@@ -45,8 +45,10 @@ lr=${lr}"
                         -print_every 50 \
                         -checkpoint_every 100 \
                         -max_epochs 100 \
+                        -speed_benchmark 1\
+                        -memory_benchmark 1\
+                        -gpu -1 \
                         -gpu_backend cuda \
-                        -gpu 0 \
                         | tee ~/bachbot/logs/$fname.log
                 done
             done
