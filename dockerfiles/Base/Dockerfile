@@ -27,7 +27,19 @@ RUN apt-get -y install \
     libssl-dev \
     libxml2-dev \
     libxslt-dev \
-    software-properties-common
+    software-properties-common \
+    vim \
+    pkg-config \
+    gfortran \
+    libopenblas-dev \
+    liblapack-dev \
+    python-numpy \
+    python-scipy \
+    python-matplotlib \
+    python-nose \
+    libbz2-dev \
+    libfreetype6-dev \
+    zsh
 
 # Torch and luarocks
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive && cd ~/torch && \
@@ -43,28 +55,14 @@ ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 
 #BachBot
 RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
+RUN rm ~/bachbot/requirements.txt
 
-#pyenv
-RUN curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | /bin/bash
-
-# Set environment variables.
-ENV PYENV_ROOT /root/.pyenv
-ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-RUN echo -e '\n\n# pyenv' >> ~/.bash_profile && \
-    echo 'export PYENV_ROOT="/root/.pyenv"' >> ~/.bash_profile && \
-    echo 'export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile && \
-    echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
-
-RUN pyenv install 2.7.11 && \
-    pyenv global 2.7.11 && \
-    pyenv rehash
-
-#BachBot virtualenv
-RUN bash -c "pyenv virtualenv 2.7.11 bachbot && \
-    source ~/.bash_profile && \
-    pyenv activate bachbot && \
-    cd ~/bachbot && \
-    pip install -r requirements.txt"
+RUN apt-get -y install python-pip
+RUN pip install --upgrade pip
+RUN pip install --upgrade virtualenv
+RUN cd ~/bachbot && \
+    pip install -r requirements.txt && \
+    pip install --editable ./scripts
 
 #Lua requirements
 RUN luarocks install nn
@@ -76,11 +74,9 @@ RUN git clone https://github.com/deepmind/torch-hdf5 ~/torch-hdf5 && \
     luarocks make hdf5-0-0.rockspec
 
 #torch-rnn and python requirements installed to bachbot venv
-RUN luarocks install lua-utf8
+RUN luarocks install luautf8
 RUN git clone https://github.com/feynmanliang/torch-rnn ~/torch-rnn
-RUN bash -c "source ~/.bash_profile && \
-    pyenv activate bachbot && \
-    pip install -r ~/torch-rnn/requirements.txt"
+RUN  pip install -r ~/torch-rnn/requirements.txt
 
 #Element-Research/rnn
 RUN luarocks install rnn
@@ -93,6 +89,9 @@ RUN apt-get clean && \
 	/var/tmp/* \
 	~/torch-hdf5
 
+# Make Required DIRs
+RUN mkdir ~/bachbot/scratch
+RUN mkdir ~/bachbot/logs
 ##################### INSTALLATION END #####################
 WORKDIR ~/
 CMD ["bash"]
