@@ -53,31 +53,33 @@ ENV LD_LIBRARY_PATH=~/torch/install/lib:$LD_LIBRARY_PATH
 ENV DYLD_LIBRARY_PATH=~/torch/install/lib:$DYLD_LIBRARY_PATH
 ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 
-#BachBot
-RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
-
-RUN apt-get -y install python-pip
-RUN pip install --upgrade pip
-RUN pip install --upgrade virtualenv
-RUN pip install -r ~/bachbot/requirements.txt && \
-    pip install --editable ~/bachbot/scripts
-
 #Lua requirements
 RUN luarocks install nn
 RUN luarocks install optim
 RUN luarocks install lua-cjson
 
+# Torch-hdf5
 RUN git clone https://github.com/deepmind/torch-hdf5 ~/torch-hdf5 && \
     cd ~/torch-hdf5 && \
     luarocks make hdf5-0-0.rockspec
 
-#torch-rnn and python requirements installed to bachbot venv
+# pip
+RUN apt-get -y install python-pip
+RUN pip install --upgrade pip
+
+#torch-rnn and python requirements
 RUN luarocks install luautf8
 RUN git clone https://github.com/feynmanliang/torch-rnn ~/torch-rnn
-RUN  pip install -r ~/torch-rnn/requirements.txt
+RUN pip install -r ~/torch-rnn/requirements.txt
 
 #Element-Research/rnn
-RUN luarocks install rnn
+# RUN luarocks install rnn
+
+#BachBot
+RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
+RUN cd ~/bachbot && \
+    pip install -r requirements.txt && \
+    pip install --editable scripts
 
 # Clean tmps
 RUN apt-get clean && \
@@ -91,5 +93,5 @@ RUN apt-get clean && \
 RUN mkdir ~/bachbot/scratch
 RUN mkdir ~/bachbot/logs
 ##################### INSTALLATION END #####################
-WORKDIR ~/
+WORKDIR /root/bachbot
 CMD ["bash"]
