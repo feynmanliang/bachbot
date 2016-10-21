@@ -94,7 +94,8 @@ RUN apt-get clean && \
 RUN mkdir ~/bachbot/scratch
 RUN mkdir ~/bachbot/logs
 ##################### INSTALLATION END #####################
-
 EXPOSE 8888
 WORKDIR /root/bachbot
-CMD ["jupyter", "notebook"]
+COPY start.sh .
+#CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0"]
+CMD ["./start.sh"]
