@@ -1,6 +1,5 @@
 alabaster==0.7.8
 Babel==2.3.4
--e git+http://github.com/feynmanliang/bachbot@c15daa0c63ed0b49c3666c0efe87fe8f912f916a#egg=bachbot&subdirectory=scripts
 backports-abc==0.4
 backports.shutil-get-terminal-size==1.0.0
 backports.ssl-match-hostname==3.5.0.1

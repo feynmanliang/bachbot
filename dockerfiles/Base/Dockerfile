@@ -55,14 +55,12 @@ ENV LUA_CPATH='~/torch/install/lib/?.so;'$LUA_CPATH
 
 #BachBot
 RUN git clone https://github.com/feynmanliang/bachbot.git ~/bachbot
-RUN rm ~/bachbot/requirements.txt
 
 RUN apt-get -y install python-pip
 RUN pip install --upgrade pip
 RUN pip install --upgrade virtualenv
-RUN cd ~/bachbot && \
-    pip install -r requirements.txt && \
-    pip install --editable ./scripts
+RUN pip install -r ~/bachbot/requirements.txt && \
+    pip install --editable ~/bachbot/scripts
 
 #Lua requirements
 RUN luarocks install nn
