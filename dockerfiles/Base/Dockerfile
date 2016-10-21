@@ -6,7 +6,8 @@
 #   docker build -f Dockerfile -t bachbot:base .
 #   docker tag <tag of last container> fliang/bachbot:base
 #   docker push fliang/bachbot:base
-#   docker run -i -t fliang/bachbot:base
+#   docker run -it --net=host fliang/bachbot:base
+# visit localhost:8888
 ############################################################
 
 FROM ubuntu:14.04
@@ -93,5 +94,7 @@ RUN apt-get clean && \
 RUN mkdir ~/bachbot/scratch
 RUN mkdir ~/bachbot/logs
 ##################### INSTALLATION END #####################
+
+EXPOSE 8888
 WORKDIR /root/bachbot
-CMD ["bash"]
+CMD ["jupyter", "notebook"]
