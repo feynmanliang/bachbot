@@ -92,6 +92,7 @@ RUN apt-get clean && \
 
 # Make Required DIRs
 RUN mkdir ~/bachbot/scratch
+RUN mkdir ~/bachbot/scratch/out
 RUN mkdir ~/bachbot/logs
 ##################### INSTALLATION END #####################
 EXPOSE 8888
