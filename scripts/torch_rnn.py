@@ -16,8 +16,8 @@ def make_h5(infile, outdir):
 
     # preprocess data (tokenize store in hdf5)
     infile_path = os.path.abspath(infile.name)
-    print 'Processing corpus at: ' + infile_path
-    print 'Outputting to: ' + outdir + '/' + fileName + '{h5,json}'
+    print('Processing corpus at: ' + infile_path)
+    print('Outputting to: ' + outdir + '/' + fileName + '{h5,json}')
     subprocess.call(' '.join([
         'python',
         '~/torch-rnn/scripts/preprocess.py',

@@ -1,5 +1,5 @@
 import click
-import json, cPickle
+import json
 import os, glob, subprocess
 import h5py
 

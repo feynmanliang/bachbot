@@ -1,6 +1,6 @@
 import click
 
-import json, cPickle
+import json
 import requests, zipfile
 import os, glob
 
@@ -66,7 +66,7 @@ def prepare(keep_fermatas, subset, mono, parts_to_mask=[]):
             fname += '-nofermatas'
 
         out_path = SCRATCH_DIR + '/{0}'.format(fname)
-        print 'Writing {0}'.format(out_path)
+        print('Writing {0}'.format(out_path))
         with open(out_path + '.txt', 'w') as fd:
             fd.write('\n'.join(encoded_score_txt))
         with open(out_path + '.utf', 'w') as fd:
@@ -74,16 +74,16 @@ def prepare(keep_fermatas, subset, mono, parts_to_mask=[]):
 
 @click.command()
 @click.argument('files', nargs=-1, required=True)
-@click.option('-o', '--output', type=click.File('wb'), default=SCRATCH_DIR + '/concat_corpus.txt')
+@click.option('-o', '--output', type=click.File('w'), default=SCRATCH_DIR + '/concat_corpus.txt')
 def concatenate_corpus(files, output):
     """Concatenates individual files together into single corpus.
 
     Try `bachbot concatenate_corpus scratch/*.utf`.
     """
-    print 'Writing concatenated corpus to {0}'.format(output.name)
+    print('Writing concatenated corpus to {0}'.format(output.name))
     for fp in files:
-        with open(fp, 'rb') as fd:
-            output.write(''.join(filter(lambda x: x != '\n', fd.read())))
+        with open(fp, 'r') as fd:
+            output.write(''.join(map(str, filter(lambda x: x != '\n', fd.read()))))
 
 @click.command()
 @click.option('--utf-to-txt-json', type=click.File('rb'), default=SCRATCH_DIR + '/utf_to_txt.json')
@@ -148,13 +148,13 @@ def build_vocabulary():
     else:
         vocabulary = set([str((midi, tie)) for tie in [True, False] for midi in range(128)]) # all MIDI notes and tie/notie
         vocabulary.update(set([CHORD_BOUNDARY_DELIM, FERMATA_SYM]))
-        txt_to_utf = dict(map(lambda x: (x[1], unichr(x[0])), enumerate(vocabulary)))
+        txt_to_utf = dict(map(lambda x: (x[1], chr(x[0])), enumerate(vocabulary)))
         txt_to_utf['START'] = START_DELIM
         txt_to_utf['END'] = END_DELIM
         utf_to_txt = {utf:txt for txt,utf in txt_to_utf.items()}
         # save vocabulary
         with open(SCRATCH_DIR + '/utf_to_txt.json', 'w') as fd:
-            print 'Writing vocabulary to ' + SCRATCH_DIR + '/utf_to_txt.json'
+            print('Writing vocabulary to ' + SCRATCH_DIR + '/utf_to_txt.json')
             json.dump(utf_to_txt, fd)
     return txt_to_utf, utf_to_txt
 
@@ -259,9 +259,11 @@ def to_text(encoded_score):
                 encoded_score_plaintext.append(str(note))
     return encoded_score_plaintext
 
-map(datasets.add_command, [
+for command in [
     prepare,
     prepare_harm_input,
     encode_text,
     concatenate_corpus,
-])
+]:
+    datasets.add_command(command)
+

@@ -16,7 +16,7 @@ def cli():
     pass
 
 # instantiate the CLI
-map(cli.add_command, [
+for command in [
     datasets,
     make_h5,
     train,
@@ -24,4 +24,8 @@ map(cli.add_command, [
     score,
     decode,
     analysis,
-])
+]:
+    cli.add_command(command)
+
+if __name__ == '__main__':
+    cli()

@@ -44,7 +44,7 @@ def harm_error_rate(ctx, out_file):
     for t in error_types:
         for parts_mask in num_correct[t]:
             outwriter.writerow((t, parts_mask, float(num_correct[t][parts_mask]) / num_total[t][parts_mask]))
-    print 'Wrote results to {}'.format(out_file.name)
+    print('Wrote results to {}'.format(out_file.name))
 
 def extract_BWV(fname):
     parts = fname.split('-')
@@ -92,7 +92,7 @@ def pca_metric(input_path):
     if not os.path.exists(out_fp):
         _compute_PCs(out_fp)
     PCs = np.fromfiile(out_fp)
-    print PCs
+    print(PCs)
     # TODO: find centroid of Bach cluster
     # TODO: compute and return neuclidian distance of PC projectio nof input_path file to Bach centroid
 
@@ -116,7 +116,7 @@ def _compute_PCs(out_fp):
         for m in myPiece.flat.getElementsByClass('Note'):
             data[n][m.midi] +=1
 
-        print 'Number %i' % n
+        print('Number %i' % n)
 
     new_data = np.array([data[0].values()]).astype(np.float64)
     new_data /= np.sum(new_data)
@@ -126,7 +126,7 @@ def _compute_PCs(out_fp):
         temp /= np.sum(temp)
         new_data =  np.concatenate((new_data,  temp)  , axis=0)
 
-    print 'Statistics gathered!'
+    print('Statistics gathered!')
     save = new_data
 
 ###############################################################################
@@ -146,7 +146,7 @@ def _compute_PCs(out_fp):
         for m in myPiece.flat.getElementsByClass('Note'):
                 data[n][m.midi] +=1
 
-        print 'Number %i' % n
+        print('Number %i' % n)
 
     new_data = np.array([data[700].values()])
     new_data /= np.sum(new_data)
@@ -157,7 +157,7 @@ def _compute_PCs(out_fp):
 
         new_data =  np.concatenate( (new_data,  temp )  , axis=0)
 
-    print 'Statistics gathered!'
+    print('Statistics gathered!')
 
     X = new_data
     d = np.concatenate((save,X))
@@ -165,7 +165,7 @@ def _compute_PCs(out_fp):
     pca = PCA(n_components=n_components).fit(d)
     pca.components_.tofile(out_fp)
 
-    print '{} PCs written to {}'.format(n_components, out_fp)
+    print('{} PCs written to {}'.format(n_components, out_fp))
 
 map(score.add_command, [
     pca_metric,
