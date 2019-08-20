@@ -9,6 +9,7 @@ from music21.tie import Tie
 from music21.duration import Duration
 from music21.chord import Chord
 from music21 import expressions
+import music21
 
 import codecs
 import json
@@ -84,11 +85,13 @@ def decode_utf_single(utf_to_txt, utf_score):
             print(u'Skipping unknown token: {}'.format(utf_token))
         else:
             curr_chord_notes.append(eval(txt))
+    return curr_score
 
 def to_musicxml(sc_enc):
     "Converts Chord tuples (see chorales.prepare_poly) to musicXML"
     timestep = Duration(1. / FRAMES_PER_CROTCHET)
     musicxml_score = Stream()
+    musicxml_score.append(music21.tempo.MetronomeMark(number=60))
     prev_chord = dict() # midi->(note instance from previous chord), used to determine tie type (start, continue, stop)
     for has_fermata, chord_notes in sc_enc:
         notes = []
@@ -97,12 +100,12 @@ def to_musicxml(sc_enc):
             r.duration = timestep
             musicxml_score.append(r)
         else:
-            for note_tuple in chord_notes:
+            for midi_pitch, tied in chord_notes:
                 note = Note()
                 if has_fermata:
                     note.expressions.append(expressions.Fermata())
-                note.midi = note_tuple[0]
-                if note_tuple[1]: # current note is tied
+                note.pitch = music21.pitch.Pitch(midi=midi_pitch)
+                if tied: # current note is tied
                     note.tie = Tie('stop')
                     if prev_chord and note.pitch.midi in prev_chord:
                         prev_note = prev_chord[note.pitch.midi]
