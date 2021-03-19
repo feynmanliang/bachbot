@@ -29,7 +29,7 @@ ipyparallel==5.0.1
 ipython==4.2.0
 ipython-genutils==0.1.0
 ipywidgets==5.1.5
-Jinja2==2.8
+Jinja2==2.11.3
 jsonschema==2.5.1
 Jug==1.2.2
 jupyter==1.0.0
