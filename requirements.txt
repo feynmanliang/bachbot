@@ -68,7 +68,7 @@ pytest==2.9.2
 python-apt===0.9.3.5ubuntu2
 python-dateutil==2.5.3
 pytz==2016.4
-PyYAML==3.11
+PyYAML==5.4
 pyzmq==15.2.0
 qtconsole==4.2.1
 readline==6.2.4.1
