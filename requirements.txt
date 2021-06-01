@@ -90,7 +90,7 @@ testpath==0.3
 Theano==0.8.2
 tornado==4.3
 traitlets==4.2.1
-urllib3==1.7.1
+urllib3==1.26.5
 urlparse2==1.1.1
 virtualenv==15.0.2
 wcwidth==0.1.7
