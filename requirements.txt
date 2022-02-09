@@ -84,7 +84,7 @@ sklearn==0.0
 snowballstemmer==1.2.1
 Sphinx==1.4.3
 ssh-import-id==3.21
-tensorflow==0.11.0rc0
+tensorflow==2.5.3
 terminado==0.6
 testpath==0.3
 Theano==0.8.2
