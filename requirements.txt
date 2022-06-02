@@ -22,7 +22,7 @@ functools32==3.2.3.post2
 futures==3.0.5
 h5py==2.5.0
 hmmlearn==0.2.0
-html5lib==0.999
+html5lib==0.99999999
 imagesize==0.7.1
 ipykernel==4.3.1
 ipyparallel==5.0.1
