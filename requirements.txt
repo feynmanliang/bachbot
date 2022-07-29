@@ -39,7 +39,7 @@ jupyter-core==4.1.0
 lxml==3.6.0
 MarkupSafe==0.23
 matplotlib==1.5.1
-mistune==0.7.2
+mistune==2.0.3
 mock==2.0.0
 multiprocess==0.70.4
 music21==2.2.1
