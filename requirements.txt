@@ -58,7 +58,7 @@ Pillow==3.3.0
 plac==0.9.6
 progress==1.2
 prompt-toolkit==1.0.8
-protobuf==3.0.0b2
+protobuf==3.18.3
 ptyprocess==0.5.1
 py==1.4.31
 pycurl==7.19.3
